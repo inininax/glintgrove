@@ -18,6 +18,7 @@
       this.undoStack = [];
       this.litAt = new Map();
       this.satisfied = new Set();
+      this.awarded = new Set();
       this.awakenCount = 0;
       this.won = false;
       this.winTimer = 0;
@@ -29,11 +30,15 @@
       this.time = 0;
       this.settings = { sound: true, motion: true, colorblind: false };
       this.hitCells = new Set();
+      this.renderer.onSpore = (x, y) => {
+        if (this.settings.motion) this.particles.spawnSpore(x, y);
+      };
     }
 
     setSettings(s) {
       Object.assign(this.settings, s);
       this.sound.setEnabled(this.settings.sound);
+      if (this.particles) this.particles.reducedMotion = !this.settings.motion;
     }
 
     startLevel(def, opts) {
@@ -43,6 +48,7 @@
       this.undoStack = [];
       this.litAt.clear();
       this.satisfied.clear();
+      this.awarded.clear();
       this.awakenCount = 0;
       this.won = false;
       this.winTimer = 0;
@@ -64,113 +70,61 @@
     H() { return this.renderer.H; }
 
     retrace() {
-      const res = this.traceFull();
+      const hadPortal = this.trace && this.trace.segments.some(s => s.portalJump);
+      const res = engine().trace(this.level);
       this.trace = res;
+
+      const hasPortal = res.segments.some(s => s.portalJump);
+      if (hasPortal && !hadPortal && !this.demoMode && this.settings.sound) {
+        this.sound.portal();
+      }
 
       const hitSet = new Set();
       for (const seg of res.segments) {
-        if (!seg.portalJump && seg.endFrac === undefined || seg.endFrac === 1) {
-          hitSet.add(seg.x2 + ',' + seg.y2);
-          hitSet.add(seg.x1 + ',' + seg.y1);
-        } else {
-          hitSet.add(seg.x1 + ',' + seg.y1);
+        if (seg.portalJump) {
+          hitSet.add(seg.fromX + ',' + seg.fromY);
+          hitSet.add(seg.toX + ',' + seg.toY);
+          continue;
         }
-        if (seg.spark) hitSet.add(seg.x2 + ',' + seg.y2);
+        hitSet.add(seg.x1 + ',' + seg.y1);
+        if (seg.endFrac === undefined || seg.endFrac === 1 || seg.spark) {
+          hitSet.add(seg.x2 + ',' + seg.y2);
+        }
       }
       this.hitCells = hitSet;
 
-      let newAwards = 0;
+      this.satisfied = new Set();
+      let awardIndex = 0;
       for (const t of this.level.targets) {
         const key = t.x + ',' + t.y;
+        const col = res.targetColors[key];
         if (!res.litSet.has(key)) continue;
-        if (t.need && res.targetColors[key] !== t.need) continue;
-        if (!this.satisfied.has(key)) {
-          this.satisfied.add(key);
-          if (!this.litAt.has(key)) this.litAt.set(key, this.time);
-          newAwards++;
-          this.awakenFx(t, res.targetColors[key] || 'white');
+        if (t.need && col !== t.need) continue;
+        this.satisfied.add(key);
+        if (!this.awarded.has(key)) {
+          this.awarded.add(key);
+          this.litAt.set(key, this.time);
+          this.awakenCount++;
+          this.awakenFx(t, col || 'white', awardIndex);
+          awardIndex++;
         } else if (!this.litAt.has(key)) {
           this.litAt.set(key, this.time);
         }
       }
 
-      if (newAwards > 0 && !this.demoMode) {
-        this.awakenCount += newAwards;
-      }
-
-      const allSatisfied = this.level.targets.every(t => this.satisfied.has(t.x + ',' + t.y));
-      if (allSatisfied && !this.won && this.level.targets.length > 0) {
+      const allSatisfied = this.level.targets.length > 0 &&
+        this.level.targets.every(t => this.satisfied.has(t.x + ',' + t.y));
+      if (allSatisfied && !this.won) {
         this.won = true;
         this.winTimer = 0;
+        this.winFrames = 0;
         if (!this.demoMode && this.hooks.onWin) {
           this.hooks.onWin(this);
         }
       }
     }
 
-    traceFull() {
-      const save = [];
-      for (const r of this.level.rotatables) save.push(r.orient);
-      const res = engine().trace(this.level);
-      const resColors = this.collectTargetColors();
-      res.targetColors = resColors;
-      for (let i = 0; i < this.level.rotatables.length; i++) this.level.rotatables[i].orient = save[i];
-      return res;
-    }
-
-    collectTargetColors() {
-      const colors = {};
-      const visited = new Set();
-      const queue = [];
-      const DX = GG.DX, DY = GG.DY;
-      for (const e of this.level.emitters) queue.push({ x: e.x, y: e.y, dir: e.dir, color: e.color });
-      while (queue.length > 0) {
-        const seed = queue.shift();
-        const sk = GG.key(seed.x, seed.y, seed.dir, seed.color);
-        if (visited.has(sk)) continue;
-        visited.add(sk);
-        let cx = seed.x, cy = seed.y, dir = seed.dir, color = seed.color;
-        let steps = 512;
-        while (steps-- > 0) {
-          const stKey = GG.key(cx, cy, dir, color);
-          if (visited.has(stKey)) break;
-          visited.add(stKey);
-          const nx = cx + DX[dir], ny = cy + DY[dir];
-          if (nx < 0 || ny < 0 || nx >= this.level.w || ny >= this.level.h) break;
-          const ch = this.level.cells[ny][nx];
-          if (ch === '#' ) break;
-          if ('TfMO'.includes(ch)) {
-            const k = nx + ',' + ny;
-            if (!colors[k]) colors[k] = color;
-            break;
-          }
-          if (engine().isGate(ch)) {
-            if (!engine().gatePasses(color, engine().gateColorOf(ch))) break;
-            cx = nx; cy = ny; continue;
-          }
-          if (engine().isCrystal(ch)) { color = ch; cx = nx; cy = ny; continue; }
-          if (engine().isPortal(ch)) {
-            const partner = this.level.portals[engine().portalPartner(ch)];
-            if (partner) { cx = partner.x; cy = partner.y; continue; }
-          }
-          if (engine().isMirror(ch) || engine().isSplitter(ch)) {
-            const ro = engine().findRotatable(this.level, nx, ny);
-            const map = ro && ro.orient === 0 ? engine().MIRROR_SLASH_MAP : engine().MIRROR_BACK_MAP;
-            const out = map[dir];
-            if (engine().isSplitter(ch)) {
-              const bKey = GG.key(nx, ny, out, color);
-              if (!visited.has(bKey)) queue.push({ x: nx, y: ny, dir: out, color });
-              cx = nx; cy = ny; continue;
-            }
-            dir = out;
-          }
-          cx = nx; cy = ny;
-        }
-      }
-      return colors;
-    }
-
-    awakenFx(t, color) {
+    awakenFx(t, color, awardIndex) {
       const lay = this.renderer.layout(this.level);
       const p = this.renderer.cc(lay, t.x, t.y);
       const col = this.renderer.colorOf(color);
@@ -180,7 +134,7 @@
         else this.particles.spawnBurst(p.cx, p.cy, col, 12);
       }
       if (!this.demoMode) {
-        this.sound.light(Math.min(this.awakenCount, 7));
+        this.sound.light(Math.max(0, Math.min((this.awakenCount - 1) + (awardIndex || 0), 7)));
       }
     }
 
@@ -222,6 +176,7 @@
       this.moves = Math.max(0, this.moves - 1);
       this.retrace();
       if (this.settings.sound) this.sound.click();
+      if (this.hooks.onMove) this.hooks.onMove(this);
       return true;
     }
 
@@ -235,10 +190,13 @@
       this.winTimer = 0;
       this.winFrames = 0;
       this.winUiDone = false;
+      this.awakenCount = 0;
       this.litAt.clear();
       this.satisfied.clear();
+      this.awarded.clear();
       this.retrace();
       if (this.settings.sound) this.sound.click();
+      if (this.hooks.onMove) this.hooks.onMove(this);
     }
 
     requestHint() {
@@ -345,7 +303,10 @@
       }
 
       if (this.trace) {
-        this.renderer.drawBeams(ctx, this.trace, lay, this.time, this.settings);
+        this.renderer.drawBeams(ctx, this.trace, lay, this.time, {
+          colorblind: this.settings.colorblind,
+          reducedMotion: !this.settings.motion
+        });
       }
 
       const portalIds = new Set();

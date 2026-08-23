@@ -7,6 +7,13 @@
       this.items = [];
       this.fireflies = [];
       this.time = 0;
+      this.reducedMotion = false;
+      this.maxItems = 400;
+    }
+
+    resize(w, h) {
+      this.w = w;
+      this.h = h;
     }
 
     reset(seed, w, h, opts) {
@@ -15,7 +22,8 @@
       this.fireflies.length = 0;
       this.w = w;
       this.h = h;
-      const count = opts && opts.reducedMotion ? 10 : 26;
+      this.reducedMotion = !!(opts && opts.reducedMotion);
+      const count = this.reducedMotion ? 10 : 26;
       for (let i = 0; i < count; i++) {
         this.fireflies.push({
           x: rng() * w,
@@ -31,6 +39,7 @@
     }
 
     spawnBurst(x, y, color, n) {
+      if (this.items.length >= this.maxItems) return;
       for (let i = 0; i < n; i++) {
         const a = this.rng ? this.rng() * Math.PI * 2 : Math.random() * Math.PI * 2;
         const sp = 40 + Math.random() * 120;
@@ -48,10 +57,12 @@
     }
 
     spawnRing(x, y, color) {
+      if (this.items.length >= this.maxItems) return;
       this.items.push({ type: 'ring', x, y, life: 0, maxLife: 0.9, size: 8, color });
     }
 
     spawnLeaves(x, y, n) {
+      if (this.items.length >= this.maxItems) return;
       for (let i = 0; i < n; i++) {
         const a = -Math.PI / 2 + (Math.random() - 0.5) * 1.6;
         const sp = 60 + Math.random() * 100;
@@ -71,6 +82,7 @@
     }
 
     spawnSpore(x, y) {
+      if (this.items.length >= this.maxItems) return;
       this.items.push({
         type: 'spore',
         x: x + (Math.random() - 0.5) * 14,
@@ -111,7 +123,7 @@
     draw(ctx) {
       ctx.save();
       for (const f of this.fireflies) {
-        const tw = 0.35 + 0.65 * Math.max(0, Math.sin(f.phase * 2));
+        const tw = this.reducedMotion ? 1 : (0.35 + 0.65 * Math.max(0, Math.sin(f.phase * 2)));
         ctx.globalAlpha = tw * 0.7;
         ctx.fillStyle = '#ffe9a8';
         ctx.beginPath();

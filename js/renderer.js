@@ -27,15 +27,16 @@
     }
 
     layout(level) {
-      const padX = Math.max(24, this.W * 0.06);
+      const padX = Math.max(16, this.W * 0.06);
       const padTop = 84;
       const padBot = 40;
       const cw = (this.W - padX * 2) / level.w;
       const chh = (this.H - padTop - padBot) / level.h;
-      const cell = Math.floor(Math.min(cw, chh, 96));
+      let cell = Math.floor(Math.min(cw, chh, 96));
+      cell = Math.max(14, cell);
       const ox = Math.floor((this.W - cell * level.w) / 2);
       const oy = Math.floor(padTop + (this.H - padTop - padBot - cell * level.h) / 2);
-      return { cell: Math.max(24, cell), ox, oy };
+      return { cell, ox, oy };
     }
 
     buildBackground(level, seed) {

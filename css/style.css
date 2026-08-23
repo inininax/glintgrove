@@ -165,7 +165,7 @@ html, body {
 .hud {
   pointer-events: auto;
   width: min(860px, 96vw);
-  margin-top: 14px;
+  margin-top: calc(14px + env(safe-area-inset-top));
   display: flex;
   align-items: center;
   gap: 10px;

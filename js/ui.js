@@ -17,6 +17,14 @@
       this.currentScreen = 'title';
     }
 
+    anyModalOpen() {
+      for (const id of ['win-overlay', 'settings-modal', 'intro-modal']) {
+        const node = el(id);
+        if (node && !node.classList.contains('hidden')) return id;
+      }
+      return null;
+    }
+
     show(name) {
       this.currentScreen = name;
       for (const s of ['screen-title', 'screen-levels', 'screen-game']) {
@@ -62,8 +70,10 @@
       const nameEl = el('hud-level-name');
       if (nameEl) nameEl.textContent = `${def.id}. ${def.name}`;
       const moveEl = el('hud-moves');
-      if (moveEl) moveEl.textContent = `이동 ${moves} / 목표 ${par}`;
-      moveEl.classList.toggle('over', moves > par);
+      if (moveEl) {
+        moveEl.textContent = `이동 ${moves} / 목표 ${par}`;
+        moveEl.classList.toggle('over', moves > par);
+      }
     }
 
     toast(msg, ms) {

@@ -27,6 +27,16 @@
         const data = GG.save.load();
         GG.save.completeLevel(data, g.def.id, stars);
       },
+      onMove(g) {
+        ui.setHud(g.def, g.moves, g.def.par);
+      },
+      onSettings(data) {
+        if (!data.sound) {
+          game.sound.stopAmbient();
+        } else if (game.state === 'playing' && !game.demoMode) {
+          game.sound.startAmbient();
+        }
+      },
       onWinUi(g) {
         try {
           ui.showWin(g.moves, g.def.par, g.starsFor(g.moves, g.def.par, g.hintsUsed));
@@ -42,7 +52,7 @@
 
     function resize() {
       game.renderer.resize();
-      if (game.level) game.particles.reset(game.seed, game.W(), game.H(), { reducedMotion: !game.settings.motion });
+      if (game.level) game.particles.resize(game.W(), game.H());
     }
     window.addEventListener('resize', resize);
 
@@ -55,11 +65,31 @@
     document.addEventListener('keydown', ev => {
       if (ui.currentScreen !== 'screen-game') return;
       const k = ev.key.toLowerCase();
+      const modal = ui.anyModalOpen();
+      if (modal === 'win-overlay') {
+        if (k === 'escape') exitToLevels();
+        return;
+      }
+      if (modal === 'settings-modal' || modal === 'intro-modal') {
+        if (k === 'escape') {
+          ui.closeSettings();
+          ui.closeIntro();
+        }
+        return;
+      }
+      if (modal) return;
       if (k === 'r') game.resetLevel();
       else if (k === 'u' || k === 'z') game.undo();
       else if (k === 'h') { game.requestHint(); ui.showHintToast(); }
-      else if (k === 'escape') { ui.show('screen-levels'); ui.renderLevelSelect(); }
+      else if (k === 'escape') exitToLevels();
     });
+
+    function exitToLevels() {
+      game.sound.stopAmbient();
+      ui.renderLevelSelect();
+      ui.show('screen-levels');
+      ui.hideWin();
+    }
 
     function bind(id, fn) {
       const node = document.getElementById(id);
@@ -94,14 +124,14 @@
     bind('btn-undo', () => game.undo());
     bind('btn-reset', () => game.resetLevel());
     bind('btn-hint', () => { game.requestHint(); ui.showHintToast(); });
-    bind('btn-exit', () => { ui.renderLevelSelect(); ui.show('screen-levels'); ui.hideWin(); });
+    bind('btn-exit', () => exitToLevels());
     bind('btn-next', () => {
       const nextId = (currentDef ? currentDef.id : 1) + 1;
       const next = GG.LEVELS.find(l => l.id === nextId);
       if (next) ui.hooks.onPlay(next.id);
     });
     bind('btn-replay', () => { if (currentDef) ui.hooks.onPlay(currentDef.id); });
-    bind('btn-win-select', () => { ui.renderLevelSelect(); ui.show('screen-levels'); ui.hideWin(); });
+    bind('btn-win-select', () => exitToLevels());
     bind('btn-intro-ok', () => ui.closeIntro());
 
     resize();

@@ -193,7 +193,6 @@
 
         cx = nx; cy = ny;
       }
-      if (cx < 0 && stepsLeft <= 0) break;
     }
 
     return { segments, litSet, targetColors, hits };
@@ -282,7 +281,7 @@
     for (let i = 0; i < level.rotatables.length; i++) level.initialOrients[i] = currentOrients[i];
     const sol = solve(level);
     for (let i = 0; i < level.rotatables.length; i++) level.initialOrients[i] = savedInitial[i];
-    restoreInitial(level);
+    applyOrients(level, currentOrients);
     return sol && sol.flips.length > 0 ? { idx: sol.flips[0] } : null;
   }
 

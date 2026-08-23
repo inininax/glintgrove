@@ -42,11 +42,24 @@
       if (!raw) return defaults();
       const data = JSON.parse(raw);
       if (!data || data.v !== 1) return defaults();
-      return Object.assign(defaults(), data);
+      return sanitize(Object.assign(defaults(), data));
     } catch (e) {
       void e;
       return defaults();
     }
+  }
+
+  function sanitize(d) {
+    d.unlocked = Number.isInteger(d.unlocked) && d.unlocked >= 1 ? d.unlocked : 1;
+    if (!d.stars || typeof d.stars !== 'object' || Array.isArray(d.stars)) d.stars = {};
+    for (const k in d.stars) {
+      if (!(Number.isInteger(d.stars[k]) && d.stars[k] >= 0 && d.stars[k] <= 3)) delete d.stars[k];
+    }
+    const def = defaults();
+    for (const k of ['sound', 'motion', 'colorblind', 'seenIntro']) {
+      if (typeof d[k] !== 'boolean') d[k] = def[k];
+    }
+    return d;
   }
 
   function save(data) {

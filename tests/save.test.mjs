@@ -33,3 +33,24 @@ test('totalStars sums', () => {
   d.stars = { 1: 3, 2: 1 };
   assert.equal(GG.save.totalStars(d), 4);
 });
+
+test('load sanitizes corrupt payloads', () => {
+  globalThis.localStorage = {
+    store: null,
+    getItem(k) { return k === '__gg_test' ? null : this.store; },
+    setItem(k, v) { if (k !== '__gg_test') this.store = v; },
+    removeItem(k) { if (k !== '__gg_test') this.store = null; }
+  };
+  globalThis.localStorage.setItem('glintgrove_save_v1', JSON.stringify({
+    v: 1,
+    unlocked: '7',
+    stars: { 1: 9, 2: 'x', 3: 2 },
+    sound: 'yes',
+    motion: null
+  }));
+  const d = GG.save.load();
+  assert.equal(d.unlocked, 1);
+  assert.deepEqual(d.stars, { 3: 2 });
+  assert.equal(d.sound, true);
+  assert.equal(d.motion, true);
+});
