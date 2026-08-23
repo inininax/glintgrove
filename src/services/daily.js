@@ -12,7 +12,9 @@ export function todayStr(now) {
   return d.toISOString().slice(0, 10);
 }
 
-export function buildDailyConfig(dateStr) {
+export function buildDailyConfig(dateStr, opts = {}) {
+  const minOptimal = opts.min ?? 3;
+  const maxOptimal = opts.max ?? 8;
   const seedFn = xmur3('glintgrove-daily-' + dateStr);
   const seed = seedFn();
   const rng = mulberry32(seed);
@@ -36,7 +38,7 @@ export function buildDailyConfig(dateStr) {
     for (let i = 0; i < level.rotatables.length; i++) level.initialOrients[i] = savedInitial[i];
     restoreInitial(level);
 
-    if (sol && sol.moves >= MIN_OPTIMAL && sol.moves <= 8) {
+    if (sol && sol.moves >= minOptimal && sol.moves <= maxOptimal) {
       return { date: dateStr, baseId, orients: scrambled, optimal: sol.moves };
     }
   }

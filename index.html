@@ -46,6 +46,7 @@
   </div>
 
   <div id="screen-game" class="screen hidden">
+    <div id="tutorial-layer"></div>
     <div class="hud panel">
       <span id="hud-level-name" class="hud-title">1.</span>
       <span id="hud-moves">0 / 0</span>
@@ -93,6 +94,14 @@
           <option value="ko">한국어</option>
           <option value="en">English</option>
         </select>
+      </div>
+      <div class="settings-row">
+        <label data-i18n="skinLabel">빛 스킨</label>
+        <select id="set-skin" class="select"></select>
+      </div>
+      <div class="settings-row">
+        <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
+        <span></span>
       </div>
       <div class="danger-zone">
         <button id="btn-wipe" class="btn danger small" data-i18n="wipe">진행 데이터 초기화</button>

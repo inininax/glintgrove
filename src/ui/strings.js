@@ -36,7 +36,20 @@ export const STRINGS = {
     'achTitle': '업적',
     'tip6': '분할기(◇)는 빛을 통과시키면서 동시에 반사합니다.',
     'tip17': '크리스털(r)은 지나가는 빛을 붉게 물들이고, 붉은 문(A)은 붉은 빛만 통과시킵니다.',
-    'tip23': '문(Portal)에 들어간 빛은 짝 문에서 같은 방향으로 나옵니다.'
+    'tip23': '문(Portal)에 들어간 빛은 짝 문에서 같은 방향으로 나옵니다.',
+    'tutPointer': '클릭!',
+    'tutGotIt': '알겠어요',
+    'tutCardSplitterTitle': '새로운 장치: 분할기',
+    'tutCardSplitterBody': '분할기(◇)는 빛을 그대로 통과시키면서, 동시에 90도 반사된 빛도 만들어냅니다. 하나의 빛으로 두 생명을 깨울 수 있어요.',
+    'tutCardColorTitle': '빛의 색과 문',
+    'tutCardColorBody': '크리스털(r·g·b)은 지나가는 빛을 해당 색으로 물들이고, 문(A·B·C)은 같은 색의 빛만 통과시킵니다. 색이 맞지 않으면 빛은 문 앞에서 멈춥니다.',
+    'tutCardPortalTitle': '차원의 문',
+    'tutCardPortalBody': '문(Portal)에 들어간 빛은 짝 문에서 같은 방향으로 나옵니다. 벽으로 막힌 공간도 문을 통해 도달할 수 있습니다.',
+    'skinLabel': '빛 스킨',
+    'exportBtn': '플레이 데이터 내보내기',
+    'exported': '데이터가 다운로드되었습니다',
+    'idleNudge': '잠시 멈추셨나요? 💡 버튼으로 힌트를 받아볼 수 있어요',
+    'skinLockedSuffix': '(★ 필요)'
   },
   en: {
     'tagline': 'Wake the forest that lost its light',
@@ -75,7 +88,20 @@ export const STRINGS = {
     'achTitle': 'Achievements',
     'tip6': 'Splitters pass light through while reflecting it at the same time.',
     'tip17': 'Red crystals tint passing beams red; red gates only let red light through.',
-    'tip23': 'Light that enters a portal exits from its twin portal, moving the same way.'
+    'tip23': 'Light that enters a portal exits from its twin portal, moving the same way.',
+    'tutPointer': 'Click!',
+    'tutGotIt': 'Got it',
+    'tutCardSplitterTitle': 'New device: Splitter',
+    'tutCardSplitterBody': 'A splitter passes light through while also reflecting a copy at 90 degrees. One beam can wake two lives.',
+    'tutCardColorTitle': 'Colored light and gates',
+    'tutCardColorBody': 'Crystals (r/g/b) tint passing beams; gates (A/B/C) only let matching colors through. Mismatched light stops at the gate.',
+    'tutCardPortalTitle': 'Dimensional portals',
+    'tutCardPortalBody': 'Light entering a portal exits from its twin portal in the same direction. Even walled-off areas can be reached through portals.',
+    'skinLabel': 'Beam theme',
+    'exportBtn': 'Export play data',
+    'exported': 'Data downloaded',
+    'idleNudge': 'Stuck? Tap the hint button for help',
+    'skinLockedSuffix': '(stars required)'
   }
 };
 
@@ -119,5 +145,6 @@ export const LEVEL_NAMES_EN = {
   14: 'Eyes of the Abyss', 15: 'Moonlit Stairs', 16: 'Beyond the Veil', 17: 'Tinted Light',
   18: 'Whispering Colors', 19: 'Fluorescent Night', 20: 'Prism Secret', 21: 'Five Colors',
   22: 'Starlight Duet', 23: 'Dimensional Door', 24: 'Dark Shortcut', 25: 'Chamber of Hearts',
-  26: 'Dawn Complete'
+  26: 'Dawn Complete',
+  27: 'Twin Doors', 28: 'Corridor of Colors', 29: 'Portal Carousel', 30: 'Dawn Concerto'
 };

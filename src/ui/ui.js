@@ -19,6 +19,58 @@ export class UI {
     this.currentScreen = 'title';
   }
 
+  showTutorial(step) {
+    this.closeTutorial();
+    const layer = el('tutorial-layer');
+    if (!layer) return;
+
+    if (step.type === 'pointer') {
+      const lay = this.game.renderer.layout(this.game.level);
+      const rect = this.game.canvas.getBoundingClientRect();
+      const cx = rect.left + lay.ox + step.x * lay.cell + lay.cell / 2;
+      const cy = rect.top + lay.oy + step.y * lay.cell + lay.cell / 2;
+      const pointer = document.createElement('div');
+      pointer.className = 'tut-pointer';
+      pointer.style.left = `${cx}px`;
+      pointer.style.top = `${cy}px`;
+      pointer.innerHTML = `<div class="tut-ring"></div><span>👆</span><em>${t('tutPointer')}</em>`;
+      layer.appendChild(pointer);
+      this._pointerEl = pointer;
+      return;
+    }
+
+    if (step.type === 'card') {
+      const card = document.createElement('div');
+      card.className = 'modal panel tut-card';
+      card.innerHTML = `
+        <div class="tut-art">${step.art}</div>
+        <h3>${t(step.titleKey)}</h3>
+        <p>${t(step.bodyKey)}</p>
+        <button id="btn-tut-ok" class="btn primary">${t('tutGotIt')}</button>`;
+      layer.appendChild(card);
+      card.querySelector('#btn-tut-ok').addEventListener('click', () => {
+        this.closeTutorial();
+        this.hooks.onTutorialDone(step.levelId);
+      });
+    }
+  }
+
+  dismissPointer() {
+    if (this._pointerEl) {
+      this._pointerEl.remove();
+      this._pointerEl = null;
+      if (this.hooks.onTutorialDone && this.currentStepLevel) {
+        this.hooks.onTutorialDone(this.currentStepLevel);
+      }
+    }
+  }
+
+  closeTutorial() {
+    const layer = el('tutorial-layer');
+    if (layer) layer.innerHTML = '';
+    this._pointerEl = null;
+  }
+
   show(name) {
     this.currentScreen = name;
     for (const s of ['screen-title', 'screen-levels', 'screen-game']) {
@@ -120,12 +172,15 @@ export class UI {
   }
 
   openSettings() {
+    this.hooks.beforeSettings?.();
     el('settings-modal').classList.remove('hidden');
     const data = this.hooks.getSave();
     el('set-sound').checked = data.sound;
     el('set-motion').checked = data.motion;
     el('set-colorblind').checked = data.colorblind;
     el('set-lang').value = data.lang || 'auto';
+    const skinSelect = el('set-skin');
+    if (skinSelect) skinSelect.value = data.skin || 'classic';
   }
 
   closeSettings() {
@@ -137,7 +192,8 @@ export class UI {
       sound: el('set-sound').checked,
       motion: el('set-motion').checked,
       colorblind: el('set-colorblind').checked,
-      lang: el('set-lang').value
+      lang: el('set-lang').value,
+      skin: (el('set-skin') && el('set-skin').value) || 'classic'
     });
   }
 

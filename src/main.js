@@ -8,10 +8,15 @@ import { buildDailyConfig, todayStr } from './services/daily.js';
 import { evaluateAchievements } from './services/achievements.js';
 import { track } from './infra/analytics.js';
 import { installErrorHandler } from './infra/errorHandler.js';
+import { loadRemoteConfig, getConfig } from './services/config.js';
+import { getTutorial, markTutorialDone } from './services/tutorial.js';
+import { SKINS, getSkin } from './core/skins.js';
+import { setSkinTheme } from './core/colors.js';
+import { recentEvents } from './infra/analytics.js';
 
 installErrorHandler();
 
-function boot() {
+async function boot() {
   const canvas = document.getElementById('game-canvas');
   if (!canvas) return;
 
@@ -20,6 +25,14 @@ function boot() {
   saveData.v = 2;
   setLanguage(saveData.lang === 'auto' ? null : saveData.lang);
   applyDomStrings(document);
+  await loadRemoteConfig();
+  applySkin(saveData.skin || getConfig().defaultSkin);
+
+  function applySkin(id) {
+    const skin = getSkin(id);
+    setSkinTheme(skin.palette);
+  }
+  window.__applySkin = applySkin;
 
   const sessionStart = Date.now();
   track('session_start', { v: GG_VERSION });
@@ -76,7 +89,9 @@ function boot() {
   function startLevelById(id, opts = {}) {
     const def = LEVELS.find(l => l.id === id);
     if (!def) return;
-    currentDef = def;
+    const po = getConfig().parOverrides[String(def.id)];
+    const effectiveDef = Number.isInteger(po) ? { ...def, par: po } : def;
+    currentDef = effectiveDef;
     dailyInfo = opts.daily || null;
     winUiHandled = false;
     game.startLevel(def, opts);
@@ -91,6 +106,21 @@ function boot() {
     });
     showContextualTip(def);
     if (def.id === 1 && !saveData.seenIntro && !opts.daily) ui.showIntro();
+
+    const step = getConfig().tipsEnabled ? getTutorial(effectiveDef, saveData) : null;
+    if (step) {
+      ui.currentStepLevel = step.levelId;
+      requestAnimationFrame(() => ui.showTutorial(step));
+      if (step.type === 'pointer') {
+        const off = game.events.on('move', () => {
+          off();
+          ui.dismissPointer();
+          markTutorialDone(saveData, step.levelId);
+          persist();
+        });
+      }
+      track('tutorial_shown', { level_id: step.levelId, type: step.type });
+    }
   }
 
   function showContextualTip(def) {
@@ -124,6 +154,11 @@ function boot() {
       saveData.colorblind = form.colorblind;
       const prevLang = saveData.lang;
       saveData.lang = form.lang;
+      if (form.skin && form.skin !== saveData.skin) {
+        saveData.skin = form.skin;
+        applySkin(form.skin);
+        track('skin_changed', { skin: form.skin });
+      }
       persist();
       game.setSettings({ sound: form.sound, motion: form.motion, colorblind: form.colorblind });
       if (prevLang !== form.lang) {
@@ -131,8 +166,13 @@ function boot() {
         if (currentDef) ui.setHud(currentDef, game.moves, currentDef.par, dailyInfo?.label);
         ui.renderLevelSelect();
       }
-      track('settings_change', { colorblind: form.colorblind, motion: form.motion, sound: form.sound, lang: form.lang });
+      track('settings_change', { colorblind: form.colorblind, motion: form.motion, sound: form.sound, lang: form.lang, skin: form.skin });
     },
+    onTutorialDone(levelId) {
+      markTutorialDone(saveData, levelId);
+      persist();
+    },
+    beforeSettings: () => populateSkinSelect(),
     achContext
   };
 
@@ -151,6 +191,11 @@ function boot() {
   });
 
   game.events.on('hint', e => track('hint_used', { level_id: e.id, count: e.count }));
+
+  game.events.on('idleNudge', e => {
+    ui.toast(t('idleNudge'), 4000);
+    track('idle_nudge_shown', { level_id: e.id });
+  });
 
   game.events.on('win', e => {
     if (e.daily) {
@@ -233,7 +278,10 @@ function boot() {
   });
   bind('btn-daily', () => {
     const dateStr = todayStr();
-    const cfg = buildDailyConfig(dateStr);
+    const cfg = buildDailyConfig(dateStr, {
+      min: getConfig().dailyMinOptimal,
+      max: getConfig().dailyMaxOptimal
+    });
     const def = LEVELS.find(l => l.id === cfg.baseId);
     if (!def) return;
     const label = `☀️ ${dateStr} · ${lang() === 'en' ? 'Daily' : '일일'} (${cfg.optimal})`;
@@ -253,6 +301,23 @@ function boot() {
   bind('btn-settings2', () => ui.openSettings());
   bind('btn-ach', () => ui.renderAchievements());
   bind('btn-close-ach', () => ui.closeAchievements());
+  function populateSkinSelect() {
+    const select = document.getElementById('set-skin');
+    if (!select) return;
+    select.innerHTML = '';
+    const total = Object.values(saveData.stars).reduce((a, b) => a + b, 0);
+    for (const skin of SKINS) {
+      const unlocked = total >= skin.unlockStars;
+      const opt = document.createElement('option');
+      opt.value = skin.id;
+      const name = lang() === 'en' ? skin.nameEn : skin.name;
+      opt.textContent = unlocked ? name : `${name} ${t('skinLockedSuffix').replace('{n}', String(skin.unlockStars))} ${skin.unlockStars}`;
+      opt.disabled = !unlocked && skin.unlockStars > 0;
+      if ((saveData.skin || getConfig().defaultSkin) === skin.id) opt.selected = true;
+      select.appendChild(opt);
+    }
+  }
+
   bind('btn-close-settings', () => {
     ui.applySettingsFromForm();
     ui.closeSettings();
@@ -296,6 +361,26 @@ function boot() {
   }
   bind('btn-win-select', () => exitToLevels());
   bind('btn-intro-ok', () => ui.closeIntro());
+  bind('btn-export-data', async () => {
+    try {
+      const payload = {
+        exportedAt: new Date().toISOString(),
+        version: GG_VERSION,
+        progress: { unlocked: saveData.unlocked, stars: saveData.stars, daily: saveData.daily, ach: Object.keys(saveData.ach) },
+        events: recentEvents()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `glintgrove-data-${Date.now()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      ui.toast(t('exported'), 2000);
+    } catch (e) {
+      ui.toast(String((e && e.message) || e), 3000);
+    }
+  });
 
   bind('btn-share', async () => {
     if (!currentDef) return;
@@ -363,9 +448,9 @@ function boot() {
 
 try {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+    document.addEventListener('DOMContentLoaded', () => boot().catch(e => console.error(e)));
   } else {
-    boot();
+    boot().catch(e => console.error(e));
   }
 } catch (e) {
   console.error(e);

@@ -2,7 +2,8 @@ export const CHAPTERS = [
     { id: 1, name: '새벽숲', desc: '거울의 기초를 배웁니다' },
     { id: 2, name: '안개 심연', desc: '갈라진 빛과 미로' },
     { id: 3, name: '별빛 정원', desc: '색을 가진 빛' },
-    { id: 4, name: '고대의 심장', desc: '차원의 문 너머' }
+    { id: 4, name: '고대의 심장', desc: '차원의 문 너머' },
+    { id: 5, name: '다시 찾은 새벽', desc: '모든 빛이 하나 되는 곳' }
   ];
 
   export const LEVELS = [
@@ -472,6 +473,101 @@ export const CHAPTERS = [
           { x: 11, y: 1, orient: 1 },
           { x: 12, y: 6, orient: 1 }
         ]
+      }
+    },
+    {
+      id: 27, name: '이중의 문', chapter: 5, par: 4,
+      grid: [
+        ".............",
+        ".>.P....Q.bCO",
+        ".............",
+        "..\\./........",
+        ".>..s..r.A..s",
+        ".............",
+        "..f.........T",
+        ".............",
+        "............."
+      ],
+      meta: {
+        hint: "두 개의 발산원과 두 쌍의 문이 교차합니다.",
+        hintEn: "Two beacons and two pairs of portals cross paths.",
+        needs: [{ x: 12, y: 1, need: 'b' }],
+        splitOrient: [{ x: 4, y: 4, orient: 1 }, { x: 12, y: 4, orient: 1 }]
+      }
+    },
+    {
+      id: 28, name: '오색 회랑', chapter: 5, par: 4,
+      grid: [
+        "..O.f..O.......",
+        "...............",
+        "..C.B..A.......",
+        "..b.g..r.......",
+        ".>s.s..s..s..T.",
+        "..........g....",
+        "..........B....",
+        "..........M....",
+        "..............."
+      ],
+      meta: {
+        hint: "연달아 이어진 분할기가 다섯 갈래 색으로 퍼집니다.",
+        hintEn: "Chained splitters fan light into five colored lanes.",
+        needs: [
+          { x: 2, y: 0, need: 'b' },
+          { x: 4, y: 0, need: 'g' },
+          { x: 7, y: 0, need: 'r' },
+          { x: 10, y: 7, need: 'g' }
+        ],
+        splitOrient: [{ x: 2, y: 4, orient: 1 }, { x: 4, y: 4, orient: 1 }, { x: 7, y: 4, orient: 1 }]
+      }
+    },
+    {
+      id: 29, name: '포탈 회전목마', chapter: 5, par: 4,
+      grid: [
+        ".............",
+        "......M......",
+        "......g......",
+        "...R..sfrS...",
+        ".............",
+        ".............",
+        "..Q.f.s.s.P..",
+        ".....f....../",
+        ".............",
+        "........O....",
+        "......^.....^"
+      ],
+      meta: {
+        hint: "문을 도는 빛이 네 방향 생명을 차례로 깨웁니다.",
+        hintEn: "Light circling through portals wakes life on all sides.",
+        needs: [{ x: 7, y: 3, need: 'r' }, { x: 6, y: 1, need: 'g' }],
+        splitOrient: [{ x: 6, y: 6, orient: 1 }, { x: 8, y: 6, orient: 1 }]
+      }
+    },
+    {
+      id: 30, name: '새벽 협주곡', chapter: 5, par: 6,
+      grid: [
+        "...............",
+        "...........O...",
+        "......../..s.<.",
+        "...............",
+        "..P../fArQ.....",
+        ".>...s...s../..",
+        ".........b.....",
+        ".........C..T..",
+        "........gO.....",
+        "........B......",
+        "........M......"
+      ],
+      meta: {
+        hint: "세 개의 빛이 포탈과 문을 지나 여섯 생명을 깨웁니다.",
+        hintEn: "Three lights pass through portals and gates to wake six lives.",
+        emitters: [{ x: 13, y: 2, color: 'r' }],
+        needs: [
+          { x: 6, y: 4, need: 'r' },
+          { x: 9, y: 8, need: 'b' },
+          { x: 7, y: 10, need: 'g' },
+          { x: 11, y: 1, need: 'r' }
+        ],
+        splitOrient: [{ x: 5, y: 5, orient: 1 }, { x: 9, y: 5, orient: 1 }]
       }
     }
   ];

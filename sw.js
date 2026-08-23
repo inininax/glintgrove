@@ -1,4 +1,4 @@
-const CACHE = 'glintgrove-v1';
+const CACHE = 'glintgrove-v1_2_0';
 const ASSETS = [
   './',
   './index.html',
@@ -30,7 +30,11 @@ const ASSETS = [
   './src/services/daily.js',
   './src/services/achievements.js',
   './src/infra/analytics.js',
-  './src/infra/errorHandler.js'
+  './src/infra/errorHandler.js',
+  './src/core/skins.js',
+  './src/services/config.js',
+  './src/services/tutorial.js',
+  './config.json'
 ];
 
 self.addEventListener('install', event => {

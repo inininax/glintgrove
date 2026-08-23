@@ -12,6 +12,7 @@ export function defaults() {
     colorblind: false,
     seenIntro: false,
     lang: 'auto',
+    skin: 'classic',
     tipsSeen: {},
     daily: {},
     ach: {}
@@ -68,6 +69,7 @@ function sanitize(d) {
   }
   if (!d.ach || typeof d.ach !== 'object' || Array.isArray(d.ach)) d.ach = {};
   if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'auto';
+  if (!['classic', 'ocean', 'ember', 'aurora'].includes(d.skin)) d.skin = 'classic';
   const def = defaults();
   for (const k of ['sound', 'motion', 'colorblind', 'seenIntro']) {
     if (typeof d[k] !== 'boolean') d[k] = def[k];

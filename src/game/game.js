@@ -1,8 +1,9 @@
 import { parseLevel } from '../sim/parser.js';
-import { trace, hintMove, restoreInitial, applyOrients, isPortal, portalPartner } from '../sim/index.js';
+import { trace, hintMove, restoreInitial, applyOrients } from '../sim/index.js';
 import { Emitter } from '../core/emitter.js';
 import { colorOf } from '../core/colors.js';
 import { easeOutCubic } from '../core/math.js';
+import { getConfig } from '../services/config.js';
 import { Renderer } from '../render/renderer.js';
 import { ParticleSystem } from '../fx/particles.js';
 import { Sound } from '../fx/sound.js';
@@ -45,6 +46,8 @@ export class Game {
     this.activePortalIds = new Set();
     this.spins = new Map();
     this.dailyInfo = null;
+    this.lastActionAt = 0;
+    this.nudged = false;
   }
 
   setSettings(s) {
@@ -191,6 +194,8 @@ export class Game {
     this.retrace();
     if (this.settings.sound) this.sound.rotate();
     this.events.emit('move', { id: this.def.id, moves: this.moves });
+    this.lastActionAt = this.time;
+    this.nudged = false;
     return true;
   }
 
@@ -241,7 +246,7 @@ export class Game {
 
   starsFor() {
     let stars = this.moves <= this.def.par ? 3 : this.moves <= this.def.par * 2 ? 2 : 1;
-    if (this.hintsUsed > 0) stars = Math.min(stars, 2);
+    if (this.hintsUsed > 0) stars = Math.min(stars, getConfig().hintPenaltyCapStars ?? 2);
     return stars;
   }
 
@@ -285,6 +290,15 @@ export class Game {
         const c = center(lay, t.x, t.y);
         this.particles.spawnLeaves(c.cx, c.cy, 3);
       }
+    }
+
+    if (
+      !this.demoMode && this.level && !this.won &&
+      getConfig().tipsEnabled &&
+      this.time - this.lastActionAt > 25 && !this.nudged
+    ) {
+      this.nudged = true;
+      this.events.emit('idleNudge', { id: this.def.id });
     }
 
     if (this.settings.sound) {
