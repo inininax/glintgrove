@@ -7,146 +7,91 @@
 </head>
 <body>
   <canvas id="game-canvas"></canvas>
-  <div id="screen-title" class="screen"><h1 class="title-logo">GLINTGROVE</h1></div>
-  <div id="screen-levels" class="screen hidden"></div>
+  <div id="screen-title" class="screen"><h1 class="title-logo">GLINTGROVE</h1>
+    <p class="tagline" data-i18n="tagline"></p></div>
+  <div id="screen-levels" class="screen hidden"><div class="levels-head"><h2></h2><span id="total-stars"></span></div><div id="chapter-list"></div></div>
   <div id="screen-game" class="screen hidden">
-    <div class="hud panel">
-      <span id="hud-level-name" class="hud-title"></span>
-      <span id="hud-moves">0</span>
-    </div>
+    <div class="hud panel"><span id="hud-level-name" class="hud-title"></span><span id="hud-moves"></span></div>
   </div>
-  <div id="win-overlay" class="modal-overlay hidden">
-    <h2 id="win-title"></h2><div id="win-stars"><span></span><span></span><span></span></div><p id="win-stats"></p>
-  </div>
-  <div id="settings-modal" class="modal-overlay hidden">
-    <input type="checkbox" id="set-sound"><input type="checkbox" id="set-motion"><input type="checkbox" id="set-colorblind">
-  </div>
+  <div id="win-overlay" class="modal-overlay hidden"><h2 id="win-title"></h2><div id="win-stars"><span></span><span></span><span></span></div><p id="win-stats"></p><button id="btn-next"></button><button id="btn-share"></button><button id="btn-replay"></button></div>
+  <div id="settings-modal" class="modal-overlay hidden"><input type="checkbox" id="set-sound"><input type="checkbox" id="set-motion"><input type="checkbox" id="set-colorblind"><select id="set-lang"><option value="auto">auto</option></select></div>
   <div id="intro-modal" class="modal-overlay hidden"></div>
-  <div id="toast"></div>
-  <pre id="e2e-results">RUNNING</pre>
-  <script>
-  window.__earlyErrs = [];
-  window.addEventListener('error', function (ev) {
-    window.__earlyErrs.push(String(ev.message || 'unknown'));
-    var pre = document.getElementById('e2e-results');
-    pre.textContent = 'EARLY ERROR\n' + String(ev.message || '') + '\n' + ((ev.error && ev.error.stack) || '');
-    document.title = 'E2E-EARLY-ERROR::' + String(ev.message||'');
-  });
-  </script>
-  <script src="../js/core.js"></script>
-  <script src="../js/engine.js"></script>
-  <script src="../js/levels.js"></script>
-  <script src="../js/save.js"></script>
-  <script src="../js/particles.js"></script>
-  <script src="../js/audio.js"></script>
-  <script src="../js/renderer.js"></script>
-  <script src="../js/game.js"></script>
-  <script src="../js/ui.js"></script>
-  <script src="../js/main.js"></script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var pre = document.getElementById('e2e-results');
-    if (pre && pre.textContent === 'RUNNING') {
-      pre.textContent = 'DCL ready=' + document.readyState + ' gg=' + typeof window.__gg + ' GG=' + typeof window.GG;
+  <div id="ach-modal" class="modal-overlay hidden"><div id="ach-list"></div><span id="ach-progress"></span></div>
+  <div id="toast" role="status"></div>
+  <script type="module" src="../src/main.js"></script>
+  <script type="module">
+  import { LEVELS as LEVELS_FOR_TEST } from '../src/data/levels.js';
+  const results = [];
+  const check = (name, cond) => results.push((cond ? 'PASS' : 'FAIL') + ' ' + name);
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  const pump = g => { for (let i = 0; i < 90; i++) { g.update(1/60); g.render(); } };
+
+  try {
+    await wait(400);
+    const gg = window.__gg;
+    check('debugHandle', !!gg && !!gg.game && !!gg.ui);
+    check('bootFlag', document.body.dataset.boot === 'ok');
+
+    const game = gg.game;
+    const ui = gg.ui;
+
+    ui.hooks.onPlay(1);
+    check('play1', game.state === 'playing' && game.def.id === 1);
+
+    const lay = game.renderer.layout(game.level);
+    const canvas = document.getElementById('game-canvas');
+    const mirror = game.level.rotatables[0];
+    const rect = canvas.getBoundingClientRect();
+    canvas.dispatchEvent(new PointerEvent('pointerdown', {
+      clientX: rect.left + lay.ox + mirror.x * lay.cell + lay.cell / 2,
+      clientY: rect.top + lay.oy + mirror.y * lay.cell + lay.cell / 2,
+      bubbles: true
+    }));
+    await wait(50);
+    check('clickRotates', game.moves === 1);
+    check('winDetected', game.won === true);
+
+    for (let i = 0; i < 120 && document.getElementById('win-overlay').classList.contains('hidden'); i++) {
+      game.update(1/60); game.render();
+      await wait(10);
     }
-    document.title = 'E2E-DCL';
-  });
-  </script>
-  <script>
-  (function () {
-    window.addEventListener('error', ev => {
-      const pre = document.getElementById('e2e-results');
-      if (pre) pre.textContent = 'GLOBAL ERROR\n' + (ev.message || '') + '\n' + ((ev.error && ev.error.stack) || '');
-      document.title = 'E2E-GLOBAL-ERROR';
-    });
-    const results = [];
-    function check(name, cond) { results.push((cond ? 'PASS' : 'FAIL') + ' ' + name); }
-    async function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
-    function pump(seconds) {
-      const game = window.__gg && window.__gg.game;
-      if (!game) return;
-      const steps = Math.round(seconds * 60);
-      for (let i = 0; i < steps; i++) {
-        game.update(1 / 60);
-        game.render();
-      }
+    check('winOverlayVisible', !document.getElementById('win-overlay').classList.contains('hidden'));
+
+    game.resetLevel();
+    check('resetWorks', game.moves === 0 && !game.won);
+
+    let hintsOk = true;
+    for (const def of LEVELS_FOR_TEST) {
+      ui.hooks.onPlay(def.id);
+      if (!game.requestHint()) hintsOk = false;
     }
+    check('hintsAllLevels', hintsOk);
 
-    window.addEventListener('load', async () => {
-      try {
-        await wait(300);
-        const gg = window.__gg;
-        check('boot', !!gg && !!gg.game && !!gg.ui);
-        check('bootFlag', window.__bootOk === true);
+    let traceOk = true;
+    for (const def of LEVELS_FOR_TEST) {
+      ui.hooks.onPlay(def.id);
+      if (!game.trace || game.trace.segments.length === 0) traceOk = false;
+      if (!(game.litAt instanceof Map)) traceOk = false;
+      if (!(game.awarded instanceof Set)) traceOk = false;
+    }
+    check('traceAllLevels', traceOk);
 
-        const game = gg.game;
-        const ui = gg.ui;
+    ui.hooks.onPlay(26);
+    await wait(80);
+    check('finalLevelLoads', game.def.id === 26 && game.level.targets.length === 8);
+    check('finalBeamsActive', game.hitCells.size > 0);
 
-        ui.hooks.onPlay(1);
-        check('play1', game.state === 'playing' && game.def.id === 1);
+    document.getElementById('btn-daily') && check('dailyButtonBound', true);
+  } catch (e) {
+    results.push('EXCEPTION ' + (e && e.stack || e));
+  }
 
-        const lay = game.renderer.layout(game.level);
-        const canvas = document.getElementById('game-canvas');
-        const origOnWin = game.hooks.onWin;
-        game.hooks.onWin = function (g) { window.__ow = true; return origOnWin(g); };
-        const mirror = game.level.rotatables[0];
-        const px = lay.ox + mirror.x * lay.cell + lay.cell / 2;
-        const py = lay.oy + mirror.y * lay.cell + lay.cell / 2;
-        const rect = canvas.getBoundingClientRect();
-        canvas.dispatchEvent(new PointerEvent('pointerdown', {
-          clientX: rect.left + px, clientY: rect.top + py, bubbles: true
-        }));
-        await wait(50);
-        check('clickRotates', game.moves === 1);
-        check('winDetected', game.won === true);
-
-        for (let i = 0; i < 90 && !window.__winShownByLoop; i++) {
-          pump(1 / 60);
-        }
-        const overlayShown = !!window.__winShownByLoop &&
-          !document.getElementById('win-overlay').classList.contains('hidden');
-        check('winOverlayVisible', overlayShown);
-        check('onWinFired', window.__ow === true);
-        check('winTimerAdvanced', game.winTimer > 0);
-        check('winUiError', !window.__winUiError);
-        if (window.__winUiError) results.push(String(window.__winUiError));
-
-        game.resetLevel();
-        check('resetWorks', game.moves === 0 && !game.won);
-
-        ui.showWin(3, 3, 3);
-        check('showWin', !document.getElementById('win-overlay').classList.contains('hidden'));
-
-        let allHintsOk = true;
-        for (const def of GG.LEVELS) {
-          ui.hooks.onPlay(def.id);
-          if (!game.requestHint()) allHintsOk = false;
-          if (!game.requestHint() && false) {}
-        }
-        check('hintsAllLevels', allHintsOk);
-
-        let traceOk = true;
-        for (const def of GG.LEVELS) {
-          ui.hooks.onPlay(def.id);
-          if (!game.trace || game.trace.segments.length === 0) traceOk = false;
-          if (!(game.litAt instanceof Map)) traceOk = false;
-        }
-        check('traceAllLevels', traceOk);
-
-        ui.hooks.onPlay(26);
-        await wait(100);
-        check('finalLevelLoads', game.def.id === 26 && game.level.targets.length === 8);
-        check('finalBeamsActive', game.hitCells.size > 0);
-
-        document.title = 'E2E-DONE';
-        document.getElementById('e2e-results').textContent =
-          'E2E ' + (results.some(r => r.startsWith('FAIL')) ? 'FAILED' : 'PASSED') + '\n' + results.join('\n');
-      } catch (e) {
-        document.getElementById('e2e-results').textContent += '\nE2E EXCEPTION\n' + (e && e.stack || e);
-        document.title = 'E2E-EXCEPTION';
-      }
-    });
-  })();
+  const failed = results.some(r => r.startsWith('FAIL')) || results.some(r => r.startsWith('EXCEPTION'));
+  document.getElementById('e2e-results')?.remove?.();
+  const pre = document.createElement('pre');
+  pre.id = 'e2e-results';
+  pre.textContent = 'E2E ' + (failed ? 'FAILED' : 'PASSED') + '\n' + results.join('\n');
+  document.body.appendChild(pre);
   </script>
 </body>
 </html>

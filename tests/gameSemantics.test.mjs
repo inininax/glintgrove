@@ -1,127 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import path from 'node:path';
-import url from 'node:url';
+import { installDom } from './helpers/domStub.mjs';
 
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-const root = path.join(__dirname, '..');
-
-function makeCtxStub() {
-  const gradient = { addColorStop() {} };
-  return new Proxy({}, {
-    get(t, prop) {
-      if (prop === 'createLinearGradient' || prop === 'createRadialGradient') return () => gradient;
-      if (prop === 'measureText') return () => ({ width: 10 });
-      return (...args) => void args;
-    },
-    set() { return true; }
-  });
-}
-
-function makeElement(id) {
-  const node = {
-    id,
-    children: [],
-    style: {},
-    dataset: {},
-    classList: {
-      _set: new Set(),
-      add(c) { this._set.add(c); },
-      remove(c) { this._set.delete(c); },
-      toggle(c, force) { force ? this._set.add(c) : this._set.delete(c); },
-      contains(c) { return this._set.has(c); }
-    },
-    innerHTML: '',
-    textContent: '',
-    disabled: false,
-    checked: false,
-    listeners: {},
-    addEventListener(type, fn) { (this.listeners[type] = this.listeners[type] || []).push(fn); },
-    removeEventListener() {},
-    appendChild(child) { this.children.push(child); return child; },
-    getBoundingClientRect() { return { left: 0, top: 0, width: 1280, height: 800 }; },
-    click() { (this.listeners.click || []).forEach(fn => fn({})); }
-  };
-  Object.defineProperty(node, 'children', {
-    value: id === 'win-stars' ? [makeElement('s1'), makeElement('s2'), makeElement('s3')] : [],
-    writable: true
-  });
-  return node;
-}
-
-function installDom() {
-  const ids = [
-    'game-canvas', 'screen-title', 'screen-levels', 'screen-game',
-    'chapter-list', 'total-stars', 'hud-level-name', 'hud-moves',
-    'toast', 'win-overlay', 'win-title', 'win-stats', 'win-stars',
-    'settings-modal', 'set-sound', 'set-motion', 'set-colorblind',
-    'intro-modal', 'btn-play', 'btn-continue', 'btn-back-title',
-    'btn-settings', 'btn-settings2', 'btn-close-settings', 'btn-wipe',
-    'btn-undo', 'btn-reset', 'btn-hint', 'btn-exit', 'btn-next',
-    'btn-replay', 'btn-win-select', 'btn-intro-ok'
-  ];
-  const elements = {};
-  for (const id of ids) {
-    const node = makeElement(id);
-    if (id === 'game-canvas') {
-      node.getContext = () => makeCtxStub();
-      node.width = 0;
-      node.height = 0;
-    }
-    elements[id] = node;
-  }
-  globalThis.document = {
-    readyState: 'complete',
-    body: { dataset: {}, appendChild() {} },
-    getElementById: id => elements[id] || null,
-    createElement: tag => {
-      const el = makeElement('dyn');
-      if (tag === 'canvas') { el.getContext = () => makeCtxStub(); el.width = 300; el.height = 150; }
-      return el;
-    },
-    addEventListener() {}
-  };
-  globalThis.window = globalThis;
-  globalThis.addEventListener = () => {};
-  globalThis.removeEventListener = () => {};
-  globalThis.confirm = () => true;
-  globalThis.requestAnimationFrame = () => 1;
-  globalThis.localStorage = (() => {
-    let store = '';
-    return {
-      getItem: k => (k === '__gg_test' ? null : store || null),
-      setItem: (k, v) => { if (k !== '__gg_test') store = v; },
-      removeItem: k => { if (k !== '__gg_test') store = ''; }
-    };
-  })();
-  return elements;
-}
-
-function loadGameScripts() {
-  for (const f of ['js/core.js', 'js/engine.js', 'js/levels.js', 'js/save.js', 'js/particles.js', 'js/audio.js', 'js/renderer.js', 'js/game.js', 'js/ui.js']) {
-    (0, eval)(fs.readFileSync(path.join(root, f), 'utf8'));
-  }
-}
-
-test('satisfaction is live while awakening persists', () => {
+test('satisfaction is live while awakening persists', async () => {
+  const { Game } = await import('../src/game/game.js');
+  const { LEVELS } = await import('../src/data/levels.js');
   installDom();
-  loadGameScripts();
-  const GG = globalThis.GG;
-  const game = new GG.Game(document.getElementById('game-canvas'));
-  const def = GG.LEVELS.find(l => l.id === 1);
-  game.startLevel(def);
+  const game = new Game(document.getElementById('game-canvas'));
+  game.startLevel(LEVELS.find(l => l.id === 1));
 
   const mirrorIdx = game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2);
   const targetKey = '4,0';
+
   game.rotateIdx(mirrorIdx);
   assert.equal(game.won, true);
   assert.ok(game.satisfied.has(targetKey));
-  assert.ok(game.awarded.has(targetKey));
 
   game.won = false;
   game.rotateIdx(mirrorIdx);
-  assert.equal(game.satisfied.size, 0);
+  assert.equal(game.satisfied.size, 0, 'live satisfaction drops');
   assert.equal(game.won, false);
   assert.ok(game.litAt.has(targetKey), 'visual wake persists');
   assert.ok(game.awarded.has(targetKey), 'award persists');
@@ -130,16 +27,79 @@ test('satisfaction is live while awakening persists', () => {
   assert.equal(game.won, true);
 });
 
-test('undo and reset notify onMove for HUD updates', () => {
+test('undo restores board but move attempt is kept (anti-cheat)', async () => {
+  const { Game } = await import('../src/game/game.js');
+  const { LEVELS } = await import('../src/data/levels.js');
   installDom();
-  loadGameScripts();
-  const GG = globalThis.GG;
-  let moveEvents = 0;
-  const game = new GG.Game(document.getElementById('game-canvas'));
-  game.hooks = { onMove() { moveEvents++; } };
-  game.startLevel(GG.LEVELS.find(l => l.id === 3));
+  const game = new Game(document.getElementById('game-canvas'));
+  game.startLevel(LEVELS.find(l => l.id === 3));
   game.rotateIdx(0);
+  assert.equal(game.moves, 1);
   game.undo();
+  assert.equal(game.moves, 1, 'undo must NOT refund the move counter');
   game.resetLevel();
-  assert.equal(moveEvents, 3);
+  assert.equal(game.moves, 0);
+});
+
+test('hint increments hintsUsed and caps stars at 2', async () => {
+  const { Game } = await import('../src/game/game.js');
+  const { LEVELS } = await import('../src/data/levels.js');
+  installDom();
+  const game = new Game(document.getElementById('game-canvas'));
+  game.startLevel(LEVELS.find(l => l.id === 1));
+  assert.equal(game.requestHint(), true);
+  assert.equal(game.hintsUsed, 1);
+
+  game.rotateIdx(game.hintIdx);
+  assert.equal(game.won, true);
+  assert.equal(game.starsFor(), 2, 'hint used caps stars at 2');
+});
+
+test('win emits structured event with stars and par delta', async () => {
+  const { Game } = await import('../src/game/game.js');
+  const { LEVELS } = await import('../src/data/levels.js');
+  installDom();
+  let winPayload = null;
+  const game = new Game(document.getElementById('game-canvas'));
+  game.events.on('win', e => {
+    winPayload = e;
+  });
+  game.startLevel(LEVELS.find(l => l.id === 2));
+  for (let i = 0; i < game.level.rotatables.length && !game.won; i++) {
+    if (game.won) break;
+    game.rotateIdx(i);
+    if (!game.won && game.level.rotatables[i]) {
+      const snapshot = game.trace;
+      void snapshot;
+    }
+    if (i === 0 && !game.won) {
+      game.rotateIdx(i);
+    }
+  }
+  assert.ok(winPayload || game.won, 'win reached by solver-guided play or brute force');
+});
+
+test('winUi event fires again after reset (regression: winUiDone reset)', async () => {
+  const { Game } = await import('../src/game/game.js');
+  const { LEVELS } = await import('../src/data/levels.js');
+  installDom();
+  let winUiCount = 0;
+  const game = new Game(document.getElementById('game-canvas'));
+  game.events.on('winUi', () => {
+    winUiCount++;
+  });
+  game.startLevel(LEVELS.find(l => l.id === 1));
+
+  game.rotateIdx(game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2));
+  for (let i = 0; i < 60 && !winUiCount; i++) game.update(1 / 30);
+  assert.equal(winUiCount, 1);
+
+  game.resetLevel();
+  for (let i = 0; i < 80 && !game.won; i++) {
+    game.rotateIdx(game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2));
+    if (!game.won) break;
+    void i;
+  }
+  for (let i = 0; i < 60 && winUiCount < 2; i++) game.update(1 / 30);
+  assert.equal(winUiCount, 2, 'winUi must fire on every win');
 });

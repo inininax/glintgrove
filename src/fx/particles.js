@@ -1,8 +1,6 @@
-(function (root) {
-  'use strict';
-  const GG = root.GG = root.GG || {};
+import { mulberry32 } from '../core/math.js';
 
-  class ParticleSystem {
+export class ParticleSystem {
     constructor() {
       this.items = [];
       this.fireflies = [];
@@ -17,7 +15,7 @@
     }
 
     reset(seed, w, h, opts) {
-      const rng = GG.mulberry32(seed);
+      const rng = mulberry32(seed);
       this.items.length = 0;
       this.fireflies.length = 0;
       this.w = w;
@@ -157,7 +155,4 @@
       }
       ctx.restore();
     }
-  }
-
-  GG.ParticleSystem = ParticleSystem;
-})(typeof window !== 'undefined' ? window : globalThis);
+}

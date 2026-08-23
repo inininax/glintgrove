@@ -49,31 +49,42 @@ python3 -m http.server 8000
 | `H` | 힌트 |
 | `Esc` | 레벨 목록 / 모달 닫기 |
 
-## 프로젝트 구조
+## 프로젝트 구조 (v1.1 — 네이티브 ESM)
+
+빌드 도구 없이 **표준 ES Modules**만 사용합니다. 모든 임포트는 상대 경로이며 GitHub Pages에 그대로 배포됩니다.
 
 ```
 glintgrove/
-├── index.html          엔트리 (UI 오버레이 + 캔버스)
-├── css/style.css       다크 포레스트 테마 스타일
-├── js/
-│   ├── core.js         상수 · 유틸 (RNG, 이징)
-│   ├── engine.js       빔 추적 · 파싱 · BFS 솔버 · 힌트
-│   ├── levels.js       레벨 데이터 (26 레벨)
-│   ├── save.js         localStorage 저장 (새니타이즈 내장)
-│   ├── particles.js    반딧불 · 폭죽 · 잎사귀 파티클
-│   ├── audio.js        WebAudio 신디사이저
-│   ├── renderer.js     캔버스 렌더링 (배경 · 엔티티 · 빔)
-│   ├── game.js         게임 컨트롤러 (상태 · 규칙 · 판정)
-│   ├── ui.js           DOM 화면 (타이틀 · 레벨선택 · HUD)
-│   └── main.js         부트 · 입력 · 루프
-├── tests/              node:test 유닛/스모크/시맨틱 스위트
-└── tools/
-    ├── check-levels.mjs     레벨 린터 + 솔버 검증
-    ├── report-optimal.mjs   최적 이동수 리포트
-    ├── debug-level.mjs      빔 경로 ASCII 덤프
-    ├── browser-e2e.html     헤드리스 Chrome E2E
-    └── verify-all.sh        전체 검증 게이트
+├── index.html              엔트리 (module script 1줄 + UI 오버레이, CSP 메타)
+├── manifest.webmanifest    PWA 매니페스트
+├── sw.js                   서비스 워커 (오프라인 캐시)
+├── package.json            type:module + scripts (dev/test/check/verify)
+├── src/
+│   ├── main.js             부트 · 입력 · RAF 루프 · 딥링크 파싱
+│   ├── core/               tiles · colors · math(RNG/이징) · emitter · version
+│   ├── sim/                순수 로직 (DOM 불필요 — 테스트가 직접 import)
+│   │   ├── parser.js       레벨 파싱 → emitters/targets/rotatables/crystals/gates/walls
+│   │   ├── tracer.js       빔 추적 (state-key visited, 무한루프 가드)
+│   │   └── solver.js       BFS 최적 플립 + 힌트
+│   ├── data/levels.js      레벨 26개 + 챕터
+│   ├── state/saveStore.js  저장 v2 (v1 마이그레이션 + 새니타이즈, 일일/업적 필드)
+│   ├── fx/                 particles · sound(WebAudio 신디사이저)
+│   ├── render/             renderer(장면 조립) + layout/background/beams/entities 분리
+│   ├── game/game.js        컨트롤러 (판정·언두·힌트, 이벤트 Emitter 발행)
+│   ├── ui/                 ui.js 화면 관리 + strings.js ko/en 사전
+│   ├── services/           daily(날짜 시드 절차 생성) · achievements(9종)
+│   └── infra/              analytics(로컬 링버퍼) · errorHandler(CSP 안전)
+├── tests/                  node:test 스위트 (helpers/domStub 공유)
+└── tools/                  check-levels · report-optimal · debug-level · verify-all
 ```
+
+### 아키텍처 원칙
+
+- **sim 계층은 DOM-free**: `src/sim/*`은 어떤 브라우저 API도 참조하지 않아 node:test가 소스를 직접 import합니다 (eval 적재 제거)
+- **논리/프레젠테이션 분리**: 회전 애니메이션 상태(spin)는 Game의 FX 맵에, 퍼즐 상태(orient)는 level 객체에 존재
+- **이벤트 버스**: Game→UI/Audio/Analytics 결합을 Emitter 이벤트(move/win/hint/settingsChange)로 대체
+- **매직 문자 단일화**: 타일 어휘는 `core/tiles.js`, 색상은 `core/colors.js`로 한 곳에서 관리
+- **정적 자산 캐싱**: 배경+격자+암석은 시드별 오프스크린 캔버스에 베이크
 
 ## 개발 워크플로우
 

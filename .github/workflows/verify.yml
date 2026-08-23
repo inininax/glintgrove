@@ -1,0 +1,44 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Syntax check
+        run: |
+          for f in js/*.js; do node --check "$f"; done
+
+      - name: Level lint + solver verification
+        run: node tools/check-levels.mjs
+
+      - name: Unit / semantic / save tests
+        run: node --test "tests/*.test.mjs"
+
+      - name: Headless browser E2E
+        run: |
+          python3 -m http.server 8765 &
+          sleep 1
+          CHROME=$(which google-chrome || which chromium-browser || which chromium)
+          "$CHROME" --headless=new --disable-gpu --no-sandbox --no-first-run \
+            --virtual-time-budget=60000 --dump-dom \
+            http://localhost:8765/tools/browser-e2e.html > /tmp/e2e-dom.html
+          python3 - <<'EOF'
+          import re, html, sys
+          dom = open('/tmp/e2e-dom.html').read()
+          m = re.search(r'<pre id="e2e-results">(.*?)</pre>', dom, re.S)
+          out = html.unescape(m.group(1)) if m else 'NO-RESULTS'
+          print(out[:2000])
+          fails = [l for l in out.splitlines() if l.startswith('FAIL')]
+          sys.exit(1 if fails or not out.startswith('E2E PASSED') else 0)
+          EOF

@@ -1,8 +1,4 @@
-(function (root) {
-  'use strict';
-  const GG = root.GG = root.GG || {};
-
-  class Sound {
+export class Sound {
     constructor() {
       this.ctx = null;
       this.master = null;
@@ -17,7 +13,8 @@
         if (this.ctx.state === 'suspended') this.ctx.resume();
         return true;
       }
-      const AC = root.AudioContext || root.webkitAudioContext;
+      const g = typeof globalThis !== 'undefined' ? globalThis : window;
+      const AC = g.AudioContext || g.webkitAudioContext;
       if (!AC) return false;
       try {
         this.ctx = new AC();
@@ -150,7 +147,4 @@
         this.tone(f * 1.1, 0.1, 'sine', 0.05, 0.18, f * 0.8);
       }
     }
-  }
-
-  GG.Sound = Sound;
-})(typeof window !== 'undefined' ? window : globalThis);
+}

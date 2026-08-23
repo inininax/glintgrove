@@ -1,0 +1,13 @@
+{
+  "name": "Glintgrove · 빛의 숲",
+  "short_name": "Glintgrove",
+  "description": "거울을 회전해 어두운 숲에 빛을 전하는 라이트 리플렉션 퍼즐",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a1420",
+  "theme_color": "#0a1420",
+  "lang": "ko",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

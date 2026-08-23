@@ -1,15 +1,11 @@
-(function (root) {
-  'use strict';
-  const GG = root.GG = root.GG || {};
-
-  GG.CHAPTERS = [
+export const CHAPTERS = [
     { id: 1, name: '새벽숲', desc: '거울의 기초를 배웁니다' },
     { id: 2, name: '안개 심연', desc: '갈라진 빛과 미로' },
     { id: 3, name: '별빛 정원', desc: '색을 가진 빛' },
     { id: 4, name: '고대의 심장', desc: '차원의 문 너머' }
   ];
 
-  GG.LEVELS = [
+  export const LEVELS = [
     {
       id: 1, name: '첫 번째 빛', chapter: 1, par: 1,
       grid: [
@@ -479,5 +475,3 @@
       }
     }
   ];
-
-})(typeof window !== 'undefined' ? window : globalThis);

@@ -1,0 +1,13 @@
+{
+  "name": "glintgrove",
+  "version": "1.1.0",
+  "description": "거울을 회전해 어두운 숲에 빛을 전하는 라이트 리플렉션 퍼즐",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node tools/check-levels.mjs",
+    "verify": "bash tools/verify-all.sh"
+  }
+}

@@ -224,6 +224,8 @@ html, body {
 
 #win-stats { margin-bottom: 20px; }
 
+.modal-actions { margin-top: 18px; }
+
 .win-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
 .settings-row {
