@@ -42,7 +42,6 @@ async function boot() {
 
   let currentDef = null;
   let dailyInfo = null;
-  let winUiHandled = false;
 
   function persist() {
     persistSave(saveData);
@@ -93,7 +92,6 @@ async function boot() {
     const effectiveDef = Number.isInteger(po) ? { ...def, par: po } : def;
     currentDef = effectiveDef;
     dailyInfo = opts.daily || null;
-    winUiHandled = false;
     game.startLevel(def, opts);
     ui.setHud(def, 0, def.par, opts.labelOverride);
     ui.show('screen-game');
