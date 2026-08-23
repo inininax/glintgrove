@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Glintgrove - 거울을 회전해 어두운 숲에 빛을 전하는 퍼즐 게임">
+  <title>Glintgrove · 빛의 숲</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='10' fill='%23ffd76e'/></svg>">
+</head>
+<body>
+  <canvas id="game-canvas"></canvas>
+
+  <div id="screen-title" class="screen">
+    <h1 class="title-logo">GLINTGROVE</h1>
+    <p class="tagline">빛을 잃은 숲을 깨워주세요</p>
+    <div class="menu-col">
+      <button id="btn-play" class="btn primary">시작하기</button>
+      <button id="btn-continue" class="btn">이어하기</button>
+      <button id="btn-settings" class="btn">설정</button>
+    </div>
+    <p class="credits">거울을 클릭해 빛의 길을 만드세요</p>
+  </div>
+
+  <div id="screen-levels" class="screen hidden">
+    <div class="levels-head">
+      <h2>숲의 지도</h2>
+      <span id="total-stars">0 / 78</span>
+    </div>
+    <div id="chapter-list"></div>
+    <button id="btn-back-title" class="btn small">← 타이틀로</button>
+    <button id="btn-settings2" class="btn small">설정</button>
+  </div>
+
+  <div id="screen-game" class="screen hidden">
+    <div class="hud panel">
+      <span id="hud-level-name" class="hud-title">1. 첫 번째 빛</span>
+      <span id="hud-moves">이동 0 / 목표 1</span>
+      <span class="hint-label">H 키: 도움말</span>
+      <button id="btn-hint" class="icon-btn" title="도움말 (H)">💡</button>
+      <button id="btn-undo" class="icon-btn" title="되돌리기 (U)">↩️</button>
+      <button id="btn-reset" class="icon-btn" title="처음부터 (R)">🔄</button>
+      <button id="btn-exit" class="icon-btn" title="레벨 선택 (Esc)">🗺️</button>
+    </div>
+  </div>
+
+  <div id="win-overlay" class="modal-overlay hidden">
+    <div class="modal panel">
+      <h2 id="win-title">숲이 깨어났습니다</h2>
+      <div id="win-stars"><span>★</span><span>★</span><span>★</span></div>
+      <p id="win-stats">이동 0 · 목표 0</p>
+      <div class="win-actions">
+        <button id="btn-next" class="btn primary">다음 레벨 →</button>
+        <button id="btn-replay" class="btn">다시 하기</button>
+        <button id="btn-win-select" class="btn">목록</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal-overlay hidden">
+    <div class="modal panel">
+      <h2>설정</h2>
+      <div class="settings-row">
+        <label>소리<span class="desc">효과음과 숲의 소리</span></label>
+        <span class="switch"><input type="checkbox" id="set-sound"><span class="slider"></span></span>
+      </div>
+      <div class="settings-row">
+        <label>화면 효과<span class="desc">반짝임과 파티클 애니메이션</span></label>
+        <span class="switch"><input type="checkbox" id="set-motion"><span class="slider"></span></span>
+      </div>
+      <div class="settings-row">
+        <label>색약 모드<span class="desc">빛 색상에 무늬와 문자를 추가</span></label>
+        <span class="switch"><input type="checkbox" id="set-colorblind"><span class="slider"></span></span>
+      </div>
+      <div class="danger-zone">
+        <button id="btn-wipe" class="btn danger small">진행 데이터 초기화</button>
+      </div>
+      <div style="margin-top:18px">
+        <button id="btn-close-settings" class="btn primary">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="intro-modal" class="modal-overlay hidden">
+    <div class="modal panel">
+      <h2>어두운 숲에 오신 것을 환영합니다</h2>
+      <p>
+        고대 빛 발산원이 다시 깨어났지만, 빛은 숲 깊은 곳까지 닿지 않습니다.<br><br>
+        <b>거울과 분할기를 클릭해 회전</b>시켜 빛의 길을 만들고,<br>
+        나무·꽃·버섯·올빼미를 깨워주세요.<br><br>
+        일부 생명은 <b>특정 색의 빛</b>을 필요로 합니다.<br>
+        크리스털(r/g/b)은 빛을 물들이고, 문(A/B/C)은 같은 색만 통과시킵니다.
+      </p>
+      <div style="margin-top:18px">
+        <button id="btn-intro-ok" class="btn primary">숲으로 들어가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="js/core.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/levels.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
