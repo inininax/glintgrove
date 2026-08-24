@@ -1,9 +1,12 @@
+import { GENERATED_LEVELS, GENERATED_CHAPTERS } from './levels.generated.js';
+
 export const CHAPTERS = [
     { id: 1, name: '새벽숲', desc: '거울의 기초를 배웁니다' },
     { id: 2, name: '안개 심연', desc: '갈라진 빛과 미로' },
     { id: 3, name: '별빛 정원', desc: '색을 가진 빛' },
     { id: 4, name: '고대의 심장', desc: '차원의 문 너머' },
-    { id: 5, name: '다시 찾은 새벽', desc: '모든 빛이 하나 되는 곳' }
+    { id: 5, name: '다시 찾은 새벽', desc: '모든 빛이 하나 되는 곳' },
+    ...GENERATED_CHAPTERS.map(c => ({ id: c.id, name: c.name, desc: c.desc }))
   ];
 
   export const LEVELS = [
@@ -569,5 +572,18 @@ export const CHAPTERS = [
         ],
         splitOrient: [{ x: 5, y: 5, orient: 1 }, { x: 9, y: 5, orient: 1 }]
       }
-    }
+    },
+    ...GENERATED_LEVELS.map(l => ({
+      ...l,
+      diff: l.par >= 7 ? 'extreme' : l.par === 6 ? 'hard' : l.par >= 4 ? 'normal' : 'easy'
+    }))
   ];
+
+export function difficultyOf(def) {
+  if (def.diff) return def.diff;
+  const p = def.par || 1;
+  if (p >= 7) return 'extreme';
+  if (p === 6) return 'hard';
+  if (p >= 4) return 'normal';
+  return 'easy';
+}

@@ -1,5 +1,5 @@
 import { GG_VERSION } from './core/version.js';
-import { LEVELS } from './data/levels.js';
+import { LEVELS, difficultyOf } from './data/levels.js';
 import { load as loadSave, save as persistSave, wipe, recordDaily, dailyStreak, defaults } from './state/saveStore.js';
 import { Game } from './game/game.js';
 import { UI, levelName } from './ui/ui.js';
@@ -169,6 +169,7 @@ async function boot() {
       persist();
     },
     beforeSettings: () => populateSkinSelect(),
+    difficultyOf: def => difficultyOf(def),
     achContext
   };
 
@@ -219,7 +220,7 @@ async function boot() {
   });
 
   game.events.on('settingsChange', s => {
-    void s;
+    game.renderer.setQuality(s.motion !== false);
   });
 
   window.addEventListener('resize', resize);
@@ -311,14 +312,11 @@ async function boot() {
     const select = document.getElementById('set-skin');
     if (!select) return;
     select.innerHTML = '';
-    const total = Object.values(saveData.stars).reduce((a, b) => a + b, 0);
     for (const skin of SKINS) {
-      const unlocked = total >= skin.unlockStars;
       const opt = document.createElement('option');
       opt.value = skin.id;
       const name = lang() === 'en' ? skin.nameEn : skin.name;
-      opt.textContent = unlocked ? name : `${name} ${t('skinLockedSuffix').replace('{n}', String(skin.unlockStars))} ${skin.unlockStars}`;
-      opt.disabled = !unlocked && skin.unlockStars > 0;
+      opt.textContent = name;
       if ((saveData.skin || getConfig().defaultSkin) === skin.id) opt.selected = true;
       select.appendChild(opt);
     }

@@ -51,6 +51,9 @@ export class Game {
     this.dailyInfo = null;
     this.lastActionAt = 0;
     this.nudged = false;
+    this.beamReveal = 1;
+    this.slowmo = 0;
+    this.auroraIntensity = 0.5;
   }
 
   setSettings(s) {
@@ -85,6 +88,9 @@ export class Game {
     this.hintsUsed = 0;
     this.demoMode = !!opts.demo;
     this.demoTimer = 1.5;
+    this.beamReveal = this.demoMode ? 1 : 0;
+    this.slowmo = 0;
+    this.auroraIntensity = 0.5;
     this.dailyInfo = opts.daily || null;
     this.seed = def.id * 1013 + 7 + hashStr(opts.seedSuffix || '');
     this.particles.reset(this.seed, this.W(), this.H(), { reducedMotion: !this.settings.motion });
@@ -149,6 +155,20 @@ export class Game {
       this.won = true;
       this.winTimer = 0;
       this.winFrames = 0;
+      this.slowmo = 0.55;
+      this.renderer.triggerBloom(1.4);
+      this.auroraIntensity = 1.8;
+      if (this.settings.motion && !this.demoMode) {
+        for (let i = 0; i < this.level.targets.length; i++) {
+          const t = this.level.targets[i];
+          setTimeout(() => {
+            const lay2 = this.renderer.layout(this.level);
+            const p2 = center(lay2, t.x, t.y);
+            this.particles.spawnRing(p2.cx, p2.cy, colorOf('white'));
+            this.particles.spawnBurst(p2.cx, p2.cy, '#ffe9b8', 8);
+          }, i * 120);
+        }
+      }
       if (!this.demoMode) {
         this.events.emit('win', {
           id: this.def.id,
@@ -168,11 +188,15 @@ export class Game {
     const col = colorOf(color);
     if (this.settings.motion) {
       this.particles.spawnRing(p.cx, p.cy, col);
+      this.particles.spawnRays(p.cx, p.cy, col);
+      this.particles.spawnMotes(p.cx, p.cy, 5);
       if (t.type === 'tree' || t.type === 'flower') {
         this.particles.spawnLeaves(p.cx, p.cy, t.type === 'tree' ? 14 : 8);
       } else {
         this.particles.spawnBurst(p.cx, p.cy, col, 12);
       }
+      this.renderer.triggerBloom(0.7);
+      this.auroraIntensity = Math.min(1.6, this.auroraIntensity + 0.18);
     }
     if (!this.demoMode) {
       this.sound.light(Math.max(0, Math.min(this.awakenCount - 1 + awardOffset, 7)));
@@ -260,8 +284,22 @@ export class Game {
   }
 
   update(dt) {
+    if (this.slowmo > 0) {
+      this.slowmo -= dt;
+      dt *= 0.35;
+    }
     this.time += dt;
+    if (this.beamReveal < 1) {
+      this.beamReveal = Math.min(1, this.beamReveal + dt * 1.6);
+      if (this.level && this.settings.motion && this.level.emitters[0] && Math.random() < 0.5) {
+        const lay = this.renderer.layout(this.level);
+        const ec = center(lay, this.level.emitters[0].x, this.level.emitters[0].y);
+        this.particles.spawnConverge(ec.cx, ec.cy, '#ffe9b8');
+      }
+    }
+    this.auroraIntensity = Math.max(0.5, this.auroraIntensity - dt * 0.08);
     this.particles.update(dt);
+    this.renderer.bloom.update(dt);
 
     if (this.hintTimer > 0) {
       this.hintTimer -= dt;
@@ -338,6 +376,8 @@ export class Game {
       hitCells: this.hitCells,
       activePortalIds: this.activePortalIds,
       hintIdx: this.hintIdx,
+      beamReveal: this.beamReveal,
+      auroraIntensity: this.auroraIntensity,
       particles: this.particles,
       onSpore: (x, y) => {
         if (this.settings.motion) this.particles.spawnSpore(x, y);
@@ -355,6 +395,8 @@ export class Game {
       ctx.fillRect(-this.renderer.W / 2, -this.renderer.H / 2, this.renderer.W, this.renderer.H);
       ctx.restore();
     }
+
+    this.renderer.applyBloom(this.canvas);
   }
 
   pointerDown(px, py) {

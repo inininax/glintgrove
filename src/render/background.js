@@ -1,59 +1,13 @@
 import { mulberry32 } from '../core/math.js';
 
-export function buildBackground(W, H, level, seed) {
-  const canvas = document.createElement('canvas');
-  canvas.width = W;
-  canvas.height = H;
-  const g = canvas.getContext('2d');
-
-  const grad = g.createLinearGradient(0, 0, 0, H);
-  grad.addColorStop(0, '#0a1420');
-  grad.addColorStop(0.55, '#0c1b2a');
-  grad.addColorStop(1, '#102433');
-  g.fillStyle = grad;
-  g.fillRect(0, 0, W, H);
-
-  const rng = mulberry32(seed * 7919 + 13);
-  g.fillStyle = 'rgba(255,255,255,0.5)';
-  for (let i = 0; i < 90; i++) {
-    g.globalAlpha = 0.12 + rng() * 0.5;
-    g.beginPath();
-    g.arc(rng() * W, rng() * H * 0.55, 0.6 + rng() * 1.1, 0, Math.PI * 2);
-    g.fill();
-  }
-  g.globalAlpha = 1;
-
-  for (const L of [
-    { col: '#0e2030', base: 0.72, amp: 60, step: 46 },
-    { col: '#12283a', base: 0.82, amp: 44, step: 34 }
-  ]) {
-    g.fillStyle = L.col;
-    g.beginPath();
-    g.moveTo(0, H);
-    const yBase = H * (1 - L.base);
-    for (let x = -20; x <= W + 20; x += L.step * (0.7 + rng() * 0.6)) {
-      g.lineTo(x + L.step / 2, yBase + rng() * L.amp);
-      g.lineTo(x + L.step, yBase + rng() * 14);
-    }
-    g.lineTo(W + 20, H);
-    g.closePath();
-    g.fill();
-  }
-
-  g.fillStyle = 'rgba(20,48,66,0.55)';
-  for (let i = 0; i < 26; i++) {
-    g.beginPath();
-    g.ellipse(rng() * W, H * (0.75 + rng() * 0.25), 20 + rng() * 50, 5 + rng() * 10, 0, 0, Math.PI * 2);
-    g.fill();
-  }
-
-  const vig = g.createRadialGradient(W / 2, H / 2, H * 0.35, W / 2, H / 2, H * 0.85);
-  vig.addColorStop(0, 'rgba(0,0,0,0)');
-  vig.addColorStop(1, 'rgba(2,8,14,0.55)');
-  g.fillStyle = vig;
-  g.fillRect(0, 0, W, H);
-
-  return { canvas, rng };
+export function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
 }
 
 export function bakeBoard(bgCtx, level, layout) {
@@ -76,50 +30,124 @@ export function bakeBoard(bgCtx, level, layout) {
     ctx.lineTo(layout.ox + level.w * layout.cell, layout.oy + y * layout.cell);
     ctx.stroke();
   }
-
-  for (const wall of level.walls) {
-    drawRock(ctx, wall.x, wall.y, layout, bgSeedFor(wall.x, wall.y));
-  }
   ctx.restore();
 }
 
-function bgSeedFor(x, y) {
-  return ((x * 73856093) ^ (y * 19349663)) >>> 0;
+export function buildBackground(W, H, level, seed) {
+  const canvas = document.createElement('canvas');
+  canvas.width = W;
+  canvas.height = H;
+  const g = canvas.getContext('2d');
+
+  const grad = g.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, '#070d18');
+  grad.addColorStop(0.45, '#0a1626');
+  grad.addColorStop(0.8, '#0d1e30');
+  grad.addColorStop(1, '#12283c');
+  g.fillStyle = grad;
+  g.fillRect(0, 0, W, H);
+
+  const rng = mulberry32(seed * 7919 + 13);
+
+  const nebulas = [
+    { x: 0.22, y: 0.3, r: 0.55, c1: 'rgba(46,90,140,0.20)', c2: 'rgba(46,90,140,0)' },
+    { x: 0.75, y: 0.2, r: 0.45, c1: 'rgba(110,70,160,0.16)', c2: 'rgba(110,70,160,0)' },
+    { x: 0.55, y: 0.75, r: 0.6, c1: 'rgba(30,110,120,0.14)', c2: 'rgba(30,110,120,0)' }
+  ];
+  for (const n of nebulas) {
+    const rg = g.createRadialGradient(n.x * W, n.y * H, 0, n.x * W, n.y * H, n.r * H);
+    rg.addColorStop(0, n.c1);
+    rg.addColorStop(1, n.c2);
+    g.fillStyle = rg;
+    g.fillRect(0, 0, W, H);
+  }
+
+  g.fillStyle = 'rgba(255,255,255,0.6)';
+  for (let i = 0; i < 150; i++) {
+    g.globalAlpha = 0.08 + rng() * 0.45;
+    g.beginPath();
+    g.arc(rng() * W, rng() * H * 0.7, 0.5 + rng() * 1.1, 0, Math.PI * 2);
+    g.fill();
+  }
+  g.fillStyle = 'rgba(200,230,255,0.9)';
+  for (let i = 0; i < 14; i++) {
+    const x = rng() * W;
+    const y = rng() * H * 0.5;
+    const r = 1 + rng() * 1.4;
+    g.globalAlpha = 0.5 + rng() * 0.4;
+    g.beginPath();
+    g.arc(x, y, r, 0, Math.PI * 2);
+    g.fill();
+    g.globalAlpha = 0.18;
+    g.fillRect(x - r * 3, y - 0.5, r * 6, 1);
+    g.fillRect(x - 0.5, y - r * 3, 1, r * 6);
+  }
+  g.globalAlpha = 1;
+
+  for (const L of [
+    { col: '#0c1c2c', base: 0.74, amp: 66, step: 44, a: 1 },
+    { col: '#102438', base: 0.84, amp: 50, step: 32, a: 1 },
+    { col: '#153048', base: 0.93, amp: 34, step: 22, a: 1 }
+  ]) {
+    g.fillStyle = L.col;
+    g.globalAlpha = L.a;
+    g.beginPath();
+    g.moveTo(0, H);
+    const yBase = H * (1 - L.base);
+    for (let x = -20; x <= W + 20; x += L.step * (0.7 + rng() * 0.6)) {
+      g.lineTo(x + L.step / 2, yBase + rng() * L.amp);
+      g.lineTo(x + L.step, yBase + rng() * 14);
+    }
+    g.lineTo(W + 20, H);
+    g.closePath();
+    g.fill();
+  }
+  g.globalAlpha = 1;
+
+  g.fillStyle = 'rgba(26,60,84,0.4)';
+  for (let i = 0; i < 30; i++) {
+    g.beginPath();
+    g.ellipse(rng() * W, H * (0.78 + rng() * 0.22), 18 + rng() * 55, 4 + rng() * 9, 0, 0, Math.PI * 2);
+    g.fill();
+  }
+
+  const vig = g.createRadialGradient(W / 2, H / 2, H * 0.32, W / 2, H / 2, H * 0.88);
+  vig.addColorStop(0, 'rgba(0,0,0,0)');
+  vig.addColorStop(1, 'rgba(2,6,12,0.6)');
+  g.fillStyle = vig;
+  g.fillRect(0, 0, W, H);
+
+  return { canvas, rng };
 }
 
-export function roundRect(ctx, x, y, w, h, r) {
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + w, y, x + w, y + h, r);
-  ctx.arcTo(x + w, y + h, x, y + h, r);
-  ctx.arcTo(x, y + h, x, y, r);
-  ctx.arcTo(x, y, x + w, y, r);
-  ctx.closePath();
-}
-
-export function drawRock(ctx, x, y, layout, seed) {
-  const { cx, cy } = center(layout, x, y);
-  const s = layout.cell;
-  const rng = mulberry32(seed);
+export function drawAurora(ctx, W, H, time, intensity) {
   ctx.save();
-  ctx.translate(cx, cy);
-  for (const [rx, ry, rr] of [[-0.2, 0.08, 0.3], [0.18, -0.1, 0.26], [0.02, 0.2, 0.22]]) {
-    const jitter = (rng() - 0.5) * 0.06;
-    ctx.fillStyle = '#2a3b4d';
+  ctx.globalCompositeOperation = 'lighter';
+  const bands = [
+    { hue: 160, yBase: 0.16, amp: 26, speed: 0.11, alpha: 0.075 },
+    { hue: 195, yBase: 0.24, amp: 34, speed: 0.07, alpha: 0.06 },
+    { hue: 275, yBase: 0.12, amp: 20, speed: 0.15, alpha: 0.05 }
+  ];
+  for (const b of bands) {
+    const a = b.alpha * (0.6 + 0.8 * intensity);
+    if (a <= 0.01) continue;
+    ctx.strokeStyle = `hsla(${b.hue}, 85%, 65%, ${a})`;
+    ctx.lineWidth = 14 + 6 * Math.sin(time * 0.4 + b.yBase * 9);
+    ctx.lineCap = 'round';
     ctx.beginPath();
-    ctx.arc(rx * s + jitter * s, ry * s, rr * s, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = 'rgba(90,130,110,0.35)';
-    ctx.beginPath();
-    ctx.arc(rx * s + jitter * s, ry * s - rr * s * 0.35, rr * s * 0.55, Math.PI, Math.PI * 2);
-    ctx.fill();
+    const segs = 22;
+    for (let i = 0; i <= segs; i++) {
+      const px = (i / segs) * W;
+      const py = H * b.yBase
+        + Math.sin(i * 0.55 + time * b.speed * 2.2) * b.amp
+        + Math.sin(i * 1.3 - time * b.speed * 1.4) * b.amp * 0.4;
+      if (i === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = `hsla(${b.hue}, 95%, 80%, ${a * 1.4})`;
+    ctx.stroke();
   }
   ctx.restore();
-}
-
-function center(layout, x, y) {
-  return {
-    cx: layout.ox + x * layout.cell + layout.cell / 2,
-    cy: layout.oy + y * layout.cell + layout.cell / 2
-  };
 }

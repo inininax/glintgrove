@@ -382,3 +382,10 @@ input:checked + .slider:before { transform: translateX(20px); background: var(--
   border-radius: 8px;
   padding: 8px 10px;
 }
+
+.level-node { position: relative; }
+.lv-diff { font-size: 9px; letter-spacing: 0.02em; padding: 1px 6px; border-radius: 999px; }
+.lv-diff.d-easy { color: #7ddba9; background: rgba(109,219,161,.12); }
+.lv-diff.d-normal { color: #8fc6ff; background: rgba(111,157,255,.12); }
+.lv-diff.d-hard { color: #ffcf7d; background: rgba(255,207,125,.12); }
+.lv-diff.d-extreme { color: #ff8f9f; background: rgba(255,110,130,.14); }

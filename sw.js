@@ -1,4 +1,4 @@
-const CACHE = 'glintgrove-v1_2_0';
+const CACHE = 'glintgrove-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -16,10 +16,14 @@ const ASSETS = [
   './src/sim/tracer.js',
   './src/sim/solver.js',
   './src/data/levels.js',
+  './src/data/levels.generated.js',
+  './src/services/generator.js',
   './src/state/saveStore.js',
   './src/fx/particles.js',
   './src/fx/sound.js',
   './src/render/renderer.js',
+  './src/render/bloom.js',
+  './src/render/gradientCache.js',
   './src/render/layout.js',
   './src/render/background.js',
   './src/render/beams.js',

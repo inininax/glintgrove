@@ -40,6 +40,9 @@ export function invalidateGlowSprites() {
 }
 
 export function drawBeams(ctx, result, layout, time, opts) {
+  const reveal = opts.reveal === undefined ? 1 : Math.max(0, Math.min(1, opts.reveal));
+  if (reveal <= 0.01) return;
+
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
   ctx.lineCap = 'round';
@@ -48,7 +51,7 @@ export function drawBeams(ctx, result, layout, time, opts) {
     if (seg.portalJump) continue;
     const p1 = centerOf(layout, seg.x1, seg.y1);
     const p2 = centerOf(layout, seg.x2, seg.y2);
-    const f = seg.endFrac !== undefined ? seg.endFrac : 1;
+    const f = (seg.endFrac !== undefined ? seg.endFrac : 1) * reveal;
     const x2 = p1.cx + (p2.cx - p1.cx) * f;
     const y2 = p1.cy + (p2.cy - p1.cy) * f;
     const col = colorOf(seg.color);
@@ -56,15 +59,16 @@ export function drawBeams(ctx, result, layout, time, opts) {
     ctx.strokeStyle = col;
     ctx.setLineDash(dashFor(seg.color, opts.colorblind));
 
-    ctx.globalAlpha = 0.1 + 0.05 * Math.sin(time * 3 + seg.x1);
+    ctx.globalAlpha = (0.1 + 0.05 * Math.sin(time * 3 + seg.x1)) * reveal;
     ctx.lineWidth = layout.cell * 0.34;
     ctx.beginPath();
     ctx.moveTo(p1.cx, p1.cy);
     ctx.lineTo(x2, y2);
     ctx.stroke();
 
-    ctx.globalAlpha = 0.32;
-    ctx.lineWidth = layout.cell * 0.16;
+    const wobble = opts.reducedMotion ? 1 : 1 + 0.1 * Math.sin(time * 6 + seg.x1 * 2 + seg.y1);
+    ctx.globalAlpha = 0.32 * reveal;
+    ctx.lineWidth = layout.cell * 0.16 * wobble;
     ctx.beginPath();
     ctx.moveTo(p1.cx, p1.cy);
     ctx.lineTo(x2, y2);
@@ -73,12 +77,12 @@ export function drawBeams(ctx, result, layout, time, opts) {
   ctx.setLineDash([]);
   ctx.restore();
 
-  drawGlowCores(ctx, result, layout, opts);
+  drawGlowCores(ctx, result, layout, opts, reveal);
 
-  if (!opts.reducedMotion) drawPulses(ctx, result, layout, time);
+  if (!opts.reducedMotion) drawPulses(ctx, result, layout, time, reveal);
 }
 
-function drawGlowCores(ctx, result, layout, opts) {
+function drawGlowCores(ctx, result, layout, opts, reveal = 1) {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
 
@@ -97,8 +101,8 @@ function drawGlowCores(ctx, result, layout, opts) {
     ctx.save();
     ctx.translate(p1.cx, p1.cy);
     ctx.rotate(angle);
-    ctx.globalAlpha = 0.9;
-    ctx.drawImage(getSprite(colorOf(seg.color)), -thickness / 2, -thickness / 2, len + thickness, thickness);
+    ctx.globalAlpha = 0.9 * reveal;
+    ctx.drawImage(getSprite(colorOf(seg.color)), -thickness / 2, -thickness / 2, (len + thickness) * reveal, thickness);
     ctx.restore();
   }
   ctx.restore();
@@ -111,7 +115,7 @@ function dashFor(color, colorblind) {
   return [4, 7];
 }
 
-function drawPulses(ctx, result, layout, time) {
+function drawPulses(ctx, result, layout, time, reveal = 1) {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
   let i = 0;
@@ -119,7 +123,7 @@ function drawPulses(ctx, result, layout, time) {
     if (seg.portalJump || seg.spark) continue;
     i++;
     const phase = (time * 1.6 + i * 0.37) % 1;
-    if (phase > 0.25) continue;
+    if (phase > 0.25 * reveal) continue;
     const p1 = centerOf(layout, seg.x1, seg.y1);
     const p2 = centerOf(layout, seg.x2, seg.y2);
     const t = phase / 0.25;

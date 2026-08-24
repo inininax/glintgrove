@@ -1,4 +1,5 @@
-import { buildBackground, bakeBoard } from './background.js';
+import { buildBackground, bakeBoard, drawAurora } from './background.js';
+import { Bloom } from './bloom.js';
 import { computeLayout } from './layout.js';
 import { drawBeams, drawPortalLinks } from './beams.js';
 import * as E from './entities.js';
@@ -11,6 +12,8 @@ export class Renderer {
     this.bgKey = '';
     this.W = 0;
     this.H = 0;
+    this.bloom = new Bloom();
+    this.bloomEnabled = true;
   }
 
   resize() {
@@ -47,6 +50,14 @@ export class Renderer {
     this.ctx.clearRect(0, 0, this.W, this.H);
   }
 
+  setQuality(high) {
+    this.bloom.enabled = high;
+  }
+
+  triggerBloom(amount = 0.8) {
+    if (this.bloomEnabled) this.bloom.trigger(amount);
+  }
+
   drawIdleBackdrop() {
     this.ctx.fillStyle = '#0a1420';
     this.ctx.fillRect(0, 0, this.W, this.H);
@@ -65,10 +76,13 @@ export class Renderer {
     ctx.rect(lay.ox - lay.cell, lay.oy - lay.cell, lay.cell * (level.w + 2), lay.cell * (level.h + 2));
     ctx.clip();
 
+    drawAurora(ctx, this.W, this.H, time, scene.auroraIntensity ?? 0.5);
+
     if (trace) drawPortalLinks(ctx, trace, lay, time);
     if (trace) drawBeams(ctx, trace, lay, time, {
       colorblind: settings.colorblind,
-      reducedMotion: !settings.motion
+      reducedMotion: !settings.motion,
+      reveal: scene.beamReveal ?? 1
     });
 
     for (const id in level.portals) {
@@ -114,5 +128,10 @@ export class Renderer {
 
     scene.particles.draw(ctx);
     ctx.restore();
+  }
+
+  applyBloom(mainCanvas) {
+    if (!this.bloomEnabled) return;
+    this.bloom.composite(this.ctx, mainCanvas);
   }
 }

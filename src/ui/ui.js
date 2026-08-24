@@ -106,10 +106,12 @@ export class UI {
         const unlocked = l.id <= data.unlocked;
         const stars = data.stars[l.id] || 0;
         const node = document.createElement('button');
-        node.className = 'level-node' + (unlocked ? '' : ' locked') + (stars > 0 ? ' done' : '');
+        const diff = this.hooks.difficultyOf(l);
+        node.className = 'level-node' + (unlocked ? '' : ' locked') + (stars > 0 ? ' done' : '') + ` diff-${diff}`;
         node.disabled = !unlocked;
+        const diffLabel = { easy: '쉬움', normal: '보통', hard: '어려움', extreme: '매우 어려움' }[diff] || '';
         node.innerHTML = unlocked
-          ? `<span class="lv-num">${l.id}</span><span class="lv-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span>`
+          ? `<span class="lv-num">${l.id}</span><span class="lv-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span><span class="lv-diff d-${diff}">${diffLabel}</span>`
           : '<span class="lv-num">🔒</span>';
         node.setAttribute('aria-label', `Level ${l.id}`);
         if (unlocked) {

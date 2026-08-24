@@ -11,6 +11,7 @@ async function makeUI() {
   const ui = new UI(game, {
     getSave: () => ({ unlocked: LEVELS.length + 1, stars: { 1: 3 }, daily: {}, tipsSeen: {}, ach: {} }),
     lang: () => 'ko',
+    difficultyOf: def => def.diff || 'easy',
     onPlay() {},
     onSettingsForm() {},
     markIntroSeen() {},

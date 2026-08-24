@@ -37,6 +37,7 @@
 
     const game = gg.game;
     const ui = gg.ui;
+    ui.hooks.difficultyOf = def => def.diff || 'easy';
 
     ui.hooks.onPlay(1);
     check('play1', game.state === 'playing' && game.def.id === 1);

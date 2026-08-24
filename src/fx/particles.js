@@ -94,6 +94,56 @@ export class ParticleSystem {
       });
     }
 
+    spawnRays(x, y, color) {
+      if (this.items.length >= this.maxItems) return;
+      for (let i = 0; i < 10; i++) {
+        this.items.push({
+          type: 'ray',
+          x, y,
+          angle: (i / 10) * Math.PI * 2 + Math.random() * 0.4,
+          life: 0,
+          maxLife: 0.7 + Math.random() * 0.3,
+          len: 14 + Math.random() * 22,
+          color
+        });
+      }
+    }
+
+    spawnMotes(x, y, n) {
+      for (let i = 0; i < n; i++) {
+        if (this.items.length >= this.maxItems) return;
+        this.items.push({
+          type: 'mote',
+          x: x + (Math.random() - 0.5) * 30,
+          y: y + (Math.random() - 0.5) * 10,
+          vx: (Math.random() - 0.5) * 6,
+          vy: -12 - Math.random() * 18,
+          life: 0,
+          maxLife: 1.4 + Math.random() * 1.2,
+          size: 1 + Math.random() * 1.6,
+          color: '#d8ffe8',
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    spawnConverge(x, y, color) {
+      if (this.items.length >= this.maxItems) return;
+      const a = Math.random() * Math.PI * 2;
+      const d = 40 + Math.random() * 50;
+      this.items.push({
+        type: 'converge',
+        x: x + Math.cos(a) * d,
+        y: y + Math.sin(a) * d,
+        tx: x,
+        ty: y,
+        life: 0,
+        maxLife: 0.5,
+        size: 1.6,
+        color
+      });
+    }
+
     update(dt) {
       this.time += dt;
       for (const f of this.fireflies) {
@@ -108,7 +158,7 @@ export class ParticleSystem {
       for (let i = this.items.length - 1; i >= 0; i--) {
         const p = this.items[i];
         p.life += dt;
-        if (p.type !== 'ring') {
+        if (p.type !== 'ring' && p.type !== 'converge') {
           p.x += p.vx * dt;
           p.y += p.vy * dt;
           if (p.type === 'spark') p.vy += 160 * dt;
@@ -131,7 +181,29 @@ export class ParticleSystem {
       for (const p of this.items) {
         const t = p.life / p.maxLife;
         ctx.globalAlpha = 1 - t;
-        if (p.type === 'ring') {
+        if (p.type === 'ray') {
+          ctx.strokeStyle = p.color;
+          ctx.lineWidth = 2 * (1 - t);
+          ctx.beginPath();
+          const r1 = 6 + t * p.len;
+          const r2 = r1 + p.len * 0.5 * (1 - t);
+          ctx.moveTo(p.x + Math.cos(p.angle) * r1, p.y + Math.sin(p.angle) * r1);
+          ctx.lineTo(p.x + Math.cos(p.angle) * r2, p.y + Math.sin(p.angle) * r2);
+          ctx.stroke();
+        } else if (p.type === 'mote') {
+          ctx.globalAlpha = (1 - t) * (0.4 + 0.6 * Math.abs(Math.sin(p.phase + p.life * 6)));
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (p.type === 'converge') {
+          const tt = 1 - t;
+          ctx.globalAlpha = t;
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.arc(p.tx + (p.x - p.tx) * tt, p.ty + (p.y - p.ty) * tt, p.size * (0.5 + t), 0, Math.PI * 2);
+          ctx.fill();
+        } else if (p.type === 'ring') {
           ctx.strokeStyle = p.color;
           ctx.lineWidth = 2.5 * (1 - t);
           ctx.beginPath();

@@ -49,9 +49,10 @@ test('tutorial steps for mechanism levels then done', () => {
   }
 });
 
-test('skins unlock by star thresholds', () => {
+test('all skins are freely available (no monetization)', () => {
   assert.ok(SKINS.length >= 4);
-  assert.equal(isUnlocked(getSkin('classic'), 0), true);
-  assert.equal(isUnlocked(getSkin('ocean'), 11), false);
-  assert.equal(isUnlocked(getSkin('ocean'), 12), true);
+  for (const skin of SKINS) {
+    assert.equal(isUnlocked(skin, 0), true, `${skin.id} must be free`);
+    assert.equal(skin.unlockStars, 0);
+  }
 });

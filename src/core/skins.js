@@ -10,19 +10,19 @@ export const SKINS = [
   {
     id: 'ocean',
     name: '오션', nameEn: 'Ocean',
-    unlockStars: 12,
+    unlockStars: 0,
     palette: { white: '#bfeaff', r: '#7fd8ff', g: '#5fffd0', b: '#6f9dff' }
   },
   {
     id: 'ember',
     name: '엠버', nameEn: 'Ember',
-    unlockStars: 30,
+    unlockStars: 0,
     palette: { white: '#ffd9a0', r: '#ff8a5c', g: '#ffc46b', b: '#ff6b9d' }
   },
   {
     id: 'aurora',
     name: '오로라', nameEn: 'Aurora',
-    unlockStars: 60,
+    unlockStars: 0,
     palette: { white: '#e4ffe9', r: '#8affe0', g: '#a0ffb0', b: '#c48aff' }
   }
 ];
