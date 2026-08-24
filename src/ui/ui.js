@@ -13,6 +13,8 @@ export function levelName(def, lang) {
 }
 
 export class UI {
+  static lastFocused = null;
+
   constructor(game, hooks) {
     this.game = game;
     this.hooks = hooks;
@@ -144,6 +146,7 @@ export class UI {
   }
 
   showWin(moves, par, stars, daily) {
+    this.focusPrimary('btn-next');
     el('win-overlay').classList.remove('hidden');
     el('win-title').textContent = daily ? t('dailyWinTitle') : t('winTitle');
     el('win-stats').textContent = daily
@@ -169,9 +172,23 @@ export class UI {
 
   hideWin() {
     el('win-overlay').classList.add('hidden');
+    this.restoreFocus();
+  }
+
+  focusPrimary(btnId) {
+    UI.lastFocused = document.activeElement;
+    const btn = el(btnId);
+    if (btn && btn.focus) setTimeout(() => btn.focus(), 30);
+  }
+
+  restoreFocus() {
+    const prev = UI.lastFocused;
+    if (prev && prev.focus) prev.focus();
+    UI.lastFocused = null;
   }
 
   openSettings() {
+    this.focusPrimary('btn-close-settings');
     this.hooks.beforeSettings?.();
     el('settings-modal').classList.remove('hidden');
     const data = this.hooks.getSave();
@@ -185,6 +202,7 @@ export class UI {
 
   closeSettings() {
     el('settings-modal').classList.add('hidden');
+    this.restoreFocus();
   }
 
   applySettingsFromForm() {

@@ -1,5 +1,6 @@
 import { colorOf } from '../core/colors.js';
 import { easeOutBack, easeOutCubic } from '../core/math.js';
+import { radialGradient } from './gradientCache.js';
 import { centerOf } from './layout.js';
 import { roundRect } from './background.js';
 
@@ -21,10 +22,7 @@ export function drawEmitter(ctx, e, layout, time, active) {
   ctx.stroke();
   const pulse = active ? 0.5 + 0.5 * Math.sin(time * 4 + e.x) : 0.3;
   ctx.globalAlpha = 0.35 + pulse * 0.4;
-  const rg = ctx.createRadialGradient(0, 0, 2, 0, 0, s * 0.55);
-  rg.addColorStop(0, col);
-  rg.addColorStop(1, 'rgba(255,255,255,0)');
-  ctx.fillStyle = rg;
+  ctx.fillStyle = radialGradient(ctx, s * 0.55, col, 'rgba(255,255,255,0)');
   ctx.beginPath();
   ctx.arc(0, 0, s * 0.55, 0, Math.PI * 2);
   ctx.fill();
@@ -228,10 +226,10 @@ export function drawTree(ctx, t, litAtTime, now, layout) {
   ctx.rotate(sway);
   if (awake) {
     ctx.globalAlpha = 0.35 + 0.15 * Math.sin(now * 2 + t.x);
-    const rg = ctx.createRadialGradient(0, -s * 0.3, 4, 0, -s * 0.3, s * 0.75);
-    rg.addColorStop(0, 'rgba(120,230,150,0.5)');
-    rg.addColorStop(1, 'rgba(120,230,150,0)');
-    ctx.fillStyle = rg;
+    ctx.save();
+    ctx.translate(0, -s * 0.3);
+    ctx.fillStyle = radialGradient(ctx, s * 0.75, 'rgba(120,230,150,0.5)', 'rgba(120,230,150,0)');
+    ctx.restore();
     ctx.beginPath();
     ctx.arc(0, -s * 0.3, s * 0.75, 0, Math.PI * 2);
     ctx.fill();
@@ -272,10 +270,10 @@ export function drawFlower(ctx, t, litAtTime, now, layout) {
   ctx.translate(cx, cy + s * 0.34);
   if (awake) {
     ctx.globalAlpha = 0.3;
-    const rg = ctx.createRadialGradient(0, -s * 0.2, 2, 0, -s * 0.2, s * 0.5);
-    rg.addColorStop(0, petalCol);
-    rg.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = rg;
+    ctx.save();
+    ctx.translate(0, -s * 0.2);
+    ctx.fillStyle = radialGradient(ctx, s * 0.5, petalCol, 'rgba(0,0,0,0)');
+    ctx.restore();
     ctx.beginPath();
     ctx.arc(0, -s * 0.2, s * 0.5, 0, Math.PI * 2);
     ctx.fill();
@@ -383,10 +381,10 @@ export function drawOwl(ctx, t, litAtTime, now, layout) {
   ctx.fill();
   if (awake) {
     ctx.globalAlpha = 0.25 + 0.1 * Math.sin(now * 2);
-    const rg = ctx.createRadialGradient(0, -s * 0.5, 2, 0, -s * 0.5, s * 0.5);
-    rg.addColorStop(0, 'rgba(255,200,80,0.6)');
-    rg.addColorStop(1, 'rgba(255,200,80,0)');
-    ctx.fillStyle = rg;
+    ctx.save();
+    ctx.translate(0, -s * 0.5);
+    ctx.fillStyle = radialGradient(ctx, s * 0.5, 'rgba(255,200,80,0.6)', 'rgba(255,200,80,0)');
+    ctx.restore();
     ctx.beginPath();
     ctx.arc(0, -s * 0.5, s * 0.5, 0, Math.PI * 2);
     ctx.fill();

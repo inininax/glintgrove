@@ -11,7 +11,6 @@ import { installErrorHandler } from './infra/errorHandler.js';
 import { loadRemoteConfig, getConfig } from './services/config.js';
 import { getTutorial, markTutorialDone } from './services/tutorial.js';
 import { SKINS, getSkin } from './core/skins.js';
-import { setSkinTheme } from './core/colors.js';
 import { recentEvents } from './infra/analytics.js';
 
 installErrorHandler();
@@ -25,20 +24,19 @@ async function boot() {
   saveData.v = 2;
   setLanguage(saveData.lang === 'auto' ? null : saveData.lang);
   applyDomStrings(document);
-  await loadRemoteConfig();
-  applySkin(saveData.skin || getConfig().defaultSkin);
-
-  function applySkin(id) {
-    const skin = getSkin(id);
-    setSkinTheme(skin.palette);
-  }
-  window.__applySkin = applySkin;
 
   const sessionStart = Date.now();
   track('session_start', { v: GG_VERSION });
 
   const game = new Game(canvas);
   game.setSettings({ sound: saveData.sound, motion: saveData.motion, colorblind: saveData.colorblind });
+
+  function applySkin(id) {
+    game.applySkin(getSkin(id).palette);
+  }
+
+  await loadRemoteConfig();
+  applySkin(saveData.skin || getConfig().defaultSkin);
 
   let currentDef = null;
   let dailyInfo = null;
@@ -225,6 +223,16 @@ async function boot() {
   });
 
   window.addEventListener('resize', resize);
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      game.sound.stopAmbient();
+      track('session_hidden');
+    } else if (game.state === 'playing' && !game.demoMode && game.settings.sound && !ui.anyModalOpen()) {
+      game.sound.startAmbient();
+      track('session_visible');
+    }
+  });
 
   canvas.addEventListener('pointerdown', ev => {
     if (game.settings.sound) game.sound.ensure();

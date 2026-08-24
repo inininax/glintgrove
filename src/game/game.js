@@ -1,10 +1,13 @@
 import { parseLevel } from '../sim/parser.js';
 import { trace, hintMove, restoreInitial, applyOrients } from '../sim/index.js';
 import { Emitter } from '../core/emitter.js';
-import { colorOf } from '../core/colors.js';
+import { colorOf, setSkinTheme } from '../core/colors.js';
 import { easeOutCubic } from '../core/math.js';
 import { getConfig } from '../services/config.js';
 import { Renderer } from '../render/renderer.js';
+import { invalidateGlowSprites } from '../render/beams.js';
+import { clearGradientCache } from '../render/gradientCache.js';
+import { radialGradient } from '../render/gradientCache.js';
 import { ParticleSystem } from '../fx/particles.js';
 import { Sound } from '../fx/sound.js';
 
@@ -55,6 +58,12 @@ export class Game {
     this.sound.setEnabled(this.settings.sound);
     this.particles.reducedMotion = !this.settings.motion;
     this.events.emit('settingsChange', { ...this.settings });
+  }
+
+  applySkin(palette) {
+    setSkinTheme(palette);
+    clearGradientCache();
+    invalidateGlowSprites();
   }
 
   startLevel(def, opts = {}) {
@@ -341,14 +350,9 @@ export class Game {
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
       ctx.globalAlpha = 0.25 * Math.max(0, 1 - this.winTimer / 2.4);
-      const rg = ctx.createRadialGradient(
-        this.renderer.W / 2, this.renderer.H / 2, 10,
-        this.renderer.W / 2, this.renderer.H / 2, this.renderer.W * 0.7
-      );
-      rg.addColorStop(0, 'rgba(255,240,190,0.9)');
-      rg.addColorStop(1, 'rgba(255,240,190,0)');
-      ctx.fillStyle = rg;
-      ctx.fillRect(0, 0, this.renderer.W, this.renderer.H);
+      ctx.translate(this.renderer.W / 2, this.renderer.H / 2);
+      ctx.fillStyle = radialGradient(ctx, this.renderer.W * 0.7, 'rgba(255,240,190,0.9)', 'rgba(255,240,190,0)');
+      ctx.fillRect(-this.renderer.W / 2, -this.renderer.H / 2, this.renderer.W, this.renderer.H);
       ctx.restore();
     }
   }

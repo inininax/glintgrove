@@ -1,6 +1,44 @@
 import { colorOf } from '../core/colors.js';
 import { centerOf } from './layout.js';
 
+const SPRITE_SIZE = 64;
+const sprites = new Map();
+
+function getSprite(color) {
+  let sprite = sprites.get(color);
+  if (sprite) return sprite;
+
+  const c = document.createElement('canvas');
+  c.width = SPRITE_SIZE;
+  c.height = SPRITE_SIZE;
+  const g = c.getContext('2d');
+
+  const rg = g.createRadialGradient(SPRITE_SIZE / 2, SPRITE_SIZE / 2, 0, SPRITE_SIZE / 2, SPRITE_SIZE / 2, SPRITE_SIZE / 2);
+  rg.addColorStop(0, 'rgba(255,255,255,0.95)');
+  rg.addColorStop(0.25, color);
+  rg.addColorStop(0.6, hexToRgba(color, 0.35));
+  rg.addColorStop(1, 'rgba(0,0,0,0)');
+  g.fillStyle = rg;
+  g.fillRect(0, 0, SPRITE_SIZE, SPRITE_SIZE);
+
+  sprite = c;
+  sprites.set(color, sprite);
+  return sprite;
+}
+
+function hexToRgba(hex, alpha) {
+  const h = hex.replace('#', '');
+  const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+  const r = parseInt(full.slice(0, 2), 16) || 255;
+  const g = parseInt(full.slice(2, 4), 16) || 233;
+  const b = parseInt(full.slice(4, 6), 16) || 184;
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+export function invalidateGlowSprites() {
+  sprites.clear();
+}
+
 export function drawBeams(ctx, result, layout, time, opts) {
   ctx.save();
   ctx.globalCompositeOperation = 'lighter';
@@ -31,24 +69,39 @@ export function drawBeams(ctx, result, layout, time, opts) {
     ctx.moveTo(p1.cx, p1.cy);
     ctx.lineTo(x2, y2);
     ctx.stroke();
-
-    if (!opts.reducedMotion || !opts.pulseSuppressed) {
-      ctx.globalAlpha = 0.95;
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = Math.max(1.6, layout.cell * 0.05);
-      ctx.shadowColor = col;
-      ctx.shadowBlur = 8;
-      ctx.beginPath();
-      ctx.moveTo(p1.cx, p1.cy);
-      ctx.lineTo(x2, y2);
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-    }
   }
   ctx.setLineDash([]);
   ctx.restore();
 
+  drawGlowCores(ctx, result, layout, opts);
+
   if (!opts.reducedMotion) drawPulses(ctx, result, layout, time);
+}
+
+function drawGlowCores(ctx, result, layout, opts) {
+  ctx.save();
+  ctx.globalCompositeOperation = 'lighter';
+
+  for (const seg of result.segments) {
+    if (seg.portalJump) continue;
+    const p1 = centerOf(layout, seg.x1, seg.y1);
+    const p2 = centerOf(layout, seg.x2, seg.y2);
+    const f = seg.endFrac !== undefined ? seg.endFrac : 1;
+    const dx = (p2.cx - p1.cx) * f;
+    const dy = (p2.cy - p1.cy) * f;
+    const len = Math.max(1, Math.hypot(dx, dy));
+    const angle = Math.atan2(dy, dx);
+
+    const thickness = Math.max(10, layout.cell * 0.5);
+
+    ctx.save();
+    ctx.translate(p1.cx, p1.cy);
+    ctx.rotate(angle);
+    ctx.globalAlpha = 0.9;
+    ctx.drawImage(getSprite(colorOf(seg.color)), -thickness / 2, -thickness / 2, len + thickness, thickness);
+    ctx.restore();
+  }
+  ctx.restore();
 }
 
 function dashFor(color, colorblind) {
