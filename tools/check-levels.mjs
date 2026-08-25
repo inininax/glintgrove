@@ -33,6 +33,20 @@ for (const def of LEVELS) {
     const ch = level.cells[e.y][e.x];
     if (!'><^v'.includes(ch)) problems.push(`${tag}: emitter cell mismatch at ${e.x},${e.y}='${ch}'`);
   }
+  for (const n of def.meta?.needs || []) {
+    if (n.x < 0 || n.y < 0 || n.x >= level.w || n.y >= level.h || !'TfMO'.includes(level.cells[n.y][n.x])) {
+      problems.push(`${tag}: needs coord mismatch at ${n.x},${n.y}`);
+    }
+  }
+  for (const s of def.meta?.splitOrient || []) {
+    const r = level.rotatables.find(r0 => r0.x === s.x && r0.y === s.y);
+    if (!r || r.kind !== 'splitter') problems.push(`${tag}: splitOrient coord mismatch at ${s.x},${s.y}`);
+  }
+  for (const e of def.meta?.emitters || []) {
+    const ch = level.cells[e.y]?.[e.x];
+    if (!ch || !'><^v'.includes(ch)) problems.push(`${tag}: emitter meta mismatch at ${e.x},${e.y}`);
+  }
+
   for (const pk in level.portals) {
     const p = level.portals[pk];
     if (!level.portals[portalPartner(pk)]) problems.push(`${tag}: portal ${pk} has no partner`);

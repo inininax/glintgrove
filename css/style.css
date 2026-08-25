@@ -350,7 +350,7 @@ input:checked + .slider:before { transform: translateX(20px); background: var(--
 @keyframes tutBounce { 0%,100%{transform:translate(-50%,-58%)} 50%{transform:translate(-50%,-44%)} }
 @keyframes tutRing { 0%{transform:scale(.6);opacity:.9} 100%{transform:scale(1.35);opacity:0} }
 
-.tut-card { max-width: min(420px, 92vw); }
+.tut-card { max-width: min(420px, 92vw); pointer-events: auto; }
 .tut-card .tut-art {
   font-size: 40px;
   margin-bottom: 8px;

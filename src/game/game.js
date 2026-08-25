@@ -159,15 +159,14 @@ export class Game {
       this.renderer.triggerBloom(1.4);
       this.auroraIntensity = 1.8;
       if (this.settings.motion && !this.demoMode) {
-        for (let i = 0; i < this.level.targets.length; i++) {
-          const t = this.level.targets[i];
+        const layNow = this.renderer.layout(this.level);
+        const pts = this.level.targets.map(t => center(layNow, t.x, t.y));
+        pts.forEach((p2, i) => {
           setTimeout(() => {
-            const lay2 = this.renderer.layout(this.level);
-            const p2 = center(lay2, t.x, t.y);
             this.particles.spawnRing(p2.cx, p2.cy, colorOf('white'));
             this.particles.spawnBurst(p2.cx, p2.cy, '#ffe9b8', 8);
           }, i * 120);
-        }
+        });
       }
       if (!this.demoMode) {
         this.events.emit('win', {
@@ -252,6 +251,7 @@ export class Game {
     this.winTimer = 0;
     this.winFrames = 0;
     this.winUiDone = false;
+    this.awakenCount = 0;
     this.spins.clear();
     this.litAt.clear();
     this.satisfied.clear();

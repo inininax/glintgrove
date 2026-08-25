@@ -1,12 +1,12 @@
 import { GENERATED_LEVELS, GENERATED_CHAPTERS } from './levels.generated.js';
 
 export const CHAPTERS = [
-    { id: 1, name: '새벽숲', desc: '거울의 기초를 배웁니다' },
-    { id: 2, name: '안개 심연', desc: '갈라진 빛과 미로' },
-    { id: 3, name: '별빛 정원', desc: '색을 가진 빛' },
-    { id: 4, name: '고대의 심장', desc: '차원의 문 너머' },
-    { id: 5, name: '다시 찾은 새벽', desc: '모든 빛이 하나 되는 곳' },
-    ...GENERATED_CHAPTERS.map(c => ({ id: c.id, name: c.name, desc: c.desc }))
+    { id: 1, name: '새벽숲', nameEn: 'Dawn Woods', desc: '거울의 기초를 배웁니다', descEn: 'Learn the mirrors' },
+    { id: 2, name: '안개 심연', nameEn: 'Misty Depths', desc: '갈라진 빛과 미로', descEn: 'Splitters and mazes' },
+    { id: 3, name: '별빛 정원', nameEn: 'Starlit Garden', desc: '색을 가진 빛', descEn: 'Light that has color' },
+    { id: 4, name: '고대의 심장', nameEn: 'Ancient Heart', desc: '차원의 문 너머', descEn: 'Beyond the portals' },
+    { id: 5, name: '다시 찾은 새벽', nameEn: 'Dawn Rediscovered', desc: '모든 빛이 하나 되는 곳', descEn: 'Where all light becomes one' },
+    ...GENERATED_CHAPTERS.map(c => ({ id: c.id, name: c.name, nameEn: c.nameEn, desc: c.desc, descEn: c.descEn || c.desc }))
   ];
 
   export const LEVELS = [
@@ -255,7 +255,7 @@ export const CHAPTERS = [
       ],
       meta: {
         hint: "달빛이 계단처럼 올라갑니다.",
-        splitOrient: [{ x: 3, y: 7, orient: 1 }, { x: 3, y: 5, orient: 1 }, { x: 6, y: 3, orient: 1 }]
+        splitOrient: [{ x: 3, y: 5, orient: 1 }, { x: 6, y: 3, orient: 1 }]
       }
     },
     {
@@ -473,8 +473,7 @@ export const CHAPTERS = [
           { x: 4, y: 9, orient: 1 },
           { x: 4, y: 6, orient: 1 },
           { x: 12, y: 1, orient: 1 },
-          { x: 11, y: 1, orient: 1 },
-          { x: 12, y: 6, orient: 1 }
+          { x: 11, y: 1, orient: 1 }
         ]
       }
     },
@@ -567,7 +566,7 @@ export const CHAPTERS = [
         needs: [
           { x: 6, y: 4, need: 'r' },
           { x: 9, y: 8, need: 'b' },
-          { x: 7, y: 10, need: 'g' },
+          { x: 8, y: 10, need: 'g' },
           { x: 11, y: 1, need: 'r' }
         ],
         splitOrient: [{ x: 5, y: 5, orient: 1 }, { x: 9, y: 5, orient: 1 }]

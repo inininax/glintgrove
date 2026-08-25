@@ -89,9 +89,9 @@ async function boot() {
     const po = getConfig().parOverrides[String(def.id)];
     const effectiveDef = Number.isInteger(po) ? { ...def, par: po } : def;
     currentDef = effectiveDef;
-    dailyInfo = opts.daily || null;
-    game.startLevel(def, opts);
-    ui.setHud(def, 0, def.par, opts.labelOverride);
+    dailyInfo = opts.daily ? { ...opts.daily, label: opts.labelOverride || null } : null;
+    game.startLevel(effectiveDef, opts);
+    ui.setHud(effectiveDef, 0, effectiveDef.par, opts.labelOverride);
     ui.show('screen-game');
     ui.hideWin();
     track('level_start', {
@@ -356,7 +356,10 @@ async function boot() {
     else hooks.onPlay(currentDef.id);
   });
   function bind_daily_replay() {
-    const cfg = buildDailyConfig(dailyInfo.date);
+    const cfg = buildDailyConfig(dailyInfo.date, {
+      min: getConfig().dailyMinOptimal,
+      max: getConfig().dailyMaxOptimal
+    });
     startLevelById(cfg.baseId, {
       orientOverride: cfg.orients,
       daily: { date: cfg.date, optimal: cfg.optimal },

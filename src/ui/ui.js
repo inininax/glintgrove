@@ -90,6 +90,7 @@ export class UI {
 
   renderLevelSelect() {
     const data = this.hooks.getSave();
+    const lang = this.hooks.lang();
     const wrap = el('chapter-list');
     wrap.innerHTML = '';
     for (const ch of CHAPTERS) {
@@ -97,8 +98,10 @@ export class UI {
       sec.className = 'chapter';
       const lvls = LEVELS.filter(l => l.chapter === ch.id);
       const done = lvls.filter(l => (data.stars[l.id] || 0) > 0).length;
+      const chName = lang === 'en' ? (ch.nameEn || ch.name) : ch.name;
+      const chDesc = lang === 'en' ? (ch.descEn || ch.desc) : ch.desc;
       const head = document.createElement('header');
-      head.innerHTML = `<h3>${ch.name}</h3><span class="chapter-desc">${ch.desc}</span><span class="chapter-progress">${done}/${lvls.length}</span>`;
+      head.innerHTML = `<h3>${chName}</h3><span class="chapter-desc">${chDesc}</span><span class="chapter-progress">${done}/${lvls.length}</span>`;
       sec.appendChild(head);
       const grid = document.createElement('div');
       grid.className = 'level-grid';
@@ -109,7 +112,11 @@ export class UI {
         const diff = this.hooks.difficultyOf(l);
         node.className = 'level-node' + (unlocked ? '' : ' locked') + (stars > 0 ? ' done' : '') + ` diff-${diff}`;
         node.disabled = !unlocked;
-        const diffLabel = { easy: '쉬움', normal: '보통', hard: '어려움', extreme: '매우 어려움' }[diff] || '';
+        const DIFF_LABELS = {
+          ko: { easy: '쉬움', normal: '보통', hard: '어려움', extreme: '매우 어려움' },
+          en: { easy: 'Easy', normal: 'Normal', hard: 'Hard', extreme: 'Very Hard' }
+        };
+        const diffLabel = (DIFF_LABELS[lang] || DIFF_LABELS.ko)[diff] || '';
         node.innerHTML = unlocked
           ? `<span class="lv-num">${l.id}</span><span class="lv-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span><span class="lv-diff d-${diff}">${diffLabel}</span>`
           : '<span class="lv-num">🔒</span>';
@@ -141,9 +148,11 @@ export class UI {
   }
 
   showHintToast() {
-    const def = this.game.def;
-    if (!def) return;
-    const hint = this.hooks.lang() === 'en' && def.hintEn ? def.hintEn : def.hint;
+    const level = this.game.level;
+    if (!level) return;
+    const hint = this.hooks.lang() === 'en'
+      ? (level.hintEn || level.hint)
+      : (level.hint || level.hintEn);
     if (hint) this.toast(`💡 ${hint}`, 3600);
   }
 

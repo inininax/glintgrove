@@ -19,7 +19,7 @@ test('defaults shape is v2', () => {
   const d = store.defaults();
   assert.equal(d.v, 2);
   assert.equal(d.unlocked, 1);
-  assert.equal(d.lang, 'auto');
+  assert.equal(d.lang, 'en');
   assert.deepEqual([d.stars, d.tipsSeen, d.daily, d.ach].map(o => typeof o), ['object', 'object', 'object', 'object']);
 });
 
@@ -39,7 +39,7 @@ test('v1 save migrates to v2 preserving progress', () => {
   assert.equal(d.stars[1], 3);
   assert.equal(d.sound, false);
   assert.equal(d.colorblind, true);
-  assert.equal(d.lang, 'auto');
+  assert.equal(d.lang, 'en');
   assert.deepEqual(d.daily, {});
 });
 

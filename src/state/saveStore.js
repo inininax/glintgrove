@@ -11,7 +11,7 @@ export function defaults() {
     motion: true,
     colorblind: false,
     seenIntro: false,
-    lang: 'auto',
+    lang: 'en',
     skin: 'classic',
     tipsSeen: {},
     daily: {},
@@ -68,7 +68,8 @@ function sanitize(d) {
     if (!e || !Number.isInteger(e.moves) || !(e.stars >= 1 && e.stars <= 3)) delete d.daily[k];
   }
   if (!d.ach || typeof d.ach !== 'object' || Array.isArray(d.ach)) d.ach = {};
-  if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'auto';
+  if (d.lang === 'auto') d.lang = 'en';
+  if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'en';
   if (!['classic', 'ocean', 'ember', 'aurora'].includes(d.skin)) d.skin = 'classic';
   const def = defaults();
   for (const k of ['sound', 'motion', 'colorblind', 'seenIntro']) {

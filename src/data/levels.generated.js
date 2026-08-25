@@ -405,11 +405,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -567,7 +562,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -661,11 +656,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -1031,7 +1021,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -1125,11 +1115,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -1740,7 +1725,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -1835,11 +1820,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -1886,7 +1866,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -1981,11 +1961,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -2066,7 +2041,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -2160,11 +2135,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -2644,11 +2614,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -2828,7 +2793,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -2922,11 +2887,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -3190,11 +3150,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -3347,7 +3302,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -4040,7 +3995,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -4135,7 +4090,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -4271,7 +4226,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -4365,11 +4320,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -4817,11 +4767,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -5035,7 +4980,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -5130,11 +5075,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -5209,11 +5149,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -5369,7 +5304,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -5463,11 +5398,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -6019,11 +5949,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -6494,7 +6419,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -6588,11 +6513,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -7035,11 +6955,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -7289,7 +7204,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -7355,7 +7270,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -7449,11 +7364,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -7600,7 +7510,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -7694,11 +7604,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -8197,7 +8102,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -8291,11 +8196,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -8649,11 +8549,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -8806,7 +8701,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -9235,11 +9130,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -9559,7 +9449,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -9767,7 +9657,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -9861,11 +9751,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -10359,7 +10244,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -10453,11 +10338,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]
@@ -10642,11 +10522,6 @@ export const GENERATED_LEVELS = [
      "x": 11,
      "y": 1,
      "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
-     "orient": 1
     }
    ]
   },
@@ -10785,7 +10660,7 @@ export const GENERATED_LEVELS = [
      "need": "b"
     },
     {
-     "x": 7,
+     "x": 8,
      "y": 10,
      "need": "g"
     },
@@ -10879,11 +10754,6 @@ export const GENERATED_LEVELS = [
     {
      "x": 11,
      "y": 1,
-     "orient": 1
-    },
-    {
-     "x": 12,
-     "y": 6,
      "orient": 1
     }
    ]

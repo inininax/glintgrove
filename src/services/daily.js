@@ -44,5 +44,7 @@ export function buildDailyConfig(dateStr, opts = {}) {
   }
 
   const fallback = LEVELS.find(l => l.id === POOL_MIN_ID + 2);
-  return { date: dateStr, baseId: fallback.id, orients: fallback ? null : null, optimal: fallback.par };
+  const fallbackLevel = parseLevel(fallback);
+  const orients = fallbackLevel.rotatables.map(r => r.orient ^ 1);
+  return { date: dateStr, baseId: fallback.id, orients, optimal: Math.max(1, fallbackLevel.rotatables.length) };
 }
