@@ -9,7 +9,40 @@ export const CHAPTERS = [
     ...GENERATED_CHAPTERS.map(c => ({ id: c.id, name: c.name, nameEn: c.nameEn, desc: c.desc, descEn: c.descEn || c.desc }))
   ];
 
-  export const LEVELS = [
+  const HINTS_EN = {
+  1: 'Click the mirror to rotate it. Guide the light to the tree.',
+  2: 'Light bends 90 degrees at every mirror.',
+  3: 'Line up three mirrors in order.',
+  4: 'The beam that dives down will find its way.',
+  5: 'Owls open their eyes when lit.',
+  6: 'A splitter passes light through AND reflects a copy.',
+  7: 'Chained splitters fan light into branches.',
+  8: 'Five devices form a single chorus.',
+  9: 'As the mist clears, several paths appear.',
+  10: 'The center splitter shares life across the forest.',
+  11: 'A spiral that rides the border.',
+  12: 'One beam spreads toward four lives.',
+  13: 'Thread the light through the moss.',
+  14: 'The deep eyes wake one by one.',
+  15: 'Moonlight climbs like a staircase.',
+  16: 'Five lives wait beyond the veil.',
+  17: 'Crystals tint light; red gates pass only red.',
+  18: 'Tint the white beam into three colors.',
+  19: 'Give each firefly-owl its own color.',
+  20: 'Split beams meet different crystals.',
+  21: 'Complete the garden of five colors.',
+  22: 'Two lights share one crossing stage.',
+  23: 'Light exits the twin portal the same way it entered.',
+  24: 'One route crosses portals twice.',
+  25: 'Red light wakes the ancient heart.',
+  26: 'All lights unite — dawn comes. Wake eight lives.',
+  27: 'Two beacons and two pairs of portals cross paths.',
+  28: 'Chained splitters fan light into five colored lanes.',
+  29: 'Light circling through portals wakes life on all sides.',
+  30: 'Three lights pass through portals and gates to wake six lives.'
+};
+
+export const LEVELS = [
     {
       id: 1, name: '첫 번째 빛', chapter: 1, par: 1,
       grid: [
@@ -576,7 +609,12 @@ export const CHAPTERS = [
       ...l,
       diff: l.par >= 7 ? 'extreme' : l.par === 6 ? 'hard' : l.par >= 4 ? 'normal' : 'easy'
     }))
-  ];
+  ].map(l => {
+    if (l.id <= 30 && !(l.meta && l.meta.hintEn)) {
+      return { ...l, meta: { ...(l.meta || {}), hintEn: HINTS_EN[l.id] || 'Find the path of light and wake the forest.' } };
+    }
+    return l;
+  });
 
 export function difficultyOf(def) {
   if (def.diff) return def.diff;

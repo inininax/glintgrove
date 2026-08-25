@@ -406,7 +406,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Gate",
   "diff": "extreme"
@@ -449,7 +450,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "normal"
@@ -488,7 +490,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Gallery",
   "diff": "normal"
@@ -517,7 +520,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "normal"
@@ -658,7 +662,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vigil",
   "diff": "extreme"
@@ -701,7 +706,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Waltz",
   "diff": "normal"
@@ -730,7 +736,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Stillness",
   "diff": "normal"
@@ -766,7 +773,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "hard"
@@ -800,7 +808,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "hard"
@@ -836,7 +845,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vale",
   "diff": "hard"
@@ -870,7 +880,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit River",
   "diff": "hard"
@@ -906,7 +917,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "extreme"
@@ -942,7 +954,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "hard"
@@ -976,7 +989,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "hard"
@@ -1117,7 +1131,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "extreme"
@@ -1434,7 +1449,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "hard"
@@ -1465,7 +1481,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "normal"
@@ -1487,7 +1504,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "normal"
@@ -1516,7 +1534,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Nocturne",
   "diff": "normal"
@@ -1552,7 +1571,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Gate",
   "diff": "normal"
@@ -1588,7 +1608,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "extreme"
@@ -1624,7 +1645,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Gallery",
   "diff": "hard"
@@ -1658,7 +1680,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "hard"
@@ -1680,7 +1703,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Path",
   "diff": "normal"
@@ -1821,7 +1845,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Waltz",
   "diff": "extreme"
@@ -1962,7 +1987,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "extreme"
@@ -1996,7 +2022,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "hard"
@@ -2137,7 +2164,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit River",
   "diff": "extreme"
@@ -2173,7 +2201,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "extreme"
@@ -2209,7 +2238,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "hard"
@@ -2615,7 +2645,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Tower",
   "diff": "extreme"
@@ -2658,7 +2689,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vale",
   "diff": "normal"
@@ -2680,7 +2712,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "normal"
@@ -2719,7 +2752,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "normal"
@@ -2748,7 +2782,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "normal"
@@ -2889,7 +2924,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Gate",
   "diff": "extreme"
@@ -2932,7 +2968,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "normal"
@@ -2968,7 +3005,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Gallery",
   "diff": "extreme"
@@ -3004,7 +3042,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "hard"
@@ -3040,7 +3079,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Path",
   "diff": "extreme"
@@ -3076,7 +3116,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vigil",
   "diff": "hard"
@@ -3151,7 +3192,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Waltz",
   "diff": "extreme"
@@ -3187,7 +3229,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Stillness",
   "diff": "extreme"
@@ -3223,7 +3266,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "hard"
@@ -3257,7 +3301,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "hard"
@@ -3649,7 +3694,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vigil",
   "diff": "hard"
@@ -3680,7 +3726,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "normal"
@@ -3702,7 +3749,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "normal"
@@ -3745,7 +3793,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Lake",
   "diff": "normal"
@@ -3774,7 +3823,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Tower",
   "diff": "normal"
@@ -3810,7 +3860,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vale",
   "diff": "normal"
@@ -3846,7 +3897,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "extreme"
@@ -3882,7 +3934,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "hard"
@@ -3916,7 +3969,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "hard"
@@ -3950,7 +4004,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Nocturne",
   "diff": "hard"
@@ -4045,7 +4100,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "normal"
@@ -4147,7 +4203,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "hard"
@@ -4181,7 +4238,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Path",
   "diff": "hard"
@@ -4322,7 +4380,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Waltz",
   "diff": "extreme"
@@ -4358,7 +4417,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Stillness",
   "diff": "extreme"
@@ -4768,7 +4828,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "extreme"
@@ -4811,7 +4872,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Path",
   "diff": "normal"
@@ -4845,7 +4907,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vigil",
   "diff": "hard"
@@ -4867,7 +4930,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "normal"
@@ -4906,7 +4970,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "normal"
@@ -4935,7 +5000,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Lake",
   "diff": "normal"
@@ -5076,7 +5142,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vale",
   "diff": "extreme"
@@ -5151,7 +5218,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "extreme"
@@ -5187,7 +5255,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "extreme"
@@ -5223,7 +5292,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "normal"
@@ -5259,7 +5329,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Nocturne",
   "diff": "extreme"
@@ -5400,7 +5471,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "extreme"
@@ -5436,7 +5508,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Gallery",
   "diff": "extreme"
@@ -5472,7 +5545,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "hard"
@@ -5506,7 +5580,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Path",
   "diff": "hard"
@@ -5822,7 +5897,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "hard"
@@ -5853,7 +5929,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Gate",
   "diff": "normal"
@@ -5875,7 +5952,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "normal"
@@ -5950,7 +6028,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Gallery",
   "diff": "extreme"
@@ -5993,7 +6072,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "normal"
@@ -6022,7 +6102,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Path",
   "diff": "normal"
@@ -6058,7 +6139,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vigil",
   "diff": "normal"
@@ -6094,7 +6176,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "extreme"
@@ -6130,7 +6213,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "hard"
@@ -6166,7 +6250,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Lake",
   "diff": "hard"
@@ -6200,7 +6285,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Tower",
   "diff": "hard"
@@ -6239,7 +6325,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vale",
   "diff": "normal"
@@ -6268,7 +6355,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "normal"
@@ -6304,7 +6392,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "extreme"
@@ -6340,7 +6429,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "hard"
@@ -6374,7 +6464,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Nocturne",
   "diff": "hard"
@@ -6515,7 +6606,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Maze",
   "diff": "extreme"
@@ -6956,7 +7048,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "extreme"
@@ -6999,7 +7092,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "normal"
@@ -7035,7 +7129,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "hard"
@@ -7069,7 +7164,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Gate",
   "diff": "hard"
@@ -7091,7 +7187,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "normal"
@@ -7130,7 +7227,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Gallery",
   "diff": "normal"
@@ -7159,7 +7257,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "normal"
@@ -7366,7 +7465,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "extreme"
@@ -7395,7 +7495,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "normal"
@@ -7431,7 +7532,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Lake",
   "diff": "normal"
@@ -7465,7 +7567,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Tower",
   "diff": "hard"
@@ -7606,7 +7709,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless River",
   "diff": "extreme"
@@ -7642,7 +7746,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Promise",
   "diff": "extreme"
@@ -7678,7 +7783,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Rhapsody",
   "diff": "hard"
@@ -7907,7 +8013,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vigil",
   "diff": "extreme"
@@ -8004,7 +8111,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "hard"
@@ -8035,7 +8143,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "normal"
@@ -8057,7 +8166,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vale",
   "diff": "normal"
@@ -8198,7 +8308,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "extreme"
@@ -8241,7 +8352,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "normal"
@@ -8270,7 +8382,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "normal"
@@ -8306,7 +8419,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Gate",
   "diff": "normal"
@@ -8342,7 +8456,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "extreme"
@@ -8378,7 +8493,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Gallery",
   "diff": "extreme"
@@ -8414,7 +8530,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "hard"
@@ -8436,7 +8553,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Path",
   "diff": "normal"
@@ -8475,7 +8593,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vigil",
   "diff": "normal"
@@ -8550,7 +8669,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "extreme"
@@ -8586,7 +8706,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "extreme"
@@ -8622,7 +8743,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Lake",
   "diff": "hard"
@@ -8656,7 +8778,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Tower",
   "diff": "hard"
@@ -9131,7 +9254,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Waltz",
   "diff": "extreme"
@@ -9174,7 +9298,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Stillness",
   "diff": "normal"
@@ -9210,7 +9335,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "extreme"
@@ -9246,7 +9372,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "hard"
@@ -9280,7 +9407,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vale",
   "diff": "hard"
@@ -9302,7 +9430,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit River",
   "diff": "normal"
@@ -9341,7 +9470,8 @@ export const GENERATED_LEVELS = [
      "y": 2,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "normal"
@@ -9370,7 +9500,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "normal"
@@ -9404,7 +9535,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "hard"
@@ -9513,7 +9645,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "normal"
@@ -9542,7 +9675,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Gallery",
   "diff": "normal"
@@ -9578,7 +9712,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "hard"
@@ -9612,7 +9747,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Path",
   "diff": "hard"
@@ -9753,7 +9889,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit Waltz",
   "diff": "extreme"
@@ -9789,7 +9926,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Stillness",
   "diff": "extreme"
@@ -10117,7 +10255,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Gallery",
   "diff": "hard"
@@ -10148,7 +10287,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Garden",
   "diff": "normal"
@@ -10170,7 +10310,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Path",
   "diff": "normal"
@@ -10199,7 +10340,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Starlit Vigil",
   "diff": "normal"
@@ -10340,7 +10482,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Stillness",
   "diff": "extreme"
@@ -10383,7 +10526,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Lake",
   "diff": "normal"
@@ -10412,7 +10556,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Tower",
   "diff": "normal"
@@ -10448,7 +10593,8 @@ export const GENERATED_LEVELS = [
      "y": 5,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Skytint Vale",
   "diff": "normal"
@@ -10523,7 +10669,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Moonlit River",
   "diff": "extreme"
@@ -10559,7 +10706,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Glassy Promise",
   "diff": "extreme"
@@ -10593,7 +10741,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Whispering Rhapsody",
   "diff": "hard"
@@ -10615,7 +10764,8 @@ export const GENERATED_LEVELS = [
    ".........."
   ],
   "meta": {
-   "hint": "테두리를 따라 도는 나선입니다."
+   "hint": "테두리를 따라 도는 나선입니다.",
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Dawning Nocturne",
   "diff": "normal"
@@ -10756,7 +10906,8 @@ export const GENERATED_LEVELS = [
      "y": 1,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Timeless Maze",
   "diff": "extreme"
@@ -10792,7 +10943,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Eternal Gallery",
   "diff": "extreme"
@@ -10828,7 +10980,8 @@ export const GENERATED_LEVELS = [
      "y": 6,
      "orient": 1
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Misty Garden",
   "diff": "hard"
@@ -10862,7 +11015,8 @@ export const GENERATED_LEVELS = [
      "y": 7,
      "orient": 0
     }
-   ]
+   ],
+   "hintEn": "Find the path of light and wake the forest."
   },
   "nameEn": "Forgotten Path",
   "diff": "hard"

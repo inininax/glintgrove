@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Glintgrove - 거울을 회전해 어두운 숲에 빛을 전하는 퍼즐 게임. A light-reflection puzzle in a sleeping forest.">
+  <meta name="description" content="Glintgrove — a light-reflection puzzle. Rotate mirrors to send light through a sleeping forest and wake its creatures. 300 puzzles + daily challenge.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta property="og:title" content="Glintgrove · 빛의 숲">
+  <meta property="og:title" content="Glintgrove — Wake the Forest of Light">
   <meta property="og:description" content="Rotate mirrors to send light through a sleeping forest. 300 puzzles + daily challenge.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#0a1420">
-  <title>Glintgrove · 빛의 숲</title>
+  <title>Glintgrove — Wake the Forest of Light</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='10' fill='%23ffd76e'/></svg>">
@@ -22,26 +22,26 @@
 
   <div id="screen-title" class="screen">
     <h1 class="title-logo">GLINTGROVE</h1>
-    <p class="tagline" data-i18n="tagline">빛을 잃은 숲을 깨워주세요</p>
+    <p class="tagline" data-i18n="tagline">Wake the forest that lost its light</p>
     <div class="menu-col">
-      <button id="btn-play" class="btn primary" data-i18n="play">시작하기</button>
-      <button id="btn-daily" class="btn accent2" data-i18n="daily">일일 챌린지 ☀️</button>
-      <button id="btn-continue" class="btn" data-i18n="continue">이어하기</button>
-      <button id="btn-settings" class="btn" data-i18n="settings">설정</button>
+      <button id="btn-play" class="btn primary" data-i18n="play">Play</button>
+      <button id="btn-daily" class="btn accent2" data-i18n="daily">Daily Puzzle ☀️</button>
+      <button id="btn-continue" class="btn" data-i18n="continue">Continue</button>
+      <button id="btn-settings" class="btn" data-i18n="settings">Settings</button>
     </div>
-    <p class="credits" data-i18n="creditsHint">거울을 클릭해 빛의 길을 만드세요</p>
+    <p class="credits" data-i18n="creditsHint">Click mirrors to guide the light</p>
   </div>
 
   <div id="screen-levels" class="screen hidden">
     <div class="levels-head">
-      <h2 data-i18n="map">숲의 지도</h2>
+      <h2 data-i18n="map">Forest Map</h2>
       <span id="total-stars">0 / 900</span>
     </div>
     <div id="chapter-list"></div>
     <div class="row-actions">
-      <button id="btn-back-title" class="btn small" data-i18n="backToTitle">← 타이틀로</button>
-      <button id="btn-ach" class="btn small" data-i18n="achievements">업적 🏆</button>
-      <button id="btn-settings2" class="btn small" data-i18n="settings">설정</button>
+      <button id="btn-back-title" class="btn small" data-i18n="backToTitle">← Title</button>
+      <button id="btn-ach" class="btn small" data-i18n="achievements">Achievements 🏆</button>
+      <button id="btn-settings2" class="btn small" data-i18n="settings">Settings</button>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
     <div class="hud panel">
       <span id="hud-level-name" class="hud-title">1.</span>
       <span id="hud-moves">0 / 0</span>
-      <span class="hint-label" data-i18n="hintLabel">H 키: 도움말</span>
+      <span class="hint-label" data-i18n="hintLabel">H: Hint</span>
       <button id="btn-hint" class="icon-btn" title="Hint (H)" aria-label="Hint">💡</button>
       <button id="btn-undo" class="icon-btn" title="Undo (U)" aria-label="Undo">↩️</button>
       <button id="btn-reset" class="icon-btn" title="Reset (R)" aria-label="Reset">🔄</button>
@@ -60,78 +60,78 @@
 
   <div id="win-overlay" class="modal-overlay hidden">
     <div class="modal panel">
-      <h2 id="win-title">숲이 깨어났습니다</h2>
+      <h2 id="win-title">The forest has awakened</h2>
       <div id="win-stars"><span>★</span><span>★</span><span>★</span></div>
       <p id="win-stats"></p>
       <div class="win-actions">
-        <button id="btn-next" class="btn primary" data-i18n="nextLevel">다음 레벨 →</button>
-        <button id="btn-share" class="btn" data-i18n="share">공유</button>
-        <button id="btn-replay" class="btn" data-i18n="replay">다시 하기</button>
-        <button id="btn-win-select" class="btn" data-i18n="list">목록</button>
+        <button id="btn-next" class="btn primary" data-i18n="nextLevel">Next Level →</button>
+        <button id="btn-share" class="btn" data-i18n="share">Share</button>
+        <button id="btn-replay" class="btn" data-i18n="replay">Replay</button>
+        <button id="btn-win-select" class="btn" data-i18n="list">List</button>
       </div>
     </div>
   </div>
 
   <div id="settings-modal" class="modal-overlay hidden">
     <div class="modal panel">
-      <h2 data-i18n="settings">설정</h2>
+      <h2 data-i18n="settings">Settings</h2>
       <div class="settings-row">
-        <label data-i18n="soundDesc">소리</label>
+        <label data-i18n="soundDesc">Sound</label>
         <span class="switch"><input type="checkbox" id="set-sound"><span class="slider"></span></span>
       </div>
       <div class="settings-row">
-        <label data-i18n="motionDesc">화면 효과</label>
+        <label data-i18n="motionDesc">Visual effects</label>
         <span class="switch"><input type="checkbox" id="set-motion"><span class="slider"></span></span>
       </div>
       <div class="settings-row">
-        <label data-i18n="colorblindDesc">색약 모드</label>
+        <label data-i18n="colorblindDesc">Colorblind mode</label>
         <span class="switch"><input type="checkbox" id="set-colorblind"><span class="slider"></span></span>
       </div>
       <div class="settings-row">
-        <label data-i18n="langLabel">언어</label>
+        <label data-i18n="langLabel">Language</label>
         <select id="set-lang" class="select">
-          <option value="auto" data-i18n="langAuto">자동</option>
-          <option value="ko">한국어</option>
+          <option value="auto" data-i18n="langAuto">Auto</option>
+          <option value="ko">한국어 (Korean)</option>
           <option value="en">English</option>
         </select>
       </div>
       <div class="settings-row">
-        <label data-i18n="skinLabel">빛 스킨</label>
+        <label data-i18n="skinLabel">Beam theme</label>
         <select id="set-skin" class="select"></select>
       </div>
       <div class="settings-row">
-        <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
+        <button id="btn-export-data" class="btn small" data-i18n="exportBtn">Export play data</button>
         <span></span>
       </div>
       <div class="danger-zone">
-        <button id="btn-wipe" class="btn danger small" data-i18n="wipe">진행 데이터 초기화</button>
+        <button id="btn-wipe" class="btn danger small" data-i18n="wipe">Reset progress data</button>
       </div>
       <div class="modal-actions">
-        <button id="btn-close-settings" class="btn primary" data-i18n="close">닫기</button>
+        <button id="btn-close-settings" class="btn primary" data-i18n="close">Close</button>
       </div>
     </div>
   </div>
 
   <div id="intro-modal" class="modal-overlay hidden">
     <div class="modal panel">
-      <h2 data-i18n="introTitle">어두운 숲에 오신 것을 환영합니다</h2>
+      <h2 data-i18n="introTitle">Welcome to the dark forest</h2>
       <p>
-        <span data-i18n="introBody1">고대 빛 발산원이 다시 깨어났지만, 빛은 숲 깊은 곳까지 닿지 않습니다.</span><br><br>
-        <b data-i18n="introBody2">거울과 분할기를 클릭해 회전시켜 빛의 길을 만드세요.</b><br><br>
-        <span data-i18n="introBody3">일부 생명은 특정 색의 빛을 필요로 합니다.</span>
+        <span data-i18n="introBody1">The ancient beacons have reawakened, but their light no longer reaches deep into the woods.</span><br><br>
+        <b data-i18n="introBody2">Rotate mirrors and splitters to build a path of light, and wake the sleeping lives.</b><br><br>
+        <span data-i18n="introBody3">Some lives need light of a specific color. Crystals (r/g/b) tint beams; gates (A/B/C) pass only matching colors.</span>
       </p>
       <div class="modal-actions">
-        <button id="btn-intro-ok" class="btn primary" data-i18n="enterForest">숲으로 들어가기</button>
+        <button id="btn-intro-ok" class="btn primary" data-i18n="enterForest">Enter the Forest</button>
       </div>
     </div>
   </div>
 
   <div id="ach-modal" class="modal-overlay hidden">
     <div class="modal panel">
-      <h2>🏆 <span data-i18n="achTitle">업적</span> <span id="ach-progress" class="chapter-progress"></span></h2>
+      <h2>🏆 <span data-i18n="achTitle">Achievements</span> <span id="ach-progress" class="chapter-progress"></span></h2>
       <div id="ach-list" class="ach-list"></div>
       <div class="modal-actions">
-        <button id="btn-close-ach" class="btn primary" data-i18n="close">닫기</button>
+        <button id="btn-close-ach" class="btn primary" data-i18n="close">Close</button>
       </div>
     </div>
   </div>

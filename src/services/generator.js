@@ -602,6 +602,7 @@ export function generateAll(startId, endId, verifiedPool = []) {
         const pick0 = ordered[idx];
         const copy = {
           ...pick0,
+          meta: { ...(pick0.meta || {}), hintEn: (pick0.meta && pick0.meta.hintEn) || 'Find the path of light and wake the forest.' },
           id,
           name: `변이된 ${pick0.name}`,
           nameEn: `${EN_PRE[(id * 7) % EN_PRE.length]} ${EN_NOUN[(id * 13) % EN_NOUN.length]}`,
