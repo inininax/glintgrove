@@ -33,25 +33,12 @@ export class TargetContactFx {
       const arrivedAt = previous?.color === color && previous.correct === correct ? previous.arrivedAt : time;
       next.set(key, { target, color, correct, arrivedAt, reducedMotion });
       if (correct && (!litAt || litAt.has(key)) && !this.visualAwakened.has(key)) {
-        this.visualAwakened.set(key, time);
+        this.visualAwakened.set(key, litAt?.get(key) ?? time);
         this.logicalAwakened.set(key, litAt?.get(key) ?? time);
       }
     }
     this.contacts = next;
     return next;
-  }
-
-  visibleParticles(items, layout, time) {
-    const origins = (this.level?.targets || []).map(target => ({ ...centerOf(layout, target.x, target.y), key: `${target.x},${target.y}` }));
-    return items.filter(particle => {
-      const origin = origins.find(point => Math.abs(point.cx - particle.x) < 1 && Math.abs(point.cy - particle.y) < 1);
-      if (!origin) return true;
-      const arrivedAt = this.visualAwakened.get(origin.key);
-      // A legacy burst may be born at logical satisfaction before the initial
-      // light front reaches the target. Suppress that burst instead of exposing
-      // an already-expanded burst later; our arrival ring supplies the feedback.
-      return arrivedAt !== undefined && time - particle.age >= arrivedAt - 1e-6;
-    });
   }
 
   draw(ctx, layout, time) {

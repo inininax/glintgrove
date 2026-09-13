@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseLevel, trace, solve } from '../src/sim/index.js';
 import { LEVELS } from '../src/data/levels.js';
-import { beamFrame, buildBeamPlan, gateIsReached, segmentPoints, drawBeamContacts, drawPortalLinks } from '../src/render/beams.js';
+import { beamFrame, beamHighlightPosition, buildBeamPlan, gateIsReached, segmentPoints, drawBeams, drawBeamContacts, drawPortalLinks } from '../src/render/beams.js';
+import { drawEmitter } from '../src/render/entities.js';
 import { TargetContactFx } from '../src/render/targetFx.js';
 import { installDom } from './helpers/domStub.mjs';
 import { artAssets } from '../src/assets/assetStore.js';
@@ -51,38 +52,38 @@ test('blocked gates meet the light membrane; walls retain their separate collisi
   }
 });
 
-test('initial reveal follows a connected front instead of starting every cell at once', () => {
+test('every optical segment is present immediately without a growing front', () => {
   const level = levelOf(['>..T']), result = trace(level);
-  assert.deepEqual(beamFrame(result, level, .5).entries.map(entry => entry.fraction), [1, .5, 0]);
-  assert.deepEqual(beamFrame(result, level, 0).entries.map(entry => entry.fraction), [0, 0, 0]);
-  assert.ok(beamFrame(result, level, 0, true).entries.every(entry => entry.fraction === 1), 'reduced motion shows complete paths immediately');
+  assert.deepEqual(beamFrame(result, level).entries.map(entry => entry.fraction), [1, 1, 1]);
+  assert.equal(beamFrame(result, level), beamFrame(result, level), 'complete geometry is reused between frames');
+  for (const time of [0, .02, .5]) {
+    const { ctx, events } = recordedContext();
+    drawBeams(ctx, result, layout, time, { level });
+    assert.ok(events.some(event => event[0] === 'lineTo' && event[1] === 300 && event[2] === 70), 'the first rendered frame already reaches the target');
+  }
 });
 
-test('split branches reveal together from the reached splitter and crossings remain independent', () => {
+test('split branches are fully connected and moving highlights keep independent crossing paths', () => {
   const level = levelOf(['..T..', '..s.T', '..^..']), result = trace(level);
-  const frame = beamFrame(result, level, .5);
-  assert.equal(frame.frontier, 1.5);
+  const frame = beamFrame(result, level);
   const branches = frame.entries.filter(entry => entry.segment.x1 === 2 && entry.segment.y1 === 1);
   assert.equal(branches.length, 2);
-  assert.ok(branches.every(entry => entry.fraction === .5));
+  assert.ok(branches.every(entry => entry.fraction === 1));
   const crossing = levelOf(['..v....', '.......', '.......', '>.....T', '.......', '..T....']);
   const plan = buildBeamPlan(trace(crossing), crossing);
   const downward = plan.entries.find(entry => entry.segment.x1 === 2 && entry.segment.y1 === 3 && entry.dir === 2);
   assert.equal(downward.distance, 3, 'the quicker horizontal ray does not teleport into the vertical ray');
 });
 
-test('crystal colors and portal exits retain causal reveal without a physical jump beam', () => {
+test('crystal colors and both portal ends connect immediately without a physical jump beam', () => {
   const level = levelOf(['>rP..QT']), result = trace(level);
-  const beforePortal = beamFrame(result, level, 1.9 / 3);
-  assert.equal(beforePortal.jumps.length, 0);
-  assert.equal(beforePortal.entries.at(-1).fraction, 0);
-  const arrived = beamFrame(result, level, 2.3 / 3);
+  const arrived = beamFrame(result, level);
   assert.equal(arrived.jumps.length, 1);
   assert.equal(arrived.entries.at(-1).segment.color, 'r');
-  assert.ok(Math.abs(arrived.entries.at(-1).fraction - .3) < 1e-12);
+  assert.equal(arrived.entries.at(-1).fraction, 1);
   const { ctx, events } = recordedContext();
-  drawPortalLinks(ctx, result, layout, 5, { frame: beforePortal });
-  assert.ok(!events.some(event => event[0] === 'bezierCurveTo'), 'portal decoration waits for entry light');
+  drawPortalLinks(ctx, result, layout, 0, { frame: arrived });
+  assert.ok(events.some(event => event[0] === 'bezierCurveTo'), 'only the existing decorative portal link crosses space');
   assert.ok(!arrived.entries.some(entry => entry.segment.portalJump), 'there is no solid beam across space');
 });
 
@@ -102,8 +103,6 @@ test('closed optical loops and every campaign solution retain every traced segme
 
 test('current target contact gates arrival pulses, wrong-color feedback and reconnection', () => {
   const level = levelOf(['>T']), result = trace(level), key = '1,0', fx = new TargetContactFx();
-  fx.update(level, beamFrame(result, level, .9), 0, new Set([key]));
-  assert.equal(fx.contacts.size, 0, 'no success halo before the optical front arrives');
   fx.update(level, beamFrame(result, level), 1, new Set([key]));
   assert.equal(fx.contacts.get(key).arrivedAt, 1);
   fx.update(level, beamFrame(result, level), 3, new Set([key]));
@@ -126,32 +125,30 @@ test('reduced motion makes persistent target contact identical across time', () 
   assert.deepEqual(first.events, later.events);
 });
 
-test('visual awakening waits for arrival, survives turns and disconnects, and resets with run history', () => {
+test('visual awakening is immediate, survives turns and disconnects, and resets with run history', () => {
   const level = levelOf(['>T']), result = trace(level), fx = new TargetContactFx();
   const key = '1,0', litAt = new Map([[key, 0]]), satisfied = new Set([key]);
-  fx.update(level, beamFrame(result, level, 0), 0, satisfied, false, litAt);
-  assert.equal(fx.visualAwakened.has(key), false);
-  fx.update(level, beamFrame(result, level), .625, satisfied, false, litAt);
-  assert.equal(fx.visualAwakened.get(key), .625, 'the artwork pop uses visual arrival time');
+  fx.update(level, beamFrame(result, level), .016, satisfied, false, litAt);
+  assert.equal(fx.visualAwakened.get(key), 0, 'the artwork starts with emission rather than a delayed front');
   fx.update(level, beamFrame(trace(level), level), 2, satisfied, false, litAt);
-  assert.equal(fx.visualAwakened.get(key), .625, 'a new trace alone does not replay the artwork pop');
+  assert.equal(fx.visualAwakened.get(key), 0, 'a new trace alone does not replay the artwork pop');
   fx.update(level, null, 3, new Set(), false, litAt);
-  assert.equal(fx.visualAwakened.get(key), .625, 'historically awake artwork survives disconnection');
+  assert.equal(fx.visualAwakened.get(key), 0, 'historically awake artwork survives disconnection');
   fx.update(level, beamFrame(result, level), 4, satisfied, false, litAt);
   assert.equal(fx.contacts.get(key).arrivedAt, 4);
-  assert.equal(fx.visualAwakened.get(key), .625, 'only the contact pulse repeats on reconnection');
+  assert.equal(fx.visualAwakened.get(key), 0, 'only the contact pulse repeats on reconnection');
   litAt.clear();
   fx.update(level, null, 5, new Set(), false, litAt);
   assert.equal(fx.visualAwakened.size, 0, 'reset clearing history clears render memory');
   litAt.set(key, 6);
-  fx.update(level, beamFrame(result, level, 0, true), 6, satisfied, true, litAt);
+  fx.update(level, beamFrame(result, level), 6, satisfied, true, litAt);
   assert.equal(fx.visualAwakened.get(key), 6, 'reduced motion wakes immediately without reveal');
   litAt.set(key, 7);
-  fx.update(level, beamFrame(result, level, 0), 7, satisfied, false, litAt);
-  assert.equal(fx.visualAwakened.size, 0, 'a renewed award also resets when reset/retrace share one frame');
+  fx.update(level, beamFrame(result, level), 7, satisfied, false, litAt);
+  assert.equal(fx.visualAwakened.get(key), 7, 'a renewed run uses its new awakening time');
 });
 
-test('matched gates stay sealed and target artwork stays dormant until each incoming front arrives', () => {
+test('the first gameplay frame joins source, open matching gate and awake target without altering rewards', () => {
   const nodes = installDom(), previousGet = artAssets.get;
   const { ctx, events } = recordedContext();
   nodes['game-canvas'].getContext = () => ctx;
@@ -164,34 +161,17 @@ test('matched gates stay sealed and target artwork stays dormant until each inco
     const gate = game.level.gates[0];
     assert.equal(game.satisfied.has('3,0'), true, 'game satisfaction remains immediate');
     const awards = [...game.awarded];
+    assert.equal(game.beamReveal, 1);
     game.render();
-    assert.ok(events.some(event => event[0] === 'image' && event[1] === 'tree.dormant'));
-    assert.ok(!events.some(event => event[0] === 'image' && event[1] === 'tree.awake'));
-    assert.equal(gateIsReached(beamFrame(game.trace, game.level, .6), gate), false);
-    assert.equal(gateIsReached(beamFrame(game.trace, game.level, .8), gate), true);
-    assert.equal(gateIsReached(beamFrame(game.trace, game.level, 0, true), gate), true);
-    events.length = 0; game.beamReveal = .8; game.time = .5; game.render();
-    assert.ok(events.some(event => event[0] === 'image' && event[1] === 'tree.dormant'));
-    events.length = 0; game.beamReveal = 1; game.time = .625; game.render();
+    assert.ok(!events.some(event => event[0] === 'image' && event[1] === 'tree.dormant'));
     assert.ok(events.some(event => event[0] === 'image' && event[1] === 'tree.awake'));
-    assert.equal(game.renderer.targetFx.visualAwakened.get('3,0'), .625);
+    assert.equal(gateIsReached(beamFrame(game.trace, game.level), gate), true);
+    assert.equal(game.renderer.targetFx.visualAwakened.get('3,0'), 0);
+    events.length = 0; game.resetLevel(); game.render();
+    assert.ok(events.some(event => event[0] === 'image' && event[1] === 'tree.awake'), 'reset also presents complete light immediately');
     assert.deepEqual([...game.awarded], awards);
     assert.equal(game.litAt.get('3,0'), 0, 'render synchronization does not alter game history');
   } finally { artAssets.get = previousGet; }
-});
-
-test('pre-arrival target bursts stay suppressed instead of popping in halfway through their flight', () => {
-  const level = levelOf(['>T']), result = trace(level), fx = new TargetContactFx();
-  const key = '1,0', litAt = new Map([[key, 0]]), satisfied = new Set([key]);
-  const targetBurst = { x: 140, y: 70, age: .3 }, sourceSpark = { x: 60, y: 70, age: .3 };
-  const items = [targetBurst, sourceSpark];
-  fx.update(level, beamFrame(result, level, .5), .3, satisfied, false, litAt);
-  assert.deepEqual(fx.visibleParticles(items, layout, .3), [sourceSpark]);
-  fx.update(level, beamFrame(result, level), .625, satisfied, false, litAt);
-  const lateBurst = { x: 140, y: 70, age: .8 };
-  const newBurst = { x: 140, y: 70, age: .1 };
-  assert.deepEqual(fx.visibleParticles([lateBurst, newBurst], layout, .8), [newBurst]);
-  assert.equal(items.length, 2, 'particle lifecycle and simulation arrays stay untouched');
 });
 
 test('contact strips and target halos render above opaque pieces while primary beams remain behind', () => {
@@ -210,4 +190,47 @@ test('contact strips and target halos render above opaque pieces while primary b
     assert.ok(events.slice(target + 1).some(event => event[0] === 'stroke' && event[1] === .75 && event[2] === 'screen'));
     assert.ok(events.slice(target + 1).some(event => event[0] === 'gradient'));
   } finally { artAssets.get = previousGet; }
+});
+
+test('travelling highlights carry their tail across cells rather than restarting at each cell', () => {
+  const level = levelOf(['>...T']), result = trace(level);
+  const time = 1.05 / 1.45;
+  const { ctx, events } = recordedContext();
+  drawBeams(ctx, result, layout, time, { level });
+  const highlightEnds = events.flatMap((event, index) => event[0] === 'stroke' && event[1] === .85 && event[2] === 'screen'
+    ? [events[index - 1]] : []);
+  assert.ok(highlightEnds.some(event => event[0] === 'lineTo' && Math.abs(event[1] - 140) < 1e-8));
+  assert.ok(highlightEnds.some(event => event[0] === 'lineTo' && Math.abs(event[1] - 144) < 1e-8), 'the next cell continues the same moving band');
+  for (const now of [0, 60, 3600, 1e8]) {
+    const a = beamHighlightPosition(5, now), b = beamHighlightPosition(5, now + 1 / 60);
+    const forward = b >= a ? b - a : b + 2.65 - a;
+    assert.ok(Math.abs(forward - 1.45 / 60) < 1e-6, 'cyclic highlights keep constant forward speed during long sessions');
+  }
+});
+
+test('beam and emitter effects stay static with reduced motion and preserve color patterns', () => {
+  const level = levelOf(['>r..T']), result = trace(level);
+  const early = recordedContext(), late = recordedContext();
+  for (const [record, time] of [[early, 0], [late, 10000]]) {
+    drawBeams(record.ctx, result, layout, time, { level, reducedMotion: true, colorblind: true });
+    drawEmitter(record.ctx, level.emitters[0], layout, time, true, false);
+  }
+  assert.deepEqual(early.events, late.events, 'the path remains connected but no light particles or source pulse move');
+  assert.ok(early.events.some(event => event[0] === 'setLineDash' && event[1].length > 0), 'color accessibility still distinguishes the carrier light');
+  assert.ok(early.events.some(event => event[0] === 'ellipse'), 'the directional source glow remains visible as a still asset');
+  const movingEarly = recordedContext(), movingLater = recordedContext();
+  drawEmitter(movingEarly.ctx, level.emitters[0], layout, 0, true, true);
+  drawEmitter(movingLater.ctx, level.emitters[0], layout, .5, true, true);
+  assert.notDeepEqual(movingEarly.events, movingLater.events, 'normal mode gives the source a restrained living glow');
+});
+
+test('emitter flare follows each emission direction without requiring a new image asset', () => {
+  for (const dir of [0, 1, 2, 3]) {
+    const { ctx, events } = recordedContext();
+    drawEmitter(ctx, { x: 0, y: 0, color: 'white', dir }, { ...layout, displayMode: 'simple' }, 0, true, false);
+    const direction = events.findIndex(event => event[0] === 'rotate' && event[1] === dir * Math.PI / 2);
+    const mouth = events.findIndex(event => event[0] === 'lineTo' && event[1] === 0 && event[2] === -.43);
+    assert.ok(direction >= 0 && mouth > direction, 'the luminous mouth rotates with the source rather than the viewport');
+    assert.ok(!events.some(event => event[0] === 'image' || event[0] === 'gradient'), 'source artwork stays original lightweight Canvas geometry');
+  }
 });

@@ -1,0 +1,30 @@
+[
+  {
+    "check": "help Escape returns focus",
+    "pass": true
+  },
+  {
+    "check": "utility English labels follow translation catalog",
+    "pass": true,
+    "names": [
+      "Options",
+      "How to play"
+    ]
+  },
+  {
+    "check": "settings Escape returns focus",
+    "pass": true
+  },
+  {
+    "check": "menu typography matches forest map",
+    "pass": true
+  },
+  {
+    "check": "320px title fits",
+    "pass": true
+  },
+  {
+    "check": "320px English controls fit",
+    "pass": true
+  }
+]

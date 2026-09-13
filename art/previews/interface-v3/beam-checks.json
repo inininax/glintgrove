@@ -1,0 +1,15 @@
+{
+  "initial": {
+    "level": 17,
+    "beamReveal": 1,
+    "segments": 4,
+    "allImmediatelyVisible": true
+  },
+  "completed": {
+    "won": true,
+    "modalVisible": true,
+    "moves": 2
+  },
+  "freshRuntime": true,
+  "reducedMotionCanvasIdentical": true
+}

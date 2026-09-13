@@ -1,0 +1,78 @@
+[
+  {
+    "check": "combined Korean search and kind filter",
+    "pass": true
+  },
+  {
+    "check": "empty search state",
+    "pass": true
+  },
+  {
+    "check": "wordmark runtime detail",
+    "pass": true
+  },
+  {
+    "check": "wordmark editable source preview",
+    "pass": true
+  },
+  {
+    "check": "Escape closes detail and returns focus",
+    "pass": true
+  },
+  {
+    "check": "music plays after native control click",
+    "pass": true,
+    "duration": 96
+  },
+  {
+    "check": "music continues across loop endpoint after seek",
+    "pass": true
+  },
+  {
+    "check": "only one music preview plays",
+    "pass": true
+  },
+  {
+    "check": "repeat control disables loop",
+    "pass": true
+  },
+  {
+    "check": "closing audio detail stops preview",
+    "pass": true
+  },
+  {
+    "check": "failed reload retains known art",
+    "pass": true,
+    "notice": "일부 항목 확인 필요"
+  },
+  {
+    "check": "studio mobile page fits",
+    "pass": true
+  },
+  {
+    "check": "mobile detail fits and scrolls internally",
+    "pass": true
+  },
+  {
+    "check": "detail keyboard navigation stays in modal",
+    "pass": true,
+    "forwardSteps": 12
+  },
+  {
+    "check": "detail reverse keyboard navigation stays in modal",
+    "pass": true,
+    "reverseSteps": 12
+  },
+  {
+    "check": "initial detail heading reverse Tab reaches final link",
+    "pass": true
+  },
+  {
+    "check": "music caption follows real play and pause",
+    "pass": true
+  },
+  {
+    "check": "wide source preview uses panoramic layout",
+    "pass": true
+  }
+]

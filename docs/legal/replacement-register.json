@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "recordedDate": "2026-09-13",
-  "recordedAt": "2026-09-13T16:55:09.715Z",
+  "recordedAt": "2026-09-13T17:37:18.880Z",
   "runtimeRevision": "nocturne-8f72a32c7dc7",
   "status": "recorded-with-provenance-status-per-entry",
   "copyrightClearance": "not-established",
@@ -1015,13 +1015,13 @@
     },
     {
       "path": "index.html",
-      "sha256": "a00d5e6a83ea02b96f5d89a4a02e4d22f4733a8383046dc82d6951471d0d296f",
-      "bytes": 15431
+      "sha256": "b7af4a1a4ecd3eb561df628b43bb5414965a4913c93267c888d27b826fa84f14",
+      "bytes": 15768
     },
     {
       "path": "css/style.css",
-      "sha256": "319110bc3f8e269c3d0ff1c31312e4d7fa2528a9a66d5d7f7dd5c4e7534ec63e",
-      "bytes": 23724
+      "sha256": "86ed96fd8f8c407fde9394ac9b44bc142a1bb216e6160508cd5ef0f438bc30dd",
+      "bytes": 25644
     },
     {
       "path": "src/render/background.js",
@@ -1030,13 +1030,13 @@
     },
     {
       "path": "src/render/beams.js",
-      "sha256": "d6f95a1bc9b444462407b761a6b4d857f70a8e9e43eb0a608bc15c13a0763b0e",
-      "bytes": 9248
+      "sha256": "b3bf9a09adfef7689887646857a8d8dc787d55d40e772ba51a70513c1b05d759",
+      "bytes": 10117
     },
     {
       "path": "src/render/targetFx.js",
-      "sha256": "1dbcaf04b5accf26c888bfb2182958af9d69d29f4f851d26410c21136ca0e6e7",
-      "bytes": 4785
+      "sha256": "4f8c25a99e17e1d8bb4468273fc04ff0b027695a401e4059be3d0a049211c878",
+      "bytes": 4033
     },
     {
       "path": "src/render/bloom.js",
@@ -1045,8 +1045,8 @@
     },
     {
       "path": "src/render/entities.js",
-      "sha256": "48d5b8a5c9d2634f15b8bb14c60c8542302c34dba13b0541a8d09bfe74e603f8",
-      "bytes": 15518
+      "sha256": "39f3726987fe915d56b7523c55d9278610f00036ed5d2a6fcd392a624dadad93",
+      "bytes": 16423
     },
     {
       "path": "src/render/layout.js",
@@ -1055,8 +1055,8 @@
     },
     {
       "path": "src/render/renderer.js",
-      "sha256": "046023c6b0f2768d729307f05e4e40522b277c4e839830e4bfef187546a9f236",
-      "bytes": 7367
+      "sha256": "dc40e97e7c952b0fcafe0e2b4e48502a9141ef37a2c448ccfb7e6a10893773f2",
+      "bytes": 7151
     },
     {
       "path": "src/render/sprites.js",
@@ -1085,8 +1085,8 @@
     },
     {
       "path": "src/game/game.js",
-      "sha256": "ec31e73da3f30d8e92190b6533a66d830c2436b2b4f2922df5d7483fcc73e8ed",
-      "bytes": 14061
+      "sha256": "2a543b4b4b23b4cf0144fab3de6ae7beea2947882fe8c3d60bab6c1587eb446b",
+      "bytes": 13633
     },
     {
       "path": "src/core/colors.js",
@@ -1110,8 +1110,8 @@
     },
     {
       "path": "sw.js",
-      "sha256": "681a690942145591a5199656c02dedbd9405b340503adbfdad96071ee51d3f1c",
-      "bytes": 10081
+      "sha256": "10f2a5ab3e7a518450cf1a85539684a19eff6f1f602b06ebe96754bd4e0a8911",
+      "bytes": 10082
     },
     {
       "path": "src/data/levels.js",
@@ -1209,9 +1209,24 @@
       "bytes": 5996
     },
     {
+      "path": "tools/art-preview.html",
+      "sha256": "9df23abe09d2cb97a8d6f2d4edbb8386677db4969d2240fabd031f32bc4bab4a",
+      "bytes": 6055
+    },
+    {
+      "path": "tools/art-preview.css",
+      "sha256": "dd7e0753af212c0dd23ae819b349696dead821b02a304ef95157834f32e59512",
+      "bytes": 11370
+    },
+    {
+      "path": "tools/art-preview.js",
+      "sha256": "a65290b68fff0c06fd043698a667d98c056aa9d14ea19894f9495e1c8da86544",
+      "bytes": 24968
+    },
+    {
       "path": "tools/record-visual-provenance.mjs",
-      "sha256": "afedee0893fa3619215914689027f0a0bf2c244dd0dc339d2c614364725852db",
-      "bytes": 18666
+      "sha256": "5a195f6d025d896db844c6bd0d51b67f4ef625244ae1cc15a2f483ab109f3ae7",
+      "bytes": 18743
     },
     {
       "path": "art/recipes/catalog.json",

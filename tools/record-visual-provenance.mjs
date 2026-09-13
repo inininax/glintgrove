@@ -124,6 +124,7 @@ const sourceFiles = [
   'tools/art/build_ancient_gates_v2.py', 'art/recipes/ancient-gates-v2.json',
   'tools/art/render_geometry_contact_sheet.py', 'tools/art/publish_art.py',
   'tools/art/LICENSES.md', 'tools/art/COPYING.GPL-3.0', 'tools/build-release.mjs',
+  'tools/art-preview.html', 'tools/art-preview.css', 'tools/art-preview.js',
   'tools/record-visual-provenance.mjs', 'art/recipes/catalog.json',
   'art/recipes/nocturne-v1.json', 'art/recipes/procedural-environments-v2.md',
   'art/recipes/procedural-environments-v2.json',

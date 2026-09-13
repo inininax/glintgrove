@@ -26,7 +26,7 @@ npm run check
 npm run check:assets
 ```
 
-ES Modules를 사용하므로 파일을 더블클릭하는 대신 로컬 HTTP 서버로 실행합니다. 미리보기는 `/tools/art-preview.html`, 브라우저 통합 테스트는 `/tools/browser-e2e.html?debug=1`입니다.
+ES Modules를 사용하므로 파일을 더블클릭하는 대신 로컬 HTTP 서버로 실행합니다. 제작자용 [아트 스튜디오](tools/art-preview.html)에서는 배경·소품·로고·음악을 검색하고 확대해 볼 수 있습니다. [관리 화면 사용법](docs/art/art-studio.md)을 참고하세요. 아트 스튜디오는 게임 배포와 분리된 로컬 도구입니다. 브라우저 통합 테스트는 `/tools/browser-e2e.html?debug=1`입니다.
 
 ## 조작
 

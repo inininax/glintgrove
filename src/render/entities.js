@@ -53,7 +53,7 @@ function leaf(ctx, x, y, length, width, tilt, tint) {
   ctx.restore();
 }
 
-export function drawEmitter(ctx, emitter, layout, time, active) {
+export function drawEmitter(ctx, emitter, layout, time, active, motion = true) {
   const { cx, cy } = centerOf(layout, emitter.x, emitter.y);
   const size = layout.cell;
   const sprite = drawSprite(ctx, 'emitter', cx, cy, size, { displayMode: layout.displayMode });
@@ -67,6 +67,26 @@ export function drawEmitter(ctx, emitter, layout, time, active) {
       ctx.stroke();
     }
     ctx.rotate(emitter.dir * Math.PI / 2);
+    if (active) {
+      const breath = motion ? 1 + Math.sin(time * 2.1) * .065 : 1;
+      ctx.save();
+      ctx.globalCompositeOperation = 'screen';
+      ctx.fillStyle = color;
+      // Concentric low-opacity light keeps the source soft without a per-frame
+      // gradient or imported flare. The narrow mouth points along emission.
+      for (const [radius, alpha] of [[.235, .035], [.17, .065], [.115, .12]]) {
+        ctx.globalAlpha = alpha;
+        disc(ctx, 0, -.015, radius * breath);
+      }
+      ctx.globalAlpha = .17;
+      ctx.beginPath(); ctx.ellipse(0, -.22, .064 * breath, .22, 0, 0, TAU); ctx.fill();
+      ctx.globalAlpha = .54;
+      ctx.beginPath(); ctx.ellipse(0, -.22, .023 * breath, .18, 0, 0, TAU); ctx.fill();
+      ctx.strokeStyle = '#fff8dc'; ctx.lineWidth = .022;
+      ctx.globalAlpha = .9;
+      line(ctx, [[0, -.02], [0, -.43]]);
+      ctx.restore();
+    }
     ctx.fillStyle = color;
     polygon(ctx, [[-.052, -.25], [-.047, -.37], [0, -.43], [.047, -.37], [.052, -.25], [0, -.29]]);
     ctx.fill();
@@ -74,7 +94,7 @@ export function drawEmitter(ctx, emitter, layout, time, active) {
     ctx.lineWidth = .018;
     line(ctx, [[0, -.23], [0, -.14]]);
     ctx.fillStyle = '#fff1c9';
-    disc(ctx, 0, -.015, active ? .053 : .041);
+    disc(ctx, 0, -.015, active ? .064 : .041);
     ctx.strokeStyle = color;
     ctx.beginPath(); ctx.arc(0, -.015, .098, .2, Math.PI * 1.3); ctx.stroke();
   });

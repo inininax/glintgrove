@@ -89,7 +89,7 @@ export class Game {
     this.hintsUsed = 0;
     this.demoMode = !!opts.demo;
     this.demoTimer = 1.5;
-    this.beamReveal = this.demoMode ? 1 : 0;
+    this.beamReveal = 1;
     this.slowmo = 0;
     this.auroraIntensity = 0.5;
     this.dailyInfo = opts.daily || null;
@@ -290,14 +290,6 @@ export class Game {
       dt *= 0.35;
     }
     this.time += dt;
-    if (this.beamReveal < 1) {
-      this.beamReveal = Math.min(1, this.beamReveal + dt * 1.6);
-      if (this.level && this.settings.motion && this.level.emitters[0] && Math.random() < 0.5) {
-        const lay = this.renderer.layout(this.level);
-        const ec = center(lay, this.level.emitters[0].x, this.level.emitters[0].y);
-        this.particles.spawnConverge(ec.cx, ec.cy, '#ffe9b8');
-      }
-    }
     this.auroraIntensity = Math.max(0.5, this.auroraIntensity - dt * 0.08);
     this.particles.update(dt);
     this.renderer.bloom.update(dt);

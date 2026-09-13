@@ -98,7 +98,7 @@ export class Renderer {
     if (!this.isGameScene) return;
 
     const layout = this.layout(level);
-    const lightFrame = trace ? beamFrame(trace, level, scene.beamReveal ?? 1, !motion) : null;
+    const lightFrame = trace ? beamFrame(trace, level) : null;
     this.targetFx.update(level, lightFrame, scene.time, scene.satisfied, !motion, scene.litAt);
     ctx.save();
     try {
@@ -111,7 +111,7 @@ export class Renderer {
         drawBeams(ctx, trace, layout, time, { frame: lightFrame, colorblind: settings.colorblind, reducedMotion: !motion });
       }
       for (const [id, position] of Object.entries(level.portals)) shapes.drawPortal(ctx, id, position, layout, time, scene.activePortalIds);
-      for (const emitter of level.emitters) shapes.drawEmitter(ctx, emitter, layout, time, scene.hitCells.size > 0);
+      for (const emitter of level.emitters) shapes.drawEmitter(ctx, emitter, layout, time, scene.hitCells.size > 0, motion);
       for (const piece of level.rotatables) {
         const draw = piece.kind === 'splitter' ? shapes.drawSplitter : shapes.drawMirror;
         draw(ctx, piece, layout, time, scene.hitCells, motion ? scene.spinAngleOf(piece) : null);
@@ -138,11 +138,7 @@ export class Renderer {
       if (lightFrame) drawBeamContacts(ctx, lightFrame, layout, { colorblind: settings.colorblind });
       this.targetFx.draw(ctx, layout, scene.time);
       if (scene.hintIdx >= 0 && level.rotatables[scene.hintIdx]) shapes.drawHintPulse(ctx, level.rotatables[scene.hintIdx], layout, time);
-      if (motion) {
-        const visibleParticles = Object.create(scene.particles);
-        visibleParticles.items = this.targetFx.visibleParticles(scene.particles.items, layout, scene.time);
-        visibleParticles.draw(ctx);
-      }
+      if (motion) scene.particles.draw(ctx);
     } finally {
       ctx.restore();
     }
