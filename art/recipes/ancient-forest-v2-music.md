@@ -1,6 +1,6 @@
 # Ancient Forest — A Light Between Roots
 
-Ilyndrel의 고대 숲을 위한 96초 연주곡이다. 악보의 음정·배치와 Node.js 합성 코드를 새 버전으로 작성했다. 외부 곡, 녹음, 샘플, 가사, 목소리, 합창은 사용하지 않았다. 오디오 생성 서비스에 프롬프트를 보내 얻은 파일이 아니라, 저장소의 악보와 수학적 합성기로 만든 PCM 음원이다. 기존 72초 `Forest Reverie` 원본과 생성기는 보존했다.
+Ilyndrel의 고대 숲을 위한 현재 배포용 96초 연주곡이다. 악보의 음정·배치와 Node.js 합성 코드를 새 버전으로 작성했다. 외부 곡, 녹음, 샘플, 가사, 목소리, 합창은 사용하지 않았다. 오디오 생성 서비스에 프롬프트를 보내 얻은 파일이 아니라, 저장소의 악보와 수학적 합성기로 만든 PCM 음원이다. 기존 72초 `Forest Reverie` 악보·생성기는 원래 제작 경로에 유지한다. 미사용 v1 WAV는 현재 `assets/audio/`에서 정리했으며 [기존 커밋의 WAV](https://github.com/inininax/glintgrove/blob/e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0/assets/audio/forest-reverie-v1.wav)로 보존한다.
 
 ## 파일 구조
 

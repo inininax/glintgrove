@@ -1,0 +1,13 @@
+{
+  "name": "Ilyndrel — 물빛을 잇는 정원",
+  "short_name": "Ilyndrel",
+  "description": "거울로 빛을 이어 잠든 정원을 깨우는 퍼즐.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0a1420",
+  "theme_color": "#0a1420",
+  "lang": "ko",
+  "icons": [
+    { "src": "assets/site/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

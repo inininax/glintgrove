@@ -108,7 +108,7 @@ const generatedProvenance = async (source, production = 'gpt-image-generated-env
 const optionalJson = async path => {
   try { return await json(path); } catch (error) { if (error.code === 'ENOENT') return null; throw error; }
 };
-const archivedInventory = await optionalJson('art/retired/retirement-register.json');
+const archivedInventory = await optionalJson('art/history/2026-09-14-complete-work/retired/retirement-register.json');
 const previousInventory = archivedInventory === null ? await optionalJson('docs/legal/replacement-register.json') : null;
 const sourceFiles = [
   'src/ui/symbols.js', 'src/ui/ui.js', 'src/ui/strings.js', 'src/ui/colorMarks.js', 'src/ui/deviceGuide.js', 'index.html', 'css/style.css',

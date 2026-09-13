@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "method": "built-in-image_gen",
+  "purpose": "unselected-background-extraction-attempt",
+  "prompt": {
+    "path": "art/recipes/ilyndrel-wordmark-v2-alpha.prompt.txt",
+    "sha256": "609e7aff40e48342f5fd6fef70c8aca711506fb370fe42315ae67639e11d9e90",
+    "bytes": 1047
+  },
+  "referenceInputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v2-design.png",
+      "sha256": "25b3a07457a413afcef0d1f45015bd7cc9afc6c33dccfd4ca79e210aae057299",
+      "bytes": 2695273
+    }
+  ],
+  "output": {
+    "path": "art/history/2026-09-14-complete-work/imagegen/ilyndrel-wordmark-v2-alpha-attempt.png",
+    "sha256": "28f49fbbe4038335083072b9a059f2a2f27ca420b82fd527f416c1c11fcef72a",
+    "bytes": 2570036
+  },
+  "observedFormat": {
+    "width": 2172,
+    "height": 724,
+    "mode": "RGB"
+  },
+  "result": "Transparency request returned RGB with the checkerboard still present. Not selected, not a runtime asset. Preserved to record the complete production process.",
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "exactModelVersion": "not-returned-by-tool"
+  }
+}

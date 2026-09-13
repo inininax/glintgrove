@@ -1,0 +1,58 @@
+{
+  "blenderVersion": "5.2.1 LTS",
+  "scenes": [
+    {
+      "scene": "depths",
+      "objects": 800,
+      "meshes": 383,
+      "curves": 409,
+      "lights": 7,
+      "textObjects": 0,
+      "externalArtwork": "none",
+      "outputName": "depths-v3.png"
+    },
+    {
+      "scene": "forest",
+      "objects": 762,
+      "meshes": 345,
+      "curves": 409,
+      "lights": 7,
+      "textObjects": 0,
+      "externalArtwork": "none",
+      "outputName": "forest-v3.png"
+    },
+    {
+      "scene": "garden",
+      "objects": 1020,
+      "meshes": 603,
+      "curves": 409,
+      "lights": 7,
+      "textObjects": 0,
+      "externalArtwork": "none",
+      "outputName": "garden-v3.png"
+    },
+    {
+      "scene": "heart",
+      "objects": 1030,
+      "meshes": 613,
+      "curves": 409,
+      "lights": 7,
+      "textObjects": 0,
+      "externalArtwork": "none",
+      "outputName": "heart-v3.png"
+    },
+    {
+      "scene": "share",
+      "objects": 659,
+      "meshes": 315,
+      "curves": 340,
+      "lights": 3,
+      "textObjects": 0,
+      "externalArtwork": "none",
+      "outputName": "og.png"
+    }
+  ],
+  "linkedLibraries": [],
+  "fileImages": [],
+  "fontFiles": []
+}

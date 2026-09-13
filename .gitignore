@@ -11,3 +11,8 @@ art/retired/
 dist/
 .release-stage-*/
 .release-previous-*/
+
+# Reviewed work-history artifacts are intentionally versioned.
+!art/history/**/*.log
+!art/history/**/*.blend1
+!art/history/**/*.blend2

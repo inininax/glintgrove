@@ -1,0 +1,46 @@
+00:00.409  blend            | Read blend: "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/blender/grove-library-v1.blend"
+00:01.371  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-b-v1.png'
+RENDERED crystal.b /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-b-v1.png
+00:02.108  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-g-v1.png'
+RENDERED crystal.g /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-g-v1.png
+00:03.099  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-r-v1.png'
+RENDERED crystal.r /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/crystal-r-v1.png
+00:04.250  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/emitter-v1.png'
+RENDERED emitter /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/emitter-v1.png
+00:04.942  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/flower-awake-v1.png'
+RENDERED flower.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/flower-awake-v1.png
+00:05.590  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/flower-dormant-v1.png'
+RENDERED flower.dormant /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/flower-dormant-v1.png
+00:06.709  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-b-v1.png'
+RENDERED gate.b /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-b-v1.png
+00:07.861  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-g-v1.png'
+RENDERED gate.g /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-g-v1.png
+00:09.008  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-r-v1.png'
+RENDERED gate.r /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/gate-r-v1.png
+00:10.075  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mirror-v1.png'
+RENDERED mirror /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mirror-v1.png
+00:10.929  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-awake-v1.png'
+RENDERED mushroom.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-awake-v1.png
+00:11.670  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-dormant-v1.png'
+RENDERED mushroom.dormant /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-dormant-v1.png
+00:12.516  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-awake-v1.png'
+RENDERED owl.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-awake-v1.png
+00:13.270  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-dormant-v1.png'
+RENDERED owl.dormant /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-dormant-v1.png
+00:14.341  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/portal-gold-v1.png'
+RENDERED portal.gold /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/portal-gold-v1.png
+00:15.417  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/portal-violet-v1.png'
+RENDERED portal.violet /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/portal-violet-v1.png
+00:16.002  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/rock-v1.png'
+RENDERED rock /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/rock-v1.png
+00:16.582  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/rock-alt-v1.png'
+RENDERED rock.alt /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/rock-alt-v1.png
+00:17.661  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/splitter-v1.png'
+RENDERED splitter /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/splitter-v1.png
+00:18.884  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-awake-v1.png'
+RENDERED tree.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-awake-v1.png
+00:20.022  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-dormant-v1.png'
+RENDERED tree.dormant /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-dormant-v1.png
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

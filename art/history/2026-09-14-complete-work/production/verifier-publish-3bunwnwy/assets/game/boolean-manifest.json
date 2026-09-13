@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "revision": "nocturne-97aff582a2ac",
+  "assets": {
+    "tree": {
+      "src": "sprites/tree-v1-7ea0059449ee.png",
+      "width": 4,
+      "height": 4,
+      "anchor": [
+        true,
+        0.5
+      ],
+      "scale": 1
+    }
+  }
+}

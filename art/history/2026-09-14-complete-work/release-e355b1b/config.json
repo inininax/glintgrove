@@ -1,0 +1,8 @@
+{
+  "hintPenaltyCapStars": 2,
+  "tipsEnabled": true,
+  "dailyMinOptimal": 3,
+  "dailyMaxOptimal": 8,
+  "parOverrides": {},
+  "defaultSkin": "classic"
+}

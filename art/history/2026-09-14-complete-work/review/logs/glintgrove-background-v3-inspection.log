@@ -1,0 +1,5 @@
+00:00.604  blend            | Read blend: "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v3.blend"
+{"blenderVersion": "5.2.1 LTS", "scenes": [{"scene": "depths", "objects": 800, "meshes": 383, "curves": 409, "lights": 7, "textObjects": 0, "externalArtwork": "none", "outputName": "depths-v3.png"}, {"scene": "forest", "objects": 762, "meshes": 345, "curves": 409, "lights": 7, "textObjects": 0, "externalArtwork": "none", "outputName": "forest-v3.png"}, {"scene": "garden", "objects": 1020, "meshes": 603, "curves": 409, "lights": 7, "textObjects": 0, "externalArtwork": "none", "outputName": "garden-v3.png"}, {"scene": "heart", "objects": 1030, "meshes": 613, "curves": 409, "lights": 7, "textObjects": 0, "externalArtwork": "none", "outputName": "heart-v3.png"}, {"scene": "share", "objects": 659, "meshes": 315, "curves": 340, "lights": 3, "textObjects": 0, "externalArtwork": "none", "outputName": "og.png"}], "linkedLibraries": [], "fileImages": [], "fontFiles": []}
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

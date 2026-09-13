@@ -32,4 +32,4 @@ screen 합성이 숲까지 닿도록 타이틀 화면만 `position: absolute`, `
 
 UI·언어·튜토리얼·장치 안내 테스트 27개가 통과했다. 새 회귀 검사는 실제 main.js 버튼 연결을 통해 도움말 열기, 뒤 메뉴 차단, Escape, 초점 복원, 진행 보존과 첫 플레이 안내 보존을 확인한다. 저장된 게임 상태가 없거나 마지막 퍼즐을 이미 완료한 경우에도 타이틀 도움말을 열 수 있음을 검사한다.
 
-통합 담당자가 Ego에서 캡처한 1440×900, 390×844, 614×427 화면을 확인했다. 검정 사각형 없이 숲 위에 합성되며, 펜던트와 글자가 잘리지 않고 낮은 창에서도 모든 메뉴가 화면에 들어온다. 캡처는 `/tmp/ilyndrel-jeweled-desktop-v2.png`, `/tmp/ilyndrel-jeweled-mobile-v2.png`, `/tmp/ilyndrel-jeweled-short-v2.png`다. 실제 버튼 높이·글꼴 일치, 도움말·설정 상호작용의 최종 독립 검증은 통합 담당자와 별도 검토자가 수행한다. 제작자의 코드 검사로 최종 승인을 대신하지 않는다.
+통합 담당자가 Ego에서 캡처한 1440×900, 390×844, 614×427 화면을 확인했다. 검정 사각형 없이 숲 위에 합성되며, 펜던트와 글자가 잘리지 않고 낮은 창에서도 모든 메뉴가 화면에 들어온다. 캡처는 [ilyndrel-jeweled-desktop-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v2.png), [ilyndrel-jeweled-mobile-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-mobile-v2.png), [ilyndrel-jeweled-short-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-short-v2.png)다. 실제 버튼 높이·글꼴 일치, 도움말·설정 상호작용의 최종 독립 검증은 통합 담당자와 별도 검토자가 수행한다. 제작자의 코드 검사로 최종 승인을 대신하지 않는다.

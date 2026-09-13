@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+  "removedFromWorkingLocations": [
+    {
+      "path": "assets/audio/forest-reverie-v1.wav",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "305c8d6e695b80622f1ea02a16cde50c5f65be1c",
+      "sha256": "2e5c34525283a79430853a39dccf459af1f7fa7d3c7f6865b4538c0194a864a3",
+      "bytes": 6912044
+    },
+    {
+      "path": "assets/game/backgrounds/depths-v1-43edb8a368f2.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "a7af781669e914380dc6e266764f02bff5f931fe",
+      "sha256": "43edb8a368f29bc20469dfce3f932e5502e2f9c862ec435f8d65b9c2785493db",
+      "bytes": 80006
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-0be3653557c8.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "c969260d8897d0893dc182431f2e31f06618e05d",
+      "sha256": "0be3653557c88e09a8e1aacb1ca6389f869e505a33513c335e9c214b92c2ae99",
+      "bytes": 272432
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-2b7ecddf8b7f.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "c644e9e956df54148ab26ac1df9b3d3426533043",
+      "sha256": "2b7ecddf8b7ffad166e9176e780dfeb96c3f5edb1afbba0145e82330d46a6a57",
+      "bytes": 108690
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-2d6f0d6fde9e.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "87d8e93613418cad370352bc6561906cf39ba042",
+      "sha256": "2d6f0d6fde9e58962dc1fc09d5b29e2b1f51633fd35dd5b61d14c4a8cfe50bf9",
+      "bytes": 82244
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-6ad8e3353031.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "23cae8131e825b422bf8be8d721e42b2f0df47ac",
+      "sha256": "6ad8e3353031ffed290da03adcec4c96283d617b40480830f2a81c781db86fce",
+      "bytes": 427750
+    },
+    {
+      "path": "assets/game/backgrounds/garden-v1-a06acefc42a0.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "e84c8925f1eb2f4b52e6b8f675032007f8219ac4",
+      "sha256": "a06acefc42a043fe8f8e7ee3225651d59a8d465c0d7b0d590b90ba14bab88afb",
+      "bytes": 91430
+    },
+    {
+      "path": "assets/game/backgrounds/heart-v1-b69be5617b9e.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "fa7abd7eda12cefeb059ec8dc3bb4ab7ec45d394",
+      "sha256": "b69be5617b9eccab940cf9a29e88870505493f8aa53bb64b455e016869dc9d55",
+      "bytes": 97844
+    },
+    {
+      "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "93f620c73f5088e7f50076b417a804fe5c7935a3",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6",
+      "bytes": 103282
+    },
+    {
+      "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "5b2acb7987728085457466676399ab1e313d421c",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3",
+      "bytes": 102831
+    },
+    {
+      "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "dcd47baa39ea07ce56aacf38398f74f1f313a6a7",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111",
+      "bytes": 103883
+    },
+    {
+      "path": "assets/site/ilyndrel-symbol.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "ca1583b2f9e4c6707daa5bbf72d17c622a122921",
+      "sha256": "d81946ef30bbe09414a46ace45d3f813919d17e6cd6a23c2f201b70eef62a58e",
+      "bytes": 723764
+    },
+    {
+      "path": "assets/site/ilyndrel-wordmark.webp",
+      "reason": "unused-runtime-export",
+      "restoreCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+      "gitBlob": "0d07a93b71a83c20c173680de37c25a22c0583ce",
+      "sha256": "8267dfc882a995a9daee1b1fea69841c0c68acf8c2cb45a8ef72d3e846e0dca2",
+      "bytes": 670866
+    },
+    {
+      "path": "art/build",
+      "reason": "moved-to-reviewed-work-history",
+      "files": 34,
+      "bytes": 2418841
+    },
+    {
+      "path": "art/retired",
+      "reason": "moved-to-reviewed-work-history",
+      "files": 89,
+      "bytes": 46801754
+    },
+    {
+      "path": "art/source/procedural/nocturne-environments-v3.blend1",
+      "reason": "moved-to-reviewed-work-history",
+      "archivePath": "art/history/2026-09-14-complete-work/blender/nocturne-environments-v3.previous.blend",
+      "bytes": 16052769
+    },
+    {
+      "path": ".DS_Store",
+      "reason": "disposable-system-or-python-cache",
+      "bytes": 6148
+    },
+    {
+      "path": "src/.DS_Store",
+      "reason": "disposable-system-or-python-cache",
+      "bytes": 8196
+    },
+    {
+      "path": "tools/art/__pycache__",
+      "reason": "disposable-system-or-python-cache",
+      "bytes": 89235
+    },
+    {
+      "path": "/tmp/glintgrove-art-studio-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-art-studio-mobile.png",
+      "sha256": "97493d9a72cd4af647634182d3d18c5e2e9d6679021860858ee1cb8330614cd0",
+      "bytes": 198969
+    },
+    {
+      "path": "/tmp/glintgrove-art-studio.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-art-studio.png",
+      "sha256": "db38600807d18a6ad88d07a5ae8c93404dd6fb6c0caca2ed4fd63ef3d511ca4e",
+      "bytes": 1038421
+    },
+    {
+      "path": "/tmp/glintgrove-asset-final-tests.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-asset-final-tests.log",
+      "sha256": "c0dd5d5c8ef64fd63c0bee87eaca06bf34705616d32f834adcfc3a2e7e3ab32d",
+      "bytes": 10920
+    },
+    {
+      "path": "/tmp/glintgrove-background-v3-draft.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-draft.log",
+      "sha256": "5bee8138c40f2f94d78cbcf267e85c76af1141d02933f94c4a26d9bf4d723bdd",
+      "bytes": 460
+    },
+    {
+      "path": "/tmp/glintgrove-background-v3-final.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-final.log",
+      "sha256": "7a98e3154ec84fede85e44ab95cc2adcf0d497514e06d66bbee2a5ee9094ab60",
+      "bytes": 1094
+    },
+    {
+      "path": "/tmp/glintgrove-background-v3-inspection.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-inspection.log",
+      "sha256": "4951c5f1885f13dc7036aa50a0ac5d47d4faa7af32680b880e02ec30d80dcadd",
+      "bytes": 1095
+    },
+    {
+      "path": "/tmp/glintgrove-background-v3-upgrade.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-upgrade.log",
+      "sha256": "589888044c0a38ad4e0cc885f24b6efdd387e2186be69d26b170c73a0e3c2d99",
+      "bytes": 437
+    },
+    {
+      "path": "/tmp/glintgrove-blender-smoke.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-blender-smoke.png",
+      "sha256": "5463be19649b542053592f7ee0b5f6774d00ca000954473d937a35d1d57cdf3b",
+      "bytes": 15735
+    },
+    {
+      "path": "/tmp/glintgrove-gpt-provenance-review.py",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-gpt-provenance-review.py",
+      "sha256": "e8692ef89ae0de9c70cbb1a330828d56064f0bb1db7080cd7fce5eaa92f52f3f",
+      "bytes": 3232
+    },
+    {
+      "path": "/tmp/glintgrove-gpt-verifier-before.json",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/glintgrove-gpt-verifier-before.json",
+      "sha256": "941dc8e8a3399bedd95a6e5a04a2376d20ad053e310ef08bc418142a50e9815e",
+      "bytes": 3893
+    },
+    {
+      "path": "/tmp/glintgrove-mobile1-before.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-mobile1-before.png",
+      "sha256": "4a0a17d2c10559b93094adcbfa9e08e22adcd4776fc8b3b6d21ad62f50bce3ab",
+      "bytes": 342286
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-level1.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-level1.png",
+      "sha256": "67ac72907124700bbd8950cf3164dbbef5f53fb1f96253326aba512580d0c037",
+      "bytes": 1633050
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-level17.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-level17.png",
+      "sha256": "0132108f32822f2987fa2dba3481a53764bd4eed468d4b0143d1342720bc02b9",
+      "bytes": 1503434
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-map.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-map.png",
+      "sha256": "3e877162cfad14d8ab4c4a56bc429a4e5ba81a59e738d3a0c975bb670f72d135",
+      "bytes": 865031
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-mobile17.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-mobile17.png",
+      "sha256": "c01894e43f2485d35ceee41c721ed47b04f8dac0e7c00ea58cb65c5bc86020ec",
+      "bytes": 392519
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title-art.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-art.png",
+      "sha256": "d3d1e999d02db5fafe857e39158a93073b6bb9859425c88299c24f4fcc159751",
+      "bytes": 735804
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title-current.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-current.png",
+      "sha256": "e67d74bab1352cc53d69fe614d36361c62f7cc513484cf676c71c2d411a1dce9",
+      "bytes": 1767674
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title-first.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-first.png",
+      "sha256": "dbb1348a05326222912ff2935d86642554cdc4f4c5d8ef4abd34f660ea3b441d",
+      "bytes": 591281
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title-loaded.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-loaded.png",
+      "sha256": "d284a933e29d348b61caf7bcb5b16830fd37143e707d3e0b86c4a4840dc098c1",
+      "bytes": 737576
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title-reload.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-reload.png",
+      "sha256": "010529bd129c7053a2730bfd650d3d39b26d6ea15e9baef6b26ff83e55e55a3d",
+      "bytes": 740663
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-title.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title.png",
+      "sha256": "fbcef13cd5a4fc48227a3461c060ae4c66a5bb1982bf81dafb3a6dab3a9a192a",
+      "bytes": 719202
+    },
+    {
+      "path": "/tmp/glintgrove-nocturne-win.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-win.png",
+      "sha256": "09db349680680dd92a3ba24af3db89fe1d79b984dce7b9b9e8580bfbf2eb71a4",
+      "bytes": 886785
+    },
+    {
+      "path": "/tmp/glintgrove-review-board.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-board.png",
+      "sha256": "045a7b61cbff79d010e89e73ea729b3fec8275791d35047ca8d1b6069335ee54",
+      "bytes": 607325
+    },
+    {
+      "path": "/tmp/glintgrove-review-integration.mjs",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-review-integration.mjs",
+      "sha256": "1df4a4324b340f3ecc02c40acca763c112abf3a38f83be891afc2761bac2d2ec",
+      "bytes": 3764
+    },
+    {
+      "path": "/tmp/glintgrove-review-level1.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-level1.png",
+      "sha256": "316c85a4cfe543d751305991f5452f6d6fad0996d23b7c6a50ef355bd984e02a",
+      "bytes": 227784
+    },
+    {
+      "path": "/tmp/glintgrove-review-provenance.mjs",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-review-provenance.mjs",
+      "sha256": "df65ffece7182c1c7a4f25f8bb5064e1ca7de795cf54113d9981d6827aa84cd9",
+      "bytes": 3145
+    },
+    {
+      "path": "/tmp/glintgrove-review-title.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-title.png",
+      "sha256": "3edc6f0bbabbafa51ae4db8919e7e45460aaaabc0160d90035a17b12a699a15b",
+      "bytes": 797652
+    },
+    {
+      "path": "/tmp/glintgrove-reviewed-recorder.mjs",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-reviewed-recorder.mjs",
+      "sha256": "2146978fa5412a4ffa9d1678eb4d0b3b7002574a7efd8d17a2636e8c96e71504",
+      "bytes": 8544
+    },
+    {
+      "path": "/tmp/glintgrove-reviewed-register.json",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/glintgrove-reviewed-register.json",
+      "sha256": "005f54f0d611454af102bca00f6a6d5674658e0e9ef2da04a3304187e70f7289",
+      "bytes": 60210
+    },
+    {
+      "path": "/tmp/glintgrove-verifier-head-og.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-verifier-head-og.png",
+      "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c",
+      "bytes": 316899
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-beam-first-contact.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-beam-first-contact.png",
+      "sha256": "d8c9a92442799e1734c51b6141d022a5c34d3fdafc3dd64c2a819292379bf81f",
+      "bytes": 1009077
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-before-game.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-before-game.png",
+      "sha256": "9b614db6fe8c90ca0e69f82d6deb92876dfe213d8e679bb7eeddfaa5dca5ed2b",
+      "bytes": 675208
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-first-clear.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-first-clear.png",
+      "sha256": "92ec3df7d166b20c11999ec56b4550ca6201ffbf30e71483e2399da1cf3e57bb",
+      "bytes": 507566
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-game-320.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-320.png",
+      "sha256": "6e09af88b6b11516f6948f092bfc7fa785001e5098075a00ed461457e609b96e",
+      "bytes": 272783
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-game-mobile-final.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-mobile-final.png",
+      "sha256": "6edbe8372f5bc8c783a22211efee841776207c855064eedf99cb1b29f470a2a1",
+      "bytes": 374103
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-game-mobile-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-mobile-v2.png",
+      "sha256": "7f11490289de72ae7fcd2392ed92fec4c91eb5fd7e21aff628dff9ae2dbaca99",
+      "bytes": 252479
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-gate-guide.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-gate-guide.png",
+      "sha256": "2c5d2ee5949a0aa3695d14b795792ef4e088aa4a4a9dece6dee475326b5ef208",
+      "bytes": 205262
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-guide-mobile-fixed.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-guide-mobile-fixed.png",
+      "sha256": "6634bb1e1ca6c4a05670a005ae6833af85db77188cae46c738085a25f3c4d91a",
+      "bytes": 181080
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-guide-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-guide-mobile.png",
+      "sha256": "8bc782678edd44f47d0eac6adc3eff7db5bb254082b09e8c541b2e29f7da68a4",
+      "bytes": 157251
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-local-final.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-local-final.png",
+      "sha256": "7c6bc72079567c0185ff3a4f1e60fa79d124ad166360c17718eb09d675da3053",
+      "bytes": 449020
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-desktop-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-desktop-v2.png",
+      "sha256": "f8f63d972555829d00022ec2fda86000f8cf8b57a2492c727d3e9444fc8ae834",
+      "bytes": 1873735
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-desktop.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-desktop.png",
+      "sha256": "199474793de03b3ebbd31e7da8bcd3969aa8ee8827a119982c2ce360610d3601",
+      "bytes": 1841481
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-mobile-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-mobile-v2.png",
+      "sha256": "1db4de59be86404290f5de1c5289a5f847d1d2cbe0073cdcecdcac705840905b",
+      "bytes": 451537
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-mobile.png",
+      "sha256": "d1cf42ac646af85cafd2e75245775524b089285a46ca897f9ef0f7fba242698a",
+      "bytes": 440120
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-short-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-short-v2.png",
+      "sha256": "41e76f290e9566126f50189deb6d7673d260d96c70096adbc0d41f9be1dec693",
+      "bytes": 430783
+    },
+    {
+      "path": "/tmp/ilyndrel-ancient-title-short.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-short.png",
+      "sha256": "a2e06239d0ddda9b679eb88cbc8d85a4ad726ef9c7edb1038ea29f3e13b8d5d4",
+      "bytes": 418591
+    },
+    {
+      "path": "/tmp/ilyndrel-background-before.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-background-before.png",
+      "sha256": "bc6d586eb9492fef939c8370d8203a596aed12c8006ae4de5be87cd0a706687a",
+      "bytes": 1136105
+    },
+    {
+      "path": "/tmp/ilyndrel-background-focused.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-background-focused.log",
+      "sha256": "6256ed1cc84da55ab33affca879a565b6fe8b3e72dccea0c369b99313cff8316",
+      "bytes": 3668
+    },
+    {
+      "path": "/tmp/ilyndrel-check-recorder-v3.mjs",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-check-recorder-v3.mjs",
+      "sha256": "1c84e38aa621562ef19b0caa8b83f71bec0abf81677e6eb64c39825f8310206d",
+      "bytes": 6044
+    },
+    {
+      "path": "/tmp/ilyndrel-check-recorder.mjs",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-check-recorder.mjs",
+      "sha256": "64e9a6bcabc0a5970b93f2fd5b6d987621e24af4caafc575ceb0d8981716be27",
+      "bytes": 5949
+    },
+    {
+      "path": "/tmp/ilyndrel-dense-mobile-prepush.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-dense-mobile-prepush.png",
+      "sha256": "2c2cd34fd5d0f0e867951a8f9962a13df59dd9e5231c8a8e228dacbc050969ce",
+      "bytes": 205745
+    },
+    {
+      "path": "/tmp/ilyndrel-final-levels.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-levels.log",
+      "sha256": "bbd5286bdebf635f411698d444d8214f8bb194a560fd419100c3ece2e3b59d8b",
+      "bytes": 70
+    },
+    {
+      "path": "/tmp/ilyndrel-final-node.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-node.log",
+      "sha256": "fe0269d805fe5c89deec9410293ed011e5f0b385ed4654371a4f8fc75f945f11",
+      "bytes": 14734
+    },
+    {
+      "path": "/tmp/ilyndrel-final-python.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-python.log",
+      "sha256": "2ed32f1f9d86b06dc310c817b51c8837e0079cd3f8f930b6a851c7395df7defd",
+      "bytes": 119
+    },
+    {
+      "path": "/tmp/ilyndrel-gpt-live-title.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-gpt-live-title.png",
+      "sha256": "0c3b958eb30c242df8f5d00d98c7dcee5307cf7e8719ef23c774224224c3834a",
+      "bytes": 3735633
+    },
+    {
+      "path": "/tmp/ilyndrel-inspect-master.py",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-inspect-master.py",
+      "sha256": "25d10d4f31f5602a9b3d1a4c36f7b106d676d561748284091866035eca27843a",
+      "bytes": 510
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-desktop-v1.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v1.png",
+      "sha256": "292c90e641ccce311114eaefbd55b3c6debdb1423d89e9076116b15260039fa9",
+      "bytes": 1906826
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-desktop-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v2.png",
+      "sha256": "bb93236a75185269e3e43d8e2245ea166bc5c443b50a284f99d8dfb892a5ae88",
+      "bytes": 1911749
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-english-320.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-english-320.png",
+      "sha256": "a01b682cef766c34c04d2ded278bb80a38838731ba6966f3abfd2a9bb3a73995",
+      "bytes": 331420
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-help-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-help-mobile.png",
+      "sha256": "3037cf44d0b6a083b59387d201531c4238d5c79de965595ac1cc85cad985b8d1",
+      "bytes": 185843
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-local-final.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-local-final.png",
+      "sha256": "e8c52140352ded1efdef24e1e7c49a756a47f51ca2efb7da4733034762a793fb",
+      "bytes": 456101
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-mobile-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-mobile-v2.png",
+      "sha256": "3a669b0cdd494cd46f6849bfad9c0828934639223297d790053a5b934b89fe93",
+      "bytes": 460488
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-short-v2.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-short-v2.png",
+      "sha256": "1a1bc183904cc67520e0da303bb769131aaaebc16881df4215a4e61996428f17",
+      "bytes": 429149
+    },
+    {
+      "path": "/tmp/ilyndrel-jeweled-tests.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-jeweled-tests.log",
+      "sha256": "34827e58880c1a2d246adfb393630f53ab1e0f57e1fd89c771f8a963463827b8",
+      "bytes": 25908
+    },
+    {
+      "path": "/tmp/ilyndrel-korean-tests.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-korean-tests.log",
+      "sha256": "d47552c0fba03e2c50d1f43a623a3c5864891bfc37f15718cb5dade5d2e059d2",
+      "bytes": 2707
+    },
+    {
+      "path": "/tmp/ilyndrel-live-title-72acec8.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-live-title-72acec8.png",
+      "sha256": "a24b28711f2d6a16b91e68d0ea583445af72c8122772e0a6df69f4e94f7b4ed4",
+      "bytes": 278823
+    },
+    {
+      "path": "/tmp/ilyndrel-living-background-tests.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-living-background-tests.log",
+      "sha256": "32a513b252935d453c8c2a8d274e7be914bf1564295a617a95bd71888992a3ed",
+      "bytes": 18407
+    },
+    {
+      "path": "/tmp/ilyndrel-local-response.html",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/ilyndrel-local-response.html",
+      "sha256": "4900adacfd7cb691d7d81b37c4fc2b450d293928e013a6aba272fb5286c77080",
+      "bytes": 14423
+    },
+    {
+      "path": "/tmp/ilyndrel-particles.js",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-particles.js",
+      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2",
+      "bytes": 4728
+    },
+    {
+      "path": "/tmp/ilyndrel-prepush-node.log",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-prepush-node.log",
+      "sha256": "1a674be959226b3dd4c3b9bec88ea3121501e90173f3123cfc7266c490f94868",
+      "bytes": 14737
+    },
+    {
+      "path": "/tmp/ilyndrel-refresh-desktop.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-desktop.png",
+      "sha256": "56d72e62c7bb56fdb02adc2593d9ad763918aa1924d49ab629ada7b5462e040c",
+      "bytes": 1720736
+    },
+    {
+      "path": "/tmp/ilyndrel-refresh-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-mobile.png",
+      "sha256": "b1e345d35669882d7a9c797170142d7f538965a6fc7438c649d819f85b950346",
+      "bytes": 452652
+    },
+    {
+      "path": "/tmp/ilyndrel-refresh-short.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-short.png",
+      "sha256": "ef9991a8b25a2927554eb14d5bf6d9545a0a1c853708aa39d5329b5fa4caa64c",
+      "bytes": 414874
+    },
+    {
+      "path": "/tmp/ilyndrel-remake-copy.py",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-remake-copy.py",
+      "sha256": "de74c3811f2bf504e660c39ad560a124052b39644a2881c1988ef71b654e5b18",
+      "bytes": 4604
+    },
+    {
+      "path": "/tmp/ilyndrel-settings-short.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-settings-short.png",
+      "sha256": "c2dad0ad08ec56882ae8be004739f943615171b98935989b02b0622d7ad85f5b",
+      "bytes": 143942
+    },
+    {
+      "path": "/tmp/ilyndrel-tutorial-after.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-after.png",
+      "sha256": "9d6a56db55f03fb81d200ebc82bd6bc279995a7e19e5ad5ce32197b4d5088778",
+      "bytes": 138717
+    },
+    {
+      "path": "/tmp/ilyndrel-tutorial-before.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-before.png",
+      "sha256": "3cf9470ab12e52ba952ce1edaa9717b8879779c7a469ed37d330936c425b6b11",
+      "bytes": 185518
+    },
+    {
+      "path": "/tmp/ilyndrel-tutorial-mobile.png",
+      "reason": "duplicate-temporary-copy-after-verified-archive",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-mobile.png",
+      "sha256": "6600450f2c92c45668f456d90bb2f4a71b690bc4f1071c82f34265dc2094d1e0",
+      "bytes": 137218
+    }
+  ],
+  "preserved": "All current provenance inputs, editable masters, source code, prompts and scores remain. Former work artifacts have byte-verified history copies. Runtime exports removed here remain in the baseline Git commit."
+}

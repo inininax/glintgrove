@@ -1,0 +1,1968 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-09-13T16:44:23.846823+00:00",
+  "baselineCommit": "e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0",
+  "scope": "Exact copies of project work products formerly outside Git. Historical only; not runtime dependencies or a new rights clearance. Tool installations and OS caches are excluded.",
+  "files": [
+    {
+      "originalPath": "art/build/author.log",
+      "archivePath": "art/history/2026-09-14-complete-work/production/author.log",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "b3b64df341f2724588a9b10ae5f6d8d40fc278a1ea1bbb5ce84b37e5b1d948c1",
+      "bytes": 1047
+    },
+    {
+      "originalPath": "art/build/browser-e2e.txt",
+      "archivePath": "art/history/2026-09-14-complete-work/production/browser-e2e.txt",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "e97dda58fc10bcc7486766d448f13fa9a3c8cb1b05d931927bc5248d29283452",
+      "bytes": 335
+    },
+    {
+      "originalPath": "art/build/browser-mobile-win.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/browser-mobile-win.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "fdc6a1da94a04fcb69b112d1875501dd65d55d3e34dc392bea87ef8949d18abb",
+      "bytes": 89
+    },
+    {
+      "originalPath": "art/build/browser-offline.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/browser-offline.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "47813d14d60ffa30d7db4f53d981f5820bf020725f198be5e20d9fee406d6276",
+      "bytes": 293
+    },
+    {
+      "originalPath": "art/build/browser-reduced-motion.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/browser-reduced-motion.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "861609444cd049ecf3b642bbc0df7df21b1592281e091f2741847716be60e78b",
+      "bytes": 121
+    },
+    {
+      "originalPath": "art/build/environment-drafts/depths-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts/depths-v2.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "d855615c5686a35100bf98450ba49244834b4a9421fa017c853011a0054dab42",
+      "bytes": 380237
+    },
+    {
+      "originalPath": "art/build/environment-drafts/forest-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts/forest-v2.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "850274e5a439aa20fe64d74b73427c9d9496666cc01e87b9dc7269c6b4820a83",
+      "bytes": 378477
+    },
+    {
+      "originalPath": "art/build/environment-drafts/garden-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts/garden-v2.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "b1b3691efd7bf5593dfcbc876c6b4e6540c7c88d4b7b2abe23fc2c9750ec244f",
+      "bytes": 388729
+    },
+    {
+      "originalPath": "art/build/environment-drafts/heart-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts/heart-v2.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "c567c03696f68d7b3ad6a41084c435ba10e93babf73a73f7fbf74808407db532",
+      "bytes": 397333
+    },
+    {
+      "originalPath": "art/build/environment-drafts/share-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts/share-v2.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "a41f53634149e62ef4d3424eeeac07571871dc0f9caf72ce75c6a9c45aedf12d",
+      "bytes": 197152
+    },
+    {
+      "originalPath": "art/build/environment-drafts-v3/forest-v3.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/environment-drafts-v3/forest-v3.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "9f913108be6c94a37590e77dceb4fea2dcc0366fb2450134462f877a91155926",
+      "bytes": 482122
+    },
+    {
+      "originalPath": "art/build/final-assets-check.txt",
+      "archivePath": "art/history/2026-09-14-complete-work/production/final-assets-check.txt",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "1ac0b485b3f898f325529268919edbc1f92ea1a5e72405e725b355d992e0b623",
+      "bytes": 1872
+    },
+    {
+      "originalPath": "art/build/final-independent-register-check.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/final-independent-register-check.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "bc31ecd175ab542e614b6e55ef39a2c411d75074013a5587f868081854e4b208",
+      "bytes": 911
+    },
+    {
+      "originalPath": "art/build/final-unit-tests.txt",
+      "archivePath": "art/history/2026-09-14-complete-work/production/final-unit-tests.txt",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "044a7a1ae006b8d0b73bbf162ea48cef0dbdf99218961f2533d2143f461dae00",
+      "bytes": 10932
+    },
+    {
+      "originalPath": "art/build/legal/runtime-visual-audit.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/legal/runtime-visual-audit.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "2a11cc3973df35bad310a600bd19c98b57c9b776ccca480666e58e9a9b4daefa",
+      "bytes": 10219
+    },
+    {
+      "originalPath": "art/build/levels-check.log",
+      "archivePath": "art/history/2026-09-14-complete-work/production/levels-check.log",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "1baaaaee2bc7836ab55de5e23fdb965aecc22f28a342edc2aceb32d563d98e5f",
+      "bytes": 70
+    },
+    {
+      "originalPath": "art/build/procedural-source-inspection.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/procedural-source-inspection.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "6c18a5a2f6a6ae0e06943839ce6a4fda1da4a9873e5c2680c604950cc9732855",
+      "bytes": 1133
+    },
+    {
+      "originalPath": "art/build/provenance.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/provenance.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "b6d05282406e660adeba62cff28efa6109ea912596777a6d6a47b99e38c44efb",
+      "bytes": 6582
+    },
+    {
+      "originalPath": "art/build/render-preview.log",
+      "archivePath": "art/history/2026-09-14-complete-work/production/render-preview.log",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "f658dc5e56ccf45346781646693d4a62505643a552d0bd6b4d0c6f867244ce42",
+      "bytes": 1115
+    },
+    {
+      "originalPath": "art/build/render.log",
+      "archivePath": "art/history/2026-09-14-complete-work/production/render.log",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "7f7e990067fe9980424681a42b29db0a8d24a132fbc4299a5a33e78969bd8a2c",
+      "bytes": 4947
+    },
+    {
+      "originalPath": "art/build/v3-scene-inspection.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/v3-scene-inspection.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "abfde3b6c3deb98b41add6d8d8e1c5005c53a89d94c9e705b4f79798cde6e2d9",
+      "bytes": 1179
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/art/build/provenance.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/art/build/provenance.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "a84da66415a7ca4ace944ec0f6012ee1f577b339dca316cfe6d5806142b0313a",
+      "bytes": 300
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/art/source/blank.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/art/source/blank.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "6fa466e21df6bf014ed03517399a711777f572b1f0be6a561b947790cda9f634",
+      "bytes": 69
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/art/source/corrupt.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/art/source/corrupt.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "928012734bf6e718916a7344dc37c4f371e1456ec4f128b8406726071374e42d",
+      "bytes": 13
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/art/source/good.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/art/source/good.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "d46bc0f2168d92a7d553d4d7b4adf3c53382b2c98ff46fb893f7ae22c57ef9b0",
+      "bytes": 76
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/art/source/new.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/art/source/new.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "bc8a7930f1459372d1526d6f25634e078401c870e3c9e8818dfcc028059093de",
+      "bytes": 77
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/assets/game/boolean-manifest.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/assets/game/boolean-manifest.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "58b1f53c2720441a13655c6e7b72e255442be2c84b1d29ebc753cc033f330101",
+      "bytes": 259
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/assets/game/manifest.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/assets/game/manifest.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "686b46d55779f62c5b8eff4221ab0a4380e0004b3d5bb01814c9e9f9149765a5",
+      "bytes": 258
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree/awake-v1-7ea0059449ee.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/assets/game/sprites/tree/awake-v1-7ea0059449ee.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "7ea0059449ee437c303a259729e0e140956f9fd114f5357cd0373b6edb99c7b4",
+      "bytes": 75
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-7ea0059449ee.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-7ea0059449ee.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "7ea0059449ee437c303a259729e0e140956f9fd114f5357cd0373b6edb99c7b4",
+      "bytes": 75
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-f164334dc398.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-f164334dc398.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "f164334dc3985e3b8d95b71e59462c9c4f6d80c7ede23238c8759d9c4495a6db",
+      "bytes": 69
+    },
+    {
+      "originalPath": "art/build/verifier-publish-3bunwnwy/catalog.json",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-publish-3bunwnwy/catalog.json",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "52cae20c15aa13cd1ea12415623658b313f4de7ac8b6b319afff4f13397b9e43",
+      "bytes": 94
+    },
+    {
+      "originalPath": "art/build/verifier-rerender/mirror-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-rerender/mirror-v1.png",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "e7dbe094aa212ce04aca1d79997369171d96b5c2b4fa43cc20d21d20dc59fd51",
+      "bytes": 152140
+    },
+    {
+      "originalPath": "art/build/verifier-rerender.log",
+      "archivePath": "art/history/2026-09-14-complete-work/production/verifier-rerender.log",
+      "role": "production-draft-or-validation-evidence",
+      "sha256": "21c322c15ccc2bb1e9582117b0839c3a38b85df56b44566f55871cd0cdb91ee8",
+      "bytes": 441
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/crystal-b-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/crystal-b-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+      "bytes": 102038
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/crystal-g-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/crystal-g-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+      "bytes": 102133
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/crystal-r-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/crystal-r-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+      "bytes": 102564
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/emitter-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/emitter-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+      "bytes": 139907
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/flower-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/flower-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+      "bytes": 93787
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/flower-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/flower-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+      "bytes": 86299
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/gate-b-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/gate-b-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab",
+      "bytes": 139992
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/gate-g-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/gate-g-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f",
+      "bytes": 139717
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/gate-r-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/gate-r-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96",
+      "bytes": 140419
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/mirror-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/mirror-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+      "bytes": 152140
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/mushroom-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/mushroom-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+      "bytes": 97225
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/mushroom-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/mushroom-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+      "bytes": 97045
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/owl-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/owl-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+      "bytes": 110380
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/owl-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/owl-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+      "bytes": 107993
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/portal-gold-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/portal-gold-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+      "bytes": 145871
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/portal-violet-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/portal-violet-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+      "bytes": 145137
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/rock-alt-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/rock-alt-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+      "bytes": 75770
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/rock-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/rock-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+      "bytes": 75027
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/splitter-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/splitter-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+      "bytes": 148975
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/tree-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/tree-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+      "bytes": 152628
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/sprites/tree-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/sprites/tree-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+      "bytes": 148427
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/depths-55de4c0ea245.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/depths-55de4c0ea245.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/depths-v1.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/depths-v1.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/forest-256a3858f253.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/forest-256a3858f253.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/forest-v1.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/forest-v1.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/garden-0de0a548ed54.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/garden-0de0a548ed54.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/backgrounds/garden-v1.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/backgrounds/garden-v1.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-b-d4f7feea1455.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-b-d4f7feea1455.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+      "bytes": 74414
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-b-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-b-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+      "bytes": 102038
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-g-9dda05f4465b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-g-9dda05f4465b.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+      "bytes": 74522
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-g-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-g-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+      "bytes": 102133
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-r-982f1d4ceecf.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-r-982f1d4ceecf.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+      "bytes": 74811
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-r-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/crystal-r-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+      "bytes": 102564
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/emitter-08b94cf5b6d8.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/emitter-08b94cf5b6d8.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+      "bytes": 106166
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/emitter-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/emitter-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+      "bytes": 139907
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-awake-6c5dc174bd75.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/flower-awake-6c5dc174bd75.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+      "bytes": 65000
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/flower-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+      "bytes": 93787
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-8a29750a727d.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-8a29750a727d.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+      "bytes": 59300
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+      "bytes": 86299
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-b-84b7686ddbf9.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-b-84b7686ddbf9.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6",
+      "bytes": 103282
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-b-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-b-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab",
+      "bytes": 139992
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-g-d0db52bbbd49.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-g-d0db52bbbd49.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3",
+      "bytes": 102831
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-g-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-g-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f",
+      "bytes": 139717
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-r-23e0f971ffec.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-r-23e0f971ffec.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111",
+      "bytes": 103883
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-r-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/gate-r-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96",
+      "bytes": 140419
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mirror-ad4a7c31891c.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mirror-ad4a7c31891c.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+      "bytes": 114999
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mirror-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mirror-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+      "bytes": 152140
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-a4256e82ee40.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-a4256e82ee40.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+      "bytes": 68030
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+      "bytes": 97225
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-4e21909d06bf.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-4e21909d06bf.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+      "bytes": 67690
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+      "bytes": 97045
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-awake-cf707d630ce9.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/owl-awake-cf707d630ce9.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+      "bytes": 79392
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/owl-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+      "bytes": 110380
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-0b0123e14f8b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-0b0123e14f8b.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+      "bytes": 77012
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+      "bytes": 107993
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-gold-3ef23c926f42.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/portal-gold-3ef23c926f42.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+      "bytes": 112378
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-gold-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/portal-gold-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+      "bytes": 145871
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-violet-e066b9b0c5bd.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/portal-violet-e066b9b0c5bd.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+      "bytes": 112020
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-violet-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/portal-violet-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+      "bytes": 145137
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-alt-ba25c75f7b5e.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/rock-alt-ba25c75f7b5e.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+      "bytes": 51158
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-alt-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/rock-alt-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+      "bytes": 75770
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-c0530e24a807.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/rock-c0530e24a807.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+      "bytes": 50510
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/rock-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+      "bytes": 75027
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/splitter-fa76287daa4b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/splitter-fa76287daa4b.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+      "bytes": 112227
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/splitter-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/splitter-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+      "bytes": 148975
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-awake-87948c6479fa.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/tree-awake-87948c6479fa.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+      "bytes": 120358
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-awake-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/tree-awake-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+      "bytes": 152628
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-f96a25b9e9ca.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-f96a25b9e9ca.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+      "bytes": 118089
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+      "bytes": 148427
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/art-studio-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/art-studio-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "907308736e030183acf819cf188906ecbc2c452b59d04f7352c52bbf951c58b3",
+      "bytes": 878795
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/game-desktop-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/game-desktop-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "31d02b92b74efe5acf1f84013931f670edcfecd34ed3796a0c6b308c71a89a98",
+      "bytes": 1754367
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/game-heart-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/game-heart-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "ac06dd4a58ddaae9da2bcee872a3f03c829c3acbf3f5f3224e037726ccbec996",
+      "bytes": 1821773
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/game-mobile-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/game-mobile-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "ba8b39e83cb7074d93f2b61b1262d9f6348f44c74cd76268e5875eddaea6df1e",
+      "bytes": 393080
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/map-mobile-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/map-mobile-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f561cc57e707d5ff322266deda3eb88379cfbbee00b19b61e3d69d6720022165",
+      "bytes": 204172
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/settings-mobile-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/settings-mobile-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "6a928e8ddc2f4b97eb7609e5c1e693b657b48fdefd6f7c31cfa7c86e63e6a745",
+      "bytes": 127822
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/title-desktop-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/title-desktop-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "ca3d2e1c908da4eb4b8cbdd507497fa5098198566dda789a9141f84e241f4f84",
+      "bytes": 1885844
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/title-mobile-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/title-mobile-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "fe6aa31993cc6a86b49a796616d88444d73c3f9a4910b27b212723762745630f",
+      "bytes": 417779
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/previews/win-mobile-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/previews/win-mobile-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "232fdceceaf70ced2dac93f74afa3620e533ce803d8404572830f986d1596140",
+      "bytes": 167827
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/blender/grove-library-v1.blend1",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/blender/grove-library-v1.blend1",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "63bcdf4558218c1a288708bc61740700fd99917eaea190d2af1229f4e2bee656",
+      "bytes": 782457
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/imagegen/depths-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/imagegen/depths-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "d30a132bf9b557e12ac9014df824f7034a22f793f6d039dd68a82f226bc9acea",
+      "bytes": 3022317
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/imagegen/forest-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/imagegen/forest-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f",
+      "bytes": 2824749
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/imagegen/garden-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/imagegen/garden-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "3feb9e0fcfb9d8f02fb3522ffb7d437a3ed70941919b8081e473b1c2cb6c383a",
+      "bytes": 3146119
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/imagegen/heart-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/imagegen/heart-v1.png",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "02267279ecdf4ff7284a38ed7aa1a56acf353ea80a590f97aaa5112a770fc91f",
+      "bytes": 3233817
+    },
+    {
+      "originalPath": "art/retired/before-remake/art/source/procedural/nocturne-environments-v2.blend1",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/art/source/procedural/nocturne-environments-v2.blend1",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "f355280efc16c53d704b09aca71d085f016f32b239cfeff649d4b51aaeb57e06",
+      "bytes": 15392251
+    },
+    {
+      "originalPath": "art/retired/before-remake/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122
+    },
+    {
+      "originalPath": "art/retired/before-remake/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064
+    },
+    {
+      "originalPath": "art/retired/before-remake/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206
+    },
+    {
+      "originalPath": "art/retired/before-remake/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/before-remake/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "360ccc2982cf46f930a12f146d1ce193cf6f6aa573431be715a85b25badb06d8",
+      "bytes": 475964
+    },
+    {
+      "originalPath": "art/retired/retirement-register.json",
+      "archivePath": "art/history/2026-09-14-complete-work/retired/retirement-register.json",
+      "role": "retired-historical-material-not-current-runtime",
+      "sha256": "26dd4971e7d37f6de097c52dc653680d6bc9de9889ef1f9a756a837c6af09558",
+      "bytes": 23425
+    },
+    {
+      "originalPath": "art/source/procedural/nocturne-environments-v3.blend1",
+      "archivePath": "art/history/2026-09-14-complete-work/blender/nocturne-environments-v3.previous.blend",
+      "role": "previous-editable-blender-backup",
+      "sha256": "f09caba94074d63f919248c86476e96c00121d89f41d2d2de066ff1ce7652139",
+      "bytes": 16052769
+    },
+    {
+      "originalPath": "/tmp/glintgrove-art-studio-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-art-studio-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "97493d9a72cd4af647634182d3d18c5e2e9d6679021860858ee1cb8330614cd0",
+      "bytes": 198969
+    },
+    {
+      "originalPath": "/tmp/glintgrove-art-studio.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-art-studio.png",
+      "role": "historical-project-review-captures",
+      "sha256": "db38600807d18a6ad88d07a5ae8c93404dd6fb6c0caca2ed4fd63ef3d511ca4e",
+      "bytes": 1038421
+    },
+    {
+      "originalPath": "/tmp/glintgrove-asset-final-tests.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-asset-final-tests.log",
+      "role": "historical-project-review-logs",
+      "sha256": "c0dd5d5c8ef64fd63c0bee87eaca06bf34705616d32f834adcfc3a2e7e3ab32d",
+      "bytes": 10920
+    },
+    {
+      "originalPath": "/tmp/glintgrove-background-v3-draft.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-draft.log",
+      "role": "historical-project-review-logs",
+      "sha256": "5bee8138c40f2f94d78cbcf267e85c76af1141d02933f94c4a26d9bf4d723bdd",
+      "bytes": 460
+    },
+    {
+      "originalPath": "/tmp/glintgrove-background-v3-final.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-final.log",
+      "role": "historical-project-review-logs",
+      "sha256": "7a98e3154ec84fede85e44ab95cc2adcf0d497514e06d66bbee2a5ee9094ab60",
+      "bytes": 1094
+    },
+    {
+      "originalPath": "/tmp/glintgrove-background-v3-inspection.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-inspection.log",
+      "role": "historical-project-review-logs",
+      "sha256": "4951c5f1885f13dc7036aa50a0ac5d47d4faa7af32680b880e02ec30d80dcadd",
+      "bytes": 1095
+    },
+    {
+      "originalPath": "/tmp/glintgrove-background-v3-upgrade.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/glintgrove-background-v3-upgrade.log",
+      "role": "historical-project-review-logs",
+      "sha256": "589888044c0a38ad4e0cc885f24b6efdd387e2186be69d26b170c73a0e3c2d99",
+      "bytes": 437
+    },
+    {
+      "originalPath": "/tmp/glintgrove-blender-smoke.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-blender-smoke.png",
+      "role": "historical-project-review-captures",
+      "sha256": "5463be19649b542053592f7ee0b5f6774d00ca000954473d937a35d1d57cdf3b",
+      "bytes": 15735
+    },
+    {
+      "originalPath": "/tmp/glintgrove-gpt-provenance-review.py",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-gpt-provenance-review.py",
+      "role": "historical-project-review-scripts",
+      "sha256": "e8692ef89ae0de9c70cbb1a330828d56064f0bb1db7080cd7fce5eaa92f52f3f",
+      "bytes": 3232
+    },
+    {
+      "originalPath": "/tmp/glintgrove-gpt-verifier-before.json",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/glintgrove-gpt-verifier-before.json",
+      "role": "historical-project-review-snapshots",
+      "sha256": "941dc8e8a3399bedd95a6e5a04a2376d20ad053e310ef08bc418142a50e9815e",
+      "bytes": 3893
+    },
+    {
+      "originalPath": "/tmp/glintgrove-mobile1-before.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-mobile1-before.png",
+      "role": "historical-project-review-captures",
+      "sha256": "4a0a17d2c10559b93094adcbfa9e08e22adcd4776fc8b3b6d21ad62f50bce3ab",
+      "bytes": 342286
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-level1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-level1.png",
+      "role": "historical-project-review-captures",
+      "sha256": "67ac72907124700bbd8950cf3164dbbef5f53fb1f96253326aba512580d0c037",
+      "bytes": 1633050
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-level17.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-level17.png",
+      "role": "historical-project-review-captures",
+      "sha256": "0132108f32822f2987fa2dba3481a53764bd4eed468d4b0143d1342720bc02b9",
+      "bytes": 1503434
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-map.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-map.png",
+      "role": "historical-project-review-captures",
+      "sha256": "3e877162cfad14d8ab4c4a56bc429a4e5ba81a59e738d3a0c975bb670f72d135",
+      "bytes": 865031
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-mobile17.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-mobile17.png",
+      "role": "historical-project-review-captures",
+      "sha256": "c01894e43f2485d35ceee41c721ed47b04f8dac0e7c00ea58cb65c5bc86020ec",
+      "bytes": 392519
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title-art.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-art.png",
+      "role": "historical-project-review-captures",
+      "sha256": "d3d1e999d02db5fafe857e39158a93073b6bb9859425c88299c24f4fcc159751",
+      "bytes": 735804
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title-current.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-current.png",
+      "role": "historical-project-review-captures",
+      "sha256": "e67d74bab1352cc53d69fe614d36361c62f7cc513484cf676c71c2d411a1dce9",
+      "bytes": 1767674
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title-first.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-first.png",
+      "role": "historical-project-review-captures",
+      "sha256": "dbb1348a05326222912ff2935d86642554cdc4f4c5d8ef4abd34f660ea3b441d",
+      "bytes": 591281
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title-loaded.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-loaded.png",
+      "role": "historical-project-review-captures",
+      "sha256": "d284a933e29d348b61caf7bcb5b16830fd37143e707d3e0b86c4a4840dc098c1",
+      "bytes": 737576
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title-reload.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-reload.png",
+      "role": "historical-project-review-captures",
+      "sha256": "010529bd129c7053a2730bfd650d3d39b26d6ea15e9baef6b26ff83e55e55a3d",
+      "bytes": 740663
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-title.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title.png",
+      "role": "historical-project-review-captures",
+      "sha256": "fbcef13cd5a4fc48227a3461c060ae4c66a5bb1982bf81dafb3a6dab3a9a192a",
+      "bytes": 719202
+    },
+    {
+      "originalPath": "/tmp/glintgrove-nocturne-win.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-win.png",
+      "role": "historical-project-review-captures",
+      "sha256": "09db349680680dd92a3ba24af3db89fe1d79b984dce7b9b9e8580bfbf2eb71a4",
+      "bytes": 886785
+    },
+    {
+      "originalPath": "/tmp/glintgrove-review-board.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-board.png",
+      "role": "historical-project-review-captures",
+      "sha256": "045a7b61cbff79d010e89e73ea729b3fec8275791d35047ca8d1b6069335ee54",
+      "bytes": 607325
+    },
+    {
+      "originalPath": "/tmp/glintgrove-review-integration.mjs",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-review-integration.mjs",
+      "role": "historical-project-review-scripts",
+      "sha256": "1df4a4324b340f3ecc02c40acca763c112abf3a38f83be891afc2761bac2d2ec",
+      "bytes": 3764
+    },
+    {
+      "originalPath": "/tmp/glintgrove-review-level1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-level1.png",
+      "role": "historical-project-review-captures",
+      "sha256": "316c85a4cfe543d751305991f5452f6d6fad0996d23b7c6a50ef355bd984e02a",
+      "bytes": 227784
+    },
+    {
+      "originalPath": "/tmp/glintgrove-review-provenance.mjs",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-review-provenance.mjs",
+      "role": "historical-project-review-scripts",
+      "sha256": "df65ffece7182c1c7a4f25f8bb5064e1ca7de795cf54113d9981d6827aa84cd9",
+      "bytes": 3145
+    },
+    {
+      "originalPath": "/tmp/glintgrove-review-title.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-review-title.png",
+      "role": "historical-project-review-captures",
+      "sha256": "3edc6f0bbabbafa51ae4db8919e7e45460aaaabc0160d90035a17b12a699a15b",
+      "bytes": 797652
+    },
+    {
+      "originalPath": "/tmp/glintgrove-reviewed-recorder.mjs",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/glintgrove-reviewed-recorder.mjs",
+      "role": "historical-project-review-scripts",
+      "sha256": "2146978fa5412a4ffa9d1678eb4d0b3b7002574a7efd8d17a2636e8c96e71504",
+      "bytes": 8544
+    },
+    {
+      "originalPath": "/tmp/glintgrove-reviewed-register.json",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/glintgrove-reviewed-register.json",
+      "role": "historical-project-review-snapshots",
+      "sha256": "005f54f0d611454af102bca00f6a6d5674658e0e9ef2da04a3304187e70f7289",
+      "bytes": 60210
+    },
+    {
+      "originalPath": "/tmp/glintgrove-verifier-head-og.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/glintgrove-verifier-head-og.png",
+      "role": "historical-project-review-captures",
+      "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c",
+      "bytes": 316899
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-beam-first-contact.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-beam-first-contact.png",
+      "role": "historical-project-review-captures",
+      "sha256": "d8c9a92442799e1734c51b6141d022a5c34d3fdafc3dd64c2a819292379bf81f",
+      "bytes": 1009077
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-before-game.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-before-game.png",
+      "role": "historical-project-review-captures",
+      "sha256": "9b614db6fe8c90ca0e69f82d6deb92876dfe213d8e679bb7eeddfaa5dca5ed2b",
+      "bytes": 675208
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-first-clear.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-first-clear.png",
+      "role": "historical-project-review-captures",
+      "sha256": "92ec3df7d166b20c11999ec56b4550ca6201ffbf30e71483e2399da1cf3e57bb",
+      "bytes": 507566
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-game-320.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-320.png",
+      "role": "historical-project-review-captures",
+      "sha256": "6e09af88b6b11516f6948f092bfc7fa785001e5098075a00ed461457e609b96e",
+      "bytes": 272783
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-game-mobile-final.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-mobile-final.png",
+      "role": "historical-project-review-captures",
+      "sha256": "6edbe8372f5bc8c783a22211efee841776207c855064eedf99cb1b29f470a2a1",
+      "bytes": 374103
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-game-mobile-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-game-mobile-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "7f11490289de72ae7fcd2392ed92fec4c91eb5fd7e21aff628dff9ae2dbaca99",
+      "bytes": 252479
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-gate-guide.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-gate-guide.png",
+      "role": "historical-project-review-captures",
+      "sha256": "2c5d2ee5949a0aa3695d14b795792ef4e088aa4a4a9dece6dee475326b5ef208",
+      "bytes": 205262
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-guide-mobile-fixed.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-guide-mobile-fixed.png",
+      "role": "historical-project-review-captures",
+      "sha256": "6634bb1e1ca6c4a05670a005ae6833af85db77188cae46c738085a25f3c4d91a",
+      "bytes": 181080
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-guide-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-guide-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "8bc782678edd44f47d0eac6adc3eff7db5bb254082b09e8c541b2e29f7da68a4",
+      "bytes": 157251
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-local-final.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-local-final.png",
+      "role": "historical-project-review-captures",
+      "sha256": "7c6bc72079567c0185ff3a4f1e60fa79d124ad166360c17718eb09d675da3053",
+      "bytes": 449020
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-desktop-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-desktop-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "f8f63d972555829d00022ec2fda86000f8cf8b57a2492c727d3e9444fc8ae834",
+      "bytes": 1873735
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-desktop.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-desktop.png",
+      "role": "historical-project-review-captures",
+      "sha256": "199474793de03b3ebbd31e7da8bcd3969aa8ee8827a119982c2ce360610d3601",
+      "bytes": 1841481
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-mobile-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-mobile-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "1db4de59be86404290f5de1c5289a5f847d1d2cbe0073cdcecdcac705840905b",
+      "bytes": 451537
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "d1cf42ac646af85cafd2e75245775524b089285a46ca897f9ef0f7fba242698a",
+      "bytes": 440120
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-short-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-short-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "41e76f290e9566126f50189deb6d7673d260d96c70096adbc0d41f9be1dec693",
+      "bytes": 430783
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-ancient-title-short.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-short.png",
+      "role": "historical-project-review-captures",
+      "sha256": "a2e06239d0ddda9b679eb88cbc8d85a4ad726ef9c7edb1038ea29f3e13b8d5d4",
+      "bytes": 418591
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-background-before.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-background-before.png",
+      "role": "historical-project-review-captures",
+      "sha256": "bc6d586eb9492fef939c8370d8203a596aed12c8006ae4de5be87cd0a706687a",
+      "bytes": 1136105
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-background-focused.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-background-focused.log",
+      "role": "historical-project-review-logs",
+      "sha256": "6256ed1cc84da55ab33affca879a565b6fe8b3e72dccea0c369b99313cff8316",
+      "bytes": 3668
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-check-recorder-v3.mjs",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-check-recorder-v3.mjs",
+      "role": "historical-project-review-scripts",
+      "sha256": "1c84e38aa621562ef19b0caa8b83f71bec0abf81677e6eb64c39825f8310206d",
+      "bytes": 6044
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-check-recorder.mjs",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-check-recorder.mjs",
+      "role": "historical-project-review-scripts",
+      "sha256": "64e9a6bcabc0a5970b93f2fd5b6d987621e24af4caafc575ceb0d8981716be27",
+      "bytes": 5949
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-dense-mobile-prepush.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-dense-mobile-prepush.png",
+      "role": "historical-project-review-captures",
+      "sha256": "2c2cd34fd5d0f0e867951a8f9962a13df59dd9e5231c8a8e228dacbc050969ce",
+      "bytes": 205745
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-final-levels.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-levels.log",
+      "role": "historical-project-review-logs",
+      "sha256": "bbd5286bdebf635f411698d444d8214f8bb194a560fd419100c3ece2e3b59d8b",
+      "bytes": 70
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-final-node.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-node.log",
+      "role": "historical-project-review-logs",
+      "sha256": "fe0269d805fe5c89deec9410293ed011e5f0b385ed4654371a4f8fc75f945f11",
+      "bytes": 14734
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-final-python.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-final-python.log",
+      "role": "historical-project-review-logs",
+      "sha256": "2ed32f1f9d86b06dc310c817b51c8837e0079cd3f8f930b6a851c7395df7defd",
+      "bytes": 119
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-gpt-live-title.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-gpt-live-title.png",
+      "role": "historical-project-review-captures",
+      "sha256": "0c3b958eb30c242df8f5d00d98c7dcee5307cf7e8719ef23c774224224c3834a",
+      "bytes": 3735633
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-inspect-master.py",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-inspect-master.py",
+      "role": "historical-project-review-scripts",
+      "sha256": "25d10d4f31f5602a9b3d1a4c36f7b106d676d561748284091866035eca27843a",
+      "bytes": 510
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-desktop-v1.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v1.png",
+      "role": "historical-project-review-captures",
+      "sha256": "292c90e641ccce311114eaefbd55b3c6debdb1423d89e9076116b15260039fa9",
+      "bytes": 1906826
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-desktop-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "bb93236a75185269e3e43d8e2245ea166bc5c443b50a284f99d8dfb892a5ae88",
+      "bytes": 1911749
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-english-320.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-english-320.png",
+      "role": "historical-project-review-captures",
+      "sha256": "a01b682cef766c34c04d2ded278bb80a38838731ba6966f3abfd2a9bb3a73995",
+      "bytes": 331420
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-help-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-help-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "3037cf44d0b6a083b59387d201531c4238d5c79de965595ac1cc85cad985b8d1",
+      "bytes": 185843
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-local-final.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-local-final.png",
+      "role": "historical-project-review-captures",
+      "sha256": "e8c52140352ded1efdef24e1e7c49a756a47f51ca2efb7da4733034762a793fb",
+      "bytes": 456101
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-mobile-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-mobile-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "3a669b0cdd494cd46f6849bfad9c0828934639223297d790053a5b934b89fe93",
+      "bytes": 460488
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-short-v2.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-short-v2.png",
+      "role": "historical-project-review-captures",
+      "sha256": "1a1bc183904cc67520e0da303bb769131aaaebc16881df4215a4e61996428f17",
+      "bytes": 429149
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-jeweled-tests.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-jeweled-tests.log",
+      "role": "historical-project-review-logs",
+      "sha256": "34827e58880c1a2d246adfb393630f53ab1e0f57e1fd89c771f8a963463827b8",
+      "bytes": 25908
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-korean-tests.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-korean-tests.log",
+      "role": "historical-project-review-logs",
+      "sha256": "d47552c0fba03e2c50d1f43a623a3c5864891bfc37f15718cb5dade5d2e059d2",
+      "bytes": 2707
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-live-title-72acec8.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-live-title-72acec8.png",
+      "role": "historical-project-review-captures",
+      "sha256": "a24b28711f2d6a16b91e68d0ea583445af72c8122772e0a6df69f4e94f7b4ed4",
+      "bytes": 278823
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-living-background-tests.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-living-background-tests.log",
+      "role": "historical-project-review-logs",
+      "sha256": "32a513b252935d453c8c2a8d274e7be914bf1564295a617a95bd71888992a3ed",
+      "bytes": 18407
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-local-response.html",
+      "archivePath": "art/history/2026-09-14-complete-work/review/snapshots/ilyndrel-local-response.html",
+      "role": "historical-project-review-snapshots",
+      "sha256": "4900adacfd7cb691d7d81b37c4fc2b450d293928e013a6aba272fb5286c77080",
+      "bytes": 14423
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-particles.js",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-particles.js",
+      "role": "historical-project-review-scripts",
+      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2",
+      "bytes": 4728
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-prepush-node.log",
+      "archivePath": "art/history/2026-09-14-complete-work/review/logs/ilyndrel-prepush-node.log",
+      "role": "historical-project-review-logs",
+      "sha256": "1a674be959226b3dd4c3b9bec88ea3121501e90173f3123cfc7266c490f94868",
+      "bytes": 14737
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-refresh-desktop.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-desktop.png",
+      "role": "historical-project-review-captures",
+      "sha256": "56d72e62c7bb56fdb02adc2593d9ad763918aa1924d49ab629ada7b5462e040c",
+      "bytes": 1720736
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-refresh-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "b1e345d35669882d7a9c797170142d7f538965a6fc7438c649d819f85b950346",
+      "bytes": 452652
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-refresh-short.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-refresh-short.png",
+      "role": "historical-project-review-captures",
+      "sha256": "ef9991a8b25a2927554eb14d5bf6d9545a0a1c853708aa39d5329b5fa4caa64c",
+      "bytes": 414874
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-remake-copy.py",
+      "archivePath": "art/history/2026-09-14-complete-work/review/scripts/ilyndrel-remake-copy.py",
+      "role": "historical-project-review-scripts",
+      "sha256": "de74c3811f2bf504e660c39ad560a124052b39644a2881c1988ef71b654e5b18",
+      "bytes": 4604
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-settings-short.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-settings-short.png",
+      "role": "historical-project-review-captures",
+      "sha256": "c2dad0ad08ec56882ae8be004739f943615171b98935989b02b0622d7ad85f5b",
+      "bytes": 143942
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-tutorial-after.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-after.png",
+      "role": "historical-project-review-captures",
+      "sha256": "9d6a56db55f03fb81d200ebc82bd6bc279995a7e19e5ad5ce32197b4d5088778",
+      "bytes": 138717
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-tutorial-before.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-before.png",
+      "role": "historical-project-review-captures",
+      "sha256": "3cf9470ab12e52ba952ce1edaa9717b8879779c7a469ed37d330936c425b6b11",
+      "bytes": 185518
+    },
+    {
+      "originalPath": "/tmp/ilyndrel-tutorial-mobile.png",
+      "archivePath": "art/history/2026-09-14-complete-work/review/captures/ilyndrel-tutorial-mobile.png",
+      "role": "historical-project-review-captures",
+      "sha256": "6600450f2c92c45668f456d90bb2f4a71b690bc4f1071c82f34265dc2094d1e0",
+      "bytes": 137218
+    },
+    {
+      "originalPath": "image_gen/exec-c599e1de-84b0-48cc-8bd6-f9cb27d21b10.png",
+      "archivePath": "art/history/2026-09-14-complete-work/imagegen/ilyndrel-wordmark-v2-alpha-attempt.png",
+      "role": "unselected-rgb-transparency-attempt",
+      "sha256": "28f49fbbe4038335083072b9a059f2a2f27ca420b82fd527f416c1c11fcef72a",
+      "bytes": 2570036
+    },
+    {
+      "originalPath": "dist/THIRD_PARTY_NOTICES.md",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/THIRD_PARTY_NOTICES.md",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "afc25588179e1e55ade5f1a7150b372419f8c09d386a7bd946e65cb93a28a70a",
+      "bytes": 3722
+    },
+    {
+      "originalPath": "dist/assets/audio/ancient-forest-v2.wav",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/audio/ancient-forest-v2.wav",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "b7755b164ef1de239fd8f0212be8e0a3a39cd772f50795f8697d41647bf5839a",
+      "bytes": 9216044
+    },
+    {
+      "originalPath": "dist/assets/game/backgrounds/depths-v1-39f37e13a2e0.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/backgrounds/depths-v1-39f37e13a2e0.webp",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "39f37e13a2e0484e85917906e2faade0f0e4aec737889314dec548e64fc38487",
+      "bytes": 104716
+    },
+    {
+      "originalPath": "dist/assets/game/backgrounds/forest-v1-994b3c8f9f6a.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/backgrounds/forest-v1-994b3c8f9f6a.webp",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "994b3c8f9f6ac764203c183e94238ef04bece5c904d6ef2c80ca11d97ddda335",
+      "bytes": 323142
+    },
+    {
+      "originalPath": "dist/assets/game/backgrounds/garden-v1-41a641c5cc95.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/backgrounds/garden-v1-41a641c5cc95.webp",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "41a641c5cc9569a2ba6680b9452b03ee02e07516690978f09f5bbd7f00763237",
+      "bytes": 115124
+    },
+    {
+      "originalPath": "dist/assets/game/backgrounds/heart-v1-6aa1848e91d0.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/backgrounds/heart-v1-6aa1848e91d0.webp",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "6aa1848e91d0fa12d4f1bb06fb83064abc22483844c7e624c51452c9206c0b20",
+      "bytes": 124616
+    },
+    {
+      "originalPath": "dist/assets/game/manifest.json",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/manifest.json",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "95bf46a1ab5cbbd8536744771ceb6da5d04d89d0ccab083f176ed5d8246e9512",
+      "bytes": 4902
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+      "bytes": 74414
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+      "bytes": 74522
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+      "bytes": 74811
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+      "bytes": 106166
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+      "bytes": 65000
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+      "bytes": 59300
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/gate-b-v1-6c769a70f82e.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/gate-b-v1-6c769a70f82e.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "6c769a70f82e4d39baa39e9677c0a6b25d2be11bd5a11d50bf2922a28ce91906",
+      "bytes": 87114
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/gate-g-v1-20b28279bd7e.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/gate-g-v1-20b28279bd7e.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "20b28279bd7ee87691b76770e4faf762fe35ad375a0379ac96acb6f155bacb8f",
+      "bytes": 87131
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/gate-r-v1-a2483c0bf432.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/gate-r-v1-a2483c0bf432.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a2483c0bf432a3e76348e78f53d7219a0d4109da0d9a0e997129303a73a67408",
+      "bytes": 87137
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+      "bytes": 114999
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+      "bytes": 68030
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+      "bytes": 67690
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+      "bytes": 79392
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+      "bytes": 77012
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+      "bytes": 112378
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+      "bytes": 112020
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+      "bytes": 51158
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/rock-v1-c0530e24a807.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/rock-v1-c0530e24a807.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+      "bytes": 50510
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+      "bytes": 112227
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+      "bytes": 120358
+    },
+    {
+      "originalPath": "dist/assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+      "bytes": 118089
+    },
+    {
+      "originalPath": "dist/assets/site/icon.svg",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/site/icon.svg",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "db5521ca0cfdc08a10d72b129ffbfdbc0233f6550a09dc48d41285e75b09096a",
+      "bytes": 569
+    },
+    {
+      "originalPath": "dist/assets/site/ilyndrel-wordmark-v2.webp",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/site/ilyndrel-wordmark-v2.webp",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "c09ca803d71bdcdb8daf9ef904040ec9ab9044bb67fc7d8b266b621ea2e84e9b",
+      "bytes": 1101064
+    },
+    {
+      "originalPath": "dist/assets/site/share.png",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/assets/site/share.png",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a6b9f7b434cfb512c561fa6103cf2e219bdae5469b792f39a3cf6bd364be5a1f",
+      "bytes": 867587
+    },
+    {
+      "originalPath": "dist/config.json",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/config.json",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "dd93892fe4a6815aeff871839c69f6c5ac5e5bcfb36b770df0c598d474706db9",
+      "bytes": 152
+    },
+    {
+      "originalPath": "dist/css/style.css",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/css/style.css",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "319110bc3f8e269c3d0ff1c31312e4d7fa2528a9a66d5d7f7dd5c4e7534ec63e",
+      "bytes": 23724
+    },
+    {
+      "originalPath": "dist/index.html",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/index.html",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a00d5e6a83ea02b96f5d89a4a02e4d22f4733a8383046dc82d6951471d0d296f",
+      "bytes": 15431
+    },
+    {
+      "originalPath": "dist/manifest.webmanifest",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/manifest.webmanifest",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "65fa87e0dba49a3a2908579ca93f546641acc458779139bba1317fbf777e0302",
+      "bytes": 400
+    },
+    {
+      "originalPath": "dist/release-files.json",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/release-files.json",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "9ca96a5b2ef40892dd5495e19ea477502f46da2cccfe72e0a1d6ea0d787e68c7",
+      "bytes": 12659
+    },
+    {
+      "originalPath": "dist/src/assets/assetStore.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/assets/assetStore.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "63b7a90261a2bbd6671c4e373812695d5766489ff470dae60cef7c6c727b2aac",
+      "bytes": 12415
+    },
+    {
+      "originalPath": "dist/src/core/colors.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/colors.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "b6bfde6c55417eb706af8020134a44c698ac809ca19fd515b113d9c1022e150d",
+      "bytes": 523
+    },
+    {
+      "originalPath": "dist/src/core/emitter.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/emitter.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "519341951fd59f8eddbed32d7dc91dc31b96a406dd15a9d35fae587b90a3bfbc",
+      "bytes": 474
+    },
+    {
+      "originalPath": "dist/src/core/math.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/math.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "60c4443228b6b188b592861daec5c912437eff0a54c7ac3c0c66bba3b5eb7eb5",
+      "bytes": 1112
+    },
+    {
+      "originalPath": "dist/src/core/skins.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/skins.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "3b0cb20a37f473c0f9f5a78e58b2a04b30287222ff4043aedb54b20ebbaf78df",
+      "bytes": 992
+    },
+    {
+      "originalPath": "dist/src/core/tiles.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/tiles.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "3f855ba053d0172ffe330cffc487d598663a73f159d1e145611087ab94689c68",
+      "bytes": 762
+    },
+    {
+      "originalPath": "dist/src/core/version.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/core/version.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "24703bf906ad651b80bfbb4a89d2ac2c5e6fdd702a972e2c076c9b67598bebda",
+      "bytes": 35
+    },
+    {
+      "originalPath": "dist/src/data/levels.generated.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/data/levels.generated.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "611749902934d52a71e5a5b2145ba235a0f9670aa81016fde0fbaac1acd1148f",
+      "bytes": 330849
+    },
+    {
+      "originalPath": "dist/src/data/levels.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/data/levels.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "d4db75bea955c2a4fcc0c6210a9d647f82161e5e1407b1b8aa149c523ce7556f",
+      "bytes": 517
+    },
+    {
+      "originalPath": "dist/src/fx/music.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/fx/music.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "1f6494ef7d7106c7bce1e23f0f476f791e3653c1ddbdc8b661383e97e74dd88e",
+      "bytes": 1277
+    },
+    {
+      "originalPath": "dist/src/fx/particles.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/fx/particles.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2",
+      "bytes": 4728
+    },
+    {
+      "originalPath": "dist/src/fx/sound.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/fx/sound.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "d2f43dde64700d4214af4255fda6b48ddaa9518aa027be10184a0470b831cbf6",
+      "bytes": 9075
+    },
+    {
+      "originalPath": "dist/src/game/game.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/game/game.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "ec31e73da3f30d8e92190b6533a66d830c2436b2b4f2922df5d7483fcc73e8ed",
+      "bytes": 14061
+    },
+    {
+      "originalPath": "dist/src/infra/analytics.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/infra/analytics.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "b1c9355a2c775e818b73fb19edf275677bd05cfdd258e69acd21511d9a6cb6b5",
+      "bytes": 491
+    },
+    {
+      "originalPath": "dist/src/infra/errorHandler.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/infra/errorHandler.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "b5f19d1b9f0c4199b71620fc32f25f2ced3ad1e99ba1d5d218443ed407397e79",
+      "bytes": 660
+    },
+    {
+      "originalPath": "dist/src/main.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/main.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "59d231fa98ff1707cb7ca94652152aea37e31db37c118d3729dedcecf9cd9656",
+      "bytes": 16260
+    },
+    {
+      "originalPath": "dist/src/render/background.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/background.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "4de561815fb8ec25963ad68a09b302022c4cc17fde3e8e31845cbd232aa44610",
+      "bytes": 13826
+    },
+    {
+      "originalPath": "dist/src/render/beams.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/beams.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "d6f95a1bc9b444462407b761a6b4d857f70a8e9e43eb0a608bc15c13a0763b0e",
+      "bytes": 9248
+    },
+    {
+      "originalPath": "dist/src/render/bloom.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/bloom.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "0cb3282dda57220cae50b1c669648a5aa8e7a693c2adeefa84237ee1c7e04757",
+      "bytes": 1600
+    },
+    {
+      "originalPath": "dist/src/render/entities.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/entities.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "48d5b8a5c9d2634f15b8bb14c60c8542302c34dba13b0541a8d09bfe74e603f8",
+      "bytes": 15518
+    },
+    {
+      "originalPath": "dist/src/render/gradientCache.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/gradientCache.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a4e30eb80180e266f33904655e2bf3d4e87cfedbe0568e3b90ac33146d835def",
+      "bytes": 766
+    },
+    {
+      "originalPath": "dist/src/render/layout.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/layout.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "f0325a79419e9479eed63fc6cb6cda56232c9438a08e98f16c023dcc5b8b06a1",
+      "bytes": 764
+    },
+    {
+      "originalPath": "dist/src/render/renderer.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/renderer.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "046023c6b0f2768d729307f05e4e40522b277c4e839830e4bfef187546a9f236",
+      "bytes": 7367
+    },
+    {
+      "originalPath": "dist/src/render/sprites.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/sprites.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "ddf328d8744c3375840ea2282661375528422ec4cc5bbb8e8c6b68b974c17ce1",
+      "bytes": 1163
+    },
+    {
+      "originalPath": "dist/src/render/targetFx.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/render/targetFx.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "1dbcaf04b5accf26c888bfb2182958af9d69d29f4f851d26410c21136ca0e6e7",
+      "bytes": 4785
+    },
+    {
+      "originalPath": "dist/src/services/achievements.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/services/achievements.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "4465c260dd38b89f3b2b2ee38fd3ca2ff66b0ff161c52768d2c2d517304596bf",
+      "bytes": 2593
+    },
+    {
+      "originalPath": "dist/src/services/config.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/services/config.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "c4dd0c98e04bafe0fc26f547a0c68eefd85e0a8c69e50ca4d3dc6242175e03a5",
+      "bytes": 1559
+    },
+    {
+      "originalPath": "dist/src/services/daily.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/services/daily.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "863de586ff9088f38df466c43a9828041e34b0471ad357ea065fe5da9ce13a54",
+      "bytes": 1850
+    },
+    {
+      "originalPath": "dist/src/services/generator.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/services/generator.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "f526739af86cf209d54db035f71c063aaf404f12510bac2ed5f90c9f9540ec16",
+      "bytes": 14737
+    },
+    {
+      "originalPath": "dist/src/services/tutorial.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/services/tutorial.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "03352b7b468383e2f77f4182f44568ee2de503258d4fa1192e613ae79b7794a2",
+      "bytes": 1008
+    },
+    {
+      "originalPath": "dist/src/sim/index.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/sim/index.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "c535b9ee80fb32448ed5be24347327db23685264c11174f29eb50b3195d3ad5a",
+      "bytes": 312
+    },
+    {
+      "originalPath": "dist/src/sim/parser.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/sim/parser.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "ee550f71cb5247b9e89e68434f2173a735214e4b9d84486c144f1fceb28ac89e",
+      "bytes": 3502
+    },
+    {
+      "originalPath": "dist/src/sim/solver.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/sim/solver.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "d78d646b625b61c5d98b57baa4cb0ad6b85dd3cf020ca3a8f4d34b2bcc5d896e",
+      "bytes": 2494
+    },
+    {
+      "originalPath": "dist/src/sim/tracer.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/sim/tracer.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "506f04686a3147e16b129cd9a2579a620406dcd60e1fdf53721de4fb03e6dcf7",
+      "bytes": 3671
+    },
+    {
+      "originalPath": "dist/src/state/saveStore.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/state/saveStore.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "e6c0b8aec773511ed88bdfd4945a28a61f3330f73b911f57a7c74d9cccc44c53",
+      "bytes": 4171
+    },
+    {
+      "originalPath": "dist/src/ui/colorMarks.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/ui/colorMarks.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "153faa2ed1e4861fdfbdcf11a04800eecfb94e8928d0d0ddd891c5567707f863",
+      "bytes": 860
+    },
+    {
+      "originalPath": "dist/src/ui/deviceGuide.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/ui/deviceGuide.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "a8904ece33b6b2225978f262c431a1bed5ee6ca0742efe7f7c4db575aa13504a",
+      "bytes": 3256
+    },
+    {
+      "originalPath": "dist/src/ui/strings.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/ui/strings.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "cf185a52697dd81f9885b51d048ed42c443246970517de249884c4544a4eef9c",
+      "bytes": 14465
+    },
+    {
+      "originalPath": "dist/src/ui/symbols.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/ui/symbols.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "39cbfb19c1c60633bd9afa76dcd374ed79f593285695e1f47b8f4a91bddb2ed5",
+      "bytes": 3484
+    },
+    {
+      "originalPath": "dist/src/ui/ui.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/src/ui/ui.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "050201006daff94db5e41cd3ae04710b55f54cc880f6d19060f83518c96ea9c4",
+      "bytes": 18723
+    },
+    {
+      "originalPath": "dist/sw.js",
+      "archivePath": "art/history/2026-09-14-complete-work/release-e355b1b/sw.js",
+      "role": "runtime-build-snapshot-at-e355b1b",
+      "sha256": "681a690942145591a5199656c02dedbd9405b340503adbfdad96071ee51d3f1c",
+      "bytes": 10081
+    }
+  ]
+}

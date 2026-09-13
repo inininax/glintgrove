@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Ilyndrel — 거울로 빛을 이어 잠든 정원을 깨우는 퍼즐. 300개의 물길과 일일 챌린지를 만나보세요.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self'; script-src 'self'; connect-src 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:title" content="Ilyndrel — 물빛을 잇는 정원">
+  <meta property="og:description" content="거울로 빛을 이어 잠든 정원을 깨워보세요. 300개의 퍼즐과 일일 챌린지.">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/site/share.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#081b22">
+  <title>Ilyndrel — 물빛을 잇는 정원</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/site/icon.svg">
+</head>
+<body data-screen="title">
+  <canvas id="game-canvas"></canvas>
+
+  <div id="screen-title" class="screen">
+    <header class="title-nav">
+      <span class="edition-mark"><svg class="own-symbol tiny-star" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg> ILYNDREL <span class="edition-rule"></span> <span data-i18n="editionLabel">물빛을 잇는 정원</span></span>
+      <button id="btn-settings" class="text-btn" data-i18n="settings">설정</button>
+    </header>
+    <div class="title-composition">
+      <div class="title-wrap">
+        <svg class="own-symbol grove-sigil" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3C22 8 25 13 23 19C21 25 16 29 16 29S9 25 8 19C7 13 11 7 16 3Z"/><path d="M16 9V24M11 15L16 19L21 13"/></svg>
+        <p class="title-eyebrow" data-i18n="genreLabel">거울 사이로 이어지는 빛</p>
+        <h1 class="title-logo">ILYNDREL</h1>
+        <p class="tagline" data-i18n="tagline">거울 너머, 작은 정원이 피어납니다</p>
+      </div>
+      <div class="menu-col">
+        <button id="btn-play" class="btn primary title-play"><span data-i18n="play">숲으로 들어가기</span><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 23V9L17 16L5 23ZM20 9L27 16L20 23"/><path d="M10 16H22"/></svg></button>
+        <div class="title-secondary">
+          <button id="btn-continue" class="text-btn" data-i18n="continue">이어하기</button>
+          <span aria-hidden="true">·</span>
+          <button id="btn-daily" class="text-btn" data-i18n="daily">일일 챌린지</button>
+        </div>
+      </div>
+    </div>
+    <footer class="title-footer">
+      <p class="credits" data-i18n="creditsHint">거울 한 번, 새로운 물길 하나</p>
+      <span class="title-footnote" data-i18n="titleFootnote">300개의 물길 · 손끝에서 피어나는 정원</span>
+    </footer>
+  </div>
+
+  <div id="screen-levels" class="screen hidden">
+    <div class="levels-shell">
+      <header class="levels-head">
+        <div><p class="eyebrow" data-i18n="mapEyebrow">깊은 숲으로 이어지는 여정</p><h2 data-i18n="map">숲의 지도</h2><p class="map-description" data-i18n="mapDescription">거울을 이어 물빛을 보내고, 길 끝의 작은 생명을 깨워보세요.</p></div>
+        <div class="star-total"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg><span id="total-stars">0 / 900</span><span class="eyebrow" data-i18n="starlightLabel">모은 별빛</span></div>
+      </header>
+      <div id="chapter-list"></div>
+    </div>
+    <nav class="row-actions" aria-label="숲의 지도 메뉴" data-i18n-aria="mapNavigation">
+      <button id="btn-back-title" class="text-btn" data-i18n="backToTitle">← 타이틀로</button>
+      <div class="row-actions-right"><button id="btn-ach" class="text-btn" data-i18n="achievements">업적</button><button id="btn-settings2" class="text-btn" data-i18n="settings">설정</button></div>
+    </nav>
+  </div>
+
+  <div id="screen-game" class="screen hidden">
+    <div id="tutorial-layer"></div>
+    <div class="hud panel">
+      <div class="hud-heading"><span id="hud-chapter" class="eyebrow" data-i18n="groveLabel">깨어나는 숲</span><span id="hud-level-name" class="hud-title">1.</span></div>
+      <span id="hud-moves">0 / 0</span>
+      <span class="hud-divider" aria-hidden="true"></span>
+      <button id="btn-hint" class="icon-btn" title="도움말 (H)" aria-label="도움말" data-i18n-aria="hintAria" data-i18n-title="hintTitle"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4L22 12L20 21H12L10 12L16 4ZM13 25H19M16 10V17"/><path d="M5 8L7 10M27 8L25 10M3 17H6M26 17H29"/></svg></button>
+      <button id="btn-undo" class="icon-btn" title="한 수 되돌리기 (U)" aria-label="한 수 되돌리기" data-i18n-aria="undoAria" data-i18n-title="undoTitle"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7L4 12L12 17V7ZM13 12H21L27 18L22 25H14"/><path d="M14 22L17 25L14 28"/></svg></button>
+      <button id="btn-reset" class="icon-btn" title="퍼즐 다시 시작 (R)" aria-label="퍼즐 다시 시작" data-i18n-aria="resetAria" data-i18n-title="resetTitle"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 5L28 11L22 17V5ZM21 10H12L5 17L11 24H20L24 20"/><path d="M12 15L17 20M17 15L12 20"/></svg></button>
+      <button id="btn-exit" class="icon-btn" title="숲의 지도 (Esc)" aria-label="숲의 지도로 돌아가기" data-i18n-aria="mapAria" data-i18n-title="mapTitle"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 25V11L11 5H24L28 9V24L23 28H9L5 25Z"/><path d="M10 23L13 17L21 15L23 9M13 17L9 12"/><circle cx="10" cy="23" r="2"/><circle cx="21" cy="15" r="2"/></svg></button>
+      <button id="btn-settings-game" class="icon-btn" title="설정" aria-label="설정" data-i18n-aria="settings" data-i18n-title="settings"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5V12M6 20V27M16 5V19M16 27V29M26 3V8M26 16V27"/><path d="M6 11L10 16L6 21L2 16Z M16 18L20 23L16 28L12 23Z M26 7L30 12L26 17L22 12Z"/></svg></button>
+    </div>
+    <div class="game-footer"><span class="game-wordmark">ILYNDREL</span><span class="hint-label" data-i18n="hintLabel">거울을 돌려 빛을 이어주세요 · H 키로 도움말</span><svg class="own-symbol game-footer-star" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg></div>
+  </div>
+
+  <div id="win-overlay" class="modal-overlay hidden">
+    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="win-title">
+      <div class="modal-emblem" aria-hidden="true"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3C22 8 25 13 23 19C21 25 16 29 16 29S9 25 8 19C7 13 11 7 16 3Z"/><path d="M16 9V24M11 15L16 19L21 13"/></svg></div>
+      <p class="eyebrow" data-i18n="winEyebrow">새벽에 한 걸음 더 가까이</p>
+      <h2 id="win-title">빛이 길을 찾았어요</h2>
+      <div id="win-stars" role="img" aria-label="0 / 3"><span><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg></span><span><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg></span><span><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3L22 12L29 16L21 21L16 29L11 21L3 16L12 11Z"/><path d="M16 9V23M9 16H23"/></svg></span></div>
+      <p id="win-stats"></p>
+      <div class="win-actions">
+        <button id="btn-next" class="btn primary" data-i18n="nextLevel">다음 레벨 →</button>
+        <button id="btn-share" class="btn" data-i18n="share">공유</button>
+        <button id="btn-replay" class="btn" data-i18n="replay">다시 하기</button>
+        <button id="btn-win-select" class="btn" data-i18n="list">목록</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal-overlay hidden">
+    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <p class="eyebrow" data-i18n="settingsEyebrow">나에게 맞는 숲의 감각</p>
+      <h2 id="settings-title" data-i18n="settings">설정</h2>
+      <div class="settings-row">
+        <label for="set-sound" data-i18n="soundDesc">효과음과 숲의 소리</label>
+        <label class="switch"><input type="checkbox" id="set-sound"><span class="slider"></span></label>
+      </div>
+      <div class="settings-row">
+        <label for="set-display" data-i18n="displayLabel">화면 표현</label>
+        <select id="set-display" class="select">
+          <option value="sculpted" data-i18n="displaySculpted">조각 아트</option>
+          <option value="simple" data-i18n="displaySimple">간결한 도형</option>
+        </select>
+      </div>
+      <div class="settings-row">
+        <label for="set-motion" data-i18n="motionDesc">배경 움직임과 반짝임</label>
+        <label class="switch"><input type="checkbox" id="set-motion"><span class="slider"></span></label>
+      </div>
+      <div class="settings-row">
+        <label for="set-colorblind" data-i18n="colorblindDesc">빛 색상에 무늬와 문자를 추가</label>
+        <label class="switch"><input type="checkbox" id="set-colorblind"><span class="slider"></span></label>
+      </div>
+      <div class="settings-row">
+        <label for="set-lang" data-i18n="langLabel">언어</label>
+        <select id="set-lang" class="select">
+          <option value="auto" data-i18n="langAuto">자동</option>
+          <option value="ko" selected>한국어 (Korean)</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <div class="settings-row">
+        <label for="set-skin" data-i18n="skinLabel">빛 스킨</label>
+        <select id="set-skin" class="select"></select>
+      </div>
+      <div class="settings-row">
+        <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
+        <span></span>
+      </div>
+      <div class="danger-zone">
+        <button id="btn-wipe" class="btn danger small" data-i18n="wipe">진행 데이터 초기화</button>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-close-settings" class="btn primary" data-i18n="close">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="intro-modal" class="modal-overlay hidden">
+    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="intro-title">
+      <div class="modal-emblem" aria-hidden="true"><svg class="own-symbol " viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3C22 8 25 13 23 19C21 25 16 29 16 29S9 25 8 19C7 13 11 7 16 3Z"/><path d="M16 9V24M11 15L16 19L21 13"/></svg></div>
+      <p class="eyebrow" data-i18n="introEyebrow">첫 번째 반짝임</p>
+      <h2 id="intro-title" data-i18n="introTitle">첫 물길을 열어보세요</h2>
+      <p>
+        <span data-i18n="introBody1">정원 입구에서 작은 빛이 흐릅니다. 길을 이어 모든 나무와 생명에게 전해주세요.</span><br><br>
+        <b data-i18n="introBody2">거울을 누르면 방향이 바뀝니다. 분할기는 빛을 둘로 나누므로, 갈라진 길에도 빛을 보낼 수 있어요.</b><br><br>
+        <span data-i18n="introBody3">일부 생명은 특정 색의 빛을 필요로 합니다. 크리스털(r/g/b)은 빛을 물들이고, 문(A/B/C)은 같은 색만 통과시킵니다.</span>
+      </p>
+      <div class="modal-actions">
+        <button id="btn-intro-ok" class="btn primary" data-i18n="enterForest">숲으로 들어가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="ach-modal" class="modal-overlay hidden">
+    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="ach-title">
+      <p class="eyebrow" data-i18n="achEyebrow">빛의 여정에서 모은 기록</p>
+      <h2 id="ach-title"><span data-i18n="achTitle">업적</span> <span id="ach-progress" class="chapter-progress"></span></h2>
+      <div id="ach-list" class="ach-list"></div>
+      <div class="modal-actions">
+        <button id="btn-close-ach" class="btn primary" data-i18n="close">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

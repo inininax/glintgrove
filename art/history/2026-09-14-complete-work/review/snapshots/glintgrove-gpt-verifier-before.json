@@ -1,0 +1,102 @@
+{
+  "crystal.b": {
+    "src": "sprites/crystal-b-v1-d4f7feea1455.png",
+    "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060"
+  },
+  "crystal.g": {
+    "src": "sprites/crystal-g-v1-9dda05f4465b.png",
+    "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509"
+  },
+  "crystal.r": {
+    "src": "sprites/crystal-r-v1-982f1d4ceecf.png",
+    "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc"
+  },
+  "depths": {
+    "src": "backgrounds/depths-v1-39f37e13a2e0.webp",
+    "sha256": "39f37e13a2e0484e85917906e2faade0f0e4aec737889314dec548e64fc38487"
+  },
+  "emitter": {
+    "src": "sprites/emitter-v1-08b94cf5b6d8.png",
+    "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd"
+  },
+  "flower.awake": {
+    "src": "sprites/flower-awake-v1-6c5dc174bd75.png",
+    "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044"
+  },
+  "flower.dormant": {
+    "src": "sprites/flower-dormant-v1-8a29750a727d.png",
+    "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a"
+  },
+  "forest": {
+    "src": "backgrounds/forest-v1-2b7ecddf8b7f.webp",
+    "sha256": "2b7ecddf8b7ffad166e9176e780dfeb96c3f5edb1afbba0145e82330d46a6a57"
+  },
+  "garden": {
+    "src": "backgrounds/garden-v1-41a641c5cc95.webp",
+    "sha256": "41a641c5cc9569a2ba6680b9452b03ee02e07516690978f09f5bbd7f00763237"
+  },
+  "gate.b": {
+    "src": "sprites/gate-b-v1-84b7686ddbf9.png",
+    "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6"
+  },
+  "gate.g": {
+    "src": "sprites/gate-g-v1-d0db52bbbd49.png",
+    "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3"
+  },
+  "gate.r": {
+    "src": "sprites/gate-r-v1-23e0f971ffec.png",
+    "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111"
+  },
+  "heart": {
+    "src": "backgrounds/heart-v1-6aa1848e91d0.webp",
+    "sha256": "6aa1848e91d0fa12d4f1bb06fb83064abc22483844c7e624c51452c9206c0b20"
+  },
+  "mirror": {
+    "src": "sprites/mirror-v1-ad4a7c31891c.png",
+    "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5"
+  },
+  "mushroom.awake": {
+    "src": "sprites/mushroom-awake-v1-a4256e82ee40.png",
+    "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e"
+  },
+  "mushroom.dormant": {
+    "src": "sprites/mushroom-dormant-v1-4e21909d06bf.png",
+    "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599"
+  },
+  "owl.awake": {
+    "src": "sprites/owl-awake-v1-cf707d630ce9.png",
+    "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c"
+  },
+  "owl.dormant": {
+    "src": "sprites/owl-dormant-v1-0b0123e14f8b.png",
+    "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9"
+  },
+  "portal.gold": {
+    "src": "sprites/portal-gold-v1-3ef23c926f42.png",
+    "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5"
+  },
+  "portal.violet": {
+    "src": "sprites/portal-violet-v1-e066b9b0c5bd.png",
+    "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff"
+  },
+  "rock": {
+    "src": "sprites/rock-v1-c0530e24a807.png",
+    "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d"
+  },
+  "rock.alt": {
+    "src": "sprites/rock-alt-v1-ba25c75f7b5e.png",
+    "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f"
+  },
+  "splitter": {
+    "src": "sprites/splitter-v1-fa76287daa4b.png",
+    "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293"
+  },
+  "tree.awake": {
+    "src": "sprites/tree-awake-v1-87948c6479fa.png",
+    "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997"
+  },
+  "tree.dormant": {
+    "src": "sprites/tree-dormant-v1-f96a25b9e9ca.png",
+    "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025"
+  }
+}

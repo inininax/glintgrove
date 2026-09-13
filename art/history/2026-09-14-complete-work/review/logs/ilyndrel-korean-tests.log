@@ -1,0 +1,106 @@
+TAP version 13
+# Subtest: ko and en dictionaries have identical key sets
+ok 1 - ko and en dictionaries have identical key sets
+  ---
+  duration_ms: 0.719209
+  type: 'test'
+  ...
+# Subtest: every key resolves to non-empty string in both languages
+ok 2 - every key resolves to non-empty string in both languages
+  ---
+  duration_ms: 0.208625
+  type: 'test'
+  ...
+# Subtest: t() falls back to ko then key
+ok 3 - t() falls back to ko then key
+  ---
+  duration_ms: 0.101833
+  type: 'test'
+  ...
+# Subtest: Korean is the default even when the browser prefers English
+ok 4 - Korean is the default even when the browser prefers English
+  ---
+  duration_ms: 0.094083
+  type: 'test'
+  ...
+# Subtest: all levels have EN display names
+ok 5 - all levels have EN display names
+  ---
+  duration_ms: 0.146
+  type: 'test'
+  ...
+# Subtest: achievements have bilingual names and descriptions
+ok 6 - achievements have bilingual names and descriptions
+  ---
+  duration_ms: 0.051708
+  type: 'test'
+  ...
+# Subtest: defaults shape is v2
+ok 7 - defaults shape is v2
+  ---
+  duration_ms: 0.873792
+  type: 'test'
+  ...
+# Subtest: v1 save migrates to v2 preserving progress
+ok 8 - v1 save migrates to v2 preserving progress
+  ---
+  duration_ms: 0.342625
+  type: 'test'
+  ...
+# Subtest: corrupted payloads sanitize safely
+ok 9 - corrupted payloads sanitize safely
+  ---
+  duration_ms: 0.106209
+  type: 'test'
+  ...
+# Subtest: fresh saves and missing or invalid language values default to Korean
+ok 10 - fresh saves and missing or invalid language values default to Korean
+  ---
+  duration_ms: 0.260709
+  type: 'test'
+  ...
+# Subtest: saved Korean, English and automatic preferences survive loading and v1 migration
+ok 11 - saved Korean, English and automatic preferences survive loading and v1 migration
+  ---
+  duration_ms: 0.210833
+  type: 'test'
+  ...
+# Subtest: completeLevel unlocks next and keeps best stars
+ok 12 - completeLevel unlocks next and keeps best stars
+  ---
+  duration_ms: 0.073708
+  type: 'test'
+  ...
+# Subtest: recordDaily keeps best stars and fewest moves
+ok 13 - recordDaily keeps best stars and fewest moves
+  ---
+  duration_ms: 0.074083
+  type: 'test'
+  ...
+# Subtest: dailyStreak counts consecutive days ending today
+ok 14 - dailyStreak counts consecutive days ending today
+  ---
+  duration_ms: 0.978792
+  type: 'test'
+  ...
+# Subtest: totalStars sums
+ok 15 - totalStars sums
+  ---
+  duration_ms: 0.355042
+  type: 'test'
+  ...
+# Subtest: legacy v1 storage key migrates and persists under v2
+ok 16 - legacy v1 storage key migrates and persists under v2
+  ---
+  duration_ms: 0.408792
+  type: 'test'
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57.148875

@@ -1,0 +1,386 @@
+{
+  "builder": "ilyndrel-runtime-release-v1",
+  "artRevision": "nocturne-8f72a32c7dc7",
+  "files": [
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 3722,
+      "sha256": "afc25588179e1e55ade5f1a7150b372419f8c09d386a7bd946e65cb93a28a70a"
+    },
+    {
+      "path": "assets/audio/ancient-forest-v2.wav",
+      "bytes": 9216044,
+      "sha256": "b7755b164ef1de239fd8f0212be8e0a3a39cd772f50795f8697d41647bf5839a"
+    },
+    {
+      "path": "assets/game/backgrounds/depths-v1-39f37e13a2e0.webp",
+      "bytes": 104716,
+      "sha256": "39f37e13a2e0484e85917906e2faade0f0e4aec737889314dec548e64fc38487"
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-994b3c8f9f6a.webp",
+      "bytes": 323142,
+      "sha256": "994b3c8f9f6ac764203c183e94238ef04bece5c904d6ef2c80ca11d97ddda335"
+    },
+    {
+      "path": "assets/game/backgrounds/garden-v1-41a641c5cc95.webp",
+      "bytes": 115124,
+      "sha256": "41a641c5cc9569a2ba6680b9452b03ee02e07516690978f09f5bbd7f00763237"
+    },
+    {
+      "path": "assets/game/backgrounds/heart-v1-6aa1848e91d0.webp",
+      "bytes": 124616,
+      "sha256": "6aa1848e91d0fa12d4f1bb06fb83064abc22483844c7e624c51452c9206c0b20"
+    },
+    {
+      "path": "assets/game/manifest.json",
+      "bytes": 4902,
+      "sha256": "95bf46a1ab5cbbd8536744771ceb6da5d04d89d0ccab083f176ed5d8246e9512"
+    },
+    {
+      "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "bytes": 74414,
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060"
+    },
+    {
+      "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "bytes": 74522,
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509"
+    },
+    {
+      "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "bytes": 74811,
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc"
+    },
+    {
+      "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "bytes": 106166,
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd"
+    },
+    {
+      "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "bytes": 65000,
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044"
+    },
+    {
+      "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "bytes": 59300,
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a"
+    },
+    {
+      "path": "assets/game/sprites/gate-b-v1-6c769a70f82e.png",
+      "bytes": 87114,
+      "sha256": "6c769a70f82e4d39baa39e9677c0a6b25d2be11bd5a11d50bf2922a28ce91906"
+    },
+    {
+      "path": "assets/game/sprites/gate-g-v1-20b28279bd7e.png",
+      "bytes": 87131,
+      "sha256": "20b28279bd7ee87691b76770e4faf762fe35ad375a0379ac96acb6f155bacb8f"
+    },
+    {
+      "path": "assets/game/sprites/gate-r-v1-a2483c0bf432.png",
+      "bytes": 87137,
+      "sha256": "a2483c0bf432a3e76348e78f53d7219a0d4109da0d9a0e997129303a73a67408"
+    },
+    {
+      "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "bytes": 114999,
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5"
+    },
+    {
+      "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "bytes": 68030,
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e"
+    },
+    {
+      "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "bytes": 67690,
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599"
+    },
+    {
+      "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "bytes": 79392,
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c"
+    },
+    {
+      "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "bytes": 77012,
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9"
+    },
+    {
+      "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "bytes": 112378,
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5"
+    },
+    {
+      "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "bytes": 112020,
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff"
+    },
+    {
+      "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "bytes": 51158,
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f"
+    },
+    {
+      "path": "assets/game/sprites/rock-v1-c0530e24a807.png",
+      "bytes": 50510,
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d"
+    },
+    {
+      "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "bytes": 112227,
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293"
+    },
+    {
+      "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "bytes": 120358,
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997"
+    },
+    {
+      "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "bytes": 118089,
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025"
+    },
+    {
+      "path": "assets/site/icon.svg",
+      "bytes": 569,
+      "sha256": "db5521ca0cfdc08a10d72b129ffbfdbc0233f6550a09dc48d41285e75b09096a"
+    },
+    {
+      "path": "assets/site/ilyndrel-wordmark-v2.webp",
+      "bytes": 1101064,
+      "sha256": "c09ca803d71bdcdb8daf9ef904040ec9ab9044bb67fc7d8b266b621ea2e84e9b"
+    },
+    {
+      "path": "assets/site/share.png",
+      "bytes": 867587,
+      "sha256": "a6b9f7b434cfb512c561fa6103cf2e219bdae5469b792f39a3cf6bd364be5a1f"
+    },
+    {
+      "path": "config.json",
+      "bytes": 152,
+      "sha256": "dd93892fe4a6815aeff871839c69f6c5ac5e5bcfb36b770df0c598d474706db9"
+    },
+    {
+      "path": "css/style.css",
+      "bytes": 23724,
+      "sha256": "319110bc3f8e269c3d0ff1c31312e4d7fa2528a9a66d5d7f7dd5c4e7534ec63e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 15431,
+      "sha256": "a00d5e6a83ea02b96f5d89a4a02e4d22f4733a8383046dc82d6951471d0d296f"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 400,
+      "sha256": "65fa87e0dba49a3a2908579ca93f546641acc458779139bba1317fbf777e0302"
+    },
+    {
+      "path": "src/assets/assetStore.js",
+      "bytes": 12415,
+      "sha256": "63b7a90261a2bbd6671c4e373812695d5766489ff470dae60cef7c6c727b2aac"
+    },
+    {
+      "path": "src/core/colors.js",
+      "bytes": 523,
+      "sha256": "b6bfde6c55417eb706af8020134a44c698ac809ca19fd515b113d9c1022e150d"
+    },
+    {
+      "path": "src/core/emitter.js",
+      "bytes": 474,
+      "sha256": "519341951fd59f8eddbed32d7dc91dc31b96a406dd15a9d35fae587b90a3bfbc"
+    },
+    {
+      "path": "src/core/math.js",
+      "bytes": 1112,
+      "sha256": "60c4443228b6b188b592861daec5c912437eff0a54c7ac3c0c66bba3b5eb7eb5"
+    },
+    {
+      "path": "src/core/skins.js",
+      "bytes": 992,
+      "sha256": "3b0cb20a37f473c0f9f5a78e58b2a04b30287222ff4043aedb54b20ebbaf78df"
+    },
+    {
+      "path": "src/core/tiles.js",
+      "bytes": 762,
+      "sha256": "3f855ba053d0172ffe330cffc487d598663a73f159d1e145611087ab94689c68"
+    },
+    {
+      "path": "src/core/version.js",
+      "bytes": 35,
+      "sha256": "24703bf906ad651b80bfbb4a89d2ac2c5e6fdd702a972e2c076c9b67598bebda"
+    },
+    {
+      "path": "src/data/levels.generated.js",
+      "bytes": 330849,
+      "sha256": "611749902934d52a71e5a5b2145ba235a0f9670aa81016fde0fbaac1acd1148f"
+    },
+    {
+      "path": "src/data/levels.js",
+      "bytes": 517,
+      "sha256": "d4db75bea955c2a4fcc0c6210a9d647f82161e5e1407b1b8aa149c523ce7556f"
+    },
+    {
+      "path": "src/fx/music.js",
+      "bytes": 1277,
+      "sha256": "1f6494ef7d7106c7bce1e23f0f476f791e3653c1ddbdc8b661383e97e74dd88e"
+    },
+    {
+      "path": "src/fx/particles.js",
+      "bytes": 4728,
+      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2"
+    },
+    {
+      "path": "src/fx/sound.js",
+      "bytes": 9075,
+      "sha256": "d2f43dde64700d4214af4255fda6b48ddaa9518aa027be10184a0470b831cbf6"
+    },
+    {
+      "path": "src/game/game.js",
+      "bytes": 14061,
+      "sha256": "ec31e73da3f30d8e92190b6533a66d830c2436b2b4f2922df5d7483fcc73e8ed"
+    },
+    {
+      "path": "src/infra/analytics.js",
+      "bytes": 491,
+      "sha256": "b1c9355a2c775e818b73fb19edf275677bd05cfdd258e69acd21511d9a6cb6b5"
+    },
+    {
+      "path": "src/infra/errorHandler.js",
+      "bytes": 660,
+      "sha256": "b5f19d1b9f0c4199b71620fc32f25f2ced3ad1e99ba1d5d218443ed407397e79"
+    },
+    {
+      "path": "src/main.js",
+      "bytes": 16260,
+      "sha256": "59d231fa98ff1707cb7ca94652152aea37e31db37c118d3729dedcecf9cd9656"
+    },
+    {
+      "path": "src/render/background.js",
+      "bytes": 13826,
+      "sha256": "4de561815fb8ec25963ad68a09b302022c4cc17fde3e8e31845cbd232aa44610"
+    },
+    {
+      "path": "src/render/beams.js",
+      "bytes": 9248,
+      "sha256": "d6f95a1bc9b444462407b761a6b4d857f70a8e9e43eb0a608bc15c13a0763b0e"
+    },
+    {
+      "path": "src/render/bloom.js",
+      "bytes": 1600,
+      "sha256": "0cb3282dda57220cae50b1c669648a5aa8e7a693c2adeefa84237ee1c7e04757"
+    },
+    {
+      "path": "src/render/entities.js",
+      "bytes": 15518,
+      "sha256": "48d5b8a5c9d2634f15b8bb14c60c8542302c34dba13b0541a8d09bfe74e603f8"
+    },
+    {
+      "path": "src/render/gradientCache.js",
+      "bytes": 766,
+      "sha256": "a4e30eb80180e266f33904655e2bf3d4e87cfedbe0568e3b90ac33146d835def"
+    },
+    {
+      "path": "src/render/layout.js",
+      "bytes": 764,
+      "sha256": "f0325a79419e9479eed63fc6cb6cda56232c9438a08e98f16c023dcc5b8b06a1"
+    },
+    {
+      "path": "src/render/renderer.js",
+      "bytes": 7367,
+      "sha256": "046023c6b0f2768d729307f05e4e40522b277c4e839830e4bfef187546a9f236"
+    },
+    {
+      "path": "src/render/sprites.js",
+      "bytes": 1163,
+      "sha256": "ddf328d8744c3375840ea2282661375528422ec4cc5bbb8e8c6b68b974c17ce1"
+    },
+    {
+      "path": "src/render/targetFx.js",
+      "bytes": 4785,
+      "sha256": "1dbcaf04b5accf26c888bfb2182958af9d69d29f4f851d26410c21136ca0e6e7"
+    },
+    {
+      "path": "src/services/achievements.js",
+      "bytes": 2593,
+      "sha256": "4465c260dd38b89f3b2b2ee38fd3ca2ff66b0ff161c52768d2c2d517304596bf"
+    },
+    {
+      "path": "src/services/config.js",
+      "bytes": 1559,
+      "sha256": "c4dd0c98e04bafe0fc26f547a0c68eefd85e0a8c69e50ca4d3dc6242175e03a5"
+    },
+    {
+      "path": "src/services/daily.js",
+      "bytes": 1850,
+      "sha256": "863de586ff9088f38df466c43a9828041e34b0471ad357ea065fe5da9ce13a54"
+    },
+    {
+      "path": "src/services/generator.js",
+      "bytes": 14737,
+      "sha256": "f526739af86cf209d54db035f71c063aaf404f12510bac2ed5f90c9f9540ec16"
+    },
+    {
+      "path": "src/services/tutorial.js",
+      "bytes": 1008,
+      "sha256": "03352b7b468383e2f77f4182f44568ee2de503258d4fa1192e613ae79b7794a2"
+    },
+    {
+      "path": "src/sim/index.js",
+      "bytes": 312,
+      "sha256": "c535b9ee80fb32448ed5be24347327db23685264c11174f29eb50b3195d3ad5a"
+    },
+    {
+      "path": "src/sim/parser.js",
+      "bytes": 3502,
+      "sha256": "ee550f71cb5247b9e89e68434f2173a735214e4b9d84486c144f1fceb28ac89e"
+    },
+    {
+      "path": "src/sim/solver.js",
+      "bytes": 2494,
+      "sha256": "d78d646b625b61c5d98b57baa4cb0ad6b85dd3cf020ca3a8f4d34b2bcc5d896e"
+    },
+    {
+      "path": "src/sim/tracer.js",
+      "bytes": 3671,
+      "sha256": "506f04686a3147e16b129cd9a2579a620406dcd60e1fdf53721de4fb03e6dcf7"
+    },
+    {
+      "path": "src/state/saveStore.js",
+      "bytes": 4171,
+      "sha256": "e6c0b8aec773511ed88bdfd4945a28a61f3330f73b911f57a7c74d9cccc44c53"
+    },
+    {
+      "path": "src/ui/colorMarks.js",
+      "bytes": 860,
+      "sha256": "153faa2ed1e4861fdfbdcf11a04800eecfb94e8928d0d0ddd891c5567707f863"
+    },
+    {
+      "path": "src/ui/deviceGuide.js",
+      "bytes": 3256,
+      "sha256": "a8904ece33b6b2225978f262c431a1bed5ee6ca0742efe7f7c4db575aa13504a"
+    },
+    {
+      "path": "src/ui/strings.js",
+      "bytes": 14465,
+      "sha256": "cf185a52697dd81f9885b51d048ed42c443246970517de249884c4544a4eef9c"
+    },
+    {
+      "path": "src/ui/symbols.js",
+      "bytes": 3484,
+      "sha256": "39cbfb19c1c60633bd9afa76dcd374ed79f593285695e1f47b8f4a91bddb2ed5"
+    },
+    {
+      "path": "src/ui/ui.js",
+      "bytes": 18723,
+      "sha256": "050201006daff94db5e41cd3ae04710b55f54cc880f6d19060f83518c96ea9c4"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 10081,
+      "sha256": "681a690942145591a5199656c02dedbd9405b340503adbfdad96071ee51d3f1c"
+    }
+  ]
+}

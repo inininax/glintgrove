@@ -1,0 +1,12 @@
+00:00.513  blend            | Read blend: "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/blender/grove-library-v1.blend"
+00:02.169  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mirror-v1.png'
+RENDERED mirror /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mirror-v1.png
+00:03.279  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-awake-v1.png'
+RENDERED mushroom.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/mushroom-awake-v1.png
+00:04.517  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-awake-v1.png'
+RENDERED owl.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/owl-awake-v1.png
+00:05.994  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-awake-v1.png'
+RENDERED tree.awake /Users/kyungseok.lee/workspace-git/glintgrove/assets/game/sprites/tree-awake-v1.png
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

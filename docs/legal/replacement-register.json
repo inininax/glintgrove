@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "recordedDate": "2026-09-13",
-  "recordedAt": "2026-09-13T15:50:31.312Z",
+  "recordedAt": "2026-09-13T16:55:09.715Z",
   "runtimeRevision": "nocturne-8f72a32c7dc7",
   "status": "recorded-with-provenance-status-per-entry",
   "copyrightClearance": "not-established",
@@ -1195,8 +1195,8 @@
     },
     {
       "path": "tools/art/LICENSES.md",
-      "sha256": "d008afce72a465fdab7bdfb2f595afe9b303616226da490a0b50b2933ab5f101",
-      "bytes": 1341
+      "sha256": "4f1aad4283b5a368c8f1559f5cdc90be2c4ea92f8cb01c6e4052bd0b11a24706",
+      "bytes": 1626
     },
     {
       "path": "tools/art/COPYING.GPL-3.0",
@@ -1210,8 +1210,8 @@
     },
     {
       "path": "tools/record-visual-provenance.mjs",
-      "sha256": "2ab06e3afb7164af52f70935e380794bd50428f39a01267b84fb65e1172358c9",
-      "bytes": 18633
+      "sha256": "afedee0893fa3619215914689027f0a0bf2c244dd0dc339d2c614364725852db",
+      "bytes": 18666
     },
     {
       "path": "art/recipes/catalog.json",
@@ -1280,8 +1280,8 @@
     },
     {
       "path": "art/recipes/ancient-forest-v6.md",
-      "sha256": "a7a232e6d10b288b8148f786d616d33c82c22e5e07db3ad40a0c67b8be2a0e73",
-      "bytes": 5677
+      "sha256": "02aee8534be6e3ee8a68e160092acbc3b6f76015098fff57d957e634ec56e8d3",
+      "bytes": 6129
     },
     {
       "path": "art/recipes/ilyndrel-symbol-v1.json",
@@ -1325,18 +1325,18 @@
     },
     {
       "path": "art/recipes/jeweled-title-v2.md",
-      "sha256": "c7a1890d23468e4aa70ef8725a6db9f17b644c7e49155663bf6537e8e576eefa",
-      "bytes": 3823
+      "sha256": "c61cd43bbe119d83e62c97a97a3dc7b46fe05acfa200c92fb12c955fb1d96ccb",
+      "bytes": 4246
     },
     {
       "path": "art/recipes/title-forest-music.md",
-      "sha256": "06ccfdfc60ce0ed97d3803a0cd00b5da233f750df33188307ded333cf11e7690",
-      "bytes": 4969
+      "sha256": "cd4a3ca81ab1dc3ee7488818548b87efdd2024898cdfb8bf450dcced970f692e",
+      "bytes": 5681
     },
     {
       "path": "art/recipes/forest-reverie-v1-music.md",
-      "sha256": "3ca71ff4b5906eedb167d145df3b58eee13c7243970388b00eebe318518dacbd",
-      "bytes": 4416
+      "sha256": "7ccc10fe35f34ba105c5685936b8eaaa952a5d575a777c39d480017c87eb4c11",
+      "bytes": 5075
     },
     {
       "path": "art/recipes/forest-reverie-v1-music.json",
@@ -1355,8 +1355,8 @@
     },
     {
       "path": "art/recipes/ancient-forest-v2-music.md",
-      "sha256": "d2b221468769aa8041575a8e416cd93d933afd0bbf85fe711cf6dd378897ace1",
-      "bytes": 5093
+      "sha256": "da3381c48d72ecaee2705f768db254e410a41d2f84fef50c384aa4e233885e14",
+      "bytes": 5358
     },
     {
       "path": "art/recipes/ancient-forest-v2-music.json",

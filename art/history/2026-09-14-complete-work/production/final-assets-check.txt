@@ -1,0 +1,30 @@
+
+> glintgrove@2.0.0 check:assets
+> node tools/check-assets.mjs
+
+crystal.b: 384×384, 72.7 KB, sprites/crystal-b-v1-d4f7feea1455.png
+crystal.g: 384×384, 72.8 KB, sprites/crystal-g-v1-9dda05f4465b.png
+crystal.r: 384×384, 73.1 KB, sprites/crystal-r-v1-982f1d4ceecf.png
+depths: 1536×1024, 370.2 KB, backgrounds/depths-v1-55de4c0ea245.webp
+emitter: 384×384, 103.7 KB, sprites/emitter-v1-08b94cf5b6d8.png
+flower.awake: 384×384, 63.5 KB, sprites/flower-awake-v1-6c5dc174bd75.png
+flower.dormant: 384×384, 57.9 KB, sprites/flower-dormant-v1-8a29750a727d.png
+forest: 1536×1024, 321.4 KB, backgrounds/forest-v1-256a3858f253.webp
+garden: 1536×1024, 413.3 KB, backgrounds/garden-v1-0de0a548ed54.webp
+gate.b: 384×384, 100.9 KB, sprites/gate-b-v1-84b7686ddbf9.png
+gate.g: 384×384, 100.4 KB, sprites/gate-g-v1-d0db52bbbd49.png
+gate.r: 384×384, 101.4 KB, sprites/gate-r-v1-23e0f971ffec.png
+heart: 1536×1024, 464.8 KB, backgrounds/heart-v1-360ccc2982cf.webp
+mirror: 384×384, 112.3 KB, sprites/mirror-v1-ad4a7c31891c.png
+mushroom.awake: 384×384, 66.4 KB, sprites/mushroom-awake-v1-a4256e82ee40.png
+mushroom.dormant: 384×384, 66.1 KB, sprites/mushroom-dormant-v1-4e21909d06bf.png
+owl.awake: 384×384, 77.5 KB, sprites/owl-awake-v1-cf707d630ce9.png
+owl.dormant: 384×384, 75.2 KB, sprites/owl-dormant-v1-0b0123e14f8b.png
+portal.gold: 384×384, 109.7 KB, sprites/portal-gold-v1-3ef23c926f42.png
+portal.violet: 384×384, 109.4 KB, sprites/portal-violet-v1-e066b9b0c5bd.png
+rock: 384×384, 49.3 KB, sprites/rock-v1-c0530e24a807.png
+rock.alt: 384×384, 50.0 KB, sprites/rock-alt-v1-ba25c75f7b5e.png
+splitter: 384×384, 109.6 KB, sprites/splitter-v1-fa76287daa4b.png
+tree.awake: 384×384, 117.5 KB, sprites/tree-awake-v1-87948c6479fa.png
+tree.dormant: 384×384, 115.3 KB, sprites/tree-dormant-v1-f96a25b9e9ca.png
+Art exports valid: 25 assets, 3.30 MB, revision nocturne-c4cf96b06729

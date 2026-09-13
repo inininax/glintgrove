@@ -1,0 +1,23 @@
+{
+  "docs/legal/replacement-register.json": {
+    "sha256": "916fbabd748de3fc70e9634d0d34844029ceedfbc9ca049861d233d61e5e1d65",
+    "references": 130,
+    "uniqueFiles": 103
+  },
+  "art/recipes/procedural-environments-v2.json": {
+    "sha256": "7ec6ea3437b4fe60aa5ad8d199e45ebb47bbbec65f88cf3b525f7609b4f0cef0",
+    "references": 76,
+    "uniqueFiles": 55
+  },
+  "status": "PASS",
+  "retiredVerified": 88,
+  "nonignoredInputsDecoded": 25,
+  "runtimeImagesDecoded": 25,
+  "reviewImagesDecodedAndExcluded": 6,
+  "releasePayloadsVerified": 70,
+  "releaseFilesIncludingInventory": 71,
+  "runtimeRevision": "nocturne-15c0715bc5ac",
+  "recorderSHA256": "a0f6ae7ee25c5172328e3645852ea468e5f423be8930eab40df6ccb00c0580ce",
+  "restoredContactSheetScriptSHA256": "fa683902e7db52891d76702df41ff669fe9c405e7776c6a9c7d3250a0c46436c",
+  "siteShareSHA256": "a6b9f7b434cfb512c561fa6103cf2e219bdae5469b792f39a3cf6bd364be5a1f"
+}

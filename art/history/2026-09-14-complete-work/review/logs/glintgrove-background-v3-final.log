@@ -1,0 +1,12 @@
+00:00.429  blend            | Read blend: "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v3.blend"
+01:07.415  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/forest-v3.png'
+RENDERED forest /Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/forest-v3.png
+02:13.451  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/depths-v3.png'
+RENDERED depths /Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/depths-v3.png
+03:21.375  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/garden-v3.png'
+RENDERED garden /Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/garden-v3.png
+04:33.941  render           | Saved: '/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/heart-v3.png'
+RENDERED heart /Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/heart-v3.png
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

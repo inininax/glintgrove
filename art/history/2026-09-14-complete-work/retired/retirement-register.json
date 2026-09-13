@@ -1,0 +1,446 @@
+{
+  "retiredDate": "2026-09-13",
+  "reason": "Removed from current art inputs and runtime outputs during user-authorized original-geometry remake. Local archive excluded from Git and runtime release. Not a finding of infringement.",
+  "files": [
+    {
+      "formerPath": "art/source/imagegen/garden-v1.png",
+      "archivePath": "art/retired/before-remake/art/source/imagegen/garden-v1.png",
+      "sha256": "3feb9e0fcfb9d8f02fb3522ffb7d437a3ed70941919b8081e473b1c2cb6c383a"
+    },
+    {
+      "formerPath": "art/source/imagegen/forest-v1.png",
+      "archivePath": "art/retired/before-remake/art/source/imagegen/forest-v1.png",
+      "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+    },
+    {
+      "formerPath": "art/source/imagegen/heart-v1.png",
+      "archivePath": "art/retired/before-remake/art/source/imagegen/heart-v1.png",
+      "sha256": "02267279ecdf4ff7284a38ed7aa1a56acf353ea80a590f97aaa5112a770fc91f"
+    },
+    {
+      "formerPath": "art/source/imagegen/depths-v1.png",
+      "archivePath": "art/retired/before-remake/art/source/imagegen/depths-v1.png",
+      "sha256": "d30a132bf9b557e12ac9014df824f7034a22f793f6d039dd68a82f226bc9acea"
+    },
+    {
+      "formerPath": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "archivePath": "art/retired/before-remake/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c"
+    },
+    {
+      "formerPath": "assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "archivePath": "art/retired/before-remake/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "sha256": "360ccc2982cf46f930a12f146d1ce193cf6f6aa573431be715a85b25badb06d8"
+    },
+    {
+      "formerPath": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "archivePath": "art/retired/before-remake/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d"
+    },
+    {
+      "formerPath": "assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "archivePath": "art/retired/before-remake/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626"
+    },
+    {
+      "formerPath": "art/previews/settings-mobile-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/settings-mobile-v1.png",
+      "sha256": "6a928e8ddc2f4b97eb7609e5c1e693b657b48fdefd6f7c31cfa7c86e63e6a745"
+    },
+    {
+      "formerPath": "art/previews/map-mobile-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/map-mobile-v1.png",
+      "sha256": "f561cc57e707d5ff322266deda3eb88379cfbbee00b19b61e3d69d6720022165"
+    },
+    {
+      "formerPath": "art/previews/win-mobile-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/win-mobile-v1.png",
+      "sha256": "232fdceceaf70ced2dac93f74afa3620e533ce803d8404572830f986d1596140"
+    },
+    {
+      "formerPath": "art/previews/art-studio-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/art-studio-v1.png",
+      "sha256": "907308736e030183acf819cf188906ecbc2c452b59d04f7352c52bbf951c58b3"
+    },
+    {
+      "formerPath": "art/previews/game-mobile-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/game-mobile-v1.png",
+      "sha256": "ba8b39e83cb7074d93f2b61b1262d9f6348f44c74cd76268e5875eddaea6df1e"
+    },
+    {
+      "formerPath": "art/previews/title-mobile-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/title-mobile-v1.png",
+      "sha256": "fe6aa31993cc6a86b49a796616d88444d73c3f9a4910b27b212723762745630f"
+    },
+    {
+      "formerPath": "art/previews/title-desktop-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/title-desktop-v1.png",
+      "sha256": "ca3d2e1c908da4eb4b8cbdd507497fa5098198566dda789a9141f84e241f4f84"
+    },
+    {
+      "formerPath": "art/previews/game-heart-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/game-heart-v1.png",
+      "sha256": "ac06dd4a58ddaae9da2bcee872a3f03c829c3acbf3f5f3224e037726ccbec996"
+    },
+    {
+      "formerPath": "art/previews/game-desktop-v1.png",
+      "archivePath": "art/retired/before-remake/art/previews/game-desktop-v1.png",
+      "sha256": "31d02b92b74efe5acf1f84013931f670edcfecd34ed3796a0c6b308c71a89a98"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/forest-v1.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/forest-v1.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/depths-55de4c0ea245.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/depths-55de4c0ea245.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/depths-v1.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/depths-v1.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/garden-v1.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/garden-v1.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/garden-0de0a548ed54.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/garden-0de0a548ed54.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d"
+    },
+    {
+      "formerPath": "art/build/unused-exports/backgrounds/forest-256a3858f253.webp",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/backgrounds/forest-256a3858f253.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-b-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-b-v1.png",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-g-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-g-v1.png",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-r-982f1d4ceecf.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-r-982f1d4ceecf.png",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/flower-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-awake-v1.png",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/flower-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-v1.png",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/rock-alt-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-alt-v1.png",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/tree-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-awake-v1.png",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-b-d4f7feea1455.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-b-d4f7feea1455.png",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/tree-awake-87948c6479fa.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-awake-87948c6479fa.png",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-r-23e0f971ffec.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-r-23e0f971ffec.png",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-g-d0db52bbbd49.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-g-d0db52bbbd49.png",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/rock-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-v1.png",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/tree-dormant-f96a25b9e9ca.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-f96a25b9e9ca.png",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/owl-dormant-0b0123e14f8b.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-0b0123e14f8b.png",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/splitter-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/splitter-v1.png",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/rock-alt-ba25c75f7b5e.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-alt-ba25c75f7b5e.png",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/owl-awake-cf707d630ce9.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-awake-cf707d630ce9.png",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mushroom-dormant-4e21909d06bf.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-4e21909d06bf.png",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-r-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-r-v1.png",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/tree-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/tree-dormant-v1.png",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/flower-awake-6c5dc174bd75.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-awake-6c5dc174bd75.png",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mushroom-awake-a4256e82ee40.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-a4256e82ee40.png",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/owl-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-awake-v1.png",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/rock-c0530e24a807.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/rock-c0530e24a807.png",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-r-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-r-v1.png",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/portal-gold-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-gold-v1.png",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/splitter-fa76287daa4b.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/splitter-fa76287daa4b.png",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mushroom-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-awake-v1.png",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/portal-violet-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-violet-v1.png",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/portal-gold-3ef23c926f42.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-gold-3ef23c926f42.png",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/owl-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/owl-dormant-v1.png",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mushroom-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mushroom-dormant-v1.png",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/emitter-08b94cf5b6d8.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/emitter-08b94cf5b6d8.png",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mirror-ad4a7c31891c.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mirror-ad4a7c31891c.png",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/flower-dormant-8a29750a727d.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/flower-dormant-8a29750a727d.png",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/emitter-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/emitter-v1.png",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-b-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-b-v1.png",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/portal-violet-e066b9b0c5bd.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/portal-violet-e066b9b0c5bd.png",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/mirror-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/mirror-v1.png",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-g-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-g-v1.png",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/crystal-g-9dda05f4465b.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/crystal-g-9dda05f4465b.png",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509"
+    },
+    {
+      "formerPath": "art/build/unused-exports/sprites/gate-b-84b7686ddbf9.png",
+      "archivePath": "art/retired/before-remake/art/build/unused-exports/sprites/gate-b-84b7686ddbf9.png",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6"
+    },
+    {
+      "formerPath": "art/source/blender/grove-library-v1.blend1",
+      "archivePath": "art/retired/before-remake/art/source/blender/grove-library-v1.blend1",
+      "sha256": "63bcdf4558218c1a288708bc61740700fd99917eaea190d2af1229f4e2bee656"
+    },
+    {
+      "formerPath": "art/source/procedural/nocturne-environments-v2.blend1",
+      "archivePath": "art/retired/before-remake/art/source/procedural/nocturne-environments-v2.blend1",
+      "sha256": "f355280efc16c53d704b09aca71d085f016f32b239cfeff649d4b51aaeb57e06"
+    },
+    {
+      "formerPath": "art/build/sprites/crystal-b-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/crystal-b-v1.png",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74"
+    },
+    {
+      "formerPath": "art/build/sprites/gate-g-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/gate-g-v1.png",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f"
+    },
+    {
+      "formerPath": "art/build/sprites/flower-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/flower-awake-v1.png",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315"
+    },
+    {
+      "formerPath": "art/build/sprites/flower-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/flower-dormant-v1.png",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454"
+    },
+    {
+      "formerPath": "art/build/sprites/rock-alt-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/rock-alt-v1.png",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e"
+    },
+    {
+      "formerPath": "art/build/sprites/tree-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/tree-awake-v1.png",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd"
+    },
+    {
+      "formerPath": "art/build/sprites/rock-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/rock-v1.png",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241"
+    },
+    {
+      "formerPath": "art/build/sprites/splitter-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/splitter-v1.png",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2"
+    },
+    {
+      "formerPath": "art/build/sprites/crystal-r-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/crystal-r-v1.png",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335"
+    },
+    {
+      "formerPath": "art/build/sprites/tree-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/tree-dormant-v1.png",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec"
+    },
+    {
+      "formerPath": "art/build/sprites/owl-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/owl-awake-v1.png",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129"
+    },
+    {
+      "formerPath": "art/build/sprites/gate-r-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/gate-r-v1.png",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96"
+    },
+    {
+      "formerPath": "art/build/sprites/portal-gold-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/portal-gold-v1.png",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58"
+    },
+    {
+      "formerPath": "art/build/sprites/mushroom-awake-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/mushroom-awake-v1.png",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad"
+    },
+    {
+      "formerPath": "art/build/sprites/portal-violet-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/portal-violet-v1.png",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43"
+    },
+    {
+      "formerPath": "art/build/sprites/owl-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/owl-dormant-v1.png",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42"
+    },
+    {
+      "formerPath": "art/build/sprites/mushroom-dormant-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/mushroom-dormant-v1.png",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187"
+    },
+    {
+      "formerPath": "art/build/sprites/emitter-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/emitter-v1.png",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980"
+    },
+    {
+      "formerPath": "art/build/sprites/gate-b-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/gate-b-v1.png",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab"
+    },
+    {
+      "formerPath": "art/build/sprites/mirror-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/mirror-v1.png",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598"
+    },
+    {
+      "formerPath": "art/build/sprites/crystal-g-v1.png",
+      "archivePath": "art/retired/before-remake/art/build/sprites/crystal-g-v1.png",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26"
+    }
+  ]
+}

@@ -49,4 +49,4 @@ python3 -m http.server 8001 --directory dist
 
 `dist/`에는 현재 아트 매니페스트의 이미지와 게임 실행 파일만 들어갑니다. 이 명령은 웹사이트에 업로드하지 않습니다. 기존 공개 주소와 저장소 경로는 자동 변경하지 않으며, 저장 데이터 키도 이어하기 호환성을 위해 유지합니다. 현재 공개 사이트는 이 작업본과 다를 수 있습니다.
 
-`art/retired/`는 교체한 로컬 자료 보관용이며 Git과 서비스 묶음에서 제외합니다. Git의 과거 커밋이나 이미 공개된 사본까지 지우는 작업은 수행하지 않습니다.
+이전 제작·검토 자료는 [작업 보관 폴더](art/history/2026-09-14-complete-work/README.md)에 Git으로 보존하며 서비스 묶음에서는 제외합니다. 바이트 일치를 확인한 뒤 중복 `art/build/`·`art/retired/`와 미사용 배포 파일을 정리했습니다. 구버전 WebP·WAV는 [기존 커밋 e355b1b](https://github.com/inininax/glintgrove/commit/e355b1b8ffa46d2047dcbd427fa20ebb37c5c6a0)에서 복원할 수 있고, 편집할 PNG·Blender 원본·악보·생성기는 현재 제작 폴더에 유지합니다. 이미 공개된 사본이나 과거 Git 이력을 지우는 작업은 수행하지 않습니다.

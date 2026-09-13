@@ -37,4 +37,4 @@
 
 기존 UI·언어·튜토리얼 회귀 테스트 19개 통과. alpha 범위를 읽어 글자가 표시 영역 안에 포함되는지 확인했다. 통합 담당자가 Ego에서 캡처한 최종 배경과의 1440×900, 390×844, 614×427 화면을 확인했다. 첫 캡처에서는 이미지의 고유 높이가 표시 영역보다 우선되어 공백이 남는 문제를 발견했고, 이미지를 비율 영역 안에 절대 배치하여 수정했다. 두 번째 캡처에서 실제 공백 감소, 글자 장식 보존, 낮은 화면의 메뉴 접근을 확인했다. 중앙 베일도 새 배경의 어둠을 고려해 최대 불투명도를 70%로 낮췄다.
 
-디자이너의 이 확인은 제작 과정의 수정 검토다. 최종 독립 검증과 승인은 통합 담당자에게 넘긴다. 확인용 캡처: `/tmp/ilyndrel-ancient-title-desktop-v2.png`, `/tmp/ilyndrel-ancient-title-mobile-v2.png`, `/tmp/ilyndrel-ancient-title-short-v2.png`.
+디자이너의 이 확인은 제작 과정의 수정 검토다. 최종 독립 검증과 승인은 통합 담당자에게 넘긴다. 확인용 캡처: [ilyndrel-ancient-title-desktop-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-desktop-v2.png), [ilyndrel-ancient-title-mobile-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-mobile-v2.png), [ilyndrel-ancient-title-short-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-ancient-title-short-v2.png).

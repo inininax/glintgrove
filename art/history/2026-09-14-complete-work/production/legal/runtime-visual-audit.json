@@ -1,0 +1,314 @@
+{
+  "observedAt": "2026-09-13T08:39:47.470Z",
+  "fontEvidence": [
+    {
+      "selector": ".title-logo",
+      "fonts": [
+        {
+          "familyName": "Georgia",
+          "postScriptName": "Georgia",
+          "isCustomFont": false,
+          "glyphCount": 10
+        }
+      ]
+    }
+  ],
+  "pageEvidence": {
+    "url": "http://127.0.0.1:8000/",
+    "title": "Glintgrove — Wake the Forest of Light",
+    "fontFaces": [],
+    "documentFontFaceCount": 0,
+    "resources": [
+      {
+        "url": "http://127.0.0.1:8000/css/style.css",
+        "initiator": "link"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/main.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/manifest.webmanifest",
+        "initiator": "link"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/version.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/data/levels.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/state/saveStore.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/game/game.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/ui/ui.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/services/daily.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/services/achievements.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/infra/analytics.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/infra/errorHandler.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/services/config.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/ui/strings.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/services/tutorial.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/skins.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/assets/assetStore.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/data/levels.generated.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/sim/index.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/sim/parser.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/emitter.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/colors.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/math.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/gradientCache.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/fx/particles.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/fx/sound.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/renderer.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/beams.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/sim/solver.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/sim/tracer.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/core/tiles.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/background.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/layout.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/bloom.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/entities.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/src/render/sprites.js",
+        "initiator": "script"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/manifest.json",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/config.json",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/icon.svg",
+        "initiator": "other"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/rock-v1-c0530e24a807.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/splitter-v1-fa76287daa4b.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+        "initiator": "fetch"
+      },
+      {
+        "url": "http://127.0.0.1:8000/assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+        "initiator": "fetch"
+      }
+    ],
+    "externalResources": [],
+    "imageElements": [],
+    "svgCount": 293
+  },
+  "achievementFontEvidence": [
+    {
+      "selector": "#ach-title",
+      "fonts": [
+        {
+          "familyName": "AppleMyungjo",
+          "postScriptName": "AppleMyungjo",
+          "isCustomFont": false,
+          "glyphCount": 2
+        },
+        {
+          "familyName": "Georgia",
+          "postScriptName": "Georgia",
+          "isCustomFont": false,
+          "glyphCount": 4
+        }
+      ]
+    },
+    {
+      "selector": "#ach-list .ach-icon",
+      "fonts": [
+        {
+          "familyName": "Apple Color Emoji",
+          "postScriptName": "AppleColorEmoji",
+          "isCustomFont": false,
+          "glyphCount": 1
+        }
+      ]
+    }
+  ],
+  "achievementMarkup": "<div class=\"ach-item on\"><span class=\"ach-icon\">🌱</span><div><b>첫 번째 빛</b><p>첫 레벨을 클리어</p></div><time>2026-09-13</time></div><div class=\"ach-item on\"><span class=\"ach-icon\">🌄</span><div><b>새벽숲의 아침</b><p>1챕터 완주</p></div><time>2026-09-13</time></div><div class=\"ach-item\"><span class=\"ach-icon\">🌫️</span><div><b>안개를 가른 빛</b><p>2챕터 완주</p></div><time></time></div><div class=\"ach-item\"><span class=\"ach-icon\">✨</span><div><b>별빛 정원사</b><p>3챕터 완주</p></div><time></time></div><div class=\"ach-item\"><span class=\"ach-icon\">💎</span><div><b>심장의 목격자</b><p>4챕터 완주</p></div><time></time></div><div class=\"ach-item on\"><span class=\"ach-icon\">🧠</span><div><b>숲의 현자</b><p>힌트 없이 10레벨 클리어</p></div><time>2026-09-13</time></div><div class=\"ach-item on\"><span class=\"ach-icon\">📅</span><div><b>오늘의 숲</b><p>일일 챌린지 첫 클리어</p></div><time>2026-09-13</time></div><div class=\"ach-item\"><span class=\"ach-icon\">🔥</span><div><b>3일 연속 새벽</b><p>일일 챌린지 3일 연속 클리어</p></div><time></time></div><div class=\"ach-item\"><span class=\"ach-icon\">🌟</span><div><b>완벽한 새벽</b><p>모든 레벨에서 ★3 달성 (900별)</p></div><time></time></div>"
+}

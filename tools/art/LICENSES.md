@@ -11,6 +11,8 @@ The following locally authored scripts are offered under the GNU General Public 
 - `render_procedural_environments_v3.py`
 - `build_ancient_gates_v2.py`
 
+The same license also covers the locally authored historical Blender inspection script at repository path `art/history/2026-09-14-complete-work/review/scripts/ilyndrel-inspect-master.py`. Its archived source bytes are preserved unchanged; this notice supplies its license separately.
+
 These scripts are distributed in source form. They are supplied without warranty, including implied warranties of merchantability or fitness for a particular purpose. The complete license is in [COPYING.GPL-3.0](COPYING.GPL-3.0), obtained from https://www.gnu.org/licenses/gpl-3.0.txt.
 
 This scope covers the listed scripts, not the game's image outputs, `.blend` scene data, web application, or other scripts in this directory. No blanket license is granted for the game or artwork by this notice. Commercial use of Blender artwork is described at https://www.blender.org/about/license/; separate third-party inputs would retain their own terms.

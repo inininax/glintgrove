@@ -11,7 +11,7 @@
 - 타이틀 도움말은 제목에 초점을 두고 맨 위에서 열렸다. Escape로 닫으면 도움말 버튼으로 초점이 돌아오며, 여닫기 전후 저장 문자열과 화면이 동일했다.
 - 실제 시작 버튼은 숲의 지도를 열었다. 이어하기는 저장된 해금 레벨13을 열었고, 일일 챌린지는 날짜 표시가 있는 퍼즐을 이동0회로 시작했다. 해당 검사에서 퍼즐 완료나 보상 획득을 수행하지 않았다.
 
-캡처: `/tmp/ilyndrel-jeweled-desktop-v2.png`, `/tmp/ilyndrel-jeweled-mobile-v2.png`, `/tmp/ilyndrel-jeweled-short-v2.png`, `/tmp/ilyndrel-jeweled-english-320.png`, `/tmp/ilyndrel-jeweled-help-mobile.png`. 임시 검증 캡처는 배포하지 않는다.
+캡처: [ilyndrel-jeweled-desktop-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-desktop-v2.png), [ilyndrel-jeweled-mobile-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-mobile-v2.png), [ilyndrel-jeweled-short-v2.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-short-v2.png), [ilyndrel-jeweled-english-320.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-english-320.png), [ilyndrel-jeweled-help-mobile.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-help-mobile.png). 임시 검증 캡처는 배포하지 않는다.
 
 ## 움직임
 
@@ -27,12 +27,12 @@
 
 ## 자동 검사와 배포 묶음
 
-- `npm test`의 최종 TAP: 131개 통과, 실패0개. 도움말 회귀3개와 배경 회귀3개가 추가됐다. 결과 로그는 `/tmp/ilyndrel-jeweled-tests.log`에 있다. 로그를 요약하던 셸 래퍼의 예약 변수 사용 오류는 테스트 완료 후 발생했으며 테스트 실패가 아니다.
+- `npm test`의 최종 TAP: 131개 통과, 실패0개. 도움말 회귀3개와 배경 회귀3개가 추가됐다. 결과 로그는 [ilyndrel-jeweled-tests.log](../../art/history/2026-09-14-complete-work/review/logs/ilyndrel-jeweled-tests.log)에 있다. 로그를 요약하던 셸 래퍼의 예약 변수 사용 오류는 테스트 완료 후 발생했으며 테스트 실패가 아니다.
 - 게임 이미지 검사: 25개, 2.35MiB, `nocturne-8f72a32c7dc7` 정상. 게임 이미지·음악은 이번 타이틀 작업에서 교체하지 않았다.
 - 최종 PNG와 lossless WebP는 2172×724 RGB이며 디코딩한 픽셀 바이트가 동일하다. 제작 기록의 입력·프롬프트·출력과 내보내기 해시를 재귀적으로 연결했다. 명부는 게임 이미지25개, 사이트 이미지3개, 음악1개, 코드·레시피77개를 기록한다.
 - `npm run build`: 실행 파일76개. 같은 서버의 `/dist/`로 모든 파일을 요청해 HTTP 성공·바이트 수·SHA256 일치를 확인했다. 이전 상징과 게임명, 중간 제작안, 원본·도구·검토 문서는 배포 목록에 없다.
 - 서비스 워커 코어 버전은 `glintgrove-core-v9-jeweled-title`이다. 새 게임명 경로를 설치 목록에 넣고 이전 두 타이틀 이미지는 뺐다. 음악의 지연 캐시 정책은 유지한다.
-- 사용자 `localhost:8000`의 기존 워커가 v9로 활성화된 뒤 캐시 우회 없이 다시 로드했다. 새 게임명과 게임 에셋25개가 모두 준비됐고 이전 상징 DOM은0개였다. 재로드 전후 저장 문자열이 동일했다. 최종 화면은 `/tmp/ilyndrel-jeweled-local-final.png`로 확인했다. 실행 중인 게임 서버는8000 하나다.
+- 사용자 `localhost:8000`의 기존 워커가 v9로 활성화된 뒤 캐시 우회 없이 다시 로드했다. 새 게임명과 게임 에셋25개가 모두 준비됐고 이전 상징 DOM은0개였다. 재로드 전후 저장 문자열이 동일했다. 최종 화면은 [ilyndrel-jeweled-local-final.png](../../art/history/2026-09-14-complete-work/review/captures/ilyndrel-jeweled-local-final.png)로 확인했다. 실행 중인 게임 서버는8000 하나다.
 
 ## 독립 검토
 

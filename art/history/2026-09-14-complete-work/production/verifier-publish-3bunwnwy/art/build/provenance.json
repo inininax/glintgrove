@@ -1,0 +1,10 @@
+{
+  "revision": "nocturne-a9b5bc01bf8d",
+  "assets": {
+    "tree": {
+      "source": "art/source/blank.png",
+      "sourceSha256": "6fa466e21df6bf014ed03517399a711777f572b1f0be6a561b947790cda9f634",
+      "outputSha256": "f164334dc3985e3b8d95b71e59462c9c4f6d80c7ede23238c8759d9c4495a6db"
+    }
+  }
+}

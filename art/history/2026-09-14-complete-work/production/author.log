@@ -1,0 +1,30 @@
+/Users/kyungseok.lee/workspace-git/glintgrove/tools/art/build_blender.py:30: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes = True
+/Users/kyungseok.lee/workspace-git/glintgrove/tools/art/build_blender.py:272: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world=bpy.data.worlds.new(name+' / atmosphere');world.use_nodes=True
+AUTHORED tree.dormant
+AUTHORED tree.awake
+AUTHORED mushroom.dormant
+AUTHORED mushroom.awake
+AUTHORED flower.dormant
+AUTHORED flower.awake
+AUTHORED owl.dormant
+AUTHORED owl.awake
+AUTHORED rock
+AUTHORED rock.alt
+AUTHORED mirror
+AUTHORED emitter
+AUTHORED splitter
+AUTHORED crystal.r
+AUTHORED gate.r
+AUTHORED crystal.g
+AUTHORED gate.g
+AUTHORED crystal.b
+AUTHORED gate.b
+AUTHORED portal.violet
+AUTHORED portal.gold
+Info: Saved as "grove-library-v1.blend"
+SAVED EDITABLE LIBRARY /Users/kyungseok.lee/workspace-git/glintgrove/art/source/blender/grove-library-v1.blend
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 01:35:57)
+
+Blender quit

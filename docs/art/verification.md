@@ -2,6 +2,8 @@
 
 > Historical initial-pipeline snapshot. Later Blender background replacements, folder paths, asset revision and test counts are documented in [current integration verification](remade-verification.md) and [replacement review](../legal/remake-independent-review.md). References below describe the files at the time of this earlier review.
 
+> Archive update, 2026-09-14: historical `art/build/` and `art/retired/` contents are now tracked under `art/history/2026-09-14-complete-work/production/` and `retired/`. See the [archive inventory](../../art/history/2026-09-14-complete-work/inventory.json) for exact path mappings. The executed commands, paths and measurements below are preserved as historical evidence.
+
 Date: 2026-09-13. Scope: asset loading, publication failure behavior, offline snapshots, editable Blender source, one source-to-sprite reproduction, and an independent review of supplied screenshots. Live browser interaction QA is a separate pass. No production code or art files were changed by this verifier.
 
 ## Review status
@@ -60,7 +62,7 @@ Fix: validate requested IDs against the loaded library before rendering; reject 
 
 ## Independent screenshot review
 
-Viewed the supplied title, desktop levels 1 and 17, mobile level 17, map, win overlay, and `art/previews/sprite-contact-sheet-v1.jpg`. The title image reviewed was `/tmp/glintgrove-nocturne-title-current.png`, which contains the intended forest composition.
+Viewed the supplied title, desktop levels 1 and 17, mobile level 17, map, win overlay, and `art/previews/sprite-contact-sheet-v1.jpg`. The title image reviewed was [glintgrove-nocturne-title-current.png](../../art/history/2026-09-14-complete-work/review/captures/glintgrove-nocturne-title-current.png), which contains the intended forest composition.
 
 - The framed forest opening, ivory title and restrained gold CTA establish a coherent visual hierarchy. The map and win overlay share its typography, palette and fine border treatment.
 - The dark game board keeps the detailed background subordinate to the puzzle. Narrow beams and the moving mirror faces remain readable. Sprites share their brass/stone/moss materials and read consistently as crafted miniature game pieces.

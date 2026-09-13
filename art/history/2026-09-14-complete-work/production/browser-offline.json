@@ -1,0 +1,16 @@
+{
+  "online": true,
+  "uncachedNetworkBlocked": true,
+  "controlled": true,
+  "boot": "ok",
+  "level": 23,
+  "art": {
+    "phase": "ready",
+    "loaded": 25,
+    "total": 25,
+    "failed": [],
+    "manifestRevision": "nocturne-c4cf96b06729"
+  },
+  "cacheEntries": 68,
+  "sourceCached": false
+}
