@@ -1,0 +1,26 @@
+{
+  "title": "Forest Reverie",
+  "score": "art/source/audio/forest-reverie-v1.score.json",
+  "scoreSha256": "0b56e3fff549edb16f07972ec95a7ccbafbcdfa9b243e02950e012df89272895",
+  "generator": "tools/audio/render-forest-music.mjs",
+  "generatorSha256": "127a58354bab61eb822e52b6418efd481d8d0fc878d26f1f70249f266216ec5e",
+  "runtime": "assets/audio/forest-reverie-v1.wav",
+  "sha256": "2e5c34525283a79430853a39dccf459af1f7fa7d3c7f6865b4538c0194a864a3",
+  "bytes": 6912044,
+  "sampleRate": 24000,
+  "channels": 2,
+  "bitsPerSample": 16,
+  "frames": 1728000,
+  "duration": 72,
+  "peak": 0.29998779296875,
+  "rms": 0.0690604732134957,
+  "seamDelta": [
+    0.001251220703125,
+    0.000244140625
+  ],
+  "sampleDeltaRms": 0.0058231029221516495,
+  "maxSampleDelta": 0.02850341796875,
+  "quietestSecondRms": 0.05258704087505913,
+  "loudestSecondRms": 0.0853218561905458,
+  "provenance": "Original score and mathematical instrument synthesis created for Ilyndrel; no recordings, samples, lyrics, or voices."
+}

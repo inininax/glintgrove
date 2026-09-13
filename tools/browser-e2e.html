@@ -18,7 +18,7 @@
   <div id="win-overlay" class="modal-overlay hidden"><h2 id="win-title"></h2><div id="win-stars"><span></span><span></span><span></span></div><p id="win-stats"></p><button id="btn-next"></button><button id="btn-share"></button><button id="btn-replay"></button></div>
   <div id="screen-levels2" class="hidden"><button id="btn-daily">daily</button></div>
   <div id="settings-modal" class="modal-overlay hidden"><input type="checkbox" id="set-sound"><input type="checkbox" id="set-motion"><input type="checkbox" id="set-colorblind"><select id="set-lang"><option value="auto">auto</option></select><select id="set-skin"></select></div>
-  <div id="intro-modal" class="modal-overlay hidden"></div>
+  <div id="intro-modal" class="modal-overlay hidden"><button id="btn-intro-ok">알겠어요</button></div>
   <div id="ach-modal" class="modal-overlay hidden"><div id="ach-list"></div><span id="ach-progress"></span></div>
   <div id="toast" role="status"></div>
   <script type="module" src="../src/main.js"></script>
@@ -40,9 +40,15 @@
     const game = gg.game;
     const ui = gg.ui;
     ui.hooks.difficultyOf = def => def.diff || 'easy';
+    // Each run exercises first-entry guidance, independent of earlier test runs.
+    gg.saveData.seenIntro = false;
+    gg.saveData.tipsSeen = {};
 
     ui.hooks.onPlay(1);
     check('play1', game.state === 'playing' && game.def.id === 1);
+    check('introBeforePointer', ui.anyModalOpen() === 'intro-modal' && !document.querySelector('.tut-pointer'));
+    document.getElementById('btn-intro-ok').click();
+    check('pointerAfterIntro', !ui.anyModalOpen() && !!document.querySelector('.tut-pointer'));
 
     const lay = game.renderer.layout(game.level);
     const canvas = document.getElementById('game-canvas');
@@ -110,14 +116,18 @@
     // tutorial card on L6 (first time)
     ui.hooks.onPlay(6);
     await wait(30);
-    check('tutorialCardShown', !!document.querySelector('.tut-card'));
+    check('tutorialCardShown', !!document.querySelector('.tut-card[role="dialog"]') && ui.anyModalOpen() === 'tutorial-layer');
+    check('tutorialNoDuplicateToast', !document.getElementById('toast').classList.contains('show'));
     const okBtn = document.getElementById('btn-tut-ok');
     if (okBtn) okBtn.click();
     await wait(20);
+    check('tutorialDismissed', !document.querySelector('.tut-card') && !ui.anyModalOpen() && gg.saveData.tipsSeen['tut-6']);
+    ui.hooks.onPlay(6);
+    check('tutorialNotRepeated', !document.querySelector('.tut-card') && !document.getElementById('toast').classList.contains('show'));
     ui.hooks.onPlay(17);
     await wait(30);
     const tutAgain = document.querySelector('.tut-card');
-    check('tutorialDismissed', !tutAgain || tutAgain.textContent.length > 0);
+    check('nextMechanismTutorial', !!tutAgain && ui.anyModalOpen() === 'tutorial-layer');
     if (tutAgain) { const b = tutAgain.querySelector('#btn-tut-ok'); b && b.click(); }
     await wait(20);
 

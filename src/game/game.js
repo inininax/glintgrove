@@ -363,7 +363,7 @@ export class Game {
   render() {
     if (!this.level) {
       this.renderer.clear();
-      this.renderer.drawIdleBackdrop();
+      this.renderer.drawIdleBackdrop(this.time, this.settings);
       return;
     }
     this.renderer.drawScene({

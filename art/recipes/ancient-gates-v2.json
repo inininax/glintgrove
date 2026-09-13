@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T14:54:38.214128+00:00",
+  "method": "local-blender-python-authored",
+  "blenderVersion": "5.2.1 LTS",
+  "blenderBuildHash": "9e2066aef7ef",
+  "master": {
+    "path": "art/source/blender/ancient-gates-v2.blend",
+    "sha256": "4ec90b01c8b465843502d8dcbbbda3e771826b8dd036e3b64b08845c79fc1933",
+    "bytes": 163194
+  },
+  "generator": {
+    "path": "tools/art/build_ancient_gates_v2.py",
+    "sha256": "fe355e508b3076a853d098f6b9bc0ef3a8e5c26f03177a1ad01ecf0bc1d773b6",
+    "bytes": 8228
+  },
+  "renderer": {
+    "path": "tools/art/render_library.py",
+    "sha256": "bef0cef11c90796f063d1259b66dca49aa7c68d5d468e5f99d1b18b7a1f5798c",
+    "bytes": 4024
+  },
+  "inputs": [],
+  "externalAssets": [],
+  "outputs": [
+    {
+      "path": "art/renders/sprites/gate-r-v2.png",
+      "sha256": "9c325d7dff48f8b96963598853a75eacb186da1cf127cffb4ba665ee7b0fa4ea",
+      "bytes": 120973,
+      "scene": "gate.r",
+      "inputMaster": "art/source/blender/ancient-gates-v2.blend",
+      "width": 384,
+      "height": 384,
+      "format": "PNG",
+      "mode": "RGBA"
+    },
+    {
+      "path": "art/renders/sprites/gate-g-v2.png",
+      "sha256": "f1eb277862027214bcda012266aabdd066c580a8b20ee352a6b8a4f02c075a35",
+      "bytes": 120981,
+      "scene": "gate.g",
+      "inputMaster": "art/source/blender/ancient-gates-v2.blend",
+      "width": 384,
+      "height": 384,
+      "format": "PNG",
+      "mode": "RGBA"
+    },
+    {
+      "path": "art/renders/sprites/gate-b-v2.png",
+      "sha256": "c012eba99a6128339a52e7e1a0b5a24bcfc1cd0d34a650fdca2df9c4531de463",
+      "bytes": 120987,
+      "scene": "gate.b",
+      "inputMaster": "art/source/blender/ancient-gates-v2.blend",
+      "width": 384,
+      "height": 384,
+      "format": "PNG",
+      "mode": "RGBA"
+    }
+  ],
+  "explanation": "Three locally modeled open-aperture greenstone gates. Only numeric geometry, procedural shaders and local lights; no imported artwork or models. The game draws the removable central light membrane. Hash consistency is not legal clearance."
+}

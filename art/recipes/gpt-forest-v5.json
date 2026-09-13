@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T13:38:59.458535+00:00",
+  "method": "built-in-image_gen",
+  "purpose": "forest",
+  "prompt": {
+    "path": "art/recipes/gpt-forest-v5.prompt.txt",
+    "sha256": "36908e04d57509d076e32ec3bb5be298e92c1bc198caab3e61ed4eb4490dbef1",
+    "bytes": 1776
+  },
+  "referenceInputs": [
+    {
+      "path": "art/source/gpt/forest-v4.png",
+      "sha256": "fb3199b145464de4dfa13612bca120e749413069aaaffed2da153fcc51c36b47",
+      "bytes": 3032964,
+      "role": "edit-target",
+      "generationEvidence": "art/recipes/gpt-forest-v4.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "art/source/gpt/forest-v5.png",
+      "sha256": "b25695941a78c92c03e0b2f2722c90e3de8c31f62dbe6cd6564cf4abfbc1423e",
+      "bytes": 2443139,
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-96aec097-7a24-494d-bc0a-409590aac70a.png",
+  "externalReferenceImages": [],
+  "legalClearance": "not-established",
+  "explanation": "Exact local prompt, inputs and AI-generated bitmap output; not a claim of Blender rendering, human-only authorship, exclusivity or zero infringement risk."
+}

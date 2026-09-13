@@ -92,7 +92,11 @@ export function bakeBoard(ctx, level, layout) {
   ctx.restore();
 }
 
-export function backgroundIdFor(level) {
+// One coherent ancient forest accompanies the complete puzzle journey.
+// Chapter identity remains in the quiet atmospheric tint, not a change of art style.
+export function backgroundIdFor() { return 'forest'; }
+
+function atmosphereIdFor(level) {
   const chapter = level?.chapter;
   if (chapter >= 2 && chapter <= 4) return ['depths', 'garden', 'heart'][chapter - 2];
   if (chapter > 5) return ['forest', 'depths', 'garden', 'heart'][(chapter - 6) % 4];
@@ -168,26 +172,147 @@ export function buildBackground(width, height, level, seed, displayMode = 'sculp
   edge.addColorStop(1, '#061a2266');
   ctx.fillStyle = edge;
   ctx.fillRect(0, 0, width, height);
-  return { canvas, rng };
+  return { canvas, rng, atmosphere: buildAtmosphere(width, height, atmosphereIdFor(level), displayMode) };
 }
 
-export function drawAurora(ctx, width, height, time, intensity = .5) {
-  // Slow, paired seed motes. Frozen at time zero when reduced motion is active.
+// All atmosphere is original Canvas geometry. Small cached light/fog sprites keep
+// animation independent of the source artwork and avoid per-frame raster work.
+function buildAtmosphere(width, height, chapter, displayMode) {
+  const colors = {
+    forest: ['235,219,170', '126,195,184'],
+    depths: ['159,214,218', '110,169,195'],
+    garden: ['235,218,169', '151,204,184'],
+    heart: ['240,210,155', '190,205,157']
+  }[chapter];
+  const shafts = document.createElement('canvas');
+  shafts.width = 512;
+  shafts.height = Math.max(128, Math.min(768, Math.round(512 * height / Math.max(1, width))));
+  const s = shafts.getContext('2d');
+  // Feather every edge, including the ends: straight-sided light polygons
+  // read as extra objects against a detailed forest rather than atmosphere.
+  for (const [x, y, spread, length, lean] of [[.27, .31, .075, .51, -.18], [.69, .36, .09, .55, .15]]) {
+    s.save();
+    s.translate(shafts.width * x, shafts.height * y);
+    s.rotate(lean);
+    s.scale(shafts.width * spread, shafts.height * length);
+    const wash = s.createRadialGradient(0, 0, 0, 0, 0, 1);
+    wash.addColorStop(0, `rgba(${colors[0]},.26)`);
+    wash.addColorStop(.35, `rgba(${colors[0]},.16)`);
+    wash.addColorStop(.7, `rgba(${colors[0]},.045)`);
+    wash.addColorStop(1, `rgba(${colors[0]},0)`);
+    s.fillStyle = wash;
+    s.fillRect(-1, -1, 2, 2);
+    s.restore();
+  }
+
+  const mist = document.createElement('canvas');
+  mist.width = 384;
+  mist.height = 128;
+  const m = mist.getContext('2d');
+  // Elliptical wisps overlap within one reusable transparent stamp.
+  for (const [x, y, radius] of [[.25, .57, .25], [.48, .43, .36], [.73, .58, .24]]) {
+    m.save();
+    m.scale(1, .27);
+    const glow = m.createRadialGradient(384 * x, 128 * y / .27, 0, 384 * x, 128 * y / .27, 384 * radius);
+    glow.addColorStop(0, `rgba(${colors[1]},.24)`);
+    glow.addColorStop(.48, `rgba(${colors[1]},.12)`);
+    glow.addColorStop(1, `rgba(${colors[1]},0)`);
+    m.fillStyle = glow;
+    m.fillRect(0, 0, 384, 128 / .27);
+    m.restore();
+  }
+
+  const mote = document.createElement('canvas');
+  mote.width = mote.height = 32;
+  const f = mote.getContext('2d');
+  const halo = f.createRadialGradient(16, 16, 0, 16, 16, 16);
+  halo.addColorStop(0, '#fff1ba');
+  halo.addColorStop(.09, '#f2ddaac4');
+  halo.addColorStop(.3, '#d6e1a938');
+  halo.addColorStop(1, '#d6e1a900');
+  f.fillStyle = halo;
+  f.fillRect(0, 0, 32, 32);
+
+  // A few soft horizontal glints move together as one water-light layer. This
+  // stamp is made once, not repainted as gradients on every animation frame.
+  const water = document.createElement('canvas');
+  water.width = 384;
+  water.height = 128;
+  const w = water.getContext('2d');
+  for (let i = 0; i < 6; i++) {
+    w.save();
+    w.translate(384 * (.44 + Math.sin(i * 1.73) * .14), 128 * (.12 + i * .145));
+    w.scale(384 * (.08 + i * .014), 1.5 + i * .35);
+    const light = w.createRadialGradient(0, 0, 0, 0, 0, 1);
+    light.addColorStop(0, `rgba(${colors[0]},.42)`);
+    light.addColorStop(.25, `rgba(${colors[1]},.25)`);
+    light.addColorStop(1, `rgba(${colors[1]},0)`);
+    w.fillStyle = light;
+    w.fillRect(-1, -1, 2, 2);
+    w.restore();
+  }
+  return { shafts, mist, mote, water, strength: displayMode === 'simple' ? .6 : 1 };
+}
+
+export function drawAtmosphere(ctx, width, height, time, atmosphere, title = false) {
+  const { shafts, mist, mote, water, strength } = atmosphere;
   ctx.save();
-  ctx.fillStyle = '#e8d8a4';
-  const count = Math.max(8, Math.min(24, Math.floor(width * height / 52000)));
+  ctx.globalCompositeOperation = 'screen';
+  ctx.globalAlpha = (title ? .23 + Math.sin(time * .12) * .045 : .2 + Math.sin(time * .065) * .025) * strength;
+  ctx.drawImage(shafts, Math.sin(time * (title ? .045 : .025)) * width * .009 - width * .025, -height * .03, width * 1.05, height * 1.08);
+  // The quiet, narrow distant veil and the wider foreground drift establish
+  // depth without moving or obscuring the artwork or the puzzle board.
+  for (let i = 0; i < 3; i++) {
+    const phase = i * 1.7;
+    const w = width * (.78 + i * .22), h = height * (.12 + i * .045);
+    const rate = title ? .055 + i * .018 : .024 + i * .009;
+    const x = (width - w) / 2 + Math.sin(time * rate + phase) * width * (.025 + i * .028);
+    const y = height * ((title ? .52 : .49) + i * .145) + Math.sin(time * (title ? .085 : .045) + phase) * height * (.002 + i * .0015);
+    // The nearest veil has a wider, slower opacity swell. Its movement remains
+    // below the title copy and reveals depth instead of washing the center out.
+    ctx.globalAlpha = (title ? .32 + i * .075 + Math.sin(time * .11 + phase) * .035 : .21 + i * .06) * strength;
+    ctx.drawImage(mist, x, y, w, h);
+  }
+
+  if (title && water) {
+    ctx.globalAlpha = (.16 + Math.sin(time * .24) * .055) * strength;
+    ctx.drawImage(water,
+      width * (.31 + Math.sin(time * .095) * .012),
+      height * (.745 + Math.sin(time * .16 + 1.2) * .003),
+      width * .43, height * .21);
+  }
+
+  // Reflections breathe in place; no wrapping lines or abrupt particle resets.
+  ctx.strokeStyle = '#a9d9cb';
+  ctx.lineWidth = .75;
+  for (let i = 0; i < 7; i++) {
+    const phase = i * 2.17;
+    const x = width * (.28 + (i * .173) % .45) + Math.sin(time * (title ? .14 : .08) + phase) * width * (title ? .018 : .012);
+    const y = height * (.75 + i * .029) + Math.sin(time * (title ? .18 : .09) + phase) * height * (title ? .002 : .0013);
+    ctx.globalAlpha = (title
+      ? .032 + .082 * (1 + Math.sin(time * .36 + phase)) / 2
+      : .018 + .047 * (1 + Math.sin(time * .15 + phase)) / 2) * strength;
+    ctx.beginPath();
+    ctx.ellipse(x, y, width * (.008 + (i % 4) * .006) * (title ? 1.3 : 1), Math.max(.3, height * .001), 0, Math.PI * .08, Math.PI * .89);
+    ctx.stroke();
+  }
+
+  // A sparse field fades and bobs in place. No wraparound resets, flashing,
+  // or extra particle density on large monitors.
+  const count = Math.max(6, Math.min(12, Math.floor(width * height / 125000)));
   for (let i = 0; i < count; i++) {
     const phase = i * 1.91;
-    const x = ((i + .31) / count * width + Math.sin(time * .16 + phase) * 14 + width) % width;
-    const y = height * (.13 + ((i * .271 + 1 - time * .002) % .75 + .75) % .75);
-    ctx.globalAlpha = (.13 + .19 * (1 + Math.sin(phase + time * .5)) / 2) * (.8 + intensity * .2);
-    ctx.beginPath();
-    ctx.ellipse(x, y, 1.2, .6, phase + time * .09, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.globalAlpha *= .45;
-    ctx.beginPath();
-    ctx.ellipse(x + 3, y + 2, .65, .4, phase, 0, Math.PI * 2);
-    ctx.fill();
+    const depth = .45 + (i % 3) * .275;
+    const baseX = title
+      ? (i % 2 ? .78 : .22) + (i % 2 ? 1 : -1) * ((Math.floor(i / 2) * .173) % .14)
+      : .06 + (i + .31) / count * .88;
+    const x = width * baseX + Math.sin(time * (title ? .13 : .075) + phase) * Math.min(19, width * .025) * depth;
+    const y = height * (.4 + (i * .241) % .49) + Math.cos(time * .06 + phase) * Math.min(13, height * .02) * depth;
+    const size = (title ? 8 : 5) + depth * 10;
+    ctx.globalAlpha = (title
+      ? .065 + .4 * (1 + Math.sin(phase + time * .28)) / 2
+      : .035 + .36 * (1 + Math.sin(phase + time * .21)) / 2) * strength * depth;
+    ctx.drawImage(mote, x - size / 2, y - size / 2, size, size);
   }
   ctx.restore();
 }

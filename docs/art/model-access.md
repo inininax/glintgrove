@@ -1,6 +1,6 @@
 # Image model requirement · access audit
 
-> Historical access audit for the retired image-model backgrounds. Its incomplete-model statement and old runtime revision describe that earlier task only. Current artwork uses local Blender scenes and authored SVG/Canvas code; see [current replacement audit](../legal/remake-audit.md) and [reference recheck](commercial-reference-recheck.md). No image-model selection is required by the current production pipeline.
+> Historical access audit for the retired image-model backgrounds. Its incomplete-model statement and old runtime revision describe that earlier task only. A later explicit user request generated a new forest with the available built-in image tool; see [GPT forest v4](../../art/recipes/gpt-forest-v4.md). The old model-access requirement below is not a verified model identity for the new image, whose exact model version was not returned by the tool.
 
 Checked 2026-09-13. The latest-model requirement remains **unverified**, so the full goal is not marked complete. The existing 25 runtime assets remain at revision `nocturne-c4cf96b06729`.
 

@@ -1,6 +1,7 @@
 import { colorOf } from '../core/colors.js';
 import { centerOf } from './layout.js';
 import { drawSprite } from './sprites.js';
+import { traceColorMark } from '../ui/colorMarks.js';
 
 // All vector recipes in this file were newly authored on 2026-09-13.
 // The saved Blender artwork supplies the normal view; these drawings also keep
@@ -134,18 +135,10 @@ function colorMark(ctx, cx, cy, cell, color) {
     polygon(ctx, [[-.4, -.31], [.3, -.4], [.43, -.15], [.35, .35], [-.31, .42], [-.43, .14]]);
     ctx.fillStyle = '#0b252c'; ctx.fill();
     ctx.strokeStyle = colorOf(color); ctx.lineWidth = .08; ctx.stroke();
-    ctx.strokeStyle = '#fbf1d3'; ctx.lineWidth = .082;
-    // Small constructed R/G/B letters, not font outlines or extracted glyphs.
-    if (color === 'r') {
-      line(ctx, [[-.16, .23], [-.16, -.23], [.11, -.23], [.21, -.1], [.09, .02], [-.14, .02]]);
-      line(ctx, [[.03, .02], [.21, .23]]);
-    } else if (color === 'g') {
-      line(ctx, [[.18, -.15], [.07, -.24], [-.16, -.15], [-.2, .12], [-.06, .24], [.19, .15], [.19, .02], [.03, .02]]);
-    } else if (color === 'b') {
-      line(ctx, [[-.16, .23], [-.16, -.23], [.09, -.23], [.18, -.12], [.06, 0], [-.16, 0], [.1, 0], [.21, .13], [.09, .23], [-.16, .23]]);
-    } else {
-      line(ctx, [[-.22, -.18], [-.12, .21], [0, -.04], [.11, .21], [.23, -.18]]);
-    }
+    ctx.strokeStyle = '#fbf1d3'; ctx.lineWidth = .17;
+    ctx.scale(.36, .36);
+    traceColorMark(ctx, color);
+    ctx.stroke();
   });
 }
 
@@ -180,12 +173,18 @@ export function drawGate(ctx, gate, layout, time, powered) {
       polygon(ctx, [[-.26, -.27], [0, -.4], [.26, -.27], [.2, -.16], [0, -.26], [-.2, -.16]]); ctx.fill();
       ctx.strokeStyle = '#b7c89b7a';
       line(ctx, [[-.22, .24], [-.22, -.19], [0, -.31], [.23, -.2], [.23, .24]]);
-      ctx.strokeStyle = colorOf(gate.needColor);
-      ctx.lineWidth = .018;
-      if (!powered) {
-        for (const x of [-.075, .075]) line(ctx, [[x, -.19], [x, .25]]);
-        line(ctx, [[-.16, .04], [.16, .04]]);
-      }
+    }
+    if (!powered) {
+      // A clear arch with a translucent seal, rather than baked ladder bars.
+      ctx.fillStyle = colorOf(gate.needColor) + '28';
+      ctx.strokeStyle = colorOf(gate.needColor) + 'b0';
+      ctx.lineWidth = .014;
+      polygon(ctx, [[-.18, -.18], [0, -.24], [.18, -.18], [.18, .18], [0, .24], [-.18, .18]]);
+      ctx.fill(); ctx.stroke();
+      ctx.save(); ctx.scale(.105, .105);
+      ctx.strokeStyle = '#edf1d9c0'; ctx.lineWidth = .14;
+      traceColorMark(ctx, gate.needColor); ctx.stroke();
+      ctx.restore();
     }
     if (powered) {
       ctx.strokeStyle = colorOf(gate.needColor);

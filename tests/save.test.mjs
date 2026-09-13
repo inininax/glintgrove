@@ -19,7 +19,7 @@ test('defaults shape is v2', () => {
   const d = store.defaults();
   assert.equal(d.v, 2);
   assert.equal(d.unlocked, 1);
-  assert.equal(d.lang, 'en');
+  assert.equal(d.lang, 'ko');
   assert.deepEqual([d.stars, d.tipsSeen, d.daily, d.ach].map(o => typeof o), ['object', 'object', 'object', 'object']);
 });
 
@@ -39,7 +39,7 @@ test('v1 save migrates to v2 preserving progress', () => {
   assert.equal(d.stars[1], 3);
   assert.equal(d.sound, false);
   assert.equal(d.colorblind, true);
-  assert.equal(d.lang, 'en');
+  assert.equal(d.lang, 'ko');
   assert.deepEqual(d.daily, {});
 });
 
@@ -56,6 +56,30 @@ test('corrupted payloads sanitize safely', () => {
   assert.deepEqual(d.stars, { 3: 2 });
   assert.equal(d.sound, true);
   assert.equal(d.motion, true);
+});
+
+test('fresh saves and missing or invalid language values default to Korean', () => {
+  stubStorage();
+  assert.equal(store.load().lang, 'ko');
+  for (const lang of [undefined, null, 'fr', 7]) {
+    stubStorage(JSON.stringify({ v: 2, unlocked: 18, stars: { 17: 2 }, lang }));
+    const data = store.load();
+    assert.equal(data.lang, 'ko', `fallback for ${String(lang)}`);
+    assert.equal(data.unlocked, 18);
+    assert.deepEqual(data.stars, { 17: 2 });
+  }
+});
+
+test('saved Korean, English and automatic preferences survive loading and v1 migration', () => {
+  for (const v of [1, 2]) {
+    for (const lang of ['ko', 'en', 'auto']) {
+      stubStorage(JSON.stringify({ v, lang, unlocked: 7, stars: { 6: 3 } }));
+      const data = store.load();
+      assert.equal(data.lang, lang);
+      assert.equal(data.unlocked, 7);
+      assert.deepEqual(data.stars, { 6: 3 });
+    }
+  }
 });
 
 test('completeLevel unlocks next and keeps best stars', () => {

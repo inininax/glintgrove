@@ -1,0 +1,54 @@
+{
+  "title": "Ancient Forest — A Light Between Roots",
+  "version": 2,
+  "score": "art/source/audio/ancient-forest-v2.score.json",
+  "scoreSha256": "5437ef653e8c5c7e6effe69bc07dcc762421fd0d870e3b1d44e1d234dfb0cffb",
+  "generator": "tools/audio/render-ancient-forest-music-v2.mjs",
+  "generatorSha256": "40cf6c8d4c6a615a67c350952731099fefb38ad41970288ce093ac45b01a972b",
+  "runtime": "assets/audio/ancient-forest-v2.wav",
+  "sha256": "b7755b164ef1de239fd8f0212be8e0a3a39cd772f50795f8697d41647bf5839a",
+  "bytes": 9216044,
+  "sampleRate": 24000,
+  "channels": 2,
+  "bitsPerSample": 16,
+  "frames": 2304000,
+  "duration": 96,
+  "peak": 0.279998779296875,
+  "rms": 0.07598945948739906,
+  "seamDelta": [
+    0.01190185546875,
+    0.01025390625
+  ],
+  "sampleDeltaRms": 0.005236820252917161,
+  "maxSampleDelta": 0.02252197265625,
+  "quietestSecondRms": 0.05532384517340956,
+  "loudestSecondRms": 0.09539248756779639,
+  "channelDc": [
+    1.1373890770806207e-7,
+    1.1901060740152994e-7
+  ],
+  "stereoCorrelation": 0.9341616647815004,
+  "sectionRms": [
+    0.07940562535042912,
+    0.07512638525093566,
+    0.07510327890046983,
+    0.07288753915624979,
+    0.07214298829778792,
+    0.08086689059539613
+  ],
+  "synthesis": {
+    "padAttack": 7,
+    "padRelease": 14,
+    "reverbSeconds": 8,
+    "chordChanges": 6,
+    "feltNotes": 3,
+    "glassNotes": 7
+  },
+  "mastering": {
+    "windowSeconds": 3.2,
+    "strength": 0.24,
+    "minimumGain": 0.84,
+    "maximumGain": 1.15
+  },
+  "provenance": "Original score and mathematical instrument synthesis created for Ilyndrel; no recordings, external samples, lyrics, voices, or choir."
+}

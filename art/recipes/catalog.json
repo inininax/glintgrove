@@ -29,7 +29,7 @@
       "scale": 1.1
     },
     "depths": {
-      "source": "art/source/procedural/depths-v2.png",
+      "source": "art/source/procedural/depths-v3.png",
       "kind": "background"
     },
     "emitter": {
@@ -60,15 +60,15 @@
       "scale": 1.1
     },
     "forest": {
-      "source": "art/source/procedural/forest-v2.png",
+      "source": "art/source/gpt/forest-v6.png",
       "kind": "background"
     },
     "garden": {
-      "source": "art/source/procedural/garden-v2.png",
+      "source": "art/source/procedural/garden-v3.png",
       "kind": "background"
     },
     "gate.b": {
-      "source": "art/renders/sprites/gate-b-v1.png",
+      "source": "art/renders/sprites/gate-b-v2.png",
       "kind": "sprite",
       "anchor": [
         0.5,
@@ -77,7 +77,7 @@
       "scale": 1.1
     },
     "gate.g": {
-      "source": "art/renders/sprites/gate-g-v1.png",
+      "source": "art/renders/sprites/gate-g-v2.png",
       "kind": "sprite",
       "anchor": [
         0.5,
@@ -86,7 +86,7 @@
       "scale": 1.1
     },
     "gate.r": {
-      "source": "art/renders/sprites/gate-r-v1.png",
+      "source": "art/renders/sprites/gate-r-v2.png",
       "kind": "sprite",
       "anchor": [
         0.5,
@@ -95,7 +95,7 @@
       "scale": 1.1
     },
     "heart": {
-      "source": "art/source/procedural/heart-v2.png",
+      "source": "art/source/procedural/heart-v3.png",
       "kind": "background"
     },
     "mirror": {

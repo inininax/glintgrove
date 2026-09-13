@@ -27,6 +27,31 @@ test('t() falls back to ko then key', () => {
   assert.notEqual(t('nonexistent-key-xyz'), '');
 });
 
+test('Korean is the default even when the browser prefers English', () => {
+  const previousNavigator = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+  Object.defineProperty(globalThis, 'navigator', {
+    configurable: true, value: { languages: ['en-US'], language: 'en-US' }
+  });
+  try {
+    for (const lang of [undefined, null, 'invalid']) {
+      setLanguage('en');
+      setLanguage(lang);
+      assert.equal(t('settings'), STRINGS.ko.settings);
+    }
+    setLanguage('en');
+    assert.equal(t('settings'), STRINGS.en.settings);
+    setLanguage('auto');
+    assert.equal(t('settings'), STRINGS.en.settings, 'automatic detection is opt-in');
+    navigator.languages = ['ko-KR', 'en-US'];
+    setLanguage('auto');
+    assert.equal(t('settings'), STRINGS.ko.settings);
+  } finally {
+    if (previousNavigator) Object.defineProperty(globalThis, 'navigator', previousNavigator);
+    else delete globalThis.navigator;
+    setLanguage('ko');
+  }
+});
+
 test('all levels have EN display names', () => {
   for (const l of LEVELS) {
     assert.ok(l.nameEn || LEVEL_NAMES_EN[l.id], `L${l.id} missing EN name`);

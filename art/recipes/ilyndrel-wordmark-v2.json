@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T15:39:58.234966+00:00",
+  "method": "built-in-image_gen",
+  "purpose": "wordmark",
+  "prompt": {
+    "path": "art/recipes/ilyndrel-wordmark-v2-black.prompt.txt",
+    "sha256": "116d2b70c7e2d9a8c73f65c70543365c03411c4d0ca1eeb873059f2b7287ab3c",
+    "bytes": 1040
+  },
+  "referenceInputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v2-design.png",
+      "sha256": "25b3a07457a413afcef0d1f45015bd7cc9afc6c33dccfd4ca79e210aae057299",
+      "bytes": 2695273,
+      "role": "own generated jeweled wordmark design; replace checkerboard with pure black for screen blending",
+      "generationEvidence": "art/recipes/ilyndrel-wordmark-v2-design.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v2.png",
+      "sha256": "a2b8d17be03f0d44989fecc690a5ae0f2412702804d899ce37418019e824740f",
+      "bytes": 1450403,
+      "width": 2172,
+      "height": 724,
+      "format": "PNG",
+      "mode": "RGB"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-b40392e5-4083-4584-9745-2dae0f010b5f.png",
+  "externalReferenceImages": [],
+  "legalClearance": "not-established",
+  "explanation": "Built-in image edit produced the final gold and emerald wordmark on a black matte. The original RGB pixels and dimensions are preserved. Runtime CSS screen blending removes the black matte over the forest; this file does not claim to have alpha transparency. No external images, sampled fonts or third-party artwork were imported. Exact production records do not establish exclusivity or worldwide non-infringement.",
+  "runtimeExport": {
+    "path": "assets/site/ilyndrel-wordmark-v2.webp",
+    "sha256": "c09ca803d71bdcdb8daf9ef904040ec9ab9044bb67fc7d8b266b621ea2e84e9b",
+    "bytes": 1101064,
+    "conversion": "Pillow lossless WebP; original RGB pixels and dimensions retained; no removal, crop or retouch"
+  }
+}

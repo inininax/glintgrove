@@ -3,9 +3,26 @@ import { totalStars } from '../state/saveStore.js';
 import { t, LEVEL_NAMES_EN } from './strings.js';
 import { ACHIEVEMENTS } from '../services/achievements.js';
 import { symbolSvg, ratingSvg } from './symbols.js';
+import { colorMarkPath } from './colorMarks.js';
+import { colorOf } from '../core/colors.js';
+import { deviceAt, deviceDiagram, guideKinds } from './deviceGuide.js';
 
 function el(id) {
   return document.getElementById(id);
+}
+
+function colorLegend() {
+  const legend = document.createElement('div');
+  legend.className = 'device-color-legend';
+  for (const color of ['r', 'g', 'b']) {
+    const item = document.createElement('span');
+    item.innerHTML = `<svg viewBox="-1 -1 2 2" aria-hidden="true"><path d="${colorMarkPath(color)}" fill="none" stroke="${colorOf(color)}" stroke-width=".14" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+    const label = document.createElement('span');
+    label.textContent = t(`colorMark${color.toUpperCase()}`);
+    item.appendChild(label);
+    legend.appendChild(item);
+  }
+  return legend;
 }
 
 export function levelName(def, lang) {
@@ -29,10 +46,10 @@ export class UI {
       if (!focusable.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
-      if (event.shiftKey && (document.activeElement === first || !el(modalId).contains(document.activeElement))) {
+      if (event.shiftKey && (document.activeElement === first || !focusable.includes(document.activeElement))) {
         event.preventDefault();
         last.focus();
-      } else if (!event.shiftKey && (document.activeElement === last || !el(modalId).contains(document.activeElement))) {
+      } else if (!event.shiftKey && (document.activeElement === last || !focusable.includes(document.activeElement))) {
         event.preventDefault();
         first.focus();
       }
@@ -43,6 +60,12 @@ export class UI {
     this.closeTutorial();
     const layer = el('tutorial-layer');
     if (!layer) return;
+    if (this.anyModalOpen()) {
+      this._pendingTutorial = step;
+      return;
+    }
+    this._tutorialStep = step;
+    this.clearToast();
 
     if (step.type === 'pointer') {
       const lay = this.game.renderer.layout(this.game.level);
@@ -62,36 +85,76 @@ export class UI {
     if (step.type === 'card') {
       const card = document.createElement('div');
       card.className = 'modal panel tut-card';
-      card.innerHTML = `
-        <div class="tut-art">${symbolSvg(step.levelId === 6 ? 'splitter' : step.levelId === 17 ? 'color' : 'portal')}</div>
-        <h3>${t(step.titleKey)}</h3>
-        <p>${t(step.bodyKey)}</p>
-        <button id="btn-tut-ok" class="btn primary">${t('tutGotIt')}</button>`;
+      card.setAttribute('role', 'dialog');
+      card.setAttribute('aria-modal', 'true');
+      card.setAttribute('aria-labelledby', 'tutorial-title');
+      card.setAttribute('aria-describedby', 'tutorial-body');
+      const art = document.createElement('div');
+      art.className = 'tut-art';
+      art.classList.add('device-tutorial-diagram');
+      art.innerHTML = deviceDiagram(step.levelId === 6 ? 'splitter' : step.levelId === 17 ? 'color' : 'portal', this.game.level?.crystals?.[0]?.color || 'r');
+      const title = document.createElement('h3');
+      title.id = 'tutorial-title';
+      title.textContent = t(step.titleKey);
+      const body = document.createElement('p');
+      body.id = 'tutorial-body';
+      body.textContent = t(step.bodyKey);
+      const button = document.createElement('button');
+      button.id = 'btn-tut-ok';
+      button.className = 'btn primary';
+      button.textContent = t('tutGotIt');
+      for (const node of [art, title, body]) card.appendChild(node);
+      if (step.levelId === 17) card.appendChild(colorLegend());
+      card.appendChild(button);
       layer.appendChild(card);
-      card.querySelector('#btn-tut-ok').addEventListener('click', () => {
-        this.closeTutorial();
-        this.hooks.onTutorialDone(step.levelId);
-      });
+      layer.classList.add('has-card');
+      button.addEventListener('click', () => this.dismissTutorial());
+      this.focusPrimary('btn-tut-ok');
     }
+  }
+
+  dismissTutorial() {
+    const step = this._tutorialStep;
+    this.closeTutorial();
+    if (step) this.hooks.onTutorialDone?.(step.levelId);
   }
 
   dismissPointer() {
-    if (this._pointerEl) {
-      this._pointerEl.remove();
-      this._pointerEl = null;
-      if (this.hooks.onTutorialDone && this.currentStepLevel) {
-        this.hooks.onTutorialDone(this.currentStepLevel);
-      }
-    }
+    if (this._pointerEl) this.dismissTutorial();
   }
 
   closeTutorial() {
+    const wasCard = this._tutorialStep?.type === 'card';
     const layer = el('tutorial-layer');
-    if (layer) layer.innerHTML = '';
+    if (layer) {
+      layer.innerHTML = '';
+      layer.classList.remove('has-card');
+    }
     this._pointerEl = null;
+    this._tutorialStep = null;
+    this._pendingTutorial = null;
+    if (wasCard) this.restoreFocus();
+  }
+
+  deferTutorial() {
+    const step = this._tutorialStep || this._pendingTutorial;
+    this.closeTutorial();
+    this._pendingTutorial = step;
+  }
+
+  resumeTutorial() {
+    if (this._pendingTutorial && !this.anyModalOpen() && this.currentScreen === 'screen-game') {
+      this.showTutorial(this._pendingTutorial);
+    }
   }
 
   show(name) {
+    this.closeTutorial();
+    this.clearToast();
+    for (const id of ['win-overlay', 'settings-modal', 'intro-modal', 'ach-modal', 'guide-modal']) {
+      el(id)?.classList.add('hidden');
+    }
+    UI.lastFocused = null;
     this.currentScreen = name;
     if (document.body) document.body.dataset.screen = name.replace('screen-', '');
     for (const s of ['screen-title', 'screen-levels', 'screen-game']) {
@@ -100,11 +163,86 @@ export class UI {
   }
 
   anyModalOpen() {
-    for (const id of ['win-overlay', 'settings-modal', 'intro-modal', 'ach-modal']) {
+    // Match the overlays' DOM paint order, with the tutorial below them.
+    for (const id of ['guide-modal', 'ach-modal', 'intro-modal', 'settings-modal', 'win-overlay']) {
       const node = el(id);
       if (node && !node.classList.contains('hidden')) return id;
     }
+    if (el('tutorial-layer')?.classList.contains('has-card')) return 'tutorial-layer';
     return null;
+  }
+
+  canPlay() {
+    return this.currentScreen === 'screen-game' && !this.anyModalOpen();
+  }
+
+  inspectAt(px, py) {
+    if (!this.canPlay() || this.game.won || !this.game.level) return false;
+    const device = deviceAt(this.game.level, this.game.renderer.layout(this.game.level), px, py);
+    return device ? this.openGuide(device) : false;
+  }
+
+  openGuide(device = null) {
+    const introduction = this.currentScreen === 'screen-title' && !device;
+    if (this.anyModalOpen() || (!introduction && (!this.canPlay() || this.game.won))) return false;
+    const modal = el('guide-modal');
+    const content = el('guide-content');
+    if (!modal || !content) return false;
+    this.deferTutorial();
+    this.clearToast();
+    content.innerHTML = '';
+    const titleKey = introduction ? 'helpTitle' : 'guideTitle';
+    el('guide-title').textContent = t(titleKey);
+    el('guide-title').setAttribute('data-i18n', titleKey);
+    if (introduction) {
+      const overview = document.createElement('section');
+      overview.className = 'guide-introduction';
+      const title = document.createElement('h3');
+      title.textContent = t('helpGoalTitle');
+      overview.appendChild(title);
+      for (const key of ['helpGoalBody', 'helpControlsBody', 'helpMenuBody']) {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = t(key);
+        overview.appendChild(paragraph);
+      }
+      content.appendChild(overview);
+    }
+    // Title help must not inherit the last played or background-demo level's
+    // device list. It always introduces the complete set without loading a level.
+    const kinds = introduction ? ['emitter', 'mirror', 'target', 'splitter', 'crystal', 'gate', 'portal']
+      : device ? [device.kind] : guideKinds(this.game.level);
+    const color = introduction ? 'r' : device?.color || this.game.level?.crystals?.[0]?.color || 'r';
+    for (const kind of kinds) {
+      const row = document.createElement('section');
+      row.className = 'device-guide-row';
+      const diagram = document.createElement('div');
+      diagram.className = 'device-guide-diagram';
+      diagram.innerHTML = deviceDiagram(kind, color);
+      const copy = document.createElement('div');
+      const title = document.createElement('h3');
+      const body = document.createElement('p');
+      const name = kind[0].toUpperCase() + kind.slice(1);
+      title.textContent = t(`guide${name}Title`);
+      body.textContent = t(`guide${name}Body`);
+      copy.appendChild(title); copy.appendChild(body);
+      row.appendChild(diagram); row.appendChild(copy);
+      content.appendChild(row);
+    }
+    if (kinds.some(kind => ['crystal', 'gate'].includes(kind)) || device?.color || this.game.level?.targets?.some(target => target.need)) content.appendChild(colorLegend());
+    modal.classList.remove('hidden');
+    // Start long guides at their heading; focusing the bottom close button would
+    // scroll mobile dialogs past the rules before the player can read them.
+    this.focusPrimary('guide-title');
+    if (el('guide-title')?.parentElement) el('guide-title').parentElement.scrollTop = 0;
+    modal.scrollTop = 0;
+    return true;
+  }
+
+  closeGuide() {
+    if (el('guide-modal')?.classList.contains('hidden')) return;
+    el('guide-modal')?.classList.add('hidden');
+    this.restoreFocus();
+    this.resumeTutorial();
   }
 
   renderLevelSelect() {
@@ -166,12 +304,21 @@ export class UI {
     moveEl.classList.toggle('over', moves > par);
   }
 
-  toast(msg, ms) {
+  clearToast() {
+    clearTimeout(this._toastTimer);
+    const toast = el('toast');
+    toast.classList.remove('show');
+    toast.textContent = '';
+  }
+
+  toast(msg, ms, { guidance = false } = {}) {
+    if (this._tutorialStep?.type === 'card' || this.anyModalOpen() === 'guide-modal' || (guidance && !this.canPlay())) return false;
     const toast = el('toast');
     toast.textContent = msg;
     toast.classList.add('show');
     clearTimeout(this._toastTimer);
     this._toastTimer = setTimeout(() => toast.classList.remove('show'), ms || 2600);
+    return true;
   }
 
   showHintToast() {
@@ -180,10 +327,13 @@ export class UI {
     const hint = this.hooks.lang() === 'en'
       ? (level.hintEn || level.hint)
       : (level.hint || level.hintEn);
-    if (hint) this.toast(hint, 3600);
+    if (hint) this.toast(hint, 3600, { guidance: true });
   }
 
   showWin(moves, par, stars, daily) {
+    el('guide-modal')?.classList.add('hidden');
+    this.closeTutorial();
+    this.clearToast();
     el('win-overlay').classList.remove('hidden');
     el('win-title').textContent = daily ? t('dailyWinTitle') : t('winTitle');
     el('win-stats').textContent = daily
@@ -206,7 +356,7 @@ export class UI {
     nextBtn.style.display = hasNext ? '' : 'none';
     if (hasNext) nextBtn.textContent = t('nextLevel');
     el('btn-share').style.display = '';
-    this.focusPrimary(hasNext ? 'btn-next' : 'btn-share');
+    if (this.anyModalOpen() === 'win-overlay') this.focusPrimary(hasNext ? 'btn-next' : 'btn-share');
   }
 
   hideWin() {
@@ -217,24 +367,32 @@ export class UI {
   focusPrimary(btnId) {
     UI.lastFocused = document.activeElement;
     const btn = el(btnId);
-    if (btn && btn.focus) setTimeout(() => btn.focus(), 30);
+    btn?.focus();
   }
 
   restoreFocus() {
     const prev = UI.lastFocused;
-    if (prev && prev.focus) prev.focus();
     UI.lastFocused = null;
+    const modal = this.anyModalOpen();
+    if (modal && !el(modal).contains(prev)) {
+      const button = el(modal).querySelector('button:not([disabled])');
+      button?.focus();
+    } else if (prev?.isConnected && prev.getClientRects().length) prev.focus();
+    else if (this.currentScreen === 'screen-game') el('btn-hint')?.focus();
   }
 
   openSettings() {
-    this.focusPrimary('btn-close-settings');
+    if (this.anyModalOpen()) return false;
+    this.deferTutorial();
+    this.clearToast();
     this.hooks.beforeSettings?.();
     el('settings-modal').classList.remove('hidden');
+    this.focusPrimary('btn-close-settings');
     const data = this.hooks.getSave();
     el('set-sound').checked = data.sound;
     el('set-motion').checked = data.motion;
     el('set-colorblind').checked = data.colorblind;
-    el('set-lang').value = data.lang || 'auto';
+    el('set-lang').value = data.lang || 'ko';
     const skinSelect = el('set-skin');
     if (skinSelect) skinSelect.value = data.skin || 'classic';
     const displaySelect = el('set-display');
@@ -242,8 +400,10 @@ export class UI {
   }
 
   closeSettings() {
+    if (el('settings-modal').classList.contains('hidden')) return;
     el('settings-modal').classList.add('hidden');
     this.restoreFocus();
+    this.resumeTutorial();
   }
 
   applySettingsFromForm() {
@@ -258,19 +418,26 @@ export class UI {
   }
 
   showIntro() {
-    if (this.hooks.getSave().seenIntro) return false;
+    if (this.hooks.getSave().seenIntro || this.anyModalOpen()) return false;
+    this.deferTutorial();
+    this.clearToast();
     el('intro-modal').classList.remove('hidden');
     this.focusPrimary('btn-intro-ok');
     return true;
   }
 
   closeIntro() {
+    if (el('intro-modal').classList.contains('hidden')) return;
     el('intro-modal').classList.add('hidden');
     this.hooks.markIntroSeen();
     this.restoreFocus();
+    this.resumeTutorial();
   }
 
   renderAchievements() {
+    if (this.anyModalOpen()) return false;
+    this.deferTutorial();
+    this.clearToast();
     const data = this.hooks.getSave();
     const ctx = this.hooks.achContext();
     const list = el('ach-list');
@@ -292,7 +459,9 @@ export class UI {
   }
 
   closeAchievements() {
+    if (el('ach-modal').classList.contains('hidden')) return;
     el('ach-modal').classList.add('hidden');
     this.restoreFocus();
+    this.resumeTutorial();
   }
 }

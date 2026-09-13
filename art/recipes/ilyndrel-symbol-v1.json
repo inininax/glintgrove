@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T13:38:58.711668+00:00",
+  "method": "built-in-image_gen",
+  "purpose": "symbol",
+  "prompt": {
+    "path": "art/recipes/ilyndrel-symbol-v1.prompt.txt",
+    "sha256": "b316bcdc4baebf6c381b065842f43d909084e16ec938c7d1d24c8055cbcc2985",
+    "bytes": 1182
+  },
+  "referenceInputs": [],
+  "outputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-symbol-v1.png",
+      "sha256": "469c083f63b166581d6d450252ba7346b6a27e1ff09574dcbd8657b6bc4301cc",
+      "bytes": 1097843,
+      "width": 1254,
+      "height": 1254,
+      "format": "PNG",
+      "mode": "RGBA"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-d6b86227-21b2-4264-b258-aaf107e7e278.png",
+  "externalReferenceImages": [],
+  "legalClearance": "not-established",
+  "explanation": "Exact local prompt, inputs and AI-generated bitmap output; not a claim of Blender rendering, human-only authorship, exclusivity or zero infringement risk.",
+  "runtimeExport": {
+    "path": "assets/site/ilyndrel-symbol.webp",
+    "sha256": "d81946ef30bbe09414a46ace45d3f813919d17e6cd6a23c2f201b70eef62a58e",
+    "bytes": 723764,
+    "conversion": "Pillow lossless WebP; original dimensions and alpha retained"
+  }
+}

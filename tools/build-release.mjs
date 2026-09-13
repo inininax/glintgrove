@@ -25,7 +25,9 @@ if (manifestBytes.length > ASSET_LIMITS.manifestBytes) throw new Error('Oversize
 const manifest = validateAssetManifest(JSON.parse(manifestBytes), 'https://release.invalid/assets/game/manifest.json');
 const artEntries = new Map(Object.values(manifest.assets).map(asset => [`assets/game/${asset.src}`, asset]));
 const files = new Set(['index.html', 'css/style.css', 'manifest.webmanifest', 'sw.js',
-  'config.json', 'assets/site/icon.svg', 'assets/site/share.png', 'assets/game/manifest.json', 'THIRD_PARTY_NOTICES.md']);
+  'config.json', 'assets/site/icon.svg', 'assets/site/share.png',
+  'assets/site/ilyndrel-wordmark-v2.webp',
+  'assets/audio/ancient-forest-v2.wav', 'assets/game/manifest.json', 'THIRD_PARTY_NOTICES.md']);
 async function sourceFiles(directory) {
   for (const item of await fs.readdir(path.join(root, directory), { withFileTypes: true })) {
     if (item.name === '.DS_Store') continue;

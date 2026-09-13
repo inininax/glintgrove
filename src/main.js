@@ -3,7 +3,7 @@ import { LEVELS, difficultyOf } from './data/levels.js';
 import { load as loadSave, save as persistSave, wipe, recordDaily, dailyStreak, defaults } from './state/saveStore.js';
 import { Game } from './game/game.js';
 import { UI, levelName } from './ui/ui.js';
-import { setLanguage, t, applyDomStrings } from './ui/strings.js';
+import { setLanguage, resolveLanguage, t, applyDomStrings } from './ui/strings.js';
 import { buildDailyConfig, todayStr } from './services/daily.js';
 import { evaluateAchievements } from './services/achievements.js';
 import { track } from './infra/analytics.js';
@@ -26,7 +26,7 @@ async function boot() {
   const params = new URLSearchParams(location.search);
   let saveData = loadSave();
   saveData.v = 2;
-  setLanguage(saveData.lang === 'auto' ? null : saveData.lang);
+  setLanguage(saveData.lang);
   applyDomStrings(document);
 
   const sessionStart = Date.now();
@@ -50,12 +50,11 @@ async function boot() {
   }
 
   function lang() {
-    return saveData.lang === 'en' || (saveData.lang === 'auto' && !navigator.languages?.some?.(l => String(l).toLowerCase().startsWith('ko'))) ? 'en' : 'ko';
+    return resolveLanguage(saveData.lang);
   }
 
   function refreshLang() {
-    if (saveData.lang === 'auto') setLanguage(null);
-    else setLanguage(saveData.lang);
+    setLanguage(saveData.lang);
     applyDomStrings(document);
   }
 
@@ -105,36 +104,16 @@ async function boot() {
       daily: !!opts.daily,
       override_orient: !!opts.orientOverride
     });
-    showContextualTip(def);
     if (def.id === 1 && !saveData.seenIntro && !opts.daily) ui.showIntro();
 
     const step = getConfig().tipsEnabled ? getTutorial(effectiveDef, saveData) : null;
     if (step) {
-      ui.currentStepLevel = step.levelId;
-      requestAnimationFrame(() => ui.showTutorial(step));
-      if (step.type === 'pointer') {
-        const off = game.events.on('move', () => {
-          off();
-          ui.dismissPointer();
-          markTutorialDone(saveData, step.levelId);
-          persist();
-        });
-      }
+      ui.showTutorial(step);
       track('tutorial_shown', { level_id: step.levelId, type: step.type });
     }
   }
 
-  function showContextualTip(def) {
-    if (def.id !== 6 && def.id !== 17 && def.id !== 23) return;
-    const key = `tip-${def.id}`;
-    if (saveData.tipsSeen[key]) return;
-    saveData.tipsSeen[key] = true;
-    persist();
-    ui.toast(`${t(`tip${def.id}`)}`, 5000);
-  }
-
   function exitToLevels() {
-    game.sound.stopAmbient();
     ui.renderLevelSelect();
     ui.show('screen-levels');
     ui.hideWin();
@@ -183,8 +162,7 @@ async function boot() {
 
   function syncAudioScene() {
     game.sound.setPageVisible(!document.hidden);
-    if (ui.currentScreen === 'screen-game' && !game.demoMode) game.sound.startAmbient();
-    else game.sound.stopAmbient();
+    game.sound.startAmbient();
   }
 
   // Capture includes dynamic level buttons, the settings switch and keyboard
@@ -195,6 +173,7 @@ async function boot() {
   }
 
   game.events.on('move', e => {
+    ui.dismissPointer();
     ui.setHud(currentDef, e.moves, currentDef.par, dailyInfo?.label);
     track('move_made', { level_id: e.id, move_n: e.moves });
   });
@@ -209,8 +188,9 @@ async function boot() {
   game.events.on('hint', e => track('hint_used', { level_id: e.id, count: e.count }));
 
   game.events.on('idleNudge', e => {
-    ui.toast(t('idleNudge'), 4000);
-    track('idle_nudge_shown', { level_id: e.id });
+    if (ui.toast(t('idleNudge'), 4000, { guidance: true })) {
+      track('idle_nudge_shown', { level_id: e.id });
+    }
   });
 
   game.events.on('win', e => {
@@ -251,20 +231,33 @@ async function boot() {
   });
 
   canvas.addEventListener('pointerdown', ev => {
+    if (!ui.canPlay()) return;
     const rect = canvas.getBoundingClientRect();
-    game.pointerDown(ev.clientX - rect.left, ev.clientY - rect.top);
+    const px = ev.clientX - rect.left, py = ev.clientY - rect.top;
+    if (!ui.inspectAt(px, py)) game.pointerDown(px, py);
   });
   canvas.addEventListener('contextmenu', ev => ev.preventDefault());
 
   document.addEventListener('keydown', ev => {
-    if (ui.currentScreen !== 'screen-game') return;
     const k = ev.key.toLowerCase();
     const modal = ui.anyModalOpen();
+    if (modal === 'guide-modal') {
+      if (k === 'escape') { ev.preventDefault(); ui.closeGuide(); }
+      return;
+    }
+    if (modal === 'tutorial-layer') {
+      if (k === 'escape') {
+        ev.preventDefault();
+        ui.dismissTutorial();
+      }
+      return;
+    }
     if (modal === 'settings-modal' || modal === 'intro-modal' || modal === 'ach-modal') {
       if (k === 'escape') {
-        ui.closeSettings();
-        ui.closeIntro();
-        ui.closeAchievements();
+        ev.preventDefault();
+        if (modal === 'settings-modal') ui.closeSettings();
+        else if (modal === 'intro-modal') ui.closeIntro();
+        else ui.closeAchievements();
       }
       return;
     }
@@ -273,6 +266,7 @@ async function boot() {
       return;
     }
     if (modal) return;
+    if (ui.currentScreen !== 'screen-game') return;
     if (k === 'r') game.resetLevel();
     else if (k === 'u' || k === 'z') game.undo();
     else if (k === 'h') {
@@ -291,11 +285,19 @@ async function boot() {
     });
   }
 
-  bind('btn-play', () => {
+  function bindGame(id, fn) {
+    bind(id, () => { if (ui.canPlay()) fn(); });
+  }
+
+  function bindTitle(id, fn) {
+    bind(id, () => { if (ui.currentScreen === 'screen-title' && !ui.anyModalOpen()) fn(); });
+  }
+
+  bindTitle('btn-play', () => {
     ui.renderLevelSelect();
     ui.show('screen-levels');
   });
-  bind('btn-daily', () => {
+  bindTitle('btn-daily', () => {
     const dateStr = todayStr();
     const cfg = buildDailyConfig(dateStr, {
       min: getConfig().dailyMinOptimal,
@@ -311,14 +313,17 @@ async function boot() {
     });
     track('daily_start', { date: dateStr, base_id: cfg.baseId, optimal: cfg.optimal });
   });
-  bind('btn-continue', () => {
+  bindTitle('btn-continue', () => {
     const target = Math.min(saveData.unlocked, LEVELS.length);
     hooks.onPlay(target);
   });
   bind('btn-back-title', () => ui.show('screen-title'));
-  bind('btn-settings', () => ui.openSettings());
+  bindTitle('btn-settings', () => ui.openSettings());
+  bindTitle('btn-title-help', () => ui.openGuide());
   bind('btn-settings2', () => ui.openSettings());
-  bind('btn-settings-game', () => ui.openSettings());
+  bindGame('btn-settings-game', () => ui.openSettings());
+  bindGame('btn-guide', () => ui.openGuide());
+  bind('btn-close-guide', () => ui.closeGuide());
   bind('btn-ach', () => ui.renderAchievements());
   bind('btn-close-ach', () => ui.closeAchievements());
   function populateSkinSelect() {
@@ -359,13 +364,13 @@ async function boot() {
     ui.toast(t('wipeDone'));
     ui.closeSettings();
   });
-  bind('btn-undo', () => game.undo());
-  bind('btn-reset', () => game.resetLevel());
-  bind('btn-hint', () => {
+  bindGame('btn-undo', () => game.undo());
+  bindGame('btn-reset', () => game.resetLevel());
+  bindGame('btn-hint', () => {
     game.requestHint();
     ui.showHintToast();
   });
-  bind('btn-exit', () => exitToLevels());
+  bindGame('btn-exit', () => exitToLevels());
   bind('btn-next', () => {
     const nextId = (currentDef ? currentDef.id : 1) + 1;
     hooks.onPlay(nextId);

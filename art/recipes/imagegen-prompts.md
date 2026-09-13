@@ -1,6 +1,6 @@
 # Image generation recipes · Nocturne v1
 
-> Historical prompts for retired image-model backgrounds. These images are excluded from the current catalog and release. The current four backgrounds and share image come from local Blender scenes; see [current Blender recipe](procedural-environments-v2.md). No image model is part of the current production pipeline.
+> Historical prompts for retired image-model backgrounds. These particular images remain excluded from the current catalog and release. The user's later GPT request produced a separate new forest; see [GPT forest v4](gpt-forest-v4.md). The old prompts and model-access investigation below do not describe that new generation.
 
 Generation date: 2026-09-13. Mode: **built-in image_gen**. No CLI/API billing path used. The tool has no model selector. Source PNG C2PA records `softwareAgent: {name: "gpt-image", version: "2.0"}`. This is software provenance, not a verified API model ID or dated snapshot; it does not establish the exact serving model. GPT Image 2.5 execution is **not verified**. See `art/README.md` and `docs/art/model-access.md` for the outstanding latest-model requirement.
 

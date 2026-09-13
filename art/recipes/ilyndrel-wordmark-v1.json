@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T13:38:59.423439+00:00",
+  "method": "built-in-image_gen",
+  "purpose": "wordmark",
+  "prompt": {
+    "path": "art/recipes/ilyndrel-wordmark-v1.prompt.txt",
+    "sha256": "c16a74b44f7dfdd99faeaa57c0dad97f08e4f94d4e29c8a3d140548a1a26c658",
+    "bytes": 1247
+  },
+  "referenceInputs": [],
+  "outputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v1.png",
+      "sha256": "63f8833d757cd88684f43fd89868a7db19b578157b58d0c35d354a8893f91a98",
+      "bytes": 1729611,
+      "width": 2048,
+      "height": 768,
+      "format": "PNG",
+      "mode": "RGBA"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-fdb2b181-c7cf-4028-9da0-d2c7d2469637.png",
+  "externalReferenceImages": [],
+  "legalClearance": "not-established",
+  "explanation": "Exact local prompt, inputs and AI-generated bitmap output; not a claim of Blender rendering, human-only authorship, exclusivity or zero infringement risk.",
+  "runtimeExport": {
+    "path": "assets/site/ilyndrel-wordmark.webp",
+    "sha256": "8267dfc882a995a9daee1b1fea69841c0c68acf8c2cb45a8ef72d3e846e0dca2",
+    "bytes": 670866,
+    "conversion": "Pillow lossless WebP; original dimensions and alpha retained"
+  }
+}

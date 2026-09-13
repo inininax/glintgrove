@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-09-13",
+  "purpose": "Non-destructive local Blender improvement of four chapter backgrounds: moonlight, colored depth, visible rippled water, hanging moss and edge blooms.",
+  "legalClearance": "not-a-legal-guarantee",
+  "authoringActor": "Coding assistant in the user-authorized local workspace; not represented as human-only authorship.",
+  "blenderVersion": "5.2.1 LTS",
+  "blenderBinary": "/Applications/Blender.app/Contents/MacOS/Blender",
+  "master": {
+    "path": "art/source/procedural/nocturne-environments-v3.blend",
+    "bytes": 16053764,
+    "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380"
+  },
+  "parentMaster": {
+    "path": "art/source/procedural/nocturne-environments-v2.blend",
+    "bytes": 15454706,
+    "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+  },
+  "scripts": [
+    {
+      "path": "tools/art/upgrade_procedural_environments_v3.py",
+      "bytes": 10886,
+      "sha256": "76ba2ddbf572c907e5d7d322392004b6fa1f66e38e20dfd9cef37d813af5bb15"
+    },
+    {
+      "path": "tools/art/render_procedural_environments_v3.py",
+      "bytes": 1998,
+      "sha256": "c2673c4463430b2314ad5c49688bd58f3510e709a6f5039e86061c8abac4b73b"
+    },
+    {
+      "path": "tools/art/build_procedural_environments.py",
+      "bytes": 22193,
+      "sha256": "aff5106fd07d6159fdcb666678f5df44d4e17d054e99dbfd2959bc1169b2bcca"
+    }
+  ],
+  "sourceCodeLicense": {
+    "path": "tools/art/COPYING.GPL-3.0",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "renderSettings": {
+    "engine": "CYCLES",
+    "samples": 48,
+    "denoising": true,
+    "seed": 1709,
+    "viewTransform": "AgX",
+    "exposure": -0.15,
+    "resolutionPercentage": 100
+  },
+  "geometrySeeds": {
+    "forest": 26091330,
+    "depths": 26091331,
+    "garden": 26091332,
+    "heart": 26091333
+  },
+  "newExternalArtworkInputs": [],
+  "outputs": [
+    {
+      "path": "art/source/procedural/forest-v3.png",
+      "bytes": 1811618,
+      "sha256": "f9d6f8385ed276de28fbc77c7487bc6f7b0c00afe81921e15cb8e625f701fd30",
+      "scene": "forest",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "inputMaster": "art/source/procedural/nocturne-environments-v3.blend",
+      "renderCommandSuffix": "render_procedural_environments_v3.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false,
+      "renderMetadata": {
+        "RenderTime": "01:06.67",
+        "Memory": "225M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "01:06.64",
+        "cycles.ViewLayer.render_time": "01:06.57"
+      }
+    },
+    {
+      "path": "art/source/procedural/depths-v3.png",
+      "bytes": 1798149,
+      "sha256": "427978ee2c378eb56e075df771f62233061a1eae32bc9cf61c3b492346f21e10",
+      "scene": "depths",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "inputMaster": "art/source/procedural/nocturne-environments-v3.blend",
+      "renderCommandSuffix": "render_procedural_environments_v3.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false,
+      "renderMetadata": {
+        "RenderTime": "01:05.95",
+        "Memory": "225M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "01:05.92",
+        "cycles.ViewLayer.render_time": "01:05.85"
+      }
+    },
+    {
+      "path": "art/source/procedural/garden-v3.png",
+      "bytes": 1824549,
+      "sha256": "8a9bb3090c2ca927795792d73831be248824238de9b6a67a65a1981b6ba23944",
+      "scene": "garden",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "inputMaster": "art/source/procedural/nocturne-environments-v3.blend",
+      "renderCommandSuffix": "render_procedural_environments_v3.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false,
+      "renderMetadata": {
+        "RenderTime": "01:07.83",
+        "Memory": "232M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "01:07.80",
+        "cycles.ViewLayer.render_time": "01:07.72"
+      }
+    },
+    {
+      "path": "art/source/procedural/heart-v3.png",
+      "bytes": 1831898,
+      "sha256": "195e0ce703be4f29b62842b58375a4a121bf5d7a02b7f373241c1c0c318c34cb",
+      "scene": "heart",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "inputMaster": "art/source/procedural/nocturne-environments-v3.blend",
+      "renderCommandSuffix": "render_procedural_environments_v3.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false,
+      "renderMetadata": {
+        "RenderTime": "01:12.48",
+        "Memory": "232M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "01:12.44",
+        "cycles.ViewLayer.render_time": "01:12.37"
+      }
+    }
+  ],
+  "sceneInspection": {
+    "blenderVersion": "5.2.1 LTS",
+    "scenes": [
+      {
+        "scene": "depths",
+        "objects": 800,
+        "meshes": 383,
+        "curves": 409,
+        "lights": 7,
+        "textObjects": 0,
+        "externalArtwork": "none",
+        "outputName": "depths-v3.png"
+      },
+      {
+        "scene": "forest",
+        "objects": 762,
+        "meshes": 345,
+        "curves": 409,
+        "lights": 7,
+        "textObjects": 0,
+        "externalArtwork": "none",
+        "outputName": "forest-v3.png"
+      },
+      {
+        "scene": "garden",
+        "objects": 1020,
+        "meshes": 603,
+        "curves": 409,
+        "lights": 7,
+        "textObjects": 0,
+        "externalArtwork": "none",
+        "outputName": "garden-v3.png"
+      },
+      {
+        "scene": "heart",
+        "objects": 1030,
+        "meshes": 613,
+        "curves": 409,
+        "lights": 7,
+        "textObjects": 0,
+        "externalArtwork": "none",
+        "outputName": "heart-v3.png"
+      },
+      {
+        "scene": "share",
+        "objects": 659,
+        "meshes": 315,
+        "curves": 340,
+        "lights": 3,
+        "textObjects": 0,
+        "externalArtwork": "none",
+        "outputName": "og.png"
+      }
+    ],
+    "linkedLibraries": [],
+    "fileImages": [],
+    "fontFiles": []
+  },
+  "preservedInputs": {
+    "v2MasterAndAllSixRecordedOutputs": "Byte hashes rechecked against procedural-environments-v2.json before publication; unchanged.",
+    "shareScene": "Inherited in v3 but not rendered or published from v3; current share-v2.png remains attributed to v2.",
+    "sprites": "Original sprite master and renders unchanged."
+  },
+  "commands": {
+    "upgradeFinal": "/Applications/Blender.app/Contents/MacOS/Blender --background art/source/procedural/nocturne-environments-v2.blend --python-exit-code 1 --python tools/art/upgrade_procedural_environments_v3.py -- --replace",
+    "draft": "/Applications/Blender.app/Contents/MacOS/Blender --background art/source/procedural/nocturne-environments-v3.blend --python-exit-code 1 --python tools/art/render_procedural_environments_v3.py -- --only forest --percent 50 --samples 18 --draft",
+    "finalRender": "/Applications/Blender.app/Contents/MacOS/Blender --background art/source/procedural/nocturne-environments-v3.blend --python-exit-code 1 --python tools/art/render_procedural_environments_v3.py -- --samples 48"
+  },
+  "verificationBoundary": "These are construction inputs, scene inspection and exact output hashes. They do not establish exclusive rights or guarantee absence of all third-party claims."
+}

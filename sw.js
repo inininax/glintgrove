@@ -2,7 +2,7 @@ import { ASSET_LIMITS, validateAssetManifest, readBoundedResponse, validateRaste
 
 // Bump CORE_CACHE whenever application code changes. Runtime art uses independent
 // complete snapshots, so editing artwork cannot strand the offline application.
-const CORE_CACHE = 'glintgrove-core-v5-ilyndrel-display-audio';
+const CORE_CACHE = 'glintgrove-core-v9-jeweled-title';
 // Retire the previous image-generation edition during activation. Future
 // complete snapshots within this geometry edition still support open clients.
 const ART_INDEX = 'glintgrove-art-index-v2-original';
@@ -14,6 +14,7 @@ const ASSETS = [
   './css/style.css',
   './manifest.webmanifest',
   './assets/site/icon.svg',
+  './assets/site/ilyndrel-wordmark-v2.webp',
   './src/main.js',
   './src/assets/assetStore.js',
   './src/core/version.js',
@@ -31,16 +32,20 @@ const ASSETS = [
   './src/state/saveStore.js',
   './src/fx/particles.js',
   './src/fx/sound.js',
+  './src/fx/music.js',
   './src/render/renderer.js',
   './src/render/bloom.js',
   './src/render/gradientCache.js',
   './src/render/layout.js',
   './src/render/background.js',
   './src/render/beams.js',
+  './src/render/targetFx.js',
   './src/render/entities.js',
   './src/render/sprites.js',
   './src/game/game.js',
   './src/ui/ui.js',
+  './src/ui/colorMarks.js',
+  './src/ui/deviceGuide.js',
   './src/ui/symbols.js',
   './src/ui/strings.js',
   './src/services/daily.js',
@@ -53,7 +58,10 @@ const ASSETS = [
   './config.json'
 ];
 
-const CORE_URLS = new Set(ASSETS.map(path => new URL(path, self.location.href).href));
+// Music is cached on its first request, after the user enables playback. It is
+// deliberately absent from installation so the opening screen stays lightweight.
+const LAZY_ASSETS = ['./assets/audio/ancient-forest-v2.wav'];
+const CORE_URLS = new Set([...ASSETS, ...LAZY_ASSETS].map(path => new URL(path, self.location.href).href));
 let artRefresh = null;
 
 function refreshArt() {

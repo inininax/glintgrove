@@ -1,4 +1,6 @@
-// Ilyndrel's synthesized tones and air bed use Web Audio nodes only.
+import { loadForestMusic } from './music.js';
+
+// Ilyndrel's original instrumental score and synthesized game cues.
 // Context creation/resume happens exclusively in activate(), from a trusted UI event.
 const ACTIVATION_EVENTS = new Set(['pointerdown', 'pointerup', 'click', 'keydown', 'change']);
 
@@ -10,7 +12,12 @@ export class Sound {
     this.visible = true;
     this.ambientWanted = false;
     this.ambientNodes = null;
-    this.birdTimer = 4;
+    this.musicBuffer = null;
+    this.musicStatus = 'idle';
+    this._musicLoad = null;
+    this._musicRetryAt = 0;
+    this._musicOffset = 0;
+    this.birdTimer = 14;
     this._activation = null;
     this._pending = [];
     this._transients = new Set();
@@ -155,22 +162,49 @@ export class Sound {
 
   _startAmbientNodes() {
     if (!this.ambientWanted || this.ambientNodes || !this.ensure()) return;
-    const ctx = this.ctx, gain = ctx.createGain(), filter = ctx.createBiquadFilter();
-    gain.gain.value = 0.065;
-    filter.type = 'lowpass'; filter.frequency.value = 620;
-    const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
-    o1.type = 'sine'; o1.frequency.value = 196;
-    o2.type = 'triangle'; o2.frequency.value = 294.6;
-    o1.connect(filter); o2.connect(filter); filter.connect(gain).connect(this.master);
-    o1.start(); o2.start();
-    this.ambientNodes = { o1, o2, gain, filter, sources: [o1, o2], nodes: [o1, o2, gain, filter] };
+    if (!this.musicBuffer) { void this._loadMusic(); return; }
+    const ctx = this.ctx, gain = ctx.createGain(), source = ctx.createBufferSource();
+    source.buffer = this.musicBuffer;
+    source.loop = true;
+    source.loopStart = 0;
+    source.loopEnd = this.musicBuffer.duration;
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 1.6);
+    source.connect(gain).connect(this.master);
+    const offset = this._musicOffset % this.musicBuffer.duration;
+    this.ambientNodes = { source, gain, startedAt: ctx.currentTime, offset, sources: [source], nodes: [source, gain] };
+    source.start(ctx.currentTime, offset);
+    this.musicStatus = 'playing';
+  }
+
+  _loadMusic() {
+    if (this._musicLoad || Date.now() < this._musicRetryAt) return this._musicLoad;
+    this.musicStatus = 'loading';
+    this._musicLoad = loadForestMusic(this.ctx).then(buffer => {
+      this.musicBuffer = buffer;
+      this.musicStatus = 'ready';
+      // A fetch may finish after mute, tab hiding, or leaving a scene. The
+      // current scene and activation guards are checked again before starting.
+      this._startAmbientNodes();
+      return true;
+    }).catch(() => {
+      this.musicStatus = 'unavailable';
+      this._musicRetryAt = Date.now() + 10000;
+      return false; // Music is optional; a network error cannot break game cues.
+    }).finally(() => { this._musicLoad = null; });
+    return this._musicLoad;
   }
 
   _stopAmbientNodes() {
     if (!this.ambientNodes) return;
+    if (this.musicBuffer && this.ctx) {
+      const elapsed = Math.max(0, this.ctx.currentTime - this.ambientNodes.startedAt);
+      this._musicOffset = (this.ambientNodes.offset + elapsed) % this.musicBuffer.duration;
+    }
     for (const node of this.ambientNodes.sources) { try { node.stop(); } catch { /* already stopped */ } }
     for (const node of this.ambientNodes.nodes) { try { node.disconnect(); } catch { /* already released */ } }
     this.ambientNodes = null;
+    this.musicStatus = 'paused';
   }
 
   stopAmbient() { this.ambientWanted = false; this._stopAmbientNodes(); }
@@ -179,9 +213,9 @@ export class Sound {
     if (!anyLit || !this.ensure() || !this.ambientWanted) return;
     this.birdTimer -= dt;
     if (this.birdTimer > 0) return;
-    this.birdTimer = 8 + Math.random() * 7;
+    this.birdTimer = 20 + Math.random() * 12;
     const frequency = 1300 + Math.random() * 450;
-    this.tone(frequency, 0.13, 'sine', 0.028, 0, frequency * 1.15);
-    this.tone(frequency * 1.1, 0.16, 'sine', 0.021, 0.2, frequency * 0.9);
+    this.tone(frequency, 0.13, 'sine', 0.012, 0, frequency * 1.15);
+    this.tone(frequency * 1.1, 0.16, 'sine', 0.009, 0.2, frequency * 0.9);
   }
 }

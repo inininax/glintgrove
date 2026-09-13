@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T15:36:32.719078+00:00",
+  "method": "built-in-image_gen",
+  "purpose": "wordmark-design-intermediate",
+  "prompt": {
+    "path": "art/recipes/ilyndrel-wordmark-v2.prompt.txt",
+    "sha256": "ba6a810a778b98e2187d2d17230980e15b843c85ccd9ac18fd56318f21f4d0a2",
+    "bytes": 2547
+  },
+  "referenceInputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v1.png",
+      "sha256": "63f8833d757cd88684f43fd89868a7db19b578157b58d0c35d354a8893f91a98",
+      "bytes": 1729611,
+      "role": "own previous wordmark letter and material reference",
+      "generationEvidence": "art/recipes/ilyndrel-wordmark-v1.json"
+    },
+    {
+      "path": "art/source/gpt/forest-v6.png",
+      "sha256": "534e5aec4a55ca12c583be65da20f9499be74fb3f1d464a3d4ab7b1eb103347e",
+      "bytes": 2714045,
+      "role": "own forest color and lighting reference",
+      "generationEvidence": "art/recipes/gpt-forest-v6.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "art/source/gpt/ilyndrel-wordmark-v2-design.png",
+      "sha256": "25b3a07457a413afcef0d1f45015bd7cc9afc6c33dccfd4ca79e210aae057299",
+      "bytes": 2695273,
+      "width": 2172,
+      "height": 724,
+      "format": "PNG",
+      "mode": "RGB"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-98bf1e45-f363-435b-8b8e-1ebd06d29d89.png",
+  "externalReferenceImages": [],
+  "legalClearance": "not-established",
+  "explanation": "Generated design returned RGB with a checkerboard painted in the background. Preserved as an intermediate and excluded from runtime. A subsequent transparency attempt also returned RGB and was not selected. The final built-in edit instead creates a black matte, recorded in ilyndrel-wordmark-v2.json; runtime CSS screen blending composites it over the forest. The final image does not have alpha transparency."
+}

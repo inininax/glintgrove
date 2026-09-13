@@ -7,6 +7,9 @@ The following locally authored scripts are offered under the GNU General Public 
 - `build_procedural_environments.py`
 - `render_procedural_environments.py`
 - `render_geometry_contact_sheet.py`
+- `upgrade_procedural_environments_v3.py`
+- `render_procedural_environments_v3.py`
+- `build_ancient_gates_v2.py`
 
 These scripts are distributed in source form. They are supplied without warranty, including implied warranties of merchantability or fitness for a particular purpose. The complete license is in [COPYING.GPL-3.0](COPYING.GPL-3.0), obtained from https://www.gnu.org/licenses/gpl-3.0.txt.
 

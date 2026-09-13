@@ -1,0 +1,35 @@
+{
+  "title": "Ancient Forest — A Light Between Roots",
+  "version": 2,
+  "origin": "Original score and mathematical instrument synthesis created for Ilyndrel; no recordings, external samples, lyrics, voices, or choir.",
+  "sampleRate": 24000,
+  "duration": 96,
+  "peak": 0.28,
+  "seed": 927461,
+  "padAttack": 7,
+  "padRelease": 14,
+  "leveling": { "windowSeconds": 3.2, "strength": 0.24, "minimumGain": 0.84, "maximumGain": 1.15 },
+  "space": { "duration": 8, "taps": 96, "decay": 2.85, "tapGain": 0.054, "dry": 0.58, "wet": 1.25 },
+  "pads": [
+    { "at": 0, "duration": 32, "notes": [40, 55, 59, 66], "level": 0.105 },
+    { "at": 16, "duration": 32, "notes": [36, 55, 59, 62], "level": 0.102 },
+    { "at": 32, "duration": 32, "notes": [43, 54, 57, 62], "level": 0.102 },
+    { "at": 48, "duration": 32, "notes": [38, 54, 57, 64], "level": 0.1 },
+    { "at": 64, "duration": 32, "notes": [45, 55, 59, 64], "level": 0.103 },
+    { "at": 80, "duration": 32, "notes": [40, 55, 59, 66], "level": 0.103 }
+  ],
+  "felt": [
+    { "at": 12.4, "note": 71, "level": 0.027, "pan": -0.23 },
+    { "at": 45.5, "note": 69, "level": 0.023, "pan": 0.19 },
+    { "at": 76.6, "note": 66, "level": 0.026, "pan": -0.15 }
+  ],
+  "glass": [
+    { "at": 7.3, "note": 78, "level": 0.008, "pan": 0.34 },
+    { "at": 22.7, "note": 74, "level": 0.009, "pan": -0.32 },
+    { "at": 38.2, "note": 81, "level": 0.0065, "pan": 0.24 },
+    { "at": 54.9, "note": 76, "level": 0.008, "pan": -0.26 },
+    { "at": 64.6, "note": 71, "level": 0.0075, "pan": 0.28 },
+    { "at": 84.3, "note": 78, "level": 0.0065, "pan": -0.3 },
+    { "at": 92.1, "note": 74, "level": 0.0058, "pan": 0.19 }
+  ]
+}

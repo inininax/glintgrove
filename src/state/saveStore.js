@@ -11,7 +11,7 @@ export function defaults() {
     motion: true,
     colorblind: false,
     seenIntro: false,
-    lang: 'en',
+    lang: 'ko',
     skin: 'classic',
     displayMode: 'sculpted',
     tipsSeen: {},
@@ -50,7 +50,8 @@ function migrateV1(old) {
     sound: old.sound,
     motion: old.motion,
     colorblind: old.colorblind,
-    seenIntro: old.seenIntro
+    seenIntro: old.seenIntro,
+    lang: old.lang
   };
 }
 
@@ -69,8 +70,7 @@ function sanitize(d) {
     if (!e || !Number.isInteger(e.moves) || !(e.stars >= 1 && e.stars <= 3)) delete d.daily[k];
   }
   if (!d.ach || typeof d.ach !== 'object' || Array.isArray(d.ach)) d.ach = {};
-  if (d.lang === 'auto') d.lang = 'en';
-  if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'en';
+  if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'ko';
   if (!['classic', 'ocean', 'ember', 'aurora'].includes(d.skin)) d.skin = 'classic';
   if (!['sculpted', 'simple'].includes(d.displayMode)) d.displayMode = 'sculpted';
   const def = defaults();

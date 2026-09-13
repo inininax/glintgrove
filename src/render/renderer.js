@@ -1,7 +1,8 @@
-import { bakeBoard, buildBackground, drawAurora } from './background.js';
+import { bakeBoard, buildBackground, drawAtmosphere } from './background.js';
 import { computeLayout } from './layout.js';
 import { Bloom } from './bloom.js';
-import { drawBeams, drawPortalLinks } from './beams.js';
+import { beamFrame, gateIsReached, drawBeams, drawBeamContacts, drawPortalLinks } from './beams.js';
+import { TargetContactFx } from './targetFx.js';
 import * as shapes from './entities.js';
 import { artAssets } from '../assets/assetStore.js';
 
@@ -20,6 +21,10 @@ export class Renderer {
     this.displayMode = 'sculpted';
     this.bloom = new Bloom();
     this.bloomEnabled = true;
+    this.backgroundTime = 0;
+    this.lastBackgroundTime = null;
+    this.reducedMotion = globalThis.matchMedia?.('(prefers-reduced-motion: reduce)');
+    this.targetFx = new TargetContactFx();
   }
 
   resize() {
@@ -41,16 +46,41 @@ export class Renderer {
   ensureBackground(level, seed, boardVisible = true) {
     const signature = [level.id, level.chapter, seed, this.W, this.H, artAssets.revision, boardVisible, this.displayMode].join('|');
     if (this.bg && signature === this.bgKey) return;
-    const { canvas } = buildBackground(this.W, this.H, level, seed, this.displayMode);
-    if (boardVisible) bakeBoard(canvas.getContext('2d'), level, this.layout(level));
+    const { canvas, atmosphere } = buildBackground(this.W, this.H, level, seed, this.displayMode);
+    this.boardCanvas = null;
+    if (boardVisible) {
+      this.boardCanvas = document.createElement('canvas');
+      this.boardCanvas.width = this.W;
+      this.boardCanvas.height = this.H;
+      bakeBoard(this.boardCanvas.getContext('2d'), level, this.layout(level));
+    }
     this.bgCanvas = canvas;
+    this.atmosphere = atmosphere;
     this.bgKey = signature;
     this.bg = true;
   }
 
-  drawIdleBackdrop() {
-    this.ensureBackground(AMBIENT, 1, false);
+  advanceBackgroundTime(time, settings) {
+    // Keep a separate, continuous clock so switching motion off freezes the
+    // current atmosphere rather than snapping to the initial composition.
+    const delta = this.lastBackgroundTime === null ? 0 : Math.max(0, Math.min(.1, time - this.lastBackgroundTime));
+    this.lastBackgroundTime = time;
+    if (settings.motion !== false && !this.reducedMotion?.matches) this.backgroundTime += delta;
+  }
+
+  drawBackdrop() {
     this.ctx.drawImage(this.bgCanvas, 0, 0);
+    drawAtmosphere(this.ctx, this.W, this.H, this.backgroundTime, this.atmosphere, this.isTitleScene);
+    if (this.boardCanvas) this.ctx.drawImage(this.boardCanvas, 0, 0);
+  }
+
+  drawIdleBackdrop(time = 0, settings = {}) {
+    this.displayMode = settings.displayMode === 'simple' ? 'simple' : 'sculpted';
+    this.isGameScene = false;
+    this.isTitleScene = !globalThis.document?.body?.dataset?.screen || document.body.dataset.screen === 'title';
+    this.advanceBackgroundTime(time, settings);
+    this.ensureBackground(AMBIENT, 1, false);
+    this.drawBackdrop();
   }
 
   drawScene(scene) {
@@ -59,13 +89,17 @@ export class Renderer {
     const ctx = this.ctx;
     const screen = globalThis.document?.body?.dataset?.screen;
     this.isGameScene = !screen || screen === 'game';
-    const time = settings.motion ? scene.time : 0;
-    this.ensureBackground(this.isGameScene ? level : AMBIENT, scene.seed, this.isGameScene);
-    ctx.drawImage(this.bgCanvas, 0, 0);
-    drawAurora(ctx, this.W, this.H, time, scene.auroraIntensity ?? .5);
+    this.isTitleScene = screen === 'title';
+    const motion = settings.motion !== false && !this.reducedMotion?.matches;
+    const time = motion ? scene.time : 0;
+    this.advanceBackgroundTime(scene.time, settings);
+    this.ensureBackground(this.isGameScene ? level : AMBIENT, this.isGameScene ? scene.seed : 1, this.isGameScene);
+    this.drawBackdrop();
     if (!this.isGameScene) return;
 
     const layout = this.layout(level);
+    const lightFrame = trace ? beamFrame(trace, level, scene.beamReveal ?? 1, !motion) : null;
+    this.targetFx.update(level, lightFrame, scene.time, scene.satisfied, !motion, scene.litAt);
     ctx.save();
     try {
       const gutter = layout.cell;
@@ -73,36 +107,42 @@ export class Renderer {
       ctx.rect(layout.ox - gutter, layout.oy - gutter, (level.w + 2) * gutter, (level.h + 2) * gutter);
       ctx.clip();
       if (trace) {
-        drawPortalLinks(ctx, trace, layout, time);
-        drawBeams(ctx, trace, layout, time, { colorblind: settings.colorblind, reducedMotion: !settings.motion, reveal: scene.beamReveal ?? 1 });
+        drawPortalLinks(ctx, trace, layout, time, { frame: lightFrame, reducedMotion: !motion });
+        drawBeams(ctx, trace, layout, time, { frame: lightFrame, colorblind: settings.colorblind, reducedMotion: !motion });
       }
       for (const [id, position] of Object.entries(level.portals)) shapes.drawPortal(ctx, id, position, layout, time, scene.activePortalIds);
       for (const emitter of level.emitters) shapes.drawEmitter(ctx, emitter, layout, time, scene.hitCells.size > 0);
       for (const piece of level.rotatables) {
         const draw = piece.kind === 'splitter' ? shapes.drawSplitter : shapes.drawMirror;
-        draw(ctx, piece, layout, time, scene.hitCells, settings.motion ? scene.spinAngleOf(piece) : null);
+        draw(ctx, piece, layout, time, scene.hitCells, motion ? scene.spinAngleOf(piece) : null);
       }
       for (const target of level.targets) {
         const key = `${target.x},${target.y}`;
-        const awake = scene.litAt.has(key);
-        const waiting = awake && !scene.satisfied.has(key);
-        const litAt = awake && !settings.motion ? -1 : scene.litAt.get(key);
+        const awake = this.targetFx.visualAwakened.has(key);
+        const connected = this.targetFx.contacts.get(key)?.correct;
+        const waiting = awake && !connected;
+        const litAt = awake && !motion ? -1 : this.targetFx.visualAwakened.get(key);
         ctx.save();
         if (waiting) ctx.globalAlpha *= .62;
         const draw = TARGET_DRAW[target.type] || TARGET_DRAW.owl;
-        draw(ctx, target, litAt, time, layout, settings.motion ? scene.onSpore : null);
+        draw(ctx, target, litAt, time, layout, motion ? scene.onSpore : null);
         ctx.restore();
         if (waiting) shapes.drawRestingMarker(ctx, target, layout);
-        if (!scene.satisfied.has(key)) shapes.drawNeedBadge(ctx, target, layout);
+        if (!connected) shapes.drawNeedBadge(ctx, target, layout);
       }
       for (const crystal of level.crystals) shapes.drawCrystal(ctx, crystal.color, crystal.x, crystal.y, layout, time);
       for (const gate of level.gates) {
-        const powered = !!trace?.segments.some(segment => !segment.portalJump && segment.color === gate.needColor &&
-          ((segment.x1 === gate.x && segment.y1 === gate.y) || (segment.x2 === gate.x && segment.y2 === gate.y)));
+        const powered = gateIsReached(lightFrame, gate);
         shapes.drawGate(ctx, gate, layout, time, powered);
       }
+      if (lightFrame) drawBeamContacts(ctx, lightFrame, layout, { colorblind: settings.colorblind });
+      this.targetFx.draw(ctx, layout, scene.time);
       if (scene.hintIdx >= 0 && level.rotatables[scene.hintIdx]) shapes.drawHintPulse(ctx, level.rotatables[scene.hintIdx], layout, time);
-      if (settings.motion) scene.particles.draw(ctx);
+      if (motion) {
+        const visibleParticles = Object.create(scene.particles);
+        visibleParticles.items = this.targetFx.visibleParticles(scene.particles.items, layout, scene.time);
+        visibleParticles.draw(ctx);
+      }
     } finally {
       ctx.restore();
     }

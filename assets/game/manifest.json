@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "revision": "nocturne-15c0715bc5ac",
+  "revision": "nocturne-8f72a32c7dc7",
   "assets": {
     "crystal.b": {
       "src": "sprites/crystal-b-v1-d4f7feea1455.png",
@@ -33,7 +33,7 @@
       "scale": 1.1
     },
     "depths": {
-      "src": "backgrounds/depths-v1-43edb8a368f2.webp",
+      "src": "backgrounds/depths-v1-39f37e13a2e0.webp",
       "width": 1536,
       "height": 1024,
       "anchor": [
@@ -73,7 +73,7 @@
       "scale": 1.1
     },
     "forest": {
-      "src": "backgrounds/forest-v1-2d6f0d6fde9e.webp",
+      "src": "backgrounds/forest-v1-994b3c8f9f6a.webp",
       "width": 1536,
       "height": 1024,
       "anchor": [
@@ -83,7 +83,7 @@
       "scale": 1
     },
     "garden": {
-      "src": "backgrounds/garden-v1-a06acefc42a0.webp",
+      "src": "backgrounds/garden-v1-41a641c5cc95.webp",
       "width": 1536,
       "height": 1024,
       "anchor": [
@@ -93,7 +93,7 @@
       "scale": 1
     },
     "gate.b": {
-      "src": "sprites/gate-b-v1-84b7686ddbf9.png",
+      "src": "sprites/gate-b-v1-6c769a70f82e.png",
       "width": 384,
       "height": 384,
       "anchor": [
@@ -103,7 +103,7 @@
       "scale": 1.1
     },
     "gate.g": {
-      "src": "sprites/gate-g-v1-d0db52bbbd49.png",
+      "src": "sprites/gate-g-v1-20b28279bd7e.png",
       "width": 384,
       "height": 384,
       "anchor": [
@@ -113,7 +113,7 @@
       "scale": 1.1
     },
     "gate.r": {
-      "src": "sprites/gate-r-v1-23e0f971ffec.png",
+      "src": "sprites/gate-r-v1-a2483c0bf432.png",
       "width": 384,
       "height": 384,
       "anchor": [
@@ -123,7 +123,7 @@
       "scale": 1.1
     },
     "heart": {
-      "src": "backgrounds/heart-v1-b69be5617b9e.webp",
+      "src": "backgrounds/heart-v1-6aa1848e91d0.webp",
       "width": 1536,
       "height": 1024,
       "anchor": [

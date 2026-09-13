@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-09-13T12:34:49.933948+00:00",
+  "method": "built-in-image_gen",
+  "userDirection": "Use GPT to generate a much lusher, dreamlike woodland that feels like entering a game world, preserving the current teal and gold colors.",
+  "prompt": {
+    "path": "art/recipes/gpt-forest-v4.prompt.txt",
+    "sha256": "5789ab243a14c35c1aa06f2558c1168c893c895cda17c90008769bbb9e67db96",
+    "bytes": 3511
+  },
+  "referenceInputs": [
+    {
+      "path": "art/source/procedural/forest-v3.png",
+      "sha256": "f9d6f8385ed276de28fbc77c7487bc6f7b0c00afe81921e15cb8e625f701fd30",
+      "bytes": 1811618,
+      "role": "palette-and-mood-reference",
+      "generationEvidence": "art/recipes/procedural-environments-v3.json"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "art/source/gpt/forest-v4.png",
+      "sha256": "fb3199b145464de4dfa13612bca120e749413069aaaffed2da153fcc51c36b47",
+      "bytes": 3032964,
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB"
+    }
+  ],
+  "modelIdentity": {
+    "tool": "image_gen.imagegen",
+    "provider": "OpenAI built-in image generation",
+    "exactModelVersion": "not-returned-by-tool"
+  },
+  "originFile": "/Users/kyungseok.lee/.codex/generated_images/01a09985-ff97-7b72-ae3c-9a7eeaec398f/exec-05df7042-9bf1-4765-a029-1fe253814425.png",
+  "externalReferenceImages": [],
+  "retainedSources": [
+    "art/source/procedural/forest-v3.png",
+    "art/source/procedural/nocturne-environments-v3.blend"
+  ],
+  "legalClearance": "not-established",
+  "explanation": "Actual prompt, local reference and generated output are recorded. This is an AI-generated bitmap, not a Blender render or a claim of human-only authorship, exclusivity or zero infringement risk."
+}

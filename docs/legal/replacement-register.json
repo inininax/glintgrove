@@ -1,23 +1,36 @@
 {
   "schemaVersion": 1,
   "recordedDate": "2026-09-13",
-  "recordedAt": "2026-09-13T10:09:10.754Z",
-  "runtimeRevision": "nocturne-15c0715bc5ac",
+  "recordedAt": "2026-09-13T15:50:31.312Z",
+  "runtimeRevision": "nocturne-8f72a32c7dc7",
   "status": "recorded-with-provenance-status-per-entry",
   "copyrightClearance": "not-established",
   "explanation": "Exact file and local generation records; not an assertion of human-only authorship, exclusive rights, or zero infringement risk.",
   "runtimeManifest": {
     "path": "assets/game/manifest.json",
-    "sha256": "8eea318f87ebe406b8e0a25ecf56a5eb96a947bb8c60a096cd311db2a5e223a0"
+    "sha256": "95bf46a1ab5cbbd8536744771ceb6da5d04d89d0ccab083f176ed5d8246e9512",
+    "bytes": 4902
   },
   "masters": [
     {
       "path": "art/source/blender/grove-library-v1.blend",
-      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "bytes": 1286762
     },
     {
       "path": "art/source/procedural/nocturne-environments-v2.blend",
-      "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+      "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+      "bytes": 15454706
+    },
+    {
+      "path": "art/source/procedural/nocturne-environments-v3.blend",
+      "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+      "bytes": 16053764
+    },
+    {
+      "path": "art/source/blender/ancient-gates-v2.blend",
+      "sha256": "4ec90b01c8b465843502d8dcbbbda3e771826b8dd036e3b64b08845c79fc1933",
+      "bytes": 163194
     }
   ],
   "assets": [
@@ -25,19 +38,22 @@
       "id": "crystal.b",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/crystal-b-v1.png",
-        "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74"
+        "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+        "bytes": 102038
       },
       "runtime": {
         "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
-        "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060"
+        "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+        "bytes": 74414
       },
       "width": 384,
       "height": 384
@@ -46,19 +62,22 @@
       "id": "crystal.g",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/crystal-g-v1.png",
-        "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26"
+        "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+        "bytes": 102133
       },
       "runtime": {
         "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
-        "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509"
+        "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+        "bytes": 74522
       },
       "width": 384,
       "height": 384
@@ -67,19 +86,22 @@
       "id": "crystal.r",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/crystal-r-v1.png",
-        "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335"
+        "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+        "bytes": 102564
       },
       "runtime": {
         "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
-        "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc"
+        "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+        "bytes": 74811
       },
       "width": 384,
       "height": 384
@@ -88,19 +110,27 @@
       "id": "depths",
       "production": "new-local-blender-environment",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/procedural-environments-v3.json",
       "master": {
+        "path": "art/source/procedural/nocturne-environments-v3.blend",
+        "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+        "bytes": 16053764
+      },
+      "parentMaster": {
         "path": "art/source/procedural/nocturne-environments-v2.blend",
-        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+        "bytes": 15454706
       },
       "source": {
-        "path": "art/source/procedural/depths-v2.png",
-        "sha256": "843a5785b1efb0f9f2f20cefe2c3dfc7d2414daad06358d7367c6a3bfe6210b1"
+        "path": "art/source/procedural/depths-v3.png",
+        "sha256": "427978ee2c378eb56e075df771f62233061a1eae32bc9cf61c3b492346f21e10",
+        "bytes": 1798149
       },
       "runtime": {
-        "path": "assets/game/backgrounds/depths-v1-43edb8a368f2.webp",
-        "sha256": "43edb8a368f29bc20469dfce3f932e5502e2f9c862ec435f8d65b9c2785493db"
+        "path": "assets/game/backgrounds/depths-v1-39f37e13a2e0.webp",
+        "sha256": "39f37e13a2e0484e85917906e2faade0f0e4aec737889314dec548e64fc38487",
+        "bytes": 104716
       },
       "width": 1536,
       "height": 1024
@@ -109,19 +139,22 @@
       "id": "emitter",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/emitter-v1.png",
-        "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980"
+        "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+        "bytes": 139907
       },
       "runtime": {
         "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
-        "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd"
+        "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+        "bytes": 106166
       },
       "width": 384,
       "height": 384
@@ -130,19 +163,22 @@
       "id": "flower.awake",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/flower-awake-v1.png",
-        "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315"
+        "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+        "bytes": 93787
       },
       "runtime": {
         "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
-        "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044"
+        "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+        "bytes": 65000
       },
       "width": 384,
       "height": 384
@@ -151,40 +187,97 @@
       "id": "flower.dormant",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/flower-dormant-v1.png",
-        "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454"
+        "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+        "bytes": 86299
       },
       "runtime": {
         "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
-        "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a"
+        "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+        "bytes": 59300
       },
       "width": 384,
       "height": 384
     },
     {
       "id": "forest",
-      "production": "new-local-blender-environment",
-      "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
-      "master": {
-        "path": "art/source/procedural/nocturne-environments-v2.blend",
-        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+      "production": "gpt-image-generated-environment",
+      "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+      "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+      "generationEvidence": "art/recipes/gpt-forest-v6.json",
+      "modelIdentity": {
+        "tool": "image_gen.imagegen",
+        "provider": "OpenAI built-in image generation",
+        "exactModelVersion": "not-returned-by-tool"
       },
+      "prompt": {
+        "path": "art/recipes/gpt-forest-v6.prompt.txt",
+        "sha256": "2f3d75461d66378d6753b08116a9bb01eac8562932eb3e5d78893f6e8f1aad86",
+        "bytes": 2429
+      },
+      "referenceInputs": [
+        {
+          "path": "art/source/gpt/forest-v4.png",
+          "sha256": "fb3199b145464de4dfa13612bca120e749413069aaaffed2da153fcc51c36b47",
+          "bytes": 3032964,
+          "production": "gpt-image-generated-reference",
+          "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+          "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+          "generationEvidence": "art/recipes/gpt-forest-v4.json",
+          "modelIdentity": {
+            "tool": "image_gen.imagegen",
+            "provider": "OpenAI built-in image generation",
+            "exactModelVersion": "not-returned-by-tool"
+          },
+          "prompt": {
+            "path": "art/recipes/gpt-forest-v4.prompt.txt",
+            "sha256": "5789ab243a14c35c1aa06f2558c1168c893c895cda17c90008769bbb9e67db96",
+            "bytes": 3511
+          },
+          "referenceInputs": [
+            {
+              "path": "art/source/procedural/forest-v3.png",
+              "sha256": "f9d6f8385ed276de28fbc77c7487bc6f7b0c00afe81921e15cb8e625f701fd30",
+              "bytes": 1811618,
+              "production": "local-blender-reference",
+              "provenanceStatus": "verified-against-local-generation-records",
+              "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+              "generationEvidence": "art/recipes/procedural-environments-v3.json",
+              "master": {
+                "path": "art/source/procedural/nocturne-environments-v3.blend",
+                "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+                "bytes": 16053764
+              },
+              "parentMaster": {
+                "path": "art/source/procedural/nocturne-environments-v2.blend",
+                "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+                "bytes": 15454706
+              },
+              "role": "palette-and-mood-reference",
+              "matchesGenerationRecord": true
+            }
+          ],
+          "role": "edit-target",
+          "matchesGenerationRecord": true
+        }
+      ],
       "source": {
-        "path": "art/source/procedural/forest-v2.png",
-        "sha256": "34d34936d5774dc533ff57a771869656e3822ffa1bd3f5f5216df8f683a5c02a"
+        "path": "art/source/gpt/forest-v6.png",
+        "sha256": "534e5aec4a55ca12c583be65da20f9499be74fb3f1d464a3d4ab7b1eb103347e",
+        "bytes": 2714045
       },
       "runtime": {
-        "path": "assets/game/backgrounds/forest-v1-2d6f0d6fde9e.webp",
-        "sha256": "2d6f0d6fde9e58962dc1fc09d5b29e2b1f51633fd35dd5b61d14c4a8cfe50bf9"
+        "path": "assets/game/backgrounds/forest-v1-994b3c8f9f6a.webp",
+        "sha256": "994b3c8f9f6ac764203c183e94238ef04bece5c904d6ef2c80ca11d97ddda335",
+        "bytes": 323142
       },
       "width": 1536,
       "height": 1024
@@ -193,82 +286,99 @@
       "id": "garden",
       "production": "new-local-blender-environment",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/procedural-environments-v3.json",
       "master": {
+        "path": "art/source/procedural/nocturne-environments-v3.blend",
+        "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+        "bytes": 16053764
+      },
+      "parentMaster": {
         "path": "art/source/procedural/nocturne-environments-v2.blend",
-        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+        "bytes": 15454706
       },
       "source": {
-        "path": "art/source/procedural/garden-v2.png",
-        "sha256": "499c67a1f7a4e4a3b1ff60dc71d3711226804647049ae90125f144cb077b807b"
+        "path": "art/source/procedural/garden-v3.png",
+        "sha256": "8a9bb3090c2ca927795792d73831be248824238de9b6a67a65a1981b6ba23944",
+        "bytes": 1824549
       },
       "runtime": {
-        "path": "assets/game/backgrounds/garden-v1-a06acefc42a0.webp",
-        "sha256": "a06acefc42a043fe8f8e7ee3225651d59a8d465c0d7b0d590b90ba14bab88afb"
+        "path": "assets/game/backgrounds/garden-v1-41a641c5cc95.webp",
+        "sha256": "41a641c5cc9569a2ba6680b9452b03ee02e07516690978f09f5bbd7f00763237",
+        "bytes": 115124
       },
       "width": 1536,
       "height": 1024
     },
     {
       "id": "gate.b",
-      "production": "retained-local-blender-sculpture",
+      "production": "new-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/ancient-gates-v2.json",
       "master": {
-        "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "path": "art/source/blender/ancient-gates-v2.blend",
+        "sha256": "4ec90b01c8b465843502d8dcbbbda3e771826b8dd036e3b64b08845c79fc1933",
+        "bytes": 163194
       },
       "source": {
-        "path": "art/renders/sprites/gate-b-v1.png",
-        "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab"
+        "path": "art/renders/sprites/gate-b-v2.png",
+        "sha256": "c012eba99a6128339a52e7e1a0b5a24bcfc1cd0d34a650fdca2df9c4531de463",
+        "bytes": 120987
       },
       "runtime": {
-        "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
-        "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6"
+        "path": "assets/game/sprites/gate-b-v1-6c769a70f82e.png",
+        "sha256": "6c769a70f82e4d39baa39e9677c0a6b25d2be11bd5a11d50bf2922a28ce91906",
+        "bytes": 87114
       },
       "width": 384,
       "height": 384
     },
     {
       "id": "gate.g",
-      "production": "retained-local-blender-sculpture",
+      "production": "new-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/ancient-gates-v2.json",
       "master": {
-        "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "path": "art/source/blender/ancient-gates-v2.blend",
+        "sha256": "4ec90b01c8b465843502d8dcbbbda3e771826b8dd036e3b64b08845c79fc1933",
+        "bytes": 163194
       },
       "source": {
-        "path": "art/renders/sprites/gate-g-v1.png",
-        "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f"
+        "path": "art/renders/sprites/gate-g-v2.png",
+        "sha256": "f1eb277862027214bcda012266aabdd066c580a8b20ee352a6b8a4f02c075a35",
+        "bytes": 120981
       },
       "runtime": {
-        "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
-        "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3"
+        "path": "assets/game/sprites/gate-g-v1-20b28279bd7e.png",
+        "sha256": "20b28279bd7ee87691b76770e4faf762fe35ad375a0379ac96acb6f155bacb8f",
+        "bytes": 87131
       },
       "width": 384,
       "height": 384
     },
     {
       "id": "gate.r",
-      "production": "retained-local-blender-sculpture",
+      "production": "new-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/ancient-gates-v2.json",
       "master": {
-        "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "path": "art/source/blender/ancient-gates-v2.blend",
+        "sha256": "4ec90b01c8b465843502d8dcbbbda3e771826b8dd036e3b64b08845c79fc1933",
+        "bytes": 163194
       },
       "source": {
-        "path": "art/renders/sprites/gate-r-v1.png",
-        "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96"
+        "path": "art/renders/sprites/gate-r-v2.png",
+        "sha256": "9c325d7dff48f8b96963598853a75eacb186da1cf127cffb4ba665ee7b0fa4ea",
+        "bytes": 120973
       },
       "runtime": {
-        "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
-        "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111"
+        "path": "assets/game/sprites/gate-r-v1-a2483c0bf432.png",
+        "sha256": "a2483c0bf432a3e76348e78f53d7219a0d4109da0d9a0e997129303a73a67408",
+        "bytes": 87137
       },
       "width": 384,
       "height": 384
@@ -277,19 +387,27 @@
       "id": "heart",
       "production": "new-local-blender-environment",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
-      "generationEvidence": "art/recipes/procedural-environments-v2.json",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+      "generationEvidence": "art/recipes/procedural-environments-v3.json",
       "master": {
+        "path": "art/source/procedural/nocturne-environments-v3.blend",
+        "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+        "bytes": 16053764
+      },
+      "parentMaster": {
         "path": "art/source/procedural/nocturne-environments-v2.blend",
-        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+        "bytes": 15454706
       },
       "source": {
-        "path": "art/source/procedural/heart-v2.png",
-        "sha256": "510adc0b30689fea8f55def6bdb2bf1b3b81ee99b8b42c059452793e96733816"
+        "path": "art/source/procedural/heart-v3.png",
+        "sha256": "195e0ce703be4f29b62842b58375a4a121bf5d7a02b7f373241c1c0c318c34cb",
+        "bytes": 1831898
       },
       "runtime": {
-        "path": "assets/game/backgrounds/heart-v1-b69be5617b9e.webp",
-        "sha256": "b69be5617b9eccab940cf9a29e88870505493f8aa53bb64b455e016869dc9d55"
+        "path": "assets/game/backgrounds/heart-v1-6aa1848e91d0.webp",
+        "sha256": "6aa1848e91d0fa12d4f1bb06fb83064abc22483844c7e624c51452c9206c0b20",
+        "bytes": 124616
       },
       "width": 1536,
       "height": 1024
@@ -298,19 +416,22 @@
       "id": "mirror",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/mirror-v1.png",
-        "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598"
+        "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+        "bytes": 152140
       },
       "runtime": {
         "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
-        "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5"
+        "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+        "bytes": 114999
       },
       "width": 384,
       "height": 384
@@ -319,19 +440,22 @@
       "id": "mushroom.awake",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/mushroom-awake-v1.png",
-        "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad"
+        "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+        "bytes": 97225
       },
       "runtime": {
         "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
-        "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e"
+        "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+        "bytes": 68030
       },
       "width": 384,
       "height": 384
@@ -340,19 +464,22 @@
       "id": "mushroom.dormant",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/mushroom-dormant-v1.png",
-        "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187"
+        "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+        "bytes": 97045
       },
       "runtime": {
         "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
-        "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599"
+        "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+        "bytes": 67690
       },
       "width": 384,
       "height": 384
@@ -361,19 +488,22 @@
       "id": "owl.awake",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/owl-awake-v1.png",
-        "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129"
+        "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+        "bytes": 110380
       },
       "runtime": {
         "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
-        "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c"
+        "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+        "bytes": 79392
       },
       "width": 384,
       "height": 384
@@ -382,19 +512,22 @@
       "id": "owl.dormant",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/owl-dormant-v1.png",
-        "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42"
+        "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+        "bytes": 107993
       },
       "runtime": {
         "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
-        "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9"
+        "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+        "bytes": 77012
       },
       "width": 384,
       "height": 384
@@ -403,19 +536,22 @@
       "id": "portal.gold",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/portal-gold-v1.png",
-        "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58"
+        "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+        "bytes": 145871
       },
       "runtime": {
         "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
-        "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5"
+        "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+        "bytes": 112378
       },
       "width": 384,
       "height": 384
@@ -424,19 +560,22 @@
       "id": "portal.violet",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/portal-violet-v1.png",
-        "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43"
+        "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+        "bytes": 145137
       },
       "runtime": {
         "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
-        "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff"
+        "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+        "bytes": 112020
       },
       "width": 384,
       "height": 384
@@ -445,19 +584,22 @@
       "id": "rock",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/rock-v1.png",
-        "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241"
+        "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+        "bytes": 75027
       },
       "runtime": {
         "path": "assets/game/sprites/rock-v1-c0530e24a807.png",
-        "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d"
+        "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+        "bytes": 50510
       },
       "width": 384,
       "height": 384
@@ -466,19 +608,22 @@
       "id": "rock.alt",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/rock-alt-v1.png",
-        "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e"
+        "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+        "bytes": 75770
       },
       "runtime": {
         "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
-        "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f"
+        "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+        "bytes": 51158
       },
       "width": 384,
       "height": 384
@@ -487,19 +632,22 @@
       "id": "splitter",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/splitter-v1.png",
-        "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2"
+        "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+        "bytes": 148975
       },
       "runtime": {
         "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
-        "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293"
+        "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+        "bytes": 112227
       },
       "width": 384,
       "height": 384
@@ -508,19 +656,22 @@
       "id": "tree.awake",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/tree-awake-v1.png",
-        "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd"
+        "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+        "bytes": 152628
       },
       "runtime": {
         "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
-        "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997"
+        "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+        "bytes": 120358
       },
       "width": 384,
       "height": 384
@@ -529,19 +680,22 @@
       "id": "tree.dormant",
       "production": "retained-local-blender-sculpture",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "source": {
         "path": "art/renders/sprites/tree-dormant-v1.png",
-        "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec"
+        "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+        "bytes": 148427
       },
       "runtime": {
         "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
-        "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025"
+        "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+        "bytes": 118089
       },
       "width": 384,
       "height": 384
@@ -551,6 +705,7 @@
     {
       "path": "assets/site/icon.svg",
       "sha256": "db5521ca0cfdc08a10d72b129ffbfdbc0233f6550a09dc48d41285e75b09096a",
+      "bytes": 569,
       "production": "recorded-svg-source",
       "provenanceStatus": "authorship-review-required",
       "explanation": "Recording current SVG bytes does not verify authorship, including after future replacements."
@@ -558,33 +713,230 @@
     {
       "path": "assets/site/share.png",
       "sha256": "a6b9f7b434cfb512c561fa6103cf2e219bdae5469b792f39a3cf6bd364be5a1f",
+      "bytes": 867587,
       "production": "known-local-blender-source",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/procedural/nocturne-environments-v2.blend",
-        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+        "bytes": 15454706
       },
       "source": {
         "path": "art/source/procedural/share-v2.png",
-        "sha256": "3a94ea347449fb49b85a7f9ab50fe7c8de2eba573f4510995b44dcafd417f343"
+        "sha256": "3a94ea347449fb49b85a7f9ab50fe7c8de2eba573f4510995b44dcafd417f343",
+        "bytes": 868183
       },
       "exporter": "tools/art/publish_art.py",
       "runtimeExportStatus": "recorded-not-revalidated-by-this-recorder"
+    },
+    {
+      "path": "assets/site/ilyndrel-wordmark-v2.webp",
+      "sha256": "c09ca803d71bdcdb8daf9ef904040ec9ab9044bb67fc7d8b266b621ea2e84e9b",
+      "bytes": 1101064,
+      "production": "gpt-image-generated-brand-wordmark",
+      "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+      "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+      "generationEvidence": "art/recipes/ilyndrel-wordmark-v2.json",
+      "modelIdentity": {
+        "tool": "image_gen.imagegen",
+        "provider": "OpenAI built-in image generation",
+        "exactModelVersion": "not-returned-by-tool"
+      },
+      "prompt": {
+        "path": "art/recipes/ilyndrel-wordmark-v2-black.prompt.txt",
+        "sha256": "116d2b70c7e2d9a8c73f65c70543365c03411c4d0ca1eeb873059f2b7287ab3c",
+        "bytes": 1040
+      },
+      "referenceInputs": [
+        {
+          "path": "art/source/gpt/ilyndrel-wordmark-v2-design.png",
+          "sha256": "25b3a07457a413afcef0d1f45015bd7cc9afc6c33dccfd4ca79e210aae057299",
+          "bytes": 2695273,
+          "production": "gpt-image-generated-reference",
+          "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+          "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+          "generationEvidence": "art/recipes/ilyndrel-wordmark-v2-design.json",
+          "modelIdentity": {
+            "tool": "image_gen.imagegen",
+            "provider": "OpenAI built-in image generation",
+            "exactModelVersion": "not-returned-by-tool"
+          },
+          "prompt": {
+            "path": "art/recipes/ilyndrel-wordmark-v2.prompt.txt",
+            "sha256": "ba6a810a778b98e2187d2d17230980e15b843c85ccd9ac18fd56318f21f4d0a2",
+            "bytes": 2547
+          },
+          "referenceInputs": [
+            {
+              "path": "art/source/gpt/ilyndrel-wordmark-v1.png",
+              "sha256": "63f8833d757cd88684f43fd89868a7db19b578157b58d0c35d354a8893f91a98",
+              "bytes": 1729611,
+              "production": "gpt-image-generated-reference",
+              "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+              "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+              "generationEvidence": "art/recipes/ilyndrel-wordmark-v1.json",
+              "modelIdentity": {
+                "tool": "image_gen.imagegen",
+                "provider": "OpenAI built-in image generation",
+                "exactModelVersion": "not-returned-by-tool"
+              },
+              "prompt": {
+                "path": "art/recipes/ilyndrel-wordmark-v1.prompt.txt",
+                "sha256": "c16a74b44f7dfdd99faeaa57c0dad97f08e4f94d4e29c8a3d140548a1a26c658",
+                "bytes": 1247
+              },
+              "referenceInputs": [],
+              "role": "own previous wordmark letter and material reference",
+              "matchesGenerationRecord": true
+            },
+            {
+              "path": "art/source/gpt/forest-v6.png",
+              "sha256": "534e5aec4a55ca12c583be65da20f9499be74fb3f1d464a3d4ab7b1eb103347e",
+              "bytes": 2714045,
+              "production": "gpt-image-generated-reference",
+              "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+              "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+              "generationEvidence": "art/recipes/gpt-forest-v6.json",
+              "modelIdentity": {
+                "tool": "image_gen.imagegen",
+                "provider": "OpenAI built-in image generation",
+                "exactModelVersion": "not-returned-by-tool"
+              },
+              "prompt": {
+                "path": "art/recipes/gpt-forest-v6.prompt.txt",
+                "sha256": "2f3d75461d66378d6753b08116a9bb01eac8562932eb3e5d78893f6e8f1aad86",
+                "bytes": 2429
+              },
+              "referenceInputs": [
+                {
+                  "path": "art/source/gpt/forest-v4.png",
+                  "sha256": "fb3199b145464de4dfa13612bca120e749413069aaaffed2da153fcc51c36b47",
+                  "bytes": 3032964,
+                  "production": "gpt-image-generated-reference",
+                  "provenanceStatus": "verified-against-recorded-image-generation-inputs",
+                  "verificationScope": "Output, exact prompt and every recursively referenced path/SHA256 match saved generation records, including Blender source/master records where referenced. An explicit empty reference list is allowed for text-only inputs. This checks file-record consistency, not the generation service, exact model identity or usage rights.",
+                  "generationEvidence": "art/recipes/gpt-forest-v4.json",
+                  "modelIdentity": {
+                    "tool": "image_gen.imagegen",
+                    "provider": "OpenAI built-in image generation",
+                    "exactModelVersion": "not-returned-by-tool"
+                  },
+                  "prompt": {
+                    "path": "art/recipes/gpt-forest-v4.prompt.txt",
+                    "sha256": "5789ab243a14c35c1aa06f2558c1168c893c895cda17c90008769bbb9e67db96",
+                    "bytes": 3511
+                  },
+                  "referenceInputs": [
+                    {
+                      "path": "art/source/procedural/forest-v3.png",
+                      "sha256": "f9d6f8385ed276de28fbc77c7487bc6f7b0c00afe81921e15cb8e625f701fd30",
+                      "bytes": 1811618,
+                      "production": "local-blender-reference",
+                      "provenanceStatus": "verified-against-local-generation-records",
+                      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
+                      "generationEvidence": "art/recipes/procedural-environments-v3.json",
+                      "master": {
+                        "path": "art/source/procedural/nocturne-environments-v3.blend",
+                        "sha256": "53766d58afee280487fa85eb2c317c8fbaa7f85ec7972dc1a608e36144642380",
+                        "bytes": 16053764
+                      },
+                      "parentMaster": {
+                        "path": "art/source/procedural/nocturne-environments-v2.blend",
+                        "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87",
+                        "bytes": 15454706
+                      },
+                      "role": "palette-and-mood-reference",
+                      "matchesGenerationRecord": true
+                    }
+                  ],
+                  "role": "edit-target",
+                  "matchesGenerationRecord": true
+                }
+              ],
+              "role": "own forest color and lighting reference",
+              "matchesGenerationRecord": true
+            }
+          ],
+          "role": "own generated jeweled wordmark design; replace checkerboard with pure black for screen blending",
+          "matchesGenerationRecord": true
+        }
+      ],
+      "source": {
+        "path": "art/source/gpt/ilyndrel-wordmark-v2.png",
+        "sha256": "a2b8d17be03f0d44989fecc690a5ae0f2412702804d899ce37418019e824740f",
+        "bytes": 1450403
+      },
+      "runtimeExportStatus": "verified-against-recorded-export",
+      "runtimeExport": {
+        "path": "assets/site/ilyndrel-wordmark-v2.webp",
+        "sha256": "c09ca803d71bdcdb8daf9ef904040ec9ab9044bb67fc7d8b266b621ea2e84e9b",
+        "bytes": 1101064,
+        "conversion": "Pillow lossless WebP; original RGB pixels and dimensions retained; no removal, crop or retouch"
+      },
+      "runtimeExportVerificationScope": "Runtime path, SHA256 and byte count match the saved export record; this does not independently re-perform the image conversion."
+    }
+  ],
+  "audio": [
+    {
+      "path": "assets/audio/ancient-forest-v2.wav",
+      "sha256": "b7755b164ef1de239fd8f0212be8e0a3a39cd772f50795f8697d41647bf5839a",
+      "bytes": 9216044,
+      "title": "Ancient Forest — A Light Between Roots",
+      "production": "local-score-and-mathematical-instrument-synthesis",
+      "provenanceStatus": "verified-against-recorded-audio-generation-inputs",
+      "source": {
+        "path": "art/source/audio/ancient-forest-v2.score.json",
+        "sha256": "5437ef653e8c5c7e6effe69bc07dcc762421fd0d870e3b1d44e1d234dfb0cffb",
+        "bytes": 1662
+      },
+      "generator": {
+        "path": "tools/audio/render-ancient-forest-music-v2.mjs",
+        "sha256": "40cf6c8d4c6a615a67c350952731099fefb38ad41970288ce093ac45b01a972b",
+        "bytes": 10013
+      },
+      "generationEvidence": {
+        "path": "art/recipes/ancient-forest-v2-music.json",
+        "sha256": "96d7f8b4c8ab7562cac04a53cecaf428a22d8d9962beb67b0b60b6000e800fa2",
+        "bytes": 1627
+      },
+      "format": {
+        "sampleRate": 24000,
+        "channels": 2,
+        "bitsPerSample": 16,
+        "frames": 2304000,
+        "duration": 96
+      },
+      "verificationScope": "WAV, score and generator path/SHA256 match the saved local production record; the PCM header, length and recorded format also match. Signal-quality measurements below are copied from that record, not remeasured here. This checks file-record consistency, not exclusive authorship or usage rights.",
+      "recordedOriginStatement": "Original score and mathematical instrument synthesis created for Ilyndrel; no recordings, external samples, lyrics, voices, or choir.",
+      "recordedSignalMeasurements": {
+        "peak": 0.279998779296875,
+        "rms": 0.07598945948739906,
+        "seamDelta": [
+          0.01190185546875,
+          0.01025390625
+        ],
+        "sampleDeltaRms": 0.005236820252917161,
+        "maxSampleDelta": 0.02252197265625,
+        "quietestSecondRms": 0.05532384517340956,
+        "loudestSecondRms": 0.09539248756779639
+      }
     }
   ],
   "reviewImages": [
     {
       "path": "art/previews/sprite-contact-sheet-v1.jpg",
       "sha256": "124a68b9213ab1f55eaabd462d49b5eee286fe7a7ddfcfa02c58693380d44978",
+      "bytes": 175929,
       "production": "wordless-local-blender-contact-sheet",
       "provenanceStatus": "verified-against-local-generation-records",
-      "verificationScope": "Source and master path/SHA256 match only; runtime bytes are recorded separately.",
+      "verificationScope": "Source, master and recorded parent-master path/SHA256 match only; runtime bytes are recorded separately.",
       "generationEvidence": "art/recipes/procedural-environments-v2.json",
       "master": {
         "path": "art/source/blender/grove-library-v1.blend",
-        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "bytes": 1286762
       },
       "intendedUse": "contact-sheet",
       "includedInRelease": false
@@ -592,6 +944,7 @@
     {
       "path": "art/previews/remade-title-desktop.png",
       "sha256": "5df993bb6074c7931fa4ba4c33c6a85b7d34183d4ee7395174a0d60b0f8e4a82",
+      "bytes": 1407106,
       "production": "recorded-review-image",
       "provenanceStatus": "capture-origin-not-revalidated",
       "intendedUse": "browser-screenshot",
@@ -600,6 +953,7 @@
     {
       "path": "art/previews/remade-game-mobile.png",
       "sha256": "6133dc2681790774aa435ae9e965c20e9f2f37f435e8a9a4aacda2c176909ec4",
+      "bytes": 191703,
       "production": "recorded-review-image",
       "provenanceStatus": "capture-origin-not-revalidated",
       "intendedUse": "browser-screenshot",
@@ -608,6 +962,7 @@
     {
       "path": "art/previews/remade-settings-mobile.png",
       "sha256": "e6335262c188d18dd08fb8e9dcd2773d88ae78eb42f270daa95d7dec3718e3be",
+      "bytes": 108691,
       "production": "recorded-review-image",
       "provenanceStatus": "capture-origin-not-revalidated",
       "intendedUse": "browser-screenshot",
@@ -616,6 +971,7 @@
     {
       "path": "art/previews/remade-simple-mobile.png",
       "sha256": "2f82ec06876a7bf501c0170825bd1d77cea453d131a9ce79f99dac793446b793",
+      "bytes": 177649,
       "production": "recorded-review-image",
       "provenanceStatus": "capture-origin-not-revalidated",
       "intendedUse": "browser-screenshot",
@@ -624,6 +980,7 @@
     {
       "path": "art/previews/remade-win-mobile.png",
       "sha256": "905233af92b31c4d6b7195fbf10633e16ccad1c2c1e4cb6398689c2fdeabb5b8",
+      "bytes": 96256,
       "production": "recorded-review-image",
       "provenanceStatus": "capture-origin-not-revalidated",
       "intendedUse": "browser-screenshot",
@@ -633,167 +990,388 @@
   "sourceCodeAndRecipes": [
     {
       "path": "src/ui/symbols.js",
-      "sha256": "39cbfb19c1c60633bd9afa76dcd374ed79f593285695e1f47b8f4a91bddb2ed5"
+      "sha256": "39cbfb19c1c60633bd9afa76dcd374ed79f593285695e1f47b8f4a91bddb2ed5",
+      "bytes": 3484
     },
     {
       "path": "src/ui/ui.js",
-      "sha256": "1b7d1d42050e92951232797798b9f2b428a82be451192b15dfc52143a93c82b3"
+      "sha256": "050201006daff94db5e41cd3ae04710b55f54cc880f6d19060f83518c96ea9c4",
+      "bytes": 18723
     },
     {
       "path": "src/ui/strings.js",
-      "sha256": "dfc0e5e710b5945b8fd8655e32aea5e63fd6d5e43d626e5368a2d3b2b5f8ceb6"
+      "sha256": "cf185a52697dd81f9885b51d048ed42c443246970517de249884c4544a4eef9c",
+      "bytes": 14465
+    },
+    {
+      "path": "src/ui/colorMarks.js",
+      "sha256": "153faa2ed1e4861fdfbdcf11a04800eecfb94e8928d0d0ddd891c5567707f863",
+      "bytes": 860
+    },
+    {
+      "path": "src/ui/deviceGuide.js",
+      "sha256": "a8904ece33b6b2225978f262c431a1bed5ee6ca0742efe7f7c4db575aa13504a",
+      "bytes": 3256
     },
     {
       "path": "index.html",
-      "sha256": "c8b14d36c12c10f06df7eabfacaf10606f387a061355ad308194e8c72ae3fcdc"
+      "sha256": "a00d5e6a83ea02b96f5d89a4a02e4d22f4733a8383046dc82d6951471d0d296f",
+      "bytes": 15431
     },
     {
       "path": "css/style.css",
-      "sha256": "6a7332ab982835e59b467ff875746a17691c57d5ba9ab30da20a99828eed2c89"
+      "sha256": "319110bc3f8e269c3d0ff1c31312e4d7fa2528a9a66d5d7f7dd5c4e7534ec63e",
+      "bytes": 23724
     },
     {
       "path": "src/render/background.js",
-      "sha256": "36efc798bd7b1c79e172c2aac8c378fa246478b939ece42065d017971906fb64"
+      "sha256": "4de561815fb8ec25963ad68a09b302022c4cc17fde3e8e31845cbd232aa44610",
+      "bytes": 13826
     },
     {
       "path": "src/render/beams.js",
-      "sha256": "e12ba424774475c70b32f645ebbded030b2d5937998bfa9cbc449ca5736f11a5"
+      "sha256": "d6f95a1bc9b444462407b761a6b4d857f70a8e9e43eb0a608bc15c13a0763b0e",
+      "bytes": 9248
+    },
+    {
+      "path": "src/render/targetFx.js",
+      "sha256": "1dbcaf04b5accf26c888bfb2182958af9d69d29f4f851d26410c21136ca0e6e7",
+      "bytes": 4785
     },
     {
       "path": "src/render/bloom.js",
-      "sha256": "0cb3282dda57220cae50b1c669648a5aa8e7a693c2adeefa84237ee1c7e04757"
+      "sha256": "0cb3282dda57220cae50b1c669648a5aa8e7a693c2adeefa84237ee1c7e04757",
+      "bytes": 1600
     },
     {
       "path": "src/render/entities.js",
-      "sha256": "cf5fdf9d7ffaa4effd04c6327ea5e6f41b203b5507e0d63d30a84e676380e84c"
+      "sha256": "48d5b8a5c9d2634f15b8bb14c60c8542302c34dba13b0541a8d09bfe74e603f8",
+      "bytes": 15518
     },
     {
       "path": "src/render/layout.js",
-      "sha256": "f0325a79419e9479eed63fc6cb6cda56232c9438a08e98f16c023dcc5b8b06a1"
+      "sha256": "f0325a79419e9479eed63fc6cb6cda56232c9438a08e98f16c023dcc5b8b06a1",
+      "bytes": 764
     },
     {
       "path": "src/render/renderer.js",
-      "sha256": "0ba86720ad08f832e5256692192295ab90b5968b6f652fe63cf385b4071d1d63"
+      "sha256": "046023c6b0f2768d729307f05e4e40522b277c4e839830e4bfef187546a9f236",
+      "bytes": 7367
     },
     {
       "path": "src/render/sprites.js",
-      "sha256": "ddf328d8744c3375840ea2282661375528422ec4cc5bbb8e8c6b68b974c17ce1"
+      "sha256": "ddf328d8744c3375840ea2282661375528422ec4cc5bbb8e8c6b68b974c17ce1",
+      "bytes": 1163
     },
     {
       "path": "src/render/gradientCache.js",
-      "sha256": "a4e30eb80180e266f33904655e2bf3d4e87cfedbe0568e3b90ac33146d835def"
+      "sha256": "a4e30eb80180e266f33904655e2bf3d4e87cfedbe0568e3b90ac33146d835def",
+      "bytes": 766
     },
     {
       "path": "src/fx/particles.js",
-      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2"
+      "sha256": "e43ed2ebf82801847937ce559ddeac98fd766a4a74cd6bfc94ad0c4793bfafb2",
+      "bytes": 4728
     },
     {
       "path": "src/fx/sound.js",
-      "sha256": "4c613edbef9cde959a16558ee81edd25c7d23ac2e0adabd57b1356debb72669d"
+      "sha256": "d2f43dde64700d4214af4255fda6b48ddaa9518aa027be10184a0470b831cbf6",
+      "bytes": 9075
+    },
+    {
+      "path": "src/fx/music.js",
+      "sha256": "1f6494ef7d7106c7bce1e23f0f476f791e3653c1ddbdc8b661383e97e74dd88e",
+      "bytes": 1277
     },
     {
       "path": "src/game/game.js",
-      "sha256": "e58828ef4e3dcf1bd19a70512470e1b0c01a44d6b22bb171785f02338011d0f4"
+      "sha256": "ec31e73da3f30d8e92190b6533a66d830c2436b2b4f2922df5d7483fcc73e8ed",
+      "bytes": 14061
     },
     {
       "path": "src/core/colors.js",
-      "sha256": "b6bfde6c55417eb706af8020134a44c698ac809ca19fd515b113d9c1022e150d"
+      "sha256": "b6bfde6c55417eb706af8020134a44c698ac809ca19fd515b113d9c1022e150d",
+      "bytes": 523
     },
     {
       "path": "src/core/skins.js",
-      "sha256": "3b0cb20a37f473c0f9f5a78e58b2a04b30287222ff4043aedb54b20ebbaf78df"
+      "sha256": "3b0cb20a37f473c0f9f5a78e58b2a04b30287222ff4043aedb54b20ebbaf78df",
+      "bytes": 992
     },
     {
       "path": "src/state/saveStore.js",
-      "sha256": "b0a0bcf607095136f498b15ed83a9609b3909ed35f5a711df9a52361f1697a4f"
+      "sha256": "e6c0b8aec773511ed88bdfd4945a28a61f3330f73b911f57a7c74d9cccc44c53",
+      "bytes": 4171
     },
     {
       "path": "manifest.webmanifest",
-      "sha256": "f10102895c3197865d52b51c20e031448edb294d36b372a6e47ac40a30ef8b05"
+      "sha256": "65fa87e0dba49a3a2908579ca93f546641acc458779139bba1317fbf777e0302",
+      "bytes": 400
     },
     {
       "path": "sw.js",
-      "sha256": "10a28fd90826dfa29cc3177021b5257f88de5964e11bcef2335b1885d1ed1c30"
+      "sha256": "681a690942145591a5199656c02dedbd9405b340503adbfdad96071ee51d3f1c",
+      "bytes": 10081
     },
     {
       "path": "src/data/levels.js",
-      "sha256": "d4db75bea955c2a4fcc0c6210a9d647f82161e5e1407b1b8aa149c523ce7556f"
+      "sha256": "d4db75bea955c2a4fcc0c6210a9d647f82161e5e1407b1b8aa149c523ce7556f",
+      "bytes": 517
     },
     {
       "path": "src/data/levels.generated.js",
-      "sha256": "611749902934d52a71e5a5b2145ba235a0f9670aa81016fde0fbaac1acd1148f"
+      "sha256": "611749902934d52a71e5a5b2145ba235a0f9670aa81016fde0fbaac1acd1148f",
+      "bytes": 330849
     },
     {
       "path": "src/services/generator.js",
-      "sha256": "f526739af86cf209d54db035f71c063aaf404f12510bac2ed5f90c9f9540ec16"
+      "sha256": "f526739af86cf209d54db035f71c063aaf404f12510bac2ed5f90c9f9540ec16",
+      "bytes": 14737
     },
     {
       "path": "src/services/achievements.js",
-      "sha256": "4465c260dd38b89f3b2b2ee38fd3ca2ff66b0ff161c52768d2c2d517304596bf"
+      "sha256": "4465c260dd38b89f3b2b2ee38fd3ca2ff66b0ff161c52768d2c2d517304596bf",
+      "bytes": 2593
     },
     {
       "path": "src/services/tutorial.js",
-      "sha256": "03352b7b468383e2f77f4182f44568ee2de503258d4fa1192e613ae79b7794a2"
+      "sha256": "03352b7b468383e2f77f4182f44568ee2de503258d4fa1192e613ae79b7794a2",
+      "bytes": 1008
     },
     {
       "path": "src/main.js",
-      "sha256": "42840d28431963bdb867ef8495d4fb4cc1d46c414aa32f80f6f7119c7541ed59"
+      "sha256": "59d231fa98ff1707cb7ca94652152aea37e31db37c118d3729dedcecf9cd9656",
+      "bytes": 16260
     },
     {
       "path": "tools/art/build_blender.py",
-      "sha256": "f38170f5970ca31f9cd318f1d5c8f91c8939438462aa845fdcc87d9fc6a920a8"
+      "sha256": "f38170f5970ca31f9cd318f1d5c8f91c8939438462aa845fdcc87d9fc6a920a8",
+      "bytes": 16650
     },
     {
       "path": "tools/art/render_library.py",
-      "sha256": "bef0cef11c90796f063d1259b66dca49aa7c68d5d468e5f99d1b18b7a1f5798c"
+      "sha256": "bef0cef11c90796f063d1259b66dca49aa7c68d5d468e5f99d1b18b7a1f5798c",
+      "bytes": 4024
     },
     {
       "path": "tools/art/build_procedural_environments.py",
-      "sha256": "aff5106fd07d6159fdcb666678f5df44d4e17d054e99dbfd2959bc1169b2bcca"
+      "sha256": "aff5106fd07d6159fdcb666678f5df44d4e17d054e99dbfd2959bc1169b2bcca",
+      "bytes": 22193
     },
     {
       "path": "tools/art/render_procedural_environments.py",
-      "sha256": "18bed103ea6b7293471f580428a4dee1bea87212370d30fa9f1d641f591bc7d3"
+      "sha256": "18bed103ea6b7293471f580428a4dee1bea87212370d30fa9f1d641f591bc7d3",
+      "bytes": 1856
+    },
+    {
+      "path": "tools/art/upgrade_procedural_environments_v3.py",
+      "sha256": "76ba2ddbf572c907e5d7d322392004b6fa1f66e38e20dfd9cef37d813af5bb15",
+      "bytes": 10886
+    },
+    {
+      "path": "tools/art/render_procedural_environments_v3.py",
+      "sha256": "c2673c4463430b2314ad5c49688bd58f3510e709a6f5039e86061c8abac4b73b",
+      "bytes": 1998
+    },
+    {
+      "path": "tools/art/build_ancient_gates_v2.py",
+      "sha256": "fe355e508b3076a853d098f6b9bc0ef3a8e5c26f03177a1ad01ecf0bc1d773b6",
+      "bytes": 8228
+    },
+    {
+      "path": "art/recipes/ancient-gates-v2.json",
+      "sha256": "9a62edcecf3b2902a68425aeb75a0dc53b733d26298d0c2411aae1d6bec825c8",
+      "bytes": 2066
     },
     {
       "path": "tools/art/render_geometry_contact_sheet.py",
-      "sha256": "fa683902e7db52891d76702df41ff669fe9c405e7776c6a9c7d3250a0c46436c"
+      "sha256": "fa683902e7db52891d76702df41ff669fe9c405e7776c6a9c7d3250a0c46436c",
+      "bytes": 3769
     },
     {
       "path": "tools/art/publish_art.py",
-      "sha256": "d2fba93207191079d785fd4708f59990021e75ecee8664059855cdb26b8cb910"
+      "sha256": "d2fba93207191079d785fd4708f59990021e75ecee8664059855cdb26b8cb910",
+      "bytes": 12075
     },
     {
       "path": "tools/art/LICENSES.md",
-      "sha256": "7975f5f938d1821628d0d15517e8e262e475d8aea6e57773d5f0a6b8a16bf707"
+      "sha256": "d008afce72a465fdab7bdfb2f595afe9b303616226da490a0b50b2933ab5f101",
+      "bytes": 1341
     },
     {
       "path": "tools/art/COPYING.GPL-3.0",
-      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
     },
     {
       "path": "tools/build-release.mjs",
-      "sha256": "555a9b853a8d6508899b9074781ca05054cc778362ad385fa19de9fa28f126eb"
+      "sha256": "1f79bc946c337b98a4c0335d91d48103987fe0a5ad74a5591263bff2b3eeb1ea",
+      "bytes": 5996
     },
     {
       "path": "tools/record-visual-provenance.mjs",
-      "sha256": "a0f6ae7ee25c5172328e3645852ea468e5f423be8930eab40df6ccb00c0580ce"
+      "sha256": "2ab06e3afb7164af52f70935e380794bd50428f39a01267b84fb65e1172358c9",
+      "bytes": 18633
     },
     {
       "path": "art/recipes/catalog.json",
-      "sha256": "29831bf0ebd0a153e84de1352ab2eacf5f6bc52fc4aba05d173dfe3d050ce2ef"
+      "sha256": "e13a3cb4ba3c457c8fff32ccea9a19eb3f2ed35fa36b129701d0c50a33f663a7",
+      "bytes": 4197
     },
     {
       "path": "art/recipes/nocturne-v1.json",
-      "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+      "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd",
+      "bytes": 484
     },
     {
       "path": "art/recipes/procedural-environments-v2.md",
-      "sha256": "24a6d82ebdc3605e69e56350cbf088103b7c35a3c4c13a68fcab1ffc4307ed4f"
+      "sha256": "24a6d82ebdc3605e69e56350cbf088103b7c35a3c4c13a68fcab1ffc4307ed4f",
+      "bytes": 5467
     },
     {
       "path": "art/recipes/procedural-environments-v2.json",
-      "sha256": "7ec6ea3437b4fe60aa5ad8d199e45ebb47bbbec65f88cf3b525f7609b4f0cef0"
+      "sha256": "7ec6ea3437b4fe60aa5ad8d199e45ebb47bbbec65f88cf3b525f7609b4f0cef0",
+      "bytes": 27713
+    },
+    {
+      "path": "art/recipes/procedural-environments-v3.md",
+      "sha256": "b3e1f1d5f9aabfd2f61f4a2f36adbbf53cd44995e7a5a39b1787cf9227438c74",
+      "bytes": 5719
+    },
+    {
+      "path": "art/recipes/procedural-environments-v3.json",
+      "sha256": "bc8d802a2a7ec1f2db603a0fea7eae1abb1c7bc932c9adcc0533b5e563e99b22",
+      "bytes": 7600
+    },
+    {
+      "path": "art/recipes/gpt-forest-v4.md",
+      "sha256": "b086c8418e175a976c13f26dcd527411b3f00c045f4d9df7aeb0d11db7dcf5c1",
+      "bytes": 2860
+    },
+    {
+      "path": "art/recipes/gpt-forest-v4.json",
+      "sha256": "6619ea7a9d23ef600cc120491ed50b6e6d0d98fdd806952fcb79874f6f5716c4",
+      "bytes": 1756
+    },
+    {
+      "path": "art/recipes/gpt-forest-v4.prompt.txt",
+      "sha256": "5789ab243a14c35c1aa06f2558c1168c893c895cda17c90008769bbb9e67db96",
+      "bytes": 3511
+    },
+    {
+      "path": "art/recipes/gpt-forest-v5.json",
+      "sha256": "96e1479e7918e2d9ee683b4d6e8b1b7180108369a6b10e385b8dd4b4b2d2e1ae",
+      "bytes": 1414
+    },
+    {
+      "path": "art/recipes/gpt-forest-v5.prompt.txt",
+      "sha256": "36908e04d57509d076e32ec3bb5be298e92c1bc198caab3e61ed4eb4490dbef1",
+      "bytes": 1776
+    },
+    {
+      "path": "art/recipes/gpt-forest-v6.json",
+      "sha256": "b3775d3cb14d261187bce83123a3b6767450b6f365af7fd5108e2ae1d7cbd625",
+      "bytes": 1506
+    },
+    {
+      "path": "art/recipes/gpt-forest-v6.prompt.txt",
+      "sha256": "2f3d75461d66378d6753b08116a9bb01eac8562932eb3e5d78893f6e8f1aad86",
+      "bytes": 2429
+    },
+    {
+      "path": "art/recipes/ancient-forest-v6.md",
+      "sha256": "a7a232e6d10b288b8148f786d616d33c82c22e5e07db3ad40a0c67b8be2a0e73",
+      "bytes": 5677
+    },
+    {
+      "path": "art/recipes/ilyndrel-symbol-v1.json",
+      "sha256": "3383a318dfe9ef2beabc0a02367875faaaff1c2eb886c6e2f4ca023c66247f06",
+      "bytes": 1428
+    },
+    {
+      "path": "art/recipes/ilyndrel-symbol-v1.prompt.txt",
+      "sha256": "b316bcdc4baebf6c381b065842f43d909084e16ec938c7d1d24c8055cbcc2985",
+      "bytes": 1182
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v1.json",
+      "sha256": "9a9fc155b9bd40ff07e6f32ffbb5679df6bf680e2aef7b4171326f1dae1fce8a",
+      "bytes": 1435
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v1.prompt.txt",
+      "sha256": "c16a74b44f7dfdd99faeaa57c0dad97f08e4f94d4e29c8a3d140548a1a26c658",
+      "bytes": 1247
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v2-design.json",
+      "sha256": "28f2c77cc9233dc8d2a32f30040aaf513ee220f588ac1156a67f831af592c07b",
+      "bytes": 2058
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v2.prompt.txt",
+      "sha256": "ba6a810a778b98e2187d2d17230980e15b843c85ccd9ac18fd56318f21f4d0a2",
+      "bytes": 2547
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v2.json",
+      "sha256": "62bbec932e7cd872ce94ebfca636f503a52845f316ea565febc27c5d25b6761a",
+      "bytes": 2114
+    },
+    {
+      "path": "art/recipes/ilyndrel-wordmark-v2-black.prompt.txt",
+      "sha256": "116d2b70c7e2d9a8c73f65c70543365c03411c4d0ca1eeb873059f2b7287ab3c",
+      "bytes": 1040
+    },
+    {
+      "path": "art/recipes/jeweled-title-v2.md",
+      "sha256": "c7a1890d23468e4aa70ef8725a6db9f17b644c7e49155663bf6537e8e576eefa",
+      "bytes": 3823
+    },
+    {
+      "path": "art/recipes/title-forest-music.md",
+      "sha256": "06ccfdfc60ce0ed97d3803a0cd00b5da233f750df33188307ded333cf11e7690",
+      "bytes": 4969
+    },
+    {
+      "path": "art/recipes/forest-reverie-v1-music.md",
+      "sha256": "3ca71ff4b5906eedb167d145df3b58eee13c7243970388b00eebe318518dacbd",
+      "bytes": 4416
+    },
+    {
+      "path": "art/recipes/forest-reverie-v1-music.json",
+      "sha256": "77a8d575b3e9d2514cd09f83885bde720ceb7cb9422c3d50853c551842cb2d13",
+      "bytes": 998
+    },
+    {
+      "path": "art/source/audio/forest-reverie-v1.score.json",
+      "sha256": "0b56e3fff549edb16f07972ec95a7ccbafbcdfa9b243e02950e012df89272895",
+      "bytes": 1598
+    },
+    {
+      "path": "tools/audio/render-forest-music.mjs",
+      "sha256": "127a58354bab61eb822e52b6418efd481d8d0fc878d26f1f70249f266216ec5e",
+      "bytes": 6679
+    },
+    {
+      "path": "art/recipes/ancient-forest-v2-music.md",
+      "sha256": "d2b221468769aa8041575a8e416cd93d933afd0bbf85fe711cf6dd378897ace1",
+      "bytes": 5093
+    },
+    {
+      "path": "art/recipes/ancient-forest-v2-music.json",
+      "sha256": "96d7f8b4c8ab7562cac04a53cecaf428a22d8d9962beb67b0b60b6000e800fa2",
+      "bytes": 1627
+    },
+    {
+      "path": "art/source/audio/ancient-forest-v2.score.json",
+      "sha256": "5437ef653e8c5c7e6effe69bc07dcc762421fd0d870e3b1d44e1d234dfb0cffb",
+      "bytes": 1662
+    },
+    {
+      "path": "tools/audio/render-ancient-forest-music-v2.mjs",
+      "sha256": "40cf6c8d4c6a615a67c350952731099fefb38ad41970288ce093ac45b01a972b",
+      "bytes": 10013
     }
   ],
   "sourceCodeRecordingScope": "Current file hashes only; recording new or changed code does not establish its authorship.",
