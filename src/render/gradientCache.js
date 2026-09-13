@@ -1,17 +1,16 @@
-const cache = new Map();
-
+// Context-local memoization for callers that construct radial illumination.
+// This utility stores no image pixels and imports no asset source.
+let gradientsByContext = new WeakMap();
 export function radialGradient(ctx, radius, colorInner, colorOuter) {
-  const key = `${radius}|${colorInner}|${colorOuter}`;
-  let grad = cache.get(key);
-  if (!grad) {
-    grad = ctx.createRadialGradient(0, 0, Math.min(2, radius * 0.08), 0, 0, radius);
-    grad.addColorStop(0, colorInner);
-    grad.addColorStop(1, colorOuter);
-    cache.set(key, grad);
+  let entries = gradientsByContext.get(ctx);
+  if (!entries) { entries = new Map(); gradientsByContext.set(ctx, entries); }
+  const key = JSON.stringify([radius, colorInner, colorOuter]);
+  if (!entries.has(key)) {
+    const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, radius);
+    gradient.addColorStop(0, colorInner);
+    gradient.addColorStop(1, colorOuter);
+    entries.set(key, gradient);
   }
-  return grad;
+  return entries.get(key);
 }
-
-export function clearGradientCache() {
-  cache.clear();
-}
+export function clearGradientCache() { gradientsByContext = new WeakMap(); }

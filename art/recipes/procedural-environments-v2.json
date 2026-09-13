@@ -1,0 +1,790 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-09-13",
+  "purpose": "Recorded local geometric replacement of four image-model backgrounds and two uncertain raster previews.",
+  "legalClearance": "not-a-legal-guarantee",
+  "authoringActor": "Coding assistant in the user-authorized local workspace; not represented as human-only authorship.",
+  "blenderVersion": "5.2.1 LTS",
+  "blenderBinary": "/Applications/Blender.app/Contents/MacOS/Blender",
+  "master": {
+    "path": "art/source/procedural/nocturne-environments-v2.blend",
+    "bytes": 15454706,
+    "sha256": "fd8a3fc165d6f7cfff9d59fb9e4f8109b7005a20c9480a6eee83f47d4f7a6a87"
+  },
+  "retainedSpriteMaster": {
+    "path": "art/source/blender/grove-library-v1.blend",
+    "bytes": 1286762,
+    "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a"
+  },
+  "scripts": [
+    {
+      "path": "tools/art/build_procedural_environments.py",
+      "bytes": 22193,
+      "sha256": "aff5106fd07d6159fdcb666678f5df44d4e17d054e99dbfd2959bc1169b2bcca",
+      "executedBodySha256BeforeThreeLicenseCommentLinesAdded": "f903b2fc1c970d7876683e2f7bc64beb189b47e32c1db5167a5c26a54022e699"
+    },
+    {
+      "path": "tools/art/render_procedural_environments.py",
+      "bytes": 1856,
+      "sha256": "18bed103ea6b7293471f580428a4dee1bea87212370d30fa9f1d641f591bc7d3",
+      "executedBodySha256BeforeThreeLicenseCommentLinesAdded": "4318fe602616f0248308cc4e081636f63683e0301b58c979a1f9bfcf0604b254",
+      "generationScriptSha256": "c6d89c14c018295167735994a06df0a295816fb622e0a60ae54f72dd808e34af",
+      "changeAfterGeneration": "Raw render output directories reorganized; geometry and render parameters unchanged."
+    },
+    {
+      "path": "tools/art/render_geometry_contact_sheet.py",
+      "bytes": 3769,
+      "sha256": "fa683902e7db52891d76702df41ff669fe9c405e7776c6a9c7d3250a0c46436c",
+      "executedBodySha256BeforeThreeLicenseCommentLinesAdded": "5471cdf3a65f5f24327f2bff12de39e1494e66ac6fcd0256115330465fe33632"
+    }
+  ],
+  "sourceCodeLicense": {
+    "path": "tools/art/COPYING.GPL-3.0",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "outputs": [
+    {
+      "path": "art/source/procedural/forest-v2.png",
+      "bytes": 1689238,
+      "sha256": "34d34936d5774dc533ff57a771869656e3822ffa1bd3f5f5216df8f683a5c02a",
+      "scene": "forest",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "metadata": {
+        "srgb": 3,
+        "gamma": 0.45455,
+        "File": "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v2.blend",
+        "Date": "2026/09/13 18:31:39",
+        "Time": "00:00:00:01",
+        "Frame": "001",
+        "Camera": "forest / composition",
+        "Scene": "forest",
+        "RenderTime": "00:51.30",
+        "Memory": "216M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "00:51.27",
+        "cycles.ViewLayer.render_time": "00:51.20",
+        "cycles.ViewLayer.synchronization_time": "00:00.06"
+      },
+      "inputMaster": "art/source/procedural/nocturne-environments-v2.blend",
+      "renderCommandSuffix": "render_procedural_environments.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false
+    },
+    {
+      "path": "art/source/procedural/depths-v2.png",
+      "bytes": 1688671,
+      "sha256": "843a5785b1efb0f9f2f20cefe2c3dfc7d2414daad06358d7367c6a3bfe6210b1",
+      "scene": "depths",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "metadata": {
+        "srgb": 3,
+        "gamma": 0.45455,
+        "File": "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v2.blend",
+        "Date": "2026/09/13 18:32:30",
+        "Time": "00:00:00:01",
+        "Frame": "001",
+        "Camera": "depths / composition",
+        "Scene": "depths",
+        "RenderTime": "00:51.40",
+        "Memory": "216M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "00:51.37",
+        "cycles.ViewLayer.render_time": "00:51.32",
+        "cycles.ViewLayer.synchronization_time": "00:00.05"
+      },
+      "inputMaster": "art/source/procedural/nocturne-environments-v2.blend",
+      "renderCommandSuffix": "render_procedural_environments.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false
+    },
+    {
+      "path": "art/source/procedural/garden-v2.png",
+      "bytes": 1726789,
+      "sha256": "499c67a1f7a4e4a3b1ff60dc71d3711226804647049ae90125f144cb077b807b",
+      "scene": "garden",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "metadata": {
+        "srgb": 3,
+        "gamma": 0.45455,
+        "File": "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v2.blend",
+        "Date": "2026/09/13 18:33:26",
+        "Time": "00:00:00:01",
+        "Frame": "001",
+        "Camera": "garden / composition",
+        "Scene": "garden",
+        "RenderTime": "00:55.96",
+        "Memory": "222M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "00:55.92",
+        "cycles.ViewLayer.render_time": "00:55.86",
+        "cycles.ViewLayer.synchronization_time": "00:00.06"
+      },
+      "inputMaster": "art/source/procedural/nocturne-environments-v2.blend",
+      "renderCommandSuffix": "render_procedural_environments.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false
+    },
+    {
+      "path": "art/source/procedural/heart-v2.png",
+      "bytes": 1753652,
+      "sha256": "510adc0b30689fea8f55def6bdb2bf1b3b81ee99b8b42c059452793e96733816",
+      "scene": "heart",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGB",
+      "metadata": {
+        "srgb": 3,
+        "gamma": 0.45455,
+        "File": "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v2.blend",
+        "Date": "2026/09/13 18:34:25",
+        "Time": "00:00:00:01",
+        "Frame": "001",
+        "Camera": "heart / composition",
+        "Scene": "heart",
+        "RenderTime": "00:58.63",
+        "Memory": "222M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "00:58.60",
+        "cycles.ViewLayer.render_time": "00:58.53",
+        "cycles.ViewLayer.synchronization_time": "00:00.06"
+      },
+      "inputMaster": "art/source/procedural/nocturne-environments-v2.blend",
+      "renderCommandSuffix": "render_procedural_environments.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false
+    },
+    {
+      "path": "art/source/procedural/share-v2.png",
+      "bytes": 868183,
+      "sha256": "3a94ea347449fb49b85a7f9ab50fe7c8de2eba573f4510995b44dcafd417f343",
+      "scene": "share",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "mode": "RGB",
+      "metadata": {
+        "srgb": 3,
+        "gamma": 0.45455,
+        "File": "/Users/kyungseok.lee/workspace-git/glintgrove/art/source/procedural/nocturne-environments-v2.blend",
+        "Date": "2026/09/13 18:34:49",
+        "Time": "00:00:00:01",
+        "Frame": "001",
+        "Camera": "share / composition",
+        "Scene": "share",
+        "RenderTime": "00:24.31",
+        "Memory": "129M",
+        "cycles.ViewLayer.samples": "48",
+        "cycles.ViewLayer.total_time": "00:24.29",
+        "cycles.ViewLayer.render_time": "00:24.24",
+        "cycles.ViewLayer.synchronization_time": "00:00.05"
+      },
+      "inputMaster": "art/source/procedural/nocturne-environments-v2.blend",
+      "renderCommandSuffix": "render_procedural_environments.py -- --samples 48",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false,
+      "originalRenderPath": "assets/og.png"
+    },
+    {
+      "path": "art/previews/sprite-contact-sheet-v1.jpg",
+      "bytes": 175929,
+      "sha256": "124a68b9213ab1f55eaabd462d49b5eee286fe7a7ddfcfa02c58693380d44978",
+      "scene": "contact-sheet",
+      "width": 1600,
+      "height": 960,
+      "format": "JPEG",
+      "mode": "RGB",
+      "metadata": {
+        "jfif": 257,
+        "jfif_unit": 0
+      },
+      "inputMaster": "art/source/blender/grove-library-v1.blend",
+      "renderCommandSuffix": "render_geometry_contact_sheet.py",
+      "externalInputs": [],
+      "containsTextOrFontGeometry": false
+    }
+  ],
+  "sourceInspection": {
+    "blenderVersion": "5.2.1 LTS",
+    "scenes": {
+      "depths": {
+        "objects": 690,
+        "types": {
+          "CAMERA": 1,
+          "CURVE": 335,
+          "LIGHT": 3,
+          "MESH": 351
+        }
+      },
+      "forest": {
+        "objects": 652,
+        "types": {
+          "CAMERA": 1,
+          "CURVE": 335,
+          "LIGHT": 3,
+          "MESH": 313
+        }
+      },
+      "garden": {
+        "objects": 910,
+        "types": {
+          "CAMERA": 1,
+          "CURVE": 335,
+          "LIGHT": 3,
+          "MESH": 571
+        }
+      },
+      "heart": {
+        "objects": 920,
+        "types": {
+          "CAMERA": 1,
+          "CURVE": 335,
+          "LIGHT": 3,
+          "MESH": 581
+        }
+      },
+      "share": {
+        "objects": 659,
+        "types": {
+          "CAMERA": 1,
+          "CURVE": 340,
+          "LIGHT": 3,
+          "MESH": 315
+        }
+      }
+    },
+    "libraries": [],
+    "images": [
+      {
+        "name": "Render Result",
+        "source": "VIEWER",
+        "type": "RENDER_RESULT"
+      },
+      {
+        "name": "Viewer Node",
+        "source": "VIEWER",
+        "type": "COMPOSITING"
+      }
+    ],
+    "fonts": [],
+    "textObjects": [],
+    "imageTextureNodes": [],
+    "materials": 136
+  },
+  "originalSpriteReferences": [
+    {
+      "id": "crystal.b",
+      "role": "source",
+      "path": "art/renders/sprites/crystal-b-v1.png",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/crystal-b-v1.png"
+    },
+    {
+      "id": "crystal.b",
+      "role": "runtime",
+      "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+      "unchanged": true
+    },
+    {
+      "id": "crystal.b",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "crystal.g",
+      "role": "source",
+      "path": "art/renders/sprites/crystal-g-v1.png",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/crystal-g-v1.png"
+    },
+    {
+      "id": "crystal.g",
+      "role": "runtime",
+      "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+      "unchanged": true
+    },
+    {
+      "id": "crystal.g",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "crystal.r",
+      "role": "source",
+      "path": "art/renders/sprites/crystal-r-v1.png",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/crystal-r-v1.png"
+    },
+    {
+      "id": "crystal.r",
+      "role": "runtime",
+      "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+      "unchanged": true
+    },
+    {
+      "id": "crystal.r",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "emitter",
+      "role": "source",
+      "path": "art/renders/sprites/emitter-v1.png",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/emitter-v1.png"
+    },
+    {
+      "id": "emitter",
+      "role": "runtime",
+      "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+      "unchanged": true
+    },
+    {
+      "id": "emitter",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "flower.awake",
+      "role": "source",
+      "path": "art/renders/sprites/flower-awake-v1.png",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/flower-awake-v1.png"
+    },
+    {
+      "id": "flower.awake",
+      "role": "runtime",
+      "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+      "unchanged": true
+    },
+    {
+      "id": "flower.awake",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "flower.dormant",
+      "role": "source",
+      "path": "art/renders/sprites/flower-dormant-v1.png",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/flower-dormant-v1.png"
+    },
+    {
+      "id": "flower.dormant",
+      "role": "runtime",
+      "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+      "unchanged": true
+    },
+    {
+      "id": "flower.dormant",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "gate.b",
+      "role": "source",
+      "path": "art/renders/sprites/gate-b-v1.png",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/gate-b-v1.png"
+    },
+    {
+      "id": "gate.b",
+      "role": "runtime",
+      "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6",
+      "unchanged": true
+    },
+    {
+      "id": "gate.b",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "gate.g",
+      "role": "source",
+      "path": "art/renders/sprites/gate-g-v1.png",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/gate-g-v1.png"
+    },
+    {
+      "id": "gate.g",
+      "role": "runtime",
+      "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3",
+      "unchanged": true
+    },
+    {
+      "id": "gate.g",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "gate.r",
+      "role": "source",
+      "path": "art/renders/sprites/gate-r-v1.png",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/gate-r-v1.png"
+    },
+    {
+      "id": "gate.r",
+      "role": "runtime",
+      "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111",
+      "unchanged": true
+    },
+    {
+      "id": "gate.r",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "mirror",
+      "role": "source",
+      "path": "art/renders/sprites/mirror-v1.png",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/mirror-v1.png"
+    },
+    {
+      "id": "mirror",
+      "role": "runtime",
+      "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+      "unchanged": true
+    },
+    {
+      "id": "mirror",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "mushroom.awake",
+      "role": "source",
+      "path": "art/renders/sprites/mushroom-awake-v1.png",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/mushroom-awake-v1.png"
+    },
+    {
+      "id": "mushroom.awake",
+      "role": "runtime",
+      "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+      "unchanged": true
+    },
+    {
+      "id": "mushroom.awake",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "mushroom.dormant",
+      "role": "source",
+      "path": "art/renders/sprites/mushroom-dormant-v1.png",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/mushroom-dormant-v1.png"
+    },
+    {
+      "id": "mushroom.dormant",
+      "role": "runtime",
+      "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+      "unchanged": true
+    },
+    {
+      "id": "mushroom.dormant",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "owl.awake",
+      "role": "source",
+      "path": "art/renders/sprites/owl-awake-v1.png",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/owl-awake-v1.png"
+    },
+    {
+      "id": "owl.awake",
+      "role": "runtime",
+      "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+      "unchanged": true
+    },
+    {
+      "id": "owl.awake",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "owl.dormant",
+      "role": "source",
+      "path": "art/renders/sprites/owl-dormant-v1.png",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/owl-dormant-v1.png"
+    },
+    {
+      "id": "owl.dormant",
+      "role": "runtime",
+      "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+      "unchanged": true
+    },
+    {
+      "id": "owl.dormant",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "portal.gold",
+      "role": "source",
+      "path": "art/renders/sprites/portal-gold-v1.png",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/portal-gold-v1.png"
+    },
+    {
+      "id": "portal.gold",
+      "role": "runtime",
+      "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+      "unchanged": true
+    },
+    {
+      "id": "portal.gold",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "portal.violet",
+      "role": "source",
+      "path": "art/renders/sprites/portal-violet-v1.png",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/portal-violet-v1.png"
+    },
+    {
+      "id": "portal.violet",
+      "role": "runtime",
+      "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+      "unchanged": true
+    },
+    {
+      "id": "portal.violet",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "rock",
+      "role": "source",
+      "path": "art/renders/sprites/rock-v1.png",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/rock-v1.png"
+    },
+    {
+      "id": "rock",
+      "role": "runtime",
+      "path": "assets/game/sprites/rock-v1-c0530e24a807.png",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+      "unchanged": true
+    },
+    {
+      "id": "rock",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "rock.alt",
+      "role": "source",
+      "path": "art/renders/sprites/rock-alt-v1.png",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/rock-alt-v1.png"
+    },
+    {
+      "id": "rock.alt",
+      "role": "runtime",
+      "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+      "unchanged": true
+    },
+    {
+      "id": "rock.alt",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "splitter",
+      "role": "source",
+      "path": "art/renders/sprites/splitter-v1.png",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/splitter-v1.png"
+    },
+    {
+      "id": "splitter",
+      "role": "runtime",
+      "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+      "unchanged": true
+    },
+    {
+      "id": "splitter",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "tree.awake",
+      "role": "source",
+      "path": "art/renders/sprites/tree-awake-v1.png",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/tree-awake-v1.png"
+    },
+    {
+      "id": "tree.awake",
+      "role": "runtime",
+      "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+      "unchanged": true
+    },
+    {
+      "id": "tree.awake",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    },
+    {
+      "id": "tree.dormant",
+      "role": "source",
+      "path": "art/renders/sprites/tree-dormant-v1.png",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+      "unchanged": true,
+      "originalRenderPath": "art/build/sprites/tree-dormant-v1.png"
+    },
+    {
+      "id": "tree.dormant",
+      "role": "runtime",
+      "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+      "unchanged": true
+    },
+    {
+      "id": "tree.dormant",
+      "role": "master",
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "unchanged": true
+    }
+  ],
+  "recipe": {
+    "path": "art/recipes/procedural-environments-v2.md",
+    "bytes": 5467,
+    "sha256": "24a6d82ebdc3605e69e56350cbf088103b7c35a3c4c13a68fcab1ffc4307ed4f"
+  },
+  "generation": {
+    "numericGeometrySeeds": [
+      260913,
+      260914,
+      260915,
+      260916
+    ],
+    "shareGeometrySeed": 260913,
+    "renderSeed": 1709,
+    "environmentSamples": 48,
+    "contactSheetSamples": 24,
+    "engine": "Cycles",
+    "externalImages": [],
+    "externalModels": [],
+    "externalTextures": [],
+    "fonts": [],
+    "imageModelCalls": 0,
+    "paidApiCalls": 0,
+    "publishArtExecutedByThisTask": true,
+    "publicationNote": "Root agent published the catalog and metadata-free site preview locally after the environment-authoring subtask; no site upload."
+  },
+  "verification": {
+    "allSixFinalRasterFilesDecoded": true,
+    "allSixFinalRastersVisuallyInspectedByAuthor": true,
+    "originalSpriteSourceRuntimeMasterReferencesUnchanged": 63,
+    "independentReview": "Root agent inspected the Blender scenes, source and output hashes; final distribution/record review is documented in docs/legal/remake-independent-review.md."
+  },
+  "limitations": [
+    "Recorded inputs and geometric construction do not prove zero copyright risk or exclusive copyright.",
+    "Account, employer and collaborative ownership rights are not changed by regenerating artwork.",
+    "Rendering may differ across Blender versions, denoiser versions, CPU/GPU and platforms; final hashes identify delivered files.",
+    "Source license comments were appended before final hash recording; executable geometry statements were not changed by that addition."
+  ],
+  "folderReorganization": {
+    "date": "2026-09-13",
+    "description": "Image bytes retained during relocation; required sprite inputs now art/renders/sprites. Raw share render is art/source/procedural/share-v2.png; publish_art.py creates metadata-free site preview with identical decoded pixels."
+  }
+}

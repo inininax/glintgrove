@@ -1,0 +1,33 @@
+{
+  "auditDate": "2026-09-13",
+  "purpose": "Record of an observed public title and a limited name-use lead. Not proof of copying, trademark registration, infringement, or permission.",
+  "sourceType": "Creator portfolio project page",
+  "sourceUrl": "https://vedantbhatnagar24.artstation.com/projects/2BAeDY",
+  "observedPageTitle": "Glintgrove: A Living Ecosystem (Game Concept Art)",
+  "displayedCreator": "Vedant Bhatnagar",
+  "observationMethod": "Successful text read through the web tool after following the creator portfolio's All page project link.",
+  "observedNavigation": [
+    "https://vedantbhatnagar24.artstation.com/projects/EzV8YA",
+    "https://vedantbhatnagar24.artstation.com/projects",
+    "https://vedantbhatnagar24.artstation.com/projects/2BAeDY"
+  ],
+  "bodySummaryKorean": "자연과 기계 생물이 공존하는 게임 세계, 네 생물의 성격과 역할, 잠재적인 인디 게임 IP를 위한 콘셉트 제작을 설명한다. 제작 도구는 Photoshop으로 표시한다.",
+  "confirmedScope": "The exact Glintgrove name appears in the title of a public external game-concept portfolio page.",
+  "notEstablished": [
+    "Exact first-publication date",
+    "A released commercial game",
+    "Any trademark registration or applicable territory",
+    "Copying of artwork or a copyright violation",
+    "Relationship to the user's pre-existing game or naming process",
+    "Visual similarity of the actual project images"
+  ],
+  "retrievalLimits": [
+    "The root reviewer obtained the creator-page title and body text through the web tool.",
+    "A separate direct HTTP request returned 403.",
+    "An independent reviewer later encountered web-tool safe-open failures for this page and the canonical ArtStation artwork URL.",
+    "No comparable source image was obtained from the targeted image search.",
+    "This record preserves the observed title and a paraphrase; it is not an authenticated archive of the entire website."
+  ],
+  "foreignMediaImportedIntoGame": false,
+  "sourceImagesUsedAsGenerationInput": false
+}

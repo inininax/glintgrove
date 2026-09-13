@@ -1,0 +1,15 @@
+{
+  "name": "Nocturne — the waking grove",
+  "version": "v1",
+  "seed": 1709,
+  "spriteSize": 384,
+  "samples": 40,
+  "palette": {
+    "stone": "#526568", "stoneDark": "#263d41", "brass": "#b89b62",
+    "ivory": "#ece1bd", "bark": "#584636", "moss": "#497957",
+    "leaf": "#4b9780", "leafLight": "#96b988", "dormant": "#546e75",
+    "cyan": "#66d6d0", "gold": "#f2cb77", "rose": "#d996b9",
+    "red": "#e77677", "green": "#7ed59f", "blue": "#87bafa",
+    "violet": "#b5a0e9"
+  }
+}

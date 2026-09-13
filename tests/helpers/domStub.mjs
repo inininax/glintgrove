@@ -17,7 +17,7 @@ const ALL_IDS = [
   'chapter-list', 'total-stars', 'hud-level-name', 'hud-moves',
   'toast', 'win-overlay', 'win-title', 'win-stats', 'win-stars',
   'settings-modal', 'set-sound', 'set-motion', 'set-colorblind',
-  'set-lang', 'intro-modal', 'ach-modal', 'ach-list', 'ach-progress',
+  'set-lang', 'set-skin', 'set-display', 'btn-settings-game', 'intro-modal', 'ach-modal', 'ach-list', 'ach-progress',
   'btn-play', 'btn-daily', 'btn-continue', 'btn-back-title',
   'btn-settings', 'btn-settings2', 'btn-close-settings', 'btn-wipe',
   'btn-undo', 'btn-reset', 'btn-hint', 'btn-exit', 'btn-next',

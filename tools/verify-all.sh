@@ -18,14 +18,21 @@ else
   tail -2 /tmp/gg-levels.log
 fi
 
-echo "== 3. unit tests =="
+echo "== 3. runtime asset validation =="
+if ! node tools/check-assets.mjs > /tmp/gg-assets.log 2>&1; then
+  echo "ASSETS FAIL"; cat /tmp/gg-assets.log; FAIL=1
+else
+  tail -1 /tmp/gg-assets.log
+fi
+
+echo "== 4. unit tests =="
 if ! node --test tests/*.test.mjs > /tmp/gg-tests.log 2>&1; then
   echo "TESTS FAIL"; grep -B2 -A12 'not ok' /tmp/gg-tests.log | head -60; FAIL=1
 else
   grep -E '^# (tests|pass|fail)' /tmp/gg-tests.log
 fi
 
-echo "== 4. browser e2e =="
+echo "== 5. browser e2e =="
 PORT=8765
 python3 -m http.server $PORT >/dev/null 2>&1 &
 SRV_PID=$!

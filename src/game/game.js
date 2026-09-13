@@ -7,7 +7,6 @@ import { getConfig } from '../services/config.js';
 import { Renderer } from '../render/renderer.js';
 import { invalidateGlowSprites } from '../render/beams.js';
 import { clearGradientCache } from '../render/gradientCache.js';
-import { radialGradient } from '../render/gradientCache.js';
 import { ParticleSystem } from '../fx/particles.js';
 import { Sound } from '../fx/sound.js';
 
@@ -60,6 +59,7 @@ export class Game {
     Object.assign(this.settings, s);
     this.sound.setEnabled(this.settings.sound);
     this.particles.reducedMotion = !this.settings.motion;
+    this.renderer.setQuality(this.settings.motion !== false);
     this.events.emit('settingsChange', { ...this.settings });
   }
 
@@ -83,6 +83,7 @@ export class Game {
     this.won = false;
     this.winTimer = 0;
     this.winFrames = 0;
+    this.winUiDone = false;
     this.hintIdx = -1;
     this.hintTimer = 0;
     this.hintsUsed = 0;
@@ -385,14 +386,22 @@ export class Game {
       spinAngleOf: ro => this.spinAngleOf(ro)
     });
 
-    if (this.won && !this.demoMode) {
+    if (this.won && !this.demoMode && this.settings.motion && this.winTimer < 2.4) {
       const ctx = this.renderer.ctx;
       ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.globalAlpha = 0.25 * Math.max(0, 1 - this.winTimer / 2.4);
-      ctx.translate(this.renderer.W / 2, this.renderer.H / 2);
-      ctx.fillStyle = radialGradient(ctx, this.renderer.W * 0.7, 'rgba(255,240,190,0.9)', 'rgba(255,240,190,0)');
-      ctx.fillRect(-this.renderer.W / 2, -this.renderer.H / 2, this.renderer.W, this.renderer.H);
+      // A pair of opening light arcs frames the board without whitening it.
+      const progress = this.winTimer / 2.4;
+      const lay = this.renderer.layout(this.level);
+      ctx.translate(lay.ox + this.level.w * lay.cell / 2, lay.oy + this.level.h * lay.cell / 2);
+      ctx.globalAlpha = 0.35 * Math.sin(progress * Math.PI);
+      ctx.strokeStyle = '#e7d8a5';
+      ctx.lineWidth = 1.5;
+      const radius = Math.min(this.renderer.W, this.renderer.H) * (0.25 + progress * 0.12);
+      for (const offset of [0, Math.PI]) {
+        ctx.beginPath();
+        ctx.arc(0, 0, radius, offset + 0.2, offset + 1.1 + progress);
+        ctx.stroke();
+      }
       ctx.restore();
     }
 

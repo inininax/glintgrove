@@ -1,3 +1,13 @@
 .DS_Store
 node_modules/
 *.log
+.venv-art*/
+art/build/
+*.blend1
+*.blend2
+__pycache__/
+*.py[cod]
+art/retired/
+dist/
+.release-stage-*/
+.release-previous-*/

@@ -4,9 +4,9 @@ export const BEAM_COLORS = Object.freeze(['white', 'r', 'g', 'b']);
 
 export const PALETTE = Object.freeze({
   white: '#ffe9b8',
-  r: '#ff5d5d',
-  g: '#5dff9d',
-  b: '#6da8ff'
+  r: '#ed887f',
+  g: '#82d4ae',
+  b: '#84b9e8'
 });
 
 let skinPalette = null;

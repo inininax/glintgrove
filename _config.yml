@@ -1,0 +1,27 @@
+# GitHub Pages publishes the repository root; keep authoring files in Git only.
+exclude:
+  - art
+  - tools
+  - tests
+  - docs
+  - README.md
+  - FOLDERS.md
+  - CYCLES.md
+  - package.json
+  - package-lock.json
+  - npm-shrinkwrap.json
+  - yarn.lock
+  - pnpm-lock.yaml
+  - dist
+  - build
+  - ".venv-art*"
+  - ".release-stage-*"
+  - ".release-previous-*"
+  # Preserve Jekyll's default cache and dependency exclusions.
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

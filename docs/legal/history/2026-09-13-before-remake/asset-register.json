@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-09-13",
+  "runtimeRevision": "nocturne-c4cf96b06729",
+  "purpose": "Factual local provenance and file-integrity register. This is not a license grant, ownership determination, or infringement clearance.",
+  "copyrightClearance": "not-established",
+  "scope": {
+    "runtimeArtEntryCount": 25,
+    "blenderRenderCount": 21,
+    "aiGeneratedBackgroundCount": 4,
+    "preExistingAssetCount": 2,
+    "exclusions": [
+      "Existing application code ownership",
+      "System fonts and font licensing",
+      "Emoji artwork and platform rendering",
+      "Trademark clearance",
+      "Commercial deployment package contents"
+    ]
+  },
+  "evidenceRecords": {
+    "runtimeManifest": {
+      "path": "assets/game/manifest.json",
+      "sha256": "10bc1eda57b8ff22daf6b4aabcd5607b08b29107f5cac25bb67234842286649a"
+    },
+    "authoringCatalog": {
+      "path": "art/recipes/catalog.json",
+      "sha256": "f996eedeaf224cf828d79158366254ed1284f1fdf21787d88c2ea33415398d84"
+    },
+    "localGenerationLedger": {
+      "path": "art/build/provenance.json",
+      "sha256": "4d1c928aa1e5f35fe87116c19a6820c098e094ddbb7e6596726b152cc2f72a73"
+    },
+    "localGenerationLedgerAvailability": "art/build is ignored by version control; per-asset hashes are retained in this register"
+  },
+  "blenderMaster": {
+    "path": "art/source/blender/grove-library-v1.blend",
+    "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+    "inspectedWithBlenderVersion": "5.2.1 LTS",
+    "inspectionMode": "background, factory startup, autoexec disabled; no rendering or saving",
+    "assetSceneCount": 21,
+    "meshDataBlockCount": 1548,
+    "curveDataBlockCount": 142,
+    "materialCount": 24,
+    "linkedLibraryCount": 0,
+    "linkedMeshCount": 0,
+    "linkedObjectCount": 0,
+    "fontDataBlockCount": 0,
+    "textDataBlockCount": 0,
+    "imageDataBlocks": [
+      {
+        "name": "Render Result",
+        "source": "VIEWER",
+        "filepath": ""
+      },
+      {
+        "name": "Viewer Node",
+        "source": "VIEWER",
+        "filepath": ""
+      }
+    ],
+    "materialNodeTypes": [
+      "ShaderNodeBsdfPrincipled",
+      "ShaderNodeBump",
+      "ShaderNodeOutputMaterial",
+      "ShaderNodeTexNoise"
+    ],
+    "generatorScript": {
+      "path": "tools/art/build_blender.py",
+      "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+    },
+    "recipe": {
+      "path": "art/recipes/nocturne-v1.json",
+      "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+    }
+  },
+  "assets": [
+    {
+      "id": "crystal.b",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+        "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060"
+      },
+      "source": {
+        "path": "art/build/sprites/crystal-b-v1.png",
+        "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "crystal.b"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+          "to": "art/build/sprites/crystal-b-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/crystal-b-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "crystal.b"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "crystal.b",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "crystal.g",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+        "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509"
+      },
+      "source": {
+        "path": "art/build/sprites/crystal-g-v1.png",
+        "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "crystal.g"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+          "to": "art/build/sprites/crystal-g-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/crystal-g-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "crystal.g"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "crystal.g",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "crystal.r",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+        "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc"
+      },
+      "source": {
+        "path": "art/build/sprites/crystal-r-v1.png",
+        "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "crystal.r"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+          "to": "art/build/sprites/crystal-r-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/crystal-r-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "crystal.r"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "crystal.r",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "depths",
+      "category": "ai-generated-background",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+        "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c"
+      },
+      "source": {
+        "path": "art/source/imagegen/depths-v1.png",
+        "sha256": "d30a132bf9b557e12ac9014df824f7034a22f793f6d039dd68a82f226bc9acea"
+      },
+      "master": {
+        "path": "art/source/imagegen/depths-v1.png",
+        "sha256": "d30a132bf9b557e12ac9014df824f7034a22f793f6d039dd68a82f226bc9acea"
+      },
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+          "to": "art/source/imagegen/depths-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "prompt-record-lists-style-reference",
+          "from": "art/source/imagegen/depths-v1.png",
+          "to": "art/source/imagegen/forest-v1.png",
+          "referenceSha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+        }
+      ],
+      "generationEvidence": {
+        "promptRecord": {
+          "path": "art/recipes/imagegen-prompts.md",
+          "sha256": "079d12993b96b5c3f176cdec8c3652ea3c4445cb171bde6eb8ed82ff88dc6826"
+        },
+        "promptSection": "depths-v1.png",
+        "toolOutputNameRecordedInPromptLog": "exec-5ac35803-cc52-48ed-9bdd-ea0c1c4dad80.png",
+        "generationToolRecorded": "built-in image_gen",
+        "embeddedC2paSoftwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "embeddedC2paClaimGeneratorName": "OpenAI Media Service API",
+        "c2paSignatureValidation": "not-performed",
+        "exactServingModel": "not-established",
+        "generationInputsRecorded": [
+          {
+            "path": "art/source/imagegen/forest-v1.png",
+            "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+          }
+        ]
+      }
+    },
+    {
+      "id": "emitter",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+        "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd"
+      },
+      "source": {
+        "path": "art/build/sprites/emitter-v1.png",
+        "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "emitter"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+          "to": "art/build/sprites/emitter-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/emitter-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "emitter"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "emitter",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "flower.awake",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+        "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044"
+      },
+      "source": {
+        "path": "art/build/sprites/flower-awake-v1.png",
+        "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "flower.awake"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+          "to": "art/build/sprites/flower-awake-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/flower-awake-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "flower.awake"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "flower.awake",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "flower.dormant",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+        "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a"
+      },
+      "source": {
+        "path": "art/build/sprites/flower-dormant-v1.png",
+        "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "flower.dormant"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+          "to": "art/build/sprites/flower-dormant-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/flower-dormant-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "flower.dormant"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "flower.dormant",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "forest",
+      "category": "ai-generated-background",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/backgrounds/forest-v1-256a3858f253.webp",
+        "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626"
+      },
+      "source": {
+        "path": "art/source/imagegen/forest-v1.png",
+        "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+      },
+      "master": {
+        "path": "art/source/imagegen/forest-v1.png",
+        "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+      },
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/backgrounds/forest-v1-256a3858f253.webp",
+          "to": "art/source/imagegen/forest-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        }
+      ],
+      "generationEvidence": {
+        "promptRecord": {
+          "path": "art/recipes/imagegen-prompts.md",
+          "sha256": "079d12993b96b5c3f176cdec8c3652ea3c4445cb171bde6eb8ed82ff88dc6826"
+        },
+        "promptSection": "forest-v1.png",
+        "toolOutputNameRecordedInPromptLog": "exec-689cbccb-7bb2-408a-afb0-f4d706a4c077.png",
+        "generationToolRecorded": "built-in image_gen",
+        "embeddedC2paSoftwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "embeddedC2paClaimGeneratorName": "OpenAI Media Service API",
+        "c2paSignatureValidation": "not-performed",
+        "exactServingModel": "not-established",
+        "generationInputsRecorded": []
+      }
+    },
+    {
+      "id": "garden",
+      "category": "ai-generated-background",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+        "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d"
+      },
+      "source": {
+        "path": "art/source/imagegen/garden-v1.png",
+        "sha256": "3feb9e0fcfb9d8f02fb3522ffb7d437a3ed70941919b8081e473b1c2cb6c383a"
+      },
+      "master": {
+        "path": "art/source/imagegen/garden-v1.png",
+        "sha256": "3feb9e0fcfb9d8f02fb3522ffb7d437a3ed70941919b8081e473b1c2cb6c383a"
+      },
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+          "to": "art/source/imagegen/garden-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "prompt-record-lists-style-reference",
+          "from": "art/source/imagegen/garden-v1.png",
+          "to": "art/source/imagegen/forest-v1.png",
+          "referenceSha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+        }
+      ],
+      "generationEvidence": {
+        "promptRecord": {
+          "path": "art/recipes/imagegen-prompts.md",
+          "sha256": "079d12993b96b5c3f176cdec8c3652ea3c4445cb171bde6eb8ed82ff88dc6826"
+        },
+        "promptSection": "garden-v1.png",
+        "toolOutputNameRecordedInPromptLog": "exec-9baf0f94-a54e-42c4-9b58-ce64aa80e5e8.png",
+        "generationToolRecorded": "built-in image_gen",
+        "embeddedC2paSoftwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "embeddedC2paClaimGeneratorName": "OpenAI Media Service API",
+        "c2paSignatureValidation": "not-performed",
+        "exactServingModel": "not-established",
+        "generationInputsRecorded": [
+          {
+            "path": "art/source/imagegen/forest-v1.png",
+            "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+          }
+        ]
+      }
+    },
+    {
+      "id": "gate.b",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+        "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6"
+      },
+      "source": {
+        "path": "art/build/sprites/gate-b-v1.png",
+        "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "gate.b"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+          "to": "art/build/sprites/gate-b-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/gate-b-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "gate.b"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "gate.b",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "gate.g",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+        "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3"
+      },
+      "source": {
+        "path": "art/build/sprites/gate-g-v1.png",
+        "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "gate.g"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+          "to": "art/build/sprites/gate-g-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/gate-g-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "gate.g"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "gate.g",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "gate.r",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+        "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111"
+      },
+      "source": {
+        "path": "art/build/sprites/gate-r-v1.png",
+        "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "gate.r"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+          "to": "art/build/sprites/gate-r-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/gate-r-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "gate.r"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "gate.r",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "heart",
+      "category": "ai-generated-background",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+        "sha256": "360ccc2982cf46f930a12f146d1ce193cf6f6aa573431be715a85b25badb06d8"
+      },
+      "source": {
+        "path": "art/source/imagegen/heart-v1.png",
+        "sha256": "02267279ecdf4ff7284a38ed7aa1a56acf353ea80a590f97aaa5112a770fc91f"
+      },
+      "master": {
+        "path": "art/source/imagegen/heart-v1.png",
+        "sha256": "02267279ecdf4ff7284a38ed7aa1a56acf353ea80a590f97aaa5112a770fc91f"
+      },
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+          "to": "art/source/imagegen/heart-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "prompt-record-lists-style-reference",
+          "from": "art/source/imagegen/heart-v1.png",
+          "to": "art/source/imagegen/forest-v1.png",
+          "referenceSha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+        }
+      ],
+      "generationEvidence": {
+        "promptRecord": {
+          "path": "art/recipes/imagegen-prompts.md",
+          "sha256": "079d12993b96b5c3f176cdec8c3652ea3c4445cb171bde6eb8ed82ff88dc6826"
+        },
+        "promptSection": "heart-v1.png",
+        "toolOutputNameRecordedInPromptLog": "exec-9603713d-fc66-4849-b40f-1a3f3ddf4a50.png",
+        "generationToolRecorded": "built-in image_gen",
+        "embeddedC2paSoftwareAgent": {
+          "name": "gpt-image",
+          "version": "2.0"
+        },
+        "embeddedC2paClaimGeneratorName": "OpenAI Media Service API",
+        "c2paSignatureValidation": "not-performed",
+        "exactServingModel": "not-established",
+        "generationInputsRecorded": [
+          {
+            "path": "art/source/imagegen/forest-v1.png",
+            "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mirror",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+        "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5"
+      },
+      "source": {
+        "path": "art/build/sprites/mirror-v1.png",
+        "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "mirror"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+          "to": "art/build/sprites/mirror-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/mirror-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "mirror"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "mirror",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "mushroom.awake",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+        "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e"
+      },
+      "source": {
+        "path": "art/build/sprites/mushroom-awake-v1.png",
+        "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "mushroom.awake"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+          "to": "art/build/sprites/mushroom-awake-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/mushroom-awake-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "mushroom.awake"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "mushroom.awake",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "mushroom.dormant",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+        "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599"
+      },
+      "source": {
+        "path": "art/build/sprites/mushroom-dormant-v1.png",
+        "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "mushroom.dormant"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+          "to": "art/build/sprites/mushroom-dormant-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/mushroom-dormant-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "mushroom.dormant"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "mushroom.dormant",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "owl.awake",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+        "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c"
+      },
+      "source": {
+        "path": "art/build/sprites/owl-awake-v1.png",
+        "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "owl.awake"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+          "to": "art/build/sprites/owl-awake-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/owl-awake-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "owl.awake"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "owl.awake",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "owl.dormant",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+        "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9"
+      },
+      "source": {
+        "path": "art/build/sprites/owl-dormant-v1.png",
+        "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "owl.dormant"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+          "to": "art/build/sprites/owl-dormant-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/owl-dormant-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "owl.dormant"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "owl.dormant",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "portal.gold",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+        "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5"
+      },
+      "source": {
+        "path": "art/build/sprites/portal-gold-v1.png",
+        "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "portal.gold"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+          "to": "art/build/sprites/portal-gold-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/portal-gold-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "portal.gold"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "portal.gold",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "portal.violet",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+        "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff"
+      },
+      "source": {
+        "path": "art/build/sprites/portal-violet-v1.png",
+        "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "portal.violet"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+          "to": "art/build/sprites/portal-violet-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/portal-violet-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "portal.violet"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "portal.violet",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "rock",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/rock-v1-c0530e24a807.png",
+        "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d"
+      },
+      "source": {
+        "path": "art/build/sprites/rock-v1.png",
+        "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "rock"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/rock-v1-c0530e24a807.png",
+          "to": "art/build/sprites/rock-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/rock-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "rock"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "rock",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "rock.alt",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+        "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f"
+      },
+      "source": {
+        "path": "art/build/sprites/rock-alt-v1.png",
+        "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "rock.alt"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+          "to": "art/build/sprites/rock-alt-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/rock-alt-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "rock.alt"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "rock.alt",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "splitter",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
+        "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293"
+      },
+      "source": {
+        "path": "art/build/sprites/splitter-v1.png",
+        "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "splitter"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
+          "to": "art/build/sprites/splitter-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/splitter-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "splitter"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "splitter",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "tree.awake",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+        "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997"
+      },
+      "source": {
+        "path": "art/build/sprites/tree-awake-v1.png",
+        "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "tree.awake"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+          "to": "art/build/sprites/tree-awake-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/tree-awake-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "tree.awake"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "tree.awake",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    },
+    {
+      "id": "tree.dormant",
+      "category": "blender-render",
+      "provenanceStatus": "verified-against-local-generation-records",
+      "copyrightClearance": "not-established",
+      "runtime": {
+        "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+        "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025"
+      },
+      "source": {
+        "path": "art/build/sprites/tree-dormant-v1.png",
+        "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec"
+      },
+      "master": {
+        "path": "art/source/blender/grove-library-v1.blend",
+        "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+        "sceneId": "tree.dormant"
+      },
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "sourceRelationships": [
+        {
+          "relationship": "runtime-exported-from",
+          "from": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+          "to": "art/build/sprites/tree-dormant-v1.png",
+          "exporter": "tools/art/publish_art.py"
+        },
+        {
+          "relationship": "render-record-identifies-master",
+          "from": "art/build/sprites/tree-dormant-v1.png",
+          "to": "art/source/blender/grove-library-v1.blend",
+          "sceneId": "tree.dormant"
+        }
+      ],
+      "generationEvidence": {
+        "renderPngSceneMetadata": "tree.dormant",
+        "renderPngFileMetadataMatchesMasterBasename": true,
+        "matchingScenePresentInInspectedMaster": true,
+        "generatorScript": {
+          "path": "tools/art/build_blender.py",
+          "sha256": "4848f389f18c36bb6c79e62b11d517fff3b3e8fc9cabd4c3587467ca8e6f1bbd"
+        },
+        "recipe": {
+          "path": "art/recipes/nocturne-v1.json",
+          "sha256": "81de4e5f44749321c9fc5b844af50a913a130c082870b680bec3aecd360288fd"
+        },
+        "reRenderedDuringThisAudit": false,
+        "exactCurrentMasterToPngReproducibility": "not-established-for-this-entry"
+      }
+    }
+  ],
+  "preExistingAssets": [
+    {
+      "id": "pre-existing.icon",
+      "file": {
+        "path": "assets/icon.svg",
+        "sha256": "e8887b1e45c9945bbd710102968c76fa6a43d9adec709b0b40894ffb88658891"
+      },
+      "provenanceStatus": "origin-unconfirmed",
+      "copyrightClearance": "not-established",
+      "note": "Predates this art upgrade; original authorship or applicable permission awaits user confirmation."
+    },
+    {
+      "id": "pre-existing.open-graph-image",
+      "file": {
+        "path": "assets/og.png",
+        "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c"
+      },
+      "provenanceStatus": "origin-unconfirmed",
+      "copyrightClearance": "not-established",
+      "note": "Predates this art upgrade; original authorship or applicable permission awaits user confirmation."
+    }
+  ],
+  "limitations": [
+    "Locally generated or procedurally constructed artwork is not a guarantee of noninfringement.",
+    "Matching hashes prove consistency with local records, not legal ownership or the truth of every historical provenance assertion.",
+    "No copied external model, image texture, font, linked library or text dependency was found in the inspected Blender master; absence of such dependencies does not prove that every underlying shape is independently original.",
+    "The 21 sprite source PNG metadata fields identify matching scenes and the master basename. This audit did not rerender each scene to establish exact current-master pixel reproducibility.",
+    "AI background PNGs preserve embedded C2PA records. Their cryptographic signatures and exact serving model were not independently validated.",
+    "No CC0, MIT, or other art-license grant is made by this register. Authoring-tool software licenses do not assign an art license.",
+    "The register covers the identified files as of the audit date; replacements require renewed file hashes and provenance review."
+  ]
+}

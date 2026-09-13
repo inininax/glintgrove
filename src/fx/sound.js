@@ -1,150 +1,187 @@
+// Ilyndrel's synthesized tones and air bed use Web Audio nodes only.
+// Context creation/resume happens exclusively in activate(), from a trusted UI event.
+const ACTIVATION_EVENTS = new Set(['pointerdown', 'pointerup', 'click', 'keydown', 'change']);
+
 export class Sound {
-    constructor() {
-      this.ctx = null;
-      this.master = null;
-      this.enabled = true;
-      this.ambientNodes = null;
-      this.birdTimer = 0;
-      this.litCount = 0;
-    }
+  constructor() {
+    this.ctx = null;
+    this.master = null;
+    this.enabled = true;
+    this.visible = true;
+    this.ambientWanted = false;
+    this.ambientNodes = null;
+    this.birdTimer = 4;
+    this._activation = null;
+    this._pending = [];
+    this._transients = new Set();
+  }
 
-    ensure() {
-      if (this.ctx) {
-        if (this.ctx.state === 'suspended') this.ctx.resume();
-        return true;
-      }
-      const g = typeof globalThis !== 'undefined' ? globalThis : window;
-      const AC = g.AudioContext || g.webkitAudioContext;
-      if (!AC) return false;
-      try {
-        this.ctx = new AC();
+  ensure() {
+    return !!(this.enabled && this.visible && this.ctx?.state === 'running' && this.master);
+  }
+
+  activate(event) {
+    if (!event?.isTrusted || !ACTIVATION_EVENTS.has(event.type) || !this.enabled || !this.visible) return Promise.resolve(false);
+    // Touch pointerdown may precede browser activation; pointerup/click retries.
+    if (globalThis.navigator?.userActivation?.isActive === false) return Promise.resolve(false);
+    if (this._activation) return this._activation;
+    try {
+      if (!this.ctx || this.ctx.state === 'closed') {
+        this._stopAmbientNodes(); this._stopTransients();
+        const Context = globalThis.AudioContext || globalThis.webkitAudioContext;
+        if (!Context) return Promise.resolve(false);
+        this.ctx = new Context();
         this.master = this.ctx.createGain();
-        this.master.gain.value = this.enabled ? 0.5 : 0;
         this.master.connect(this.ctx.destination);
+        this._applyGain();
+      }
+      if (this.ctx.state === 'running') {
+        this._startAmbientNodes();
+        return Promise.resolve(true);
+      }
+      // Call resume synchronously while the activation event is on the stack.
+      const resumed = this.ctx.resume();
+      this._activation = Promise.resolve(resumed).then(() => {
+        if (!this.ensure()) { this._pending.length = 0; return false; }
+        this._applyGain();
+        this._startAmbientNodes();
+        const pending = this._pending.splice(0);
+        for (const item of pending) if (Date.now() - item.at < 500) item.play();
         return true;
-      } catch (e) {
-        void e;
-        return false;
+      }).catch(() => { this._pending.length = 0; return false; })
+        .finally(() => { this._activation = null; });
+      return this._activation;
+    } catch {
+      this._pending.length = 0;
+      return Promise.resolve(false);
+    }
+  }
+
+  _applyGain() {
+    if (this.master) this.master.gain.value = this.enabled && this.visible ? 0.62 : 0;
+  }
+
+  setEnabled(on) {
+    this.enabled = !!on;
+    this._applyGain();
+    if (!this.enabled) { this._pending.length = 0; this._stopAmbientNodes(); this._stopTransients(); }
+    else this._startAmbientNodes();
+  }
+
+  setPageVisible(visible) {
+    this.visible = !!visible;
+    this._applyGain();
+    if (!this.visible) {
+      this._pending.length = 0;
+      this._stopAmbientNodes(); this._stopTransients();
+      if (this.ctx?.state === 'running') {
+        try { Promise.resolve(this.ctx.suspend()).catch(() => {}); } catch { /* optional audio */ }
       }
-    }
+    } else this._startAmbientNodes();
+  }
 
-    setEnabled(on) {
-      this.enabled = on;
-      if (this.master) this.master.gain.value = on ? 0.5 : 0;
-    }
+  _play(callback) {
+    if (!this.enabled || !this.visible) return;
+    if (this.ensure()) callback();
+    else if (this._activation && this._pending.length < 24) this._pending.push({ at: Date.now(), play: callback });
+  }
 
-    tone(freq, dur, type, vol, when, glideTo) {
-      if (!this.ensure()) return;
-      const t = this.ctx.currentTime + (when || 0);
-      const osc = this.ctx.createOscillator();
-      const gain = this.ctx.createGain();
-      osc.type = type || 'sine';
-      osc.frequency.setValueAtTime(freq, t);
-      if (glideTo) osc.frequency.exponentialRampToValueAtTime(glideTo, t + dur);
-      gain.gain.setValueAtTime(0, t);
-      gain.gain.linearRampToValueAtTime(vol || 0.2, t + 0.012);
-      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      osc.connect(gain).connect(this.master);
-      osc.start(t);
-      osc.stop(t + dur + 0.05);
-    }
+  _track(source, nodes) {
+    const item = { source, nodes };
+    this._transients.add(item);
+    source.onended = () => {
+      for (const node of nodes) { try { node.disconnect(); } catch { /* already released */ } }
+      this._transients.delete(item);
+    };
+  }
 
-    noise(dur, vol, freqFrom, freqTo) {
-      if (!this.ensure()) return;
-      const t = this.ctx.currentTime;
-      const len = Math.floor(this.ctx.sampleRate * dur);
-      const buf = this.ctx.createBuffer(1, len, this.ctx.sampleRate);
-      const data = buf.getChannelData(0);
-      for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
-      const src = this.ctx.createBufferSource();
-      src.buffer = buf;
-      const filt = this.ctx.createBiquadFilter();
-      filt.type = 'bandpass';
-      filt.frequency.setValueAtTime(freqFrom, t);
-      filt.frequency.exponentialRampToValueAtTime(freqTo, t + dur);
-      const gain = this.ctx.createGain();
-      gain.gain.setValueAtTime(vol, t);
-      gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-      src.connect(filt).connect(gain).connect(this.master);
-      src.start(t);
+  _stopTransients() {
+    for (const item of this._transients) {
+      try { item.source.stop(); } catch { /* already ended */ }
+      for (const node of item.nodes) { try { node.disconnect(); } catch { /* already released */ } }
     }
+    this._transients.clear();
+  }
 
-    rotate() { this.tone(340, 0.09, 'triangle', 0.16, 0, 240); this.noise(0.05, 0.08, 1800, 600); }
-    deny() { this.tone(140, 0.14, 'square', 0.1); }
-    portal() { this.noise(0.3, 0.14, 300, 1600); }
-    light(index) {
-      const scale = [523.25, 587.33, 659.25, 783.99, 880];
-      const base = scale[Math.min(index, scale.length - 1)];
-      this.tone(base, 0.5, 'sine', 0.22);
-      this.tone(base * 2, 0.35, 'sine', 0.07, 0.02);
-      this.tone(base * 1.5, 0.4, 'triangle', 0.05, 0.04);
-    }
-    win() {
-      const notes = [523.25, 659.25, 783.99, 1046.5];
-      notes.forEach((n, i) => this.tone(n, 0.55, 'sine', 0.2, i * 0.13));
-      this.tone(261.63, 1.6, 'triangle', 0.1, 0.1);
-      this.tone(392, 1.6, 'triangle', 0.08, 0.15);
-      this.noise(0.5, 0.05, 2000, 4000);
-    }
-    click() { this.tone(520, 0.05, 'square', 0.06); }
+  tone(freq, duration, type = 'sine', volume = 0.18, delay = 0, glideTo) {
+    this._play(() => {
+      const ctx = this.ctx, time = ctx.currentTime + delay;
+      const oscillator = ctx.createOscillator(), gain = ctx.createGain();
+      oscillator.type = type;
+      oscillator.frequency.setValueAtTime(freq, time);
+      if (glideTo) oscillator.frequency.exponentialRampToValueAtTime(glideTo, time + duration);
+      gain.gain.setValueAtTime(0, time);
+      gain.gain.linearRampToValueAtTime(volume, time + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+      oscillator.connect(gain).connect(this.master);
+      this._track(oscillator, [oscillator, gain]);
+      oscillator.start(time); oscillator.stop(time + duration + 0.025);
+    });
+  }
 
-    startAmbient() {
-      if (!this.ensure() || this.ambientNodes) return;
-      const ctx = this.ctx;
-      const gain = ctx.createGain();
-      gain.gain.value = 0.05;
-      const filt = ctx.createBiquadFilter();
-      filt.type = 'lowpass';
-      filt.frequency.value = 320;
-      const o1 = ctx.createOscillator();
-      o1.type = 'triangle'; o1.frequency.value = 98;
-      const o2 = ctx.createOscillator();
-      o2.type = 'triangle'; o2.frequency.value = 98.7;
-      o1.connect(filt); o2.connect(filt);
-      filt.connect(gain).connect(this.master);
-      o1.start(); o2.start();
+  noise(duration, volume, from, to) {
+    this._play(() => {
+      const ctx = this.ctx, time = ctx.currentTime;
+      const source = ctx.createBufferSource(), filter = ctx.createBiquadFilter(), gain = ctx.createGain();
+      const buffer = ctx.createBuffer(1, Math.ceil(ctx.sampleRate * duration), ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+      source.buffer = buffer;
+      filter.type = 'bandpass'; filter.frequency.setValueAtTime(from, time);
+      filter.frequency.exponentialRampToValueAtTime(to, time + duration);
+      gain.gain.setValueAtTime(volume, time); gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+      source.connect(filter).connect(gain).connect(this.master);
+      this._track(source, [source, filter, gain]);
+      source.start(time); source.stop(time + duration);
+    });
+  }
 
-      const nlen = ctx.sampleRate * 2;
-      const nbuf = ctx.createBuffer(1, nlen, ctx.sampleRate);
-      const nd = nbuf.getChannelData(0);
-      let lastv = 0;
-      for (let i = 0; i < nlen; i++) {
-        lastv = lastv * 0.97 + Math.random() * 0.06;
-        nd[i] = lastv * 2 - 0.5;
-      }
-      const windSrc = ctx.createBufferSource();
-      windSrc.buffer = nbuf; windSrc.loop = true;
-      const windGain = ctx.createGain();
-      windGain.gain.value = 0.03;
-      const lfo = ctx.createOscillator();
-      lfo.frequency.value = 0.13;
-      const lfoGain = ctx.createGain();
-      lfoGain.gain.value = 0.02;
-      lfo.connect(lfoGain).connect(windGain.gain);
-      windSrc.connect(windGain).connect(this.master);
-      windSrc.start(); lfo.start();
-      this.ambientNodes = { gain, o1, o2, windSrc, lfo };
-    }
+  click() { this.tone(620, 0.09, 'triangle', 0.12, 0, 510); }
+  rotate() { this.tone(370, 0.14, 'sine', 0.24, 0, 493); this.noise(0.07, 0.045, 1250, 720); }
+  deny() { this.tone(185, 0.18, 'triangle', 0.16, 0, 155); }
+  portal() { this.tone(220, 0.4, 'sine', 0.13, 0, 660); this.noise(0.25, 0.035, 420, 1400); }
+  light(index) {
+    const notes = [294, 392, 440, 587, 660];
+    const base = notes[Math.max(0, Math.min(notes.length - 1, Math.floor(index)))];
+    this.tone(base, 0.55, 'sine', 0.22);
+    this.tone(base * 2, 0.32, 'sine', 0.055, 0.035);
+  }
+  win() {
+    [392, 588, 784].forEach((frequency, i) => this.tone(frequency, 0.8, 'sine', 0.13, i * 0.17));
+    this.tone(196, 1.3, 'triangle', 0.055, 0.05);
+  }
 
-    stopAmbient() {
-      if (!this.ambientNodes) return;
-      try {
-        this.ambientNodes.o1.stop();
-        this.ambientNodes.o2.stop();
-        this.ambientNodes.windSrc.stop();
-        this.ambientNodes.lfo.stop();
-      } catch (e) { void e; }
-      this.ambientNodes = null;
-    }
+  startAmbient() { this.ambientWanted = true; this._startAmbientNodes(); }
 
-    maybeBird(dt, anyLit) {
-      if (!anyLit || !this.enabled || !this.ctx) return;
-      this.birdTimer -= dt;
-      if (this.birdTimer <= 0) {
-        this.birdTimer = 6 + Math.random() * 9;
-        const f = 1400 + Math.random() * 900;
-        this.tone(f, 0.12, 'sine', 0.06, 0, f * 1.3);
-        this.tone(f * 1.1, 0.1, 'sine', 0.05, 0.18, f * 0.8);
-      }
-    }
+  _startAmbientNodes() {
+    if (!this.ambientWanted || this.ambientNodes || !this.ensure()) return;
+    const ctx = this.ctx, gain = ctx.createGain(), filter = ctx.createBiquadFilter();
+    gain.gain.value = 0.065;
+    filter.type = 'lowpass'; filter.frequency.value = 620;
+    const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+    o1.type = 'sine'; o1.frequency.value = 196;
+    o2.type = 'triangle'; o2.frequency.value = 294.6;
+    o1.connect(filter); o2.connect(filter); filter.connect(gain).connect(this.master);
+    o1.start(); o2.start();
+    this.ambientNodes = { o1, o2, gain, filter, sources: [o1, o2], nodes: [o1, o2, gain, filter] };
+  }
+
+  _stopAmbientNodes() {
+    if (!this.ambientNodes) return;
+    for (const node of this.ambientNodes.sources) { try { node.stop(); } catch { /* already stopped */ } }
+    for (const node of this.ambientNodes.nodes) { try { node.disconnect(); } catch { /* already released */ } }
+    this.ambientNodes = null;
+  }
+
+  stopAmbient() { this.ambientWanted = false; this._stopAmbientNodes(); }
+
+  maybeBird(dt, anyLit) {
+    if (!anyLit || !this.ensure() || !this.ambientWanted) return;
+    this.birdTimer -= dt;
+    if (this.birdTimer > 0) return;
+    this.birdTimer = 8 + Math.random() * 7;
+    const frequency = 1300 + Math.random() * 450;
+    this.tone(frequency, 0.13, 'sine', 0.028, 0, frequency * 1.15);
+    this.tone(frequency * 1.1, 0.16, 'sine', 0.021, 0.2, frequency * 0.9);
+  }
 }

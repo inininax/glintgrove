@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "assets": {
+    "crystal.b": {
+      "source": "art/renders/sprites/crystal-b-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "crystal.g": {
+      "source": "art/renders/sprites/crystal-g-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "crystal.r": {
+      "source": "art/renders/sprites/crystal-r-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "depths": {
+      "source": "art/source/procedural/depths-v2.png",
+      "kind": "background"
+    },
+    "emitter": {
+      "source": "art/renders/sprites/emitter-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "flower.awake": {
+      "source": "art/renders/sprites/flower-awake-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "flower.dormant": {
+      "source": "art/renders/sprites/flower-dormant-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "forest": {
+      "source": "art/source/procedural/forest-v2.png",
+      "kind": "background"
+    },
+    "garden": {
+      "source": "art/source/procedural/garden-v2.png",
+      "kind": "background"
+    },
+    "gate.b": {
+      "source": "art/renders/sprites/gate-b-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "gate.g": {
+      "source": "art/renders/sprites/gate-g-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "gate.r": {
+      "source": "art/renders/sprites/gate-r-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "heart": {
+      "source": "art/source/procedural/heart-v2.png",
+      "kind": "background"
+    },
+    "mirror": {
+      "source": "art/renders/sprites/mirror-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "mushroom.awake": {
+      "source": "art/renders/sprites/mushroom-awake-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "mushroom.dormant": {
+      "source": "art/renders/sprites/mushroom-dormant-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "owl.awake": {
+      "source": "art/renders/sprites/owl-awake-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "owl.dormant": {
+      "source": "art/renders/sprites/owl-dormant-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "portal.gold": {
+      "source": "art/renders/sprites/portal-gold-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "portal.violet": {
+      "source": "art/renders/sprites/portal-violet-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "rock": {
+      "source": "art/renders/sprites/rock-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "rock.alt": {
+      "source": "art/renders/sprites/rock-alt-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "splitter": {
+      "source": "art/renders/sprites/splitter-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "tree.awake": {
+      "source": "art/renders/sprites/tree-awake-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "tree.dormant": {
+      "source": "art/renders/sprites/tree-dormant-v1.png",
+      "kind": "sprite",
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    }
+  }
+}

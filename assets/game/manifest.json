@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "revision": "nocturne-15c0715bc5ac",
+  "assets": {
+    "crystal.b": {
+      "src": "sprites/crystal-b-v1-d4f7feea1455.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "crystal.g": {
+      "src": "sprites/crystal-g-v1-9dda05f4465b.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "crystal.r": {
+      "src": "sprites/crystal-r-v1-982f1d4ceecf.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "depths": {
+      "src": "backgrounds/depths-v1-43edb8a368f2.webp",
+      "width": 1536,
+      "height": 1024,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1
+    },
+    "emitter": {
+      "src": "sprites/emitter-v1-08b94cf5b6d8.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "flower.awake": {
+      "src": "sprites/flower-awake-v1-6c5dc174bd75.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "flower.dormant": {
+      "src": "sprites/flower-dormant-v1-8a29750a727d.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "forest": {
+      "src": "backgrounds/forest-v1-2d6f0d6fde9e.webp",
+      "width": 1536,
+      "height": 1024,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1
+    },
+    "garden": {
+      "src": "backgrounds/garden-v1-a06acefc42a0.webp",
+      "width": 1536,
+      "height": 1024,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1
+    },
+    "gate.b": {
+      "src": "sprites/gate-b-v1-84b7686ddbf9.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "gate.g": {
+      "src": "sprites/gate-g-v1-d0db52bbbd49.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "gate.r": {
+      "src": "sprites/gate-r-v1-23e0f971ffec.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "heart": {
+      "src": "backgrounds/heart-v1-b69be5617b9e.webp",
+      "width": 1536,
+      "height": 1024,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1
+    },
+    "mirror": {
+      "src": "sprites/mirror-v1-ad4a7c31891c.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "mushroom.awake": {
+      "src": "sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "mushroom.dormant": {
+      "src": "sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "owl.awake": {
+      "src": "sprites/owl-awake-v1-cf707d630ce9.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "owl.dormant": {
+      "src": "sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "portal.gold": {
+      "src": "sprites/portal-gold-v1-3ef23c926f42.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "portal.violet": {
+      "src": "sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "rock": {
+      "src": "sprites/rock-v1-c0530e24a807.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "rock.alt": {
+      "src": "sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "splitter": {
+      "src": "sprites/splitter-v1-fa76287daa4b.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.1
+    },
+    "tree.awake": {
+      "src": "sprites/tree-awake-v1-87948c6479fa.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    },
+    "tree.dormant": {
+      "src": "sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "width": 384,
+      "height": 384,
+      "anchor": [
+        0.5,
+        0.5
+      ],
+      "scale": 1.12
+    }
+  }
+}

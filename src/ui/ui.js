@@ -2,6 +2,7 @@ import { CHAPTERS, LEVELS } from '../data/levels.js';
 import { totalStars } from '../state/saveStore.js';
 import { t, LEVEL_NAMES_EN } from './strings.js';
 import { ACHIEVEMENTS } from '../services/achievements.js';
+import { symbolSvg, ratingSvg } from './symbols.js';
 
 function el(id) {
   return document.getElementById(id);
@@ -18,7 +19,24 @@ export class UI {
   constructor(game, hooks) {
     this.game = game;
     this.hooks = hooks;
-    this.currentScreen = 'title';
+    this.currentScreen = 'screen-title';
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const modalId = this.anyModalOpen();
+      if (!modalId) return;
+      const focusable = [...el(modalId).querySelectorAll('button, input, select, [tabindex="0"]')]
+        .filter(node => !node.disabled && node.getClientRects().length);
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !el(modalId).contains(document.activeElement))) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (document.activeElement === last || !el(modalId).contains(document.activeElement))) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
   }
 
   showTutorial(step) {
@@ -35,7 +53,7 @@ export class UI {
       pointer.className = 'tut-pointer';
       pointer.style.left = `${cx}px`;
       pointer.style.top = `${cy}px`;
-      pointer.innerHTML = `<div class="tut-ring"></div><span>👆</span><em>${t('tutPointer')}</em>`;
+      pointer.innerHTML = `<div class="tut-ring" aria-hidden="true"></div>${symbolSvg('pointer')}<em>${t('tutPointer')}</em>`;
       layer.appendChild(pointer);
       this._pointerEl = pointer;
       return;
@@ -45,7 +63,7 @@ export class UI {
       const card = document.createElement('div');
       card.className = 'modal panel tut-card';
       card.innerHTML = `
-        <div class="tut-art">${step.art}</div>
+        <div class="tut-art">${symbolSvg(step.levelId === 6 ? 'splitter' : step.levelId === 17 ? 'color' : 'portal')}</div>
         <h3>${t(step.titleKey)}</h3>
         <p>${t(step.bodyKey)}</p>
         <button id="btn-tut-ok" class="btn primary">${t('tutGotIt')}</button>`;
@@ -75,6 +93,7 @@ export class UI {
 
   show(name) {
     this.currentScreen = name;
+    if (document.body) document.body.dataset.screen = name.replace('screen-', '');
     for (const s of ['screen-title', 'screen-levels', 'screen-game']) {
       el(s).classList.toggle('hidden', s !== name);
     }
@@ -101,7 +120,7 @@ export class UI {
       const chName = lang === 'en' ? (ch.nameEn || ch.name) : ch.name;
       const chDesc = lang === 'en' ? (ch.descEn || ch.desc) : ch.desc;
       const head = document.createElement('header');
-      head.innerHTML = `<h3>${chName}</h3><span class="chapter-desc">${chDesc}</span><span class="chapter-progress">${done}/${lvls.length}</span>`;
+      head.innerHTML = `<span class="chapter-number" aria-hidden="true">${String(ch.id).padStart(2, '0')}</span><div class="chapter-name"><h3>${chName}</h3><span class="chapter-desc">${chDesc}</span></div><span class="chapter-progress">${String(done).padStart(2, '0')} / ${String(lvls.length).padStart(2, '0')}<span class="chapter-progress-label">${t('chapterClearedLabel')}</span></span>`;
       sec.appendChild(head);
       const grid = document.createElement('div');
       grid.className = 'level-grid';
@@ -111,6 +130,7 @@ export class UI {
         const node = document.createElement('button');
         const diff = this.hooks.difficultyOf(l);
         node.className = 'level-node' + (unlocked ? '' : ' locked') + (stars > 0 ? ' done' : '') + ` diff-${diff}`;
+        if (unlocked && l.id === Math.min(data.unlocked, LEVELS.length)) node.className += ' current';
         node.disabled = !unlocked;
         const DIFF_LABELS = {
           ko: { easy: '쉬움', normal: '보통', hard: '어려움', extreme: '매우 어려움' },
@@ -118,9 +138,9 @@ export class UI {
         };
         const diffLabel = (DIFF_LABELS[lang] || DIFF_LABELS.ko)[diff] || '';
         node.innerHTML = unlocked
-          ? `<span class="lv-num">${l.id}</span><span class="lv-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</span><span class="lv-diff d-${diff}">${diffLabel}</span>`
-          : '<span class="lv-num">🔒</span>';
-        node.setAttribute('aria-label', `Level ${l.id}`);
+          ? `<span class="lv-num">${String(l.id).padStart(2, '0')}</span><span class="lv-stars${stars ? '' : ' empty'}" aria-hidden="true">${ratingSvg(stars)}</span><span class="lv-diff d-${diff}">${diffLabel}</span>`
+          : `<span class="lv-num">${String(l.id).padStart(2, '0')}</span>${symbolSvg('lock', 'lv-lock')}`;
+        node.setAttribute('aria-label', `${t('levelAria', { number: l.id, name: levelName(l, lang) })} · ${unlocked ? `${diffLabel} · ${t('starsAria', { stars })}` : t('lockedLabel')}`);
         if (unlocked) {
           node.addEventListener('click', () => this.hooks.onPlay(l.id));
         }
@@ -133,7 +153,14 @@ export class UI {
   }
 
   setHud(def, moves, par, labelOverride) {
-    el('hud-level-name').textContent = labelOverride || `${def.id}. ${def.name}`;
+    el('hud-level-name').textContent = labelOverride || `${String(def.id).padStart(2, '0')} · ${levelName(def, this.hooks.lang())}`;
+    const chapter = CHAPTERS.find(item => item.id === def.chapter);
+    const chapterEl = el('hud-chapter');
+    if (chapterEl) {
+      chapterEl.textContent = chapter
+        ? t('chapterLabel', { number: String(chapter.id).padStart(2, '0'), name: this.hooks.lang() === 'en' ? chapter.nameEn || chapter.name : chapter.name })
+        : t('groveLabel');
+    }
     const moveEl = el('hud-moves');
     moveEl.textContent = `${t('moves')} ${moves} / ${t('goal')} ${par}`;
     moveEl.classList.toggle('over', moves > par);
@@ -153,17 +180,17 @@ export class UI {
     const hint = this.hooks.lang() === 'en'
       ? (level.hintEn || level.hint)
       : (level.hint || level.hintEn);
-    if (hint) this.toast(`💡 ${hint}`, 3600);
+    if (hint) this.toast(hint, 3600);
   }
 
   showWin(moves, par, stars, daily) {
-    this.focusPrimary('btn-next');
     el('win-overlay').classList.remove('hidden');
     el('win-title').textContent = daily ? t('dailyWinTitle') : t('winTitle');
     el('win-stats').textContent = daily
       ? `${daily.date} · ${t('moves')} ${moves} / ${par}`
       : `${t('moves')} ${moves} · ${t('goal')} ${par}`;
 
+    el('win-stars').setAttribute('aria-label', t('starsAria', { stars }));
     const starEls = el('win-stars').children;
     for (let i = 0; i < 3; i++) {
       starEls[i].classList.remove('on', 'pop');
@@ -179,6 +206,7 @@ export class UI {
     nextBtn.style.display = hasNext ? '' : 'none';
     if (hasNext) nextBtn.textContent = t('nextLevel');
     el('btn-share').style.display = '';
+    this.focusPrimary(hasNext ? 'btn-next' : 'btn-share');
   }
 
   hideWin() {
@@ -209,6 +237,8 @@ export class UI {
     el('set-lang').value = data.lang || 'auto';
     const skinSelect = el('set-skin');
     if (skinSelect) skinSelect.value = data.skin || 'classic';
+    const displaySelect = el('set-display');
+    if (displaySelect) displaySelect.value = data.displayMode || 'sculpted';
   }
 
   closeSettings() {
@@ -222,19 +252,22 @@ export class UI {
       motion: el('set-motion').checked,
       colorblind: el('set-colorblind').checked,
       lang: el('set-lang').value,
-      skin: (el('set-skin') && el('set-skin').value) || 'classic'
+      skin: (el('set-skin') && el('set-skin').value) || 'classic',
+      displayMode: el('set-display')?.value === 'simple' ? 'simple' : 'sculpted'
     });
   }
 
   showIntro() {
     if (this.hooks.getSave().seenIntro) return false;
     el('intro-modal').classList.remove('hidden');
+    this.focusPrimary('btn-intro-ok');
     return true;
   }
 
   closeIntro() {
     el('intro-modal').classList.add('hidden');
     this.hooks.markIntroSeen();
+    this.restoreFocus();
   }
 
   renderAchievements() {
@@ -250,14 +283,16 @@ export class UI {
       const desc = this.hooks.lang() === 'en' ? a.descEn : a.desc;
       const item = document.createElement('div');
       item.className = 'ach-item' + (has ? ' on' : '');
-      item.innerHTML = `<span class="ach-icon">${a.icon}</span><div><b>${name}</b><p>${desc}</p></div><time>${has ? (data.ach[a.id] || '').slice(0, 10) : ''}</time>`;
+      item.innerHTML = `<span class="ach-icon">${symbolSvg(a.id)}</span><div><b>${name}</b><p>${desc}</p></div><time>${has ? (data.ach[a.id] || '').slice(0, 10) : ''}</time>`;
       list.appendChild(item);
     }
     el('ach-progress').textContent = `${earned}/${ACHIEVEMENTS.length}`;
     el('ach-modal').classList.remove('hidden');
+    this.focusPrimary('btn-close-ach');
   }
 
   closeAchievements() {
     el('ach-modal').classList.add('hidden');
+    this.restoreFocus();
   }
 }

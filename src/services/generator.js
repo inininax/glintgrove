@@ -1,630 +1,256 @@
-import { parseLevel } from '../sim/parser.js';
-import { solve, applyOrients, restoreInitial, isLevelSolved } from '../sim/index.js';
 import { mulberry32, xmur3 } from '../core/math.js';
+import { parseLevel } from '../sim/parser.js';
+import { solve, applyOrients, isLevelSolved } from '../sim/solver.js';
 
-const TARGET_KINDS = ['T', 'f', 'M', 'O'];
-
-function pick(rng, arr) {
-  return arr[Math.floor(rng() * arr.length)];
-}
-
-function clampY(y, h) {
-  return Math.max(0, Math.min(h - 1, y));
-}
-
-function buildGrid(w, h, cells) {
-  const g = Array.from({ length: h }, () => new Array(w).fill('.'));
-  for (const [x, y, ch] of cells) {
-    if (x < 0 || y < 0 || x >= w || y >= h) return null;
-    if (g[y][x] !== '.') return null;
-    g[y][x] = ch;
+// Authored 2026-09-13. Routes are constructed from an empty board; no previous
+// level layouts, transformed templates, external grids or artwork are inputs.
+export const LEVEL_REMAKE_SEED = 'ilyndrel-rainpaths-2026-09-13-v1';
+const DX = [0, 1, 0, -1], DY = [-1, 0, 1, 0];
+const key = (x, y) => `${x},${y}`;
+const pick = (rng, items) => items[Math.floor(rng() * items.length)];
+const integer = (rng, lo, hi) => lo + Math.floor(rng() * (hi - lo + 1));
+const turnOrient = (incoming, outgoing) => [1, 0, 3, 2][incoming] === outgoing ? 0 : 1;
+function shuffle(rng, items) {
+  const out = [...items];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = integer(rng, 0, i); [out[i], out[j]] = [out[j], out[i]];
   }
-  return g.map(row => row.join(''));
+  return out;
 }
 
-function extendEntry(built, extraPairs, rng) {
-  const cells = built.cells.map(c => c.slice());
-  const eIdx = cells.findIndex(c => '><^v'.includes(c[2]));
-  if (eIdx < 0) return null;
-  const [ex, ey] = cells[eIdx];
-  cells.splice(eIdx, 1);
-
-  const dx = extraPairs * 3 + ex;
-  for (const c of cells) c[0] += dx;
-
-  let y = ey;
-  const laneCells = [[1, y, '>']];
-  let col = 3;
-  for (let i = 0; i < extraPairs; i++) {
-    const down = i % 2 === 1;
-    const m = down ? '\\' : '/';
-    const y2 = down ? y + 2 : y - 2;
-    if (y2 < 0) return null;
-    laneCells.push([col, y, m]);
-    laneCells.push([col, y2, m]);
-    y = y2;
-    col += 3;
-  }
-
-  const dy = -Math.min(0, ...laneCells.map(c => c[1]), ...cells.map(c => c[1]));
-  for (const c of laneCells) c[1] += dy;
-  for (const c of cells) c[1] += dy;
-
-  const all = cells.concat(laneCells);
-  const newW = Math.max(...all.map(c => c[0])) + 2;
-  const newH = Math.max(...all.map(c => c[1])) + 2;
-  const grid = buildGrid(newW, newH, all);
-  if (!grid) return null;
-  return { cells: all, w: newW, h: newH };
-}
-
-function zigzag(rng, w, h, n) {
-  const maxN = w - 4;
-  n = Math.min(n, maxN);
-  if (n < 2) return null;
-  const cells = [];
-  let x = 1;
-  let y = clampY(2 + Math.floor(rng() * (h - 4)), h);
-  cells.push([1, y, '>']);
-  let vert = rng() < 0.5 ? -1 : 1;
-  for (let i = 0; i < n; i++) {
-    const step = 1 + Math.floor(rng() * 2);
-    let ny = clampY(y + vert * step, h);
-    if (ny === y) {
-      vert = -vert;
-      ny = clampY(y + vert * step, h);
-      if (ny === y) return null;
-    }
-    cells.push([x, ny, '/']);
-    x += 1 + Math.floor(rng() * 2);
-    if (x > w - 2) return null;
-    cells.push([x, ny, '/']);
-    y = ny;
-    vert = -vert;
-  }
-  const ty = clampY(y + vert * (1 + Math.floor(rng() * 2)), h);
-  cells.push([x, ty, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function twins(rng, w, h, n) {
-  const maxN = Math.floor((w - 5) / 2) + 2;
-  n = Math.min(n, maxN);
-  if (n < 2) return null;
-  const cells = [];
-  const y0 = Math.floor(h / 2);
-  cells.push([1, y0, '>']);
-  const sx = 3;
-  cells.push([sx, y0, 's']);
-  const ty = rng() < 0.5 ? clampY(y0 - 3, h) : clampY(y0 + 3, h);
-  if (ty === y0) return null;
-  cells.push([sx, ty, pick(rng, TARGET_KINDS)]);
-
-  let x = sx + 1;
-  let y = y0;
-  let vert = rng() < 0.5 ? -1 : 1;
-  for (let i = 0; i < n; i++) {
-    const step = 1 + Math.floor(rng() * 2);
-    let ny = clampY(y + vert * step, h);
-    if (ny === y) {
-      vert = -vert;
-      ny = clampY(y + vert * step, h);
-    }
-    cells.push([x, ny, '/']);
-    x += 1 + Math.floor(rng() * 2);
-    if (x > w - 2) return null;
-    cells.push([x, ny, '/']);
-    y = ny;
-    vert = -vert;
-  }
-  const t2x = x;
-  const t2y = clampY(y + vert * 2, h);
-  cells.push([t2x, t2y, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function cascade(rng, w, h, n) {
-  const maxS = Math.min(3, Math.floor((w - 6) / 2));
-  const splitCount = Math.min(n - 1, maxS);
-  if (splitCount < 2) return null;
-  const cells = [];
-  const y0 = Math.floor(h / 2);
-  cells.push([1, y0, '>']);
-  let x = 3;
-  const lanes = [];
-  for (let i = 0; i < splitCount; i++) {
-    cells.push([x, y0, 's']);
-    const ly = clampY(y0 - 3, h);
-    if (ly === y0) return null;
-    lanes.push([x, ly]);
-    x += 2;
-  }
-  for (const [lx, ly] of lanes) {
-    cells.push([lx, ly, pick(rng, TARGET_KINDS)]);
-  }
-  cells.push([x, y0, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function portalBox(rng, w, h, n) {
-  if (w < 12 || h < 8) return null;
-  const bx = w - 5;
-  const by = 2;
-  const bh = Math.min(6, h - 3);
-  if (bh < 4) return null;
-  const maxN = bx - 3;
-  n = Math.min(n, maxN);
-  if (n < 3) return null;
-
-  const cells = [];
-  for (let x = bx; x < bx + 4; x++) {
-    cells.push([x, by, '#']);
-    cells.push([x, by + bh - 1, '#']);
-  }
-  for (let y = by; y < by + bh; y++) {
-    cells.push([bx, y, '#']);
-    cells.push([bx + 3, y, '#']);
-  }
-  cells.push([bx + 2, by, 'Q']);
-  cells.push([bx + 2, by + 2, pick(rng, TARGET_KINDS)]);
-  cells.push([bx + 1, by + bh - 2, pick(rng, TARGET_KINDS)]);
-  cells.push([bx + 2, 1, 'P']);
-
-  cells.push([1, 1, '>']);
-  let x = 3;
-  let row = 1;
-  let placed = 0;
-  while (placed < n - 1 && x < bx - 2) {
-    cells.push([x, 1, '/']);
-    cells.push([x, 0, '/']);
-    placed++;
-    x += 1 + Math.floor(rng() * 2);
-    if (x >= bx - 2) break;
-    cells.push([x, 0, '\\']);
-    cells.push([x, 1, '\\']);
-    placed++;
-    x += 1 + Math.floor(rng() * 2);
-  }
-  cells.push([bx + 2, 1, '\\']);
-
-  const sy = by + bh + 1 <= h - 2 ? by + bh + 1 : by - 2;
-  if (sy < 0 || sy > h - 1 || sy === by) return null;
-  cells.push([3, sy, 's']);
-  const ty2 = sy + 2 <= h - 1 ? sy + 2 : sy - 2;
-  cells.push([3, ty2, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function gateRun(rng, w, h) {
-  if (w < 12) return null;
-  const cells = [];
-  const y0 = Math.floor(h / 2);
-  cells.push([1, y0, '>']);
-  const gates = ['A', 'B', 'C'];
-  const cries = ['r', 'g', 'b'];
-  const pairs = Math.min(3, Math.floor((w - 5) / 3));
-  if (pairs < 2) return null;
-  let x = 3;
-  for (let i = 0; i < pairs; i++) {
-    cells.push([x, y0, cries[i]]);
-    cells.push([x + 2, y0, gates[i]]);
-    x += 3;
-  }
-  cells.push([Math.min(x, w - 2), y0, pick(rng, TARGET_KINDS)]);
-
-  const maY = clampY(y0 - 3, h);
-  if (maY === y0) return null;
-  cells.push([3, y0, 's']);
-  cells.push([3, maY, '\\']);
-  cells.push([1, maY, pick(rng, TARGET_KINDS)]);
-
-  const s2x = 8;
-  const mbY = clampY(y0 + 2, h);
-  if (mbY === y0) return null;
-  cells.push([s2x, y0, 's']);
-  cells.push([s2x, mbY, '/']);
-  cells.push([Math.min(w - 2, s2x + 2), mbY, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function spiral(rng, w, h) {
-  if (w < 11 || h < 8) return null;
-  const cells = [];
-  const mid = Math.floor(h / 2);
-  cells.push([1, 1, '>']);
-  cells.push([w - 2, 1, '/']);
-  cells.push([w - 2, h - 2, '/']);
-  cells.push([1, h - 2, '/']);
-  cells.push([1, mid, '\\']);
-  const sx = 4 + Math.floor(rng() * 2);
-  cells.push([sx, mid, 's']);
-  cells.push([sx, clampY(mid + 2, h), pick(rng, TARGET_KINDS)]);
-  cells.push([Math.min(w - 2, sx + 4), mid, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function hub(rng, w, h) {
-  if (w < 12 || h < 8) return null;
-  const cells = [];
-  const cx = Math.floor(w / 2);
-  const cy = Math.floor(h / 2);
-  cells.push([1, cy, '>']);
-  cells.push([cx, cy, 's']);
-  cells.push([cx, 1, '/']);
-  cells.push([cx - 2, 1, pick(rng, TARGET_KINDS)]);
-  const ex = w - 3;
-  cells.push([ex, cy, 's']);
-  cells.push([ex, clampY(cy - 2, h), pick(rng, TARGET_KINDS)]);
-  cells.push([w - 2, cy, '/']);
-  cells.push([w - 2, clampY(cy + 2, h), pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-function dual(rng, w, h) {
-  if (w < 12 || h < 9) return null;
-  const cells = [];
-  const y1 = 2;
-  const y2 = h - 3;
-  const my = Math.floor(h / 2);
-  if (my <= y1 || my >= y2) return null;
-  const mx = Math.floor(w / 2);
-  cells.push([1, y1, '>']);
-  cells.push([w - 2, y2, '<']);
-  cells.push([mx, y1, '\\']);
-  cells.push([mx, my, 's']);
-  cells.push([mx, y2, '\\']);
-  cells.push([mx, my + 2, pick(rng, TARGET_KINDS)]);
-  cells.push([2, my, pick(rng, TARGET_KINDS)]);
-  cells.push([mx, 2, '\\']);
-  cells.push([3, 2, pick(rng, TARGET_KINDS)]);
-  cells.push([mx + 3, my, pick(rng, TARGET_KINDS)]);
-  return { cells, w, h };
-}
-
-
-function forcedHub(rng, w, h, targetRot) {
-  if (w < 13 || h < 9) return null;
-  const my = Math.max(2, Math.min(h - 7, 2 + Math.floor(rng() * 2)));
-  const cells = [];
-  const finals = new Map();
-  const setF = (x, y, ch, f) => {
-    cells.push([x, y, ch]);
-    finals.set(`${x},${y}`, f);
-  };
-
-  cells.push([1, my, '>']);
-
-  const put = (x, y, ch, f) => setF(x, y, ch, f);
-
-  if (targetRot <= 2) {
-    put(3, my, '\\', '\\');
-    put(3, my + 2, '\\', '\\');
-    put(5, my + 2, pick(rng, TARGET_KINDS), null);
-    return finish(cells, finals, w, h, 2);
-  }
-
-  const sCount = targetRot <= 5 ? Math.min(2, Math.floor((targetRot - 1) / 2)) : 3;
-  for (let i = 0; i < sCount; i++) {
-    const sx = 3 + 3 * i;
-    put(sx, my, 's', 's/');
-    put(sx, my - 2, '\\', '\\');
-    put(sx - 2, my - 2, pick(rng, TARGET_KINDS), null);
-  }
-  let rot = 2 * sCount + 1;
-  let lastX = 3 + 3 * (sCount - 1);
-  let bendRow = my;
-
-  if (rot < targetRot || targetRot > 7) {
-    const mdX = Math.min(w - 2, lastX + 3);
-    put(mdX, bendRow, '\\', '\\');
-    rot += 1;
-    bendRow += 2;
-    put(mdX, bendRow, 's', 'sB');
-    rot += 1;
-    if (rot < targetRot) {
-      put(mdX - 2, bendRow, '/', '/L');
-      put(mdX - 2, Math.min(h - 1, bendRow + 2), pick(rng, TARGET_KINDS), null);
-      rot += 1;
-    }
-    if (rot < targetRot) {
-      put(mdX, Math.min(h - 1, bendRow + 2), pick(rng, TARGET_KINDS), null);
-      rot += 1;
-    }
-    if (rot < targetRot) {
-      put(mdX + 2, bendRow, 's', 'sC');
-      put(mdX + 2, bendRow - 2, '\\', '\\');
-      put(mdX + 4, bendRow - 2, pick(rng, TARGET_KINDS), null);
-      rot += 2;
-    }
-  }
-
-  return finish(cells, finals, w, h, rot);
-}
-
-function finish(cells, finals, w, h, rot) {
-  const gridCells = cells.map(c => {
-    const f = finals.get(`${c[0]},${c[1]}`);
-    if (f === undefined || f === null) return c;
-    if (f === 's/' || f === 'sB' || f === 'sC') return [c[0], c[1], 's'];
-    return [c[0], c[1], f];
-  });
-  return { cells: gridCells, w, h, rotHint: rot, guaranteedPar: rot };
-}
-
-const ARCHETYPES = [
-  { fn: forcedHub, diffs: [3, 4, 5, 6, 7, 8, 9, 10, 11] },
-  { fn: zigzag, diffs: [1, 2, 3, 4, 5, 6] },
-  { fn: twins, diffs: [3, 4, 5, 6, 7] },
-  { fn: cascade, diffs: [4, 5, 6, 7] },
-  { fn: portalBox, diffs: [5, 6, 7, 8, 9] },
-  { fn: gateRun, diffs: [5, 6, 7, 8, 9] },
-  { fn: spiral, diffs: [4, 5, 6, 7] },
-  { fn: hub, diffs: [4, 5, 6, 7] },
-  { fn: dual, diffs: [6, 7] }
+const CHAPTER_NAMES = [
+  ['물방울 길', 'Droplet Paths', '작은 굽이에서 시작합니다', 'Begin with a small turn'],
+  ['갈래 수로', 'Branching Channels', '빛을 나누어 두 길을 엽니다', 'Share a beam between paths'],
+  ['물든 둔덕', 'Tinted Banks', '빛의 색을 길 끝까지 보냅니다', 'Carry a color to the end'],
+  ['건너편 연못', 'The Far Pool', '떨어진 길을 이어 봅니다', 'Join paths across a gap'],
+  ['모이는 물줄기', 'Meeting Streams', '배운 길을 함께 엮습니다', 'Combine the routes you learned'],
+  ['조약돌 여울', 'Pebble Shallows'], ['물결의 모서리', 'Edges of Ripples'],
+  ['이슬 수집가', 'Dew Collectors'], ['돌담 사이', 'Between Stone Walls'],
+  ['물빛 편지', 'Letters in Water'], ['비스듬한 비', 'Slanting Rain'],
+  ['깊은 웅덩이', 'Deep Puddles'], ['잎 끝의 무게', 'At the Leaf Tip'],
+  ['겹친 물소리', 'Overlapping Drops'], ['비가 쉬는 곳', 'Where Rain Rests'],
+  ['작은 합류점', 'Small Confluences'], ['돌아오는 물결', 'Returning Ripples'],
+  ['젖은 등성이', 'Rainlit Ridges'], ['마지막 수문', 'The Last Sluice'],
+  ['고요한 물마루', 'Quiet Waterline']
 ];
+export const CHAPTER_INFO = CHAPTER_NAMES.map(([name, nameEn, desc, descEn], index) => ({
+  id: index + 1, name, nameEn,
+  desc: desc || '굽이와 갈래를 차근차근 읽어 보세요',
+  descEn: descEn || 'Read each bend and branch in turn'
+}));
+const WORDS_KO = ['낮은', '고른', '둥근', '가느다란', '잔잔한', '포개진', '깊은', '흩어진', '맑은', '비껴난', '느린', '너른', '짧은', '이어진', '먼'];
+const WORDS_EN = ['Low', 'Even', 'Rounded', 'Slender', 'Still', 'Layered', 'Deep', 'Scattered', 'Clear', 'Oblique', 'Slow', 'Wide', 'Short', 'Joined', 'Distant'];
+const NOUNS_KO = ['낙숫물', '돌 틈', '물자국', '물매', '빗방울', '모래턱', '젖은 잎', '작은 만', '물고리', '돌계단', '잎 그늘', '샛물', '물길', '여울목', '물거울', '징검돌', '잔물결', '비의 쉼표', '모퉁이', '물가'];
+const NOUNS_EN = ['Drip', 'Stone Gap', 'Watermark', 'Slope', 'Raindrop', 'Sandbar', 'Wet Leaf', 'Small Bay', 'Water Ring', 'Stone Step', 'Leaf Shade', 'Rill', 'Waterway', 'Shallow Bend', 'Water Mirror', 'Stepping Stone', 'Ripple', 'Rain Pause', 'Corner', 'Shore'];
 
-const KO_PRE = ['잊혔던', '손끝의', '유리의', '별조각', '이슬의', '안개의', '달그림자', '새벽의', '여명의', '영겁의', '하늘빛', '물빛', '숨결의', '시간의', '별빛의'];
-const KO_NOUN = ['숲길', '강', '정원', '계곡', '회랑', '탑', '미로', '호수', '문', '정적', '속삭임', '눈빛', '서곡', '왈츠', '야상곡', '기억', '약속', '기도'];
-const EN_PRE = ['Forgotten', 'Glassy', 'Starlit', 'Misty', 'Moonlit', 'Dawning', 'Eternal', 'Skytint', 'Whispering', 'Timeless'];
-const EN_NOUN = ['Path', 'River', 'Garden', 'Vale', 'Gallery', 'Tower', 'Maze', 'Lake', 'Gate', 'Stillness', 'Nocturne', 'Waltz', 'Rhapsody', 'Vigil', 'Promise'];
-
-function difficultyBand(optimal) {
-  if (optimal <= 3) return 'easy';
-  if (optimal <= 5) return 'normal';
-  if (optimal === 6) return 'hard';
-  return 'extreme';
+function planFor(id) {
+  if (id === 300) return { turns: 5, branches: 2, branchTurns: 1, color: true, portal: true, secondEmitter: true, flips: 8 };
+  if (id <= 5) return { turns: id === 2 ? 2 : id === 5 ? 4 : 3, branches: 0, branchTurns: 0, flips: id < 3 ? 1 : id < 5 ? 2 : 3 };
+  if (id <= 16) return { turns: id === 6 ? 2 : 3 + id % 3, branches: id < 10 ? 1 : 1 + id % 2, branchTurns: id > 11 ? 1 : 0, flips: id === 6 ? 1 : id < 9 ? 2 : 3 + id % 2 };
+  if (id <= 22) return { turns: 3 + id % 2, branches: id === 17 ? 1 : 1 + id % 2, branchTurns: id > 19 ? 1 : 0, color: true, flips: id === 17 ? 2 : 3 + id % 3 };
+  if (id <= 26) return { turns: id === 23 ? 3 : 4, branches: id === 23 ? 0 : 1, branchTurns: 0, portal: true, color: id > 24, flips: id === 23 ? 2 : 3 + id % 2 };
+  if (id <= 30) return { turns: 4 + id % 2, branches: 2, branchTurns: 1, color: true, portal: true, flips: 5 + id % 2 };
+  const band = Math.floor((id - 31) / 54);
+  return { turns: 3 + (id % 3), branches: 1 + ((id + band) % 2), branchTurns: band > 0 && id % 3 !== 0 ? 1 : 0,
+    color: id % 3 !== 0, portal: id % 4 === 0 || (band > 2 && id % 4 === 1),
+    secondEmitter: id % 10 === 0, flips: Math.min(7, 2 + band + id % 3) };
 }
 
-export function bandFor(diffTarget) {
-  if (diffTarget <= 3) return { min: 2, max: 3 };
-  if (diffTarget <= 5) return { min: 4, max: 5 };
-  if (diffTarget <= 7) return { min: 6, max: 7 };
-  if (diffTarget <= 9) return { min: 7, max: 9 };
-  return { min: 8, max: 11 };
+function emptyBoard(rng, id) {
+  const w = id < 6 ? 11 : integer(rng, 13, 16);
+  const h = id < 6 ? 9 : integer(rng, 10, 13);
+  return { w, h, grid: Array.from({ length: h }, () => Array(w).fill('.')),
+    used: new Set(), turns: [], terminals: [], branches: [], portalUsed: false };
 }
-
-export function generateLevel(id, opts = {}) {
-  const band = opts.band ?? bandFor(opts.diffTarget ?? 5);
-  const minOpt = band.min;
-  const maxOpt = band.max;
-  const seedFn = xmur3(`glintgrove-l${id}`);
-  const baseSeed = seedFn();
-  const diffTarget = opts.diffTarget ?? 5;
-
-  const candidates = ARCHETYPES.filter(a => a.diffs.includes(diffTarget));
-  let pool = candidates.length ? candidates : ARCHETYPES;
-  if (band.min >= 8) {
-    const forced = pool.filter(a => a.fn === forcedHub);
-    if (forced.length) pool = forced;
-  }
-
-  const attemptMax = band.min >= 8 ? 8 : 40;
-  for (let attempt = 0; attempt < attemptMax; attempt++) {
-    const rng = mulberry32(baseSeed + attempt * 7919);
-    const arch = pool[Math.floor(rng() * pool.length)];
-
-    const w = Math.min(15, Math.max(11, 10 + Math.floor(diffTarget / 2) + Math.floor(rng() * 3)));
-    const h = Math.min(11, Math.max(8, 8 + Math.floor(rng() * 3)));
-    const rotCap = band.min >= 8 ? 9 : 13;
-    const rotCount = Math.max(minOpt + 1, Math.min(rotCap, minOpt + 1 + Math.floor(rng() * 4)));
-
-    const built = arch.fn(rng, w, h, rotCount);
-    if (!built) continue;
-
-    const isForced = arch.fn === forcedHub;
-    const baseRot = built.cells.filter(c => '/\\s'.includes(c[2])).length;
-    const extraPairs = isForced ? 0 : Math.max(0, Math.min(3, Math.floor((maxOpt - baseRot) / 2)));
-    let extended = built;
-    if (extraPairs > 0) {
-      extended = extendEntry(built, extraPairs, rng);
-      if (!extended) continue;
-    }
-
-    const cells = extended.cells.slice();
-    const grid = buildGrid(extended.w, extended.h, cells);
-    if (!grid) continue;
-
-    const taken = new Set(cells.map(c => `${c[0]},${c[1]}`));
-    const wallCount = Math.floor(rng() * 3);
-    for (let i = 0; i < wallCount; i++) {
-      const wx = 1 + Math.floor(rng() * (extended.w - 2));
-      const wy = 1 + Math.floor(rng() * (extended.h - 2));
-      if (!taken.has(`${wx},${wy}`)) {
-        taken.add(`${wx},${wy}`);
-        cells.push([wx, wy, '#']);
-      }
-    }
-
-    const finalGrid = buildGrid(extended.w, extended.h, cells);
-    if (!finalGrid) continue;
-
-    const def = {
-      id,
-      name: `${pick(rng, KO_PRE)} ${pick(rng, KO_NOUN)}`,
-      nameEn: `${pick(rng, EN_PRE)} ${pick(rng, EN_NOUN)}`,
-      chapter: opts.chapter || 1,
-      par: 99,
-      grid: finalGrid,
-      meta: { hint: '빛의 길을 찾아 숲을 깨우세요.', hintEn: 'Find the path of light and wake the forest.' }
-    };
-
-    const level = parseLevel(def);
-    if (level.targets.length === 0 || level.emitters.length === 0) continue;
-    const n = level.rotatables.length;
-    if (n < minOpt || n > 10) continue;
-
-    const guaranteed = built.guaranteedPar || 0;
-
-    if (isForced) {
-      const finals = level.rotatables.map(r => r.orient);
-      const initial = finals.map(f => f ^ 1);
-      const mirrorCells = [];
-      const splitOrient = [];
-      for (let i = 0; i < level.rotatables.length; i++) {
-        const r = level.rotatables[i];
-        if (r.kind === 'mirror') {
-          mirrorCells.push({ x: r.x, y: r.y, orient: initial[i] });
-        } else {
-          splitOrient.push({ x: r.x, y: r.y, orient: initial[i] });
-        }
-      }
-      for (const mc of mirrorCells) {
-        const row = def.grid[mc.y];
-        def.grid[mc.y] = row.slice(0, mc.x) + (mc.orient === 0 ? '/' : '\\') + row.slice(mc.x + 1);
-      }
-      if (splitOrient.length > 0) def.meta.splitOrient = splitOrient;
-
-      const verifyLevel = parseLevel(def);
-      applyOrients(verifyLevel, initial);
-      const res = solve(verifyLevel);
-      restoreInitial(verifyLevel);
-      if (res && res.moves === guaranteed && res.moves >= minOpt && res.moves <= maxOpt) {
-        def.par = res.moves;
-        def.diff = difficultyBand(res.moves);
-        def.archetype = arch.fn.name;
-        def.solutionOrients = finals;
-        return def;
-      }
-      continue;
-    }
-
-    let solvedOrients = null;
-    let criticalCount = 0;
-    const seedCandidates = [
-      new Array(n).fill(0),
-      new Array(n).fill(1),
-      Array.from({ length: n }, () => (rng() < 0.5 ? 0 : 1)),
-      Array.from({ length: n }, () => (rng() < 0.5 ? 0 : 1)),
-      Array.from({ length: n }, () => (rng() < 0.5 ? 0 : 1)),
-      Array.from({ length: n }, () => (rng() < 0.5 ? 0 : 1))
-    ];
-    for (const cand of seedCandidates) {
-      applyOrients(level, cand);
-      const probeRes = solve(level);
-      if (probeRes) {
-        solvedOrients = cand.slice();
-        for (const f of probeRes.flips) solvedOrients[f] ^= 1;
-        criticalCount = probeRes.flips.length;
-        break;
-      }
-    }
-    restoreInitial(level);
-    if (!solvedOrients) continue;
-    if (criticalCount > maxOpt) continue;
-
-    const nonCritical = Array.from({ length: n }, (_, i) => i);
-
-    const tOrder = [];
-    for (let t = Math.max(minOpt, criticalCount); t <= Math.min(maxOpt, n); t++) tOrder.push(t);
-    for (let i = tOrder.length - 1; i > 0; i--) {
-      const j = Math.floor(rng() * (i + 1));
-      [tOrder[i], tOrder[j]] = [tOrder[j], tOrder[i]];
-    }
-
-    for (const t of tOrder) {
-      const extraNeed = t - criticalCount;
-      if (extraNeed < 0) continue;
-      if (extraNeed > nonCritical.length) continue;
-      const shuffled = nonCritical.slice();
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(rng() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      const candidate = level.initialOrients.slice();
-      for (let i = 0; i < extraNeed; i++) candidate[shuffled[i]] ^= 1;
-
-      applyOrients(level, candidate);
-      const res = solve(level);
-      const opt = res ? res.moves : -1;
-      restoreInitial(level);
-
-      if (opt >= minOpt && opt <= maxOpt) {
-        const solutionOrients = candidate.slice();
-        for (const f of res.flips) solutionOrients[f] ^= 1;
-
-        def.par = opt;
-        def.diff = difficultyBand(opt);
-        def.archetype = arch.fn.name;
-        def.solutionOrients = solutionOrients;
-        return def;
-      }
+function free(board, x, y) {
+  return x >= 1 && y >= 1 && x < board.w - 1 && y < board.h - 1 && !board.used.has(key(x, y));
+}
+function occupy(board, x, y, char = '.') {
+  board.used.add(key(x, y)); board.grid[y][x] = char;
+}
+function origin(board, rng) {
+  for (const dir of shuffle(rng, [0, 1, 2, 3])) {
+    for (const n of shuffle(rng, Array.from({ length: (dir % 2 ? board.h : board.w) - 2 }, (_, i) => i + 1))) {
+      const x = dir === 1 ? 1 : dir === 3 ? board.w - 2 : n;
+      const y = dir === 2 ? 1 : dir === 0 ? board.h - 2 : n;
+      if (free(board, x, y) && free(board, x + DX[dir] * 2, y + DY[dir] * 2)) return { x, y, dir };
     }
   }
-
   return null;
 }
-
-export const CHAPTER_INFO = [
-  { id: 6, name: '빛의 강', nameEn: 'River of Light', desc: '흐르는 빛을 따라가세요', lo: 31, hi: 57 },
-  { id: 7, name: '별의 계곡', nameEn: 'Valley of Stars', desc: '갈라진 빛의 계곡', lo: 58, hi: 84 },
-  { id: 8, name: '안개 정원', nameEn: 'Misty Garden', desc: '색을 잃은 정원', lo: 85, hi: 111 },
-  { id: 9, name: '유리 숲', nameEn: 'Glass Forest', desc: '비침과 반사의 숲', lo: 112, hi: 138 },
-  { id: 10, name: '달빛 사막', nameEn: 'Moonlit Desert', desc: '문이 있는 광활한 땅', lo: 139, hi: 165 },
-  { id: 11, name: '극광의 밤', nameEn: 'Aurora Night', desc: '극광이 흐르는 밤', lo: 166, hi: 192 },
-  { id: 12, name: '심연의 별', nameEn: 'Abyssal Stars', desc: '가장 깊은 곳의 별', lo: 193, hi: 219 },
-  { id: 13, name: '여명의 문', nameEn: 'Gates of Dawn', desc: '새벽으로 이어지는 문', lo: 220, hi: 246 },
-  { id: 14, name: '영겁의 숲', nameEn: 'Eternal Forest', desc: '모든 것이 섞이는 숲', lo: 247, hi: 273 },
-  { id: 15, name: '영원의 새벽', nameEn: 'Forever Dawn', desc: '최종장 — 빛의 대합주', lo: 274, hi: 300 }
-];
-
-export function chapterForId(id) {
-  for (const c of CHAPTER_INFO) {
-    if (id >= c.lo && id <= c.hi) return c.id;
+function segment(board, from, dir, min, max, rng) {
+  const options = [];
+  const cells = [];
+  for (let distance = 1; distance <= max; distance++) {
+    const x = from.x + DX[dir] * distance, y = from.y + DY[dir] * distance;
+    if (!free(board, x, y)) break;
+    cells.push({ x, y });
+    if (distance >= min) options.push(cells.slice());
   }
-  return 1;
+  if (!options.length) return null;
+  const selected = pick(rng, options);
+  for (const cell of selected) occupy(board, cell.x, cell.y);
+  return selected;
 }
-
-export function difficultyWaveForId(id) {
-  const idx = id - 31;
-  if (idx < 0) return 4;
-  const wave = idx % 27;
-  if (wave < 6) return 3 + Math.floor(wave / 2);
-  if (wave < 20) return 6 + Math.floor((wave - 6) / 3);
-  return 9 + Math.min(3, Math.floor((wave - 20) / 2));
-}
-
-export function generateAll(startId, endId, verifiedPool = []) {
-  const out = [];
-  const failures = [];
-  for (let id = startId; id <= endId; id++) {
-    const chapter = chapterForId(id);
-    const diffTarget = difficultyWaveForId(id);
-    const band = bandFor(diffTarget);
-    let def = generateLevel(id, { chapter, diffTarget, band });
-    if (!def) {
-      def = generateLevel(id, { chapter, diffTarget: Math.max(1, diffTarget - 1), band: bandFor(Math.max(1, diffTarget - 1)) });
-    }
-    if (!def) {
-      const pool = verifiedPool.filter(l => l.par >= Math.max(1, band.min - 2));
-      const ordered = pool.length ? pool : verifiedPool;
-      for (let pi = 0; pi < ordered.length && !def; pi++) {
-        const idx = (id * 7919 + pi * 104729) % ordered.length;
-        const pick0 = ordered[idx];
-        const copy = {
-          ...pick0,
-          meta: { ...(pick0.meta || {}), hintEn: (pick0.meta && pick0.meta.hintEn) || 'Find the path of light and wake the forest.' },
-          id,
-          name: `변이된 ${pick0.name}`,
-          nameEn: `${EN_PRE[(id * 7) % EN_PRE.length]} ${EN_NOUN[(id * 13) % EN_NOUN.length]}`,
-          chapter,
-          par: pick0.par,
-          diff: difficultyBand(pick0.par)
-        };
-        const lv = parseLevel(copy);
-        const sol = solve(lv);
-        if (sol && sol.moves >= 1 && sol.moves <= 13) {
-          copy.par = sol.moves;
-          copy.diff = difficultyBand(sol.moves);
-          def = copy;
-        }
+function addRoute(board, start, count, rng, { color = false, portal = false, root = false } = {}) {
+  let cursor = { x: start.x, y: start.y }, dir = start.dir;
+  if (root) occupy(board, cursor.x, cursor.y, ['^', '>', 'v', '<'][dir]);
+  for (let i = 0; i <= count; i++) {
+    if (portal && !board.portalUsed && i === Math.floor(count / 2)) {
+      const entry = segment(board, cursor, dir, 1, 2, rng);
+      if (!entry) return false;
+      const p = entry.at(-1); board.grid[p.y][p.x] = 'P';
+      const exits = [];
+      for (let y = 2; y < board.h - 2; y++) for (let x = 2; x < board.w - 2; x++) {
+        if (free(board, x, y) && free(board, x + DX[dir], y + DY[dir]) && free(board, x + DX[dir] * 2, y + DY[dir] * 2)
+          && Math.abs(x - p.x) + Math.abs(y - p.y) >= 5) exits.push({ x, y });
       }
+      if (!exits.length) return false;
+      cursor = pick(rng, exits); occupy(board, cursor.x, cursor.y, 'Q'); board.portalUsed = true;
     }
-    if (!def) failures.push(id);
-    else out.push(def);
+    const terminal = i === count;
+    const cells = segment(board, cursor, dir, terminal && color ? 3 : 2, terminal && color ? 5 : 4, rng);
+    if (!cells) return false;
+    cursor = cells.at(-1);
+    if (terminal) {
+      board.grid[cursor.y][cursor.x] = pick(rng, ['T', 'f', 'M', 'O']);
+      board.terminals.push({ ...cursor, cells, color });
+    } else {
+      const exits = shuffle(rng, [(dir + 1) % 4, (dir + 3) % 4]).filter(next =>
+        free(board, cursor.x + DX[next], cursor.y + DY[next]) && free(board, cursor.x + DX[next] * 2, cursor.y + DY[next] * 2));
+      if (!exits.length) return false;
+      const outgoing = exits[0];
+      const orient = turnOrient(dir, outgoing);
+      board.grid[cursor.y][cursor.x] = orient ? '\\' : '/';
+      board.turns.push({ ...cursor, orient, incoming: dir });
+      if (root) board.branches.push({ ...cursor, dir });
+      dir = outgoing;
+    }
   }
-  return { levels: out, failures };
+  return true;
 }
 
+function construct(id, rng, plan) {
+  const board = emptyBoard(rng, id);
+  const start = origin(board, rng);
+  if (!start || !addRoute(board, start, plan.turns, rng, { ...plan, root: true })) return null;
+  for (let n = 0; n < plan.branches; n++) {
+    const candidates = shuffle(rng, board.branches).filter(p => board.grid[p.y][p.x] !== 's'
+      && free(board, p.x + DX[p.dir], p.y + DY[p.dir]));
+    if (!candidates.length) return null;
+    const p = candidates[0];
+    if (!addRoute(board, p, plan.branchTurns, rng, { color: plan.color })) return null;
+    board.grid[p.y][p.x] = 's';
+  }
+  if (plan.secondEmitter) {
+    const second = origin(board, rng);
+    if (!second || !addRoute(board, second, 2, rng, { color: plan.color, root: true })) return null;
+  }
+  const needs = [];
+  if (plan.color) {
+    for (const [i, t] of board.terminals.entries()) {
+      const color = ['r', 'g', 'b'][(id + i) % 3];
+      const crystal = t.cells.at(-3), gate = t.cells.at(-2);
+      board.grid[crystal.y][crystal.x] = color;
+      board.grid[gate.y][gate.x] = { r: 'A', g: 'B', b: 'C' }[color];
+      needs.push({ x: t.x, y: t.y, need: color });
+    }
+  }
+  // Wall islands use only cells outside every intended beam route.
+  for (let y = 1; y < board.h - 1; y++) for (let x = 1; x < board.w - 1; x++) {
+    if (free(board, x, y) && rng() < 0.075) board.grid[y][x] = '#';
+  }
+  const meta = { needs, splitOrient: board.turns.filter(t => board.grid[t.y][t.x] === 's').map(t => ({ x: t.x, y: t.y, orient: t.orient })) };
+  return { grid: board.grid.map(row => row.join('')), meta };
+}
 
+function decorate(id, raw) {
+  const chapter = id <= 5 ? 1 : id <= 16 ? 2 : id <= 22 ? 3 : id <= 26 ? 4 : id <= 30 ? 5 : 6 + Math.floor((id - 31) / 18);
+  const a = Math.floor((id - 1) / 20), b = (id - 1) % 20;
+  const plan = planFor(id);
+  const hint = plan.portal ? '입구에 닿은 빛은 짝 출구에서 같은 방향으로 이어집니다.' : plan.color ? '수정과 문을 지난 빛의 색이 생명이 원하는 색과 같아야 합니다.' : plan.branches ? '갈림돌에서는 곧은 길과 꺾이는 길을 함께 확인하세요.' : '빛이 굽이를 지날 때마다 다음 거울과 생명의 위치를 확인하세요.';
+  const hintEn = plan.portal ? 'At a paired exit, light keeps its incoming direction.' : plan.color ? 'After a crystal and gate, the light must match the target color.' : plan.branches ? 'At a splitter, check both the straight path and the turning path.' : 'At each bend, look for the next mirror and the waiting life.';
+  return { id, name: `${WORDS_KO[a]} ${NOUNS_KO[b]}`, nameEn: `${WORDS_EN[a]} ${NOUNS_EN[b]}`, chapter,
+    grid: raw.grid, meta: { ...raw.meta, hint, hintEn }, origin: 'rainpaths-v1', archetype: plan.portal ? 'paired-route' : plan.color ? 'tinted-tributaries' : plan.branches ? 'branch-route' : 'turn-route' };
+}
 
+function scramble(def, rng, requestedFlips) {
+  const level = parseLevel(def);
+  if (!isLevelSolved(level) || level.rotatables.length > 10) return null;
+  const solutionOrients = level.initialOrients.slice();
+  const candidates = def.id === 6
+    ? level.rotatables.map((r, i) => r.kind === 'splitter' ? i : -1).filter(i => i >= 0)
+    : shuffle(rng, level.rotatables.map((_, i) => i));
+  const changed = new Set(candidates.slice(0, Math.min(requestedFlips, level.rotatables.length)));
+  const initial = solutionOrients.map((orient, i) => orient ^ Number(changed.has(i)));
+  const grid = def.grid.map(row => [...row]);
+  def.meta.splitOrient = [];
+  for (const [i, r] of level.rotatables.entries()) {
+    if (r.kind === 'splitter') def.meta.splitOrient.push({ x: r.x, y: r.y, orient: initial[i] });
+    else grid[r.y][r.x] = initial[i] ? '\\' : '/';
+  }
+  def.grid = grid.map(row => row.join(''));
+  const scrambled = parseLevel(def), sol = solve(scrambled);
+  if (!sol || sol.moves < 1 || sol.moves !== changed.size) return null;
+  def.par = sol.moves;
+  def.diff = sol.moves >= 7 ? 'extreme' : sol.moves >= 6 ? 'hard' : sol.moves >= 4 ? 'normal' : 'easy';
+  def.solutionOrients = solutionOrients;
+  applyOrients(scrambled, solutionOrients);
+  if (!isLevelSolved(scrambled)) return null;
+  return def;
+}
 
+// Ignore decorative walls, target species, emitter heading and mirror state.
+// Trim and compare all rotations/reflections to reject re-skinned old layouts.
+export function canonicalLayoutSignature(def) {
+  const points = [];
+  for (const [y, row] of def.grid.entries()) for (const [x, ch] of [...row].entries()) {
+    if ('.#'.includes(ch)) continue;
+    const kind = '/\\'.includes(ch) ? 'm' : '><^v'.includes(ch) ? 'e' : 'TfMO'.includes(ch) ? 't' : 'PQRS'.includes(ch) ? 'p' : ch;
+    points.push({ x, y, kind });
+  }
+  return Array.from({ length: 8 }, (_, transform) => {
+    const q = points.map(p => {
+      let x = p.x, y = p.y;
+      if (transform & 1) x = -x;
+      if (transform & 2) y = -y;
+      if (transform & 4) [x, y] = [y, x];
+      return { x, y, kind: p.kind };
+    });
+    const minX = Math.min(...q.map(p => p.x)), minY = Math.min(...q.map(p => p.y));
+    return q.map(p => `${p.x - minX},${p.y - minY}:${p.kind}`).sort().join(';');
+  }).sort()[0];
+}
+
+export function generateLevel(id, { seed = LEVEL_REMAKE_SEED, reject = () => false } = {}) {
+  if (!Number.isInteger(id) || id < 1 || id > 300) throw new RangeError('level id must be an integer from 1 to 300');
+  const rng = mulberry32(xmur3(`${seed}:level:${id}`)());
+  if (id === 1) {
+    const def = decorate(1, { grid: ['.........', '....../.T', '.........', '.........', '.........', '.>....\\..', '.#.......'], meta: {} });
+    def.par = 1; def.diff = 'easy'; def.solutionOrients = [0, 0];
+    def.meta.hint = '아래쪽 거울을 한 번 돌려 빛을 위의 거울로 보내세요.';
+    def.meta.hintEn = 'Turn the lower mirror once to send light to the upper mirror.';
+    if (reject(canonicalLayoutSignature(def))) throw new Error('authored introduction duplicates a retired layout');
+    return def;
+  }
+  const plan = planFor(id);
+  for (let attempt = 0; attempt < 25000; attempt++) {
+    const raw = construct(id, rng, plan);
+    if (!raw) continue;
+    const def = scramble(decorate(id, raw), rng, plan.flips);
+    if (def && !reject(canonicalLayoutSignature(def))) return def;
+  }
+  throw new Error(`could not construct level ${id} for seed ${seed}`);
+}
+
+export function generateAll(start = 1, end = 300, { seed = LEVEL_REMAKE_SEED, reject = () => false } = {}) {
+  if (!Number.isInteger(start) || !Number.isInteger(end) || start < 1 || end > 300 || end < start) throw new RangeError('invalid level range');
+  const seen = new Set(), levels = [], failures = [];
+  for (let id = start; id <= end; id++) {
+    try {
+      const def = generateLevel(id, { seed, reject: signature => seen.has(signature) || reject(signature) });
+      seen.add(canonicalLayoutSignature(def)); levels.push(def);
+    } catch (error) { failures.push({ id, message: error.message }); }
+  }
+  return { levels, failures };
+}

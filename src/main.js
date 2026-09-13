@@ -12,12 +12,16 @@ import { loadRemoteConfig, getConfig } from './services/config.js';
 import { getTutorial, markTutorialDone } from './services/tutorial.js';
 import { SKINS, getSkin } from './core/skins.js';
 import { recentEvents } from './infra/analytics.js';
+import { artAssets } from './assets/assetStore.js';
 
 installErrorHandler();
 
 async function boot() {
   const canvas = document.getElementById('game-canvas');
   if (!canvas) return;
+
+  // Art never blocks startup: procedural rendering remains available on failure.
+  void artAssets.load();
 
   const params = new URLSearchParams(location.search);
   let saveData = loadSave();
@@ -29,7 +33,7 @@ async function boot() {
   track('session_start', { v: GG_VERSION });
 
   const game = new Game(canvas);
-  game.setSettings({ sound: saveData.sound, motion: saveData.motion, colorblind: saveData.colorblind });
+  game.setSettings({ sound: saveData.sound, motion: saveData.motion, colorblind: saveData.colorblind, displayMode: saveData.displayMode });
 
   function applySkin(id) {
     game.applySkin(getSkin(id).palette);
@@ -77,7 +81,7 @@ async function boot() {
     persist();
     for (const a of newly) {
       const name = lang() === 'en' ? a.nameEn : a.name;
-      ui.toast(`${a.icon} ${t('achievements')}: ${name}`, 4200);
+      ui.toast(`${t('achievements')}: ${name}`, 4200);
       track('achievement_unlocked', { id: a.id });
     }
   }
@@ -94,6 +98,7 @@ async function boot() {
     ui.setHud(effectiveDef, 0, effectiveDef.par, opts.labelOverride);
     ui.show('screen-game');
     ui.hideWin();
+    syncAudioScene();
     track('level_start', {
       level_id: id,
       attempt: 1,
@@ -125,7 +130,7 @@ async function boot() {
     if (saveData.tipsSeen[key]) return;
     saveData.tipsSeen[key] = true;
     persist();
-    ui.toast(`💡 ${t(`tip${def.id}`)}`, 5000);
+    ui.toast(`${t(`tip${def.id}`)}`, 5000);
   }
 
   function exitToLevels() {
@@ -148,6 +153,7 @@ async function boot() {
       saveData.sound = form.sound;
       saveData.motion = form.motion;
       saveData.colorblind = form.colorblind;
+      saveData.displayMode = form.displayMode;
       const prevLang = saveData.lang;
       saveData.lang = form.lang;
       if (form.skin && form.skin !== saveData.skin) {
@@ -156,7 +162,7 @@ async function boot() {
         track('skin_changed', { skin: form.skin });
       }
       persist();
-      game.setSettings({ sound: form.sound, motion: form.motion, colorblind: form.colorblind });
+      game.setSettings({ sound: form.sound, motion: form.motion, colorblind: form.colorblind, displayMode: form.displayMode });
       if (prevLang !== form.lang) {
         refreshLang();
         if (currentDef) ui.setHud(currentDef, game.moves, currentDef.par, dailyInfo?.label);
@@ -174,6 +180,19 @@ async function boot() {
   };
 
   const ui = new UI(game, hooks);
+
+  function syncAudioScene() {
+    game.sound.setPageVisible(!document.hidden);
+    if (ui.currentScreen === 'screen-game' && !game.demoMode) game.sound.startAmbient();
+    else game.sound.stopAmbient();
+  }
+
+  // Capture includes dynamic level buttons, the settings switch and keyboard
+  // controls. Sound rejects synthetic events and never unlocks itself at boot.
+  const activateAudio = event => { void game.sound.activate(event); };
+  for (const type of ['pointerdown', 'pointerup', 'click', 'keydown']) {
+    document.addEventListener(type, activateAudio, { capture: true, passive: true });
+  }
 
   game.events.on('move', e => {
     ui.setHud(currentDef, e.moves, currentDef.par, dailyInfo?.label);
@@ -195,6 +214,7 @@ async function boot() {
   });
 
   game.events.on('win', e => {
+    if (game.settings.sound) game.sound.win();
     if (e.daily) {
       recordDaily(saveData, e.daily.date, e.moves, e.stars);
     } else {
@@ -226,17 +246,11 @@ async function boot() {
   window.addEventListener('resize', resize);
 
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      game.sound.stopAmbient();
-      track('session_hidden');
-    } else if (game.state === 'playing' && !game.demoMode && game.settings.sound && !ui.anyModalOpen()) {
-      game.sound.startAmbient();
-      track('session_visible');
-    }
+    syncAudioScene();
+    track(document.hidden ? 'session_hidden' : 'session_visible');
   });
 
   canvas.addEventListener('pointerdown', ev => {
-    if (game.settings.sound) game.sound.ensure();
     const rect = canvas.getBoundingClientRect();
     game.pointerDown(ev.clientX - rect.left, ev.clientY - rect.top);
   });
@@ -271,11 +285,9 @@ async function boot() {
     const node = document.getElementById(id);
     if (!node) return;
     node.addEventListener('click', () => {
-      if (game.settings.sound) {
-        game.sound.ensure();
-        game.sound.click();
-      }
+      if (game.settings.sound) game.sound.click();
       fn();
+      syncAudioScene();
     });
   }
 
@@ -291,7 +303,7 @@ async function boot() {
     });
     const def = LEVELS.find(l => l.id === cfg.baseId);
     if (!def) return;
-    const label = `☀️ ${dateStr} · ${lang() === 'en' ? 'Daily' : '일일'} (${cfg.optimal})`;
+    const label = `${dateStr} · ${lang() === 'en' ? 'Daily' : '일일'} (${cfg.optimal})`;
     startLevelById(cfg.baseId, {
       orientOverride: cfg.orients,
       daily: { date: dateStr, optimal: cfg.optimal },
@@ -306,6 +318,7 @@ async function boot() {
   bind('btn-back-title', () => ui.show('screen-title'));
   bind('btn-settings', () => ui.openSettings());
   bind('btn-settings2', () => ui.openSettings());
+  bind('btn-settings-game', () => ui.openSettings());
   bind('btn-ach', () => ui.renderAchievements());
   bind('btn-close-ach', () => ui.closeAchievements());
   function populateSkinSelect() {
@@ -326,16 +339,23 @@ async function boot() {
     ui.applySettingsFromForm();
     ui.closeSettings();
   });
-  ['set-sound', 'set-motion', 'set-colorblind', 'set-lang'].forEach(id => {
+  ['set-sound', 'set-motion', 'set-colorblind', 'set-lang', 'set-skin', 'set-display'].forEach(id => {
     const node = document.getElementById(id);
-    if (node) node.addEventListener('change', () => ui.applySettingsFromForm());
+    if (node) node.addEventListener('change', event => {
+      ui.applySettingsFromForm();
+      syncAudioScene();
+      // The switch may have been off during the preceding pointer event.
+      if (id === 'set-sound' && game.settings.sound) {
+        void game.sound.activate(event).then(active => { if (active) game.sound.click(); });
+      }
+    });
   });
   bind('btn-wipe', () => {
     if (globalThis.confirm && !globalThis.confirm(t('wipe') + '?')) return;
     wipe();
     saveData = defaults();
     persist();
-    game.setSettings({ sound: saveData.sound, motion: saveData.motion, colorblind: saveData.colorblind });
+    game.setSettings({ sound: saveData.sound, motion: saveData.motion, colorblind: saveData.colorblind, displayMode: saveData.displayMode });
     ui.toast(t('wipeDone'));
     ui.closeSettings();
   });
@@ -363,7 +383,7 @@ async function boot() {
     startLevelById(cfg.baseId, {
       orientOverride: cfg.orients,
       daily: { date: cfg.date, optimal: cfg.optimal },
-      labelOverride: `☀️ ${cfg.date}`
+      labelOverride: `${cfg.date}`
     });
   }
   bind('btn-win-select', () => exitToLevels());
@@ -380,7 +400,7 @@ async function boot() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `glintgrove-data-${Date.now()}.json`;
+      a.download = `ilyndrel-data-${Date.now()}.json`;
       a.click();
       URL.revokeObjectURL(url);
       ui.toast(t('exported'), 2000);
@@ -396,7 +416,7 @@ async function boot() {
     const text = t('shareText', { name: levelName(currentDef, lang()), stars });
     try {
       if (navigator.share) {
-        await navigator.share({ title: 'Glintgrove', text, url });
+        await navigator.share({ title: 'Ilyndrel', text, url });
       } else if (navigator.clipboard) {
         await navigator.clipboard.writeText(`${text} ${url}`);
         ui.toast(t('copied'), 2000);
@@ -419,6 +439,7 @@ async function boot() {
   const demoDef = LEVELS.find(l => l.id === 7) || LEVELS[0];
   game.startLevel(demoDef, { demo: true });
   game.state = 'title';
+  syncAudioScene();
 
   let last = performance.now();
   function frame(now) {
@@ -433,9 +454,11 @@ async function boot() {
   document.body.dataset.boot = 'ok';
 
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.register('sw.js', { type: 'module', updateViaCache: 'none' }).catch(() => {});
   }
-  if (params.has('debug')) {
+  // The inspection handle is a local development aid, not a public control API.
+  const localDevelopment = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  if (localDevelopment && params.has('debug')) {
     window.__gg = { game, ui, saveData };
   }
 

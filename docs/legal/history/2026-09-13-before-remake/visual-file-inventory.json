@@ -1,0 +1,4616 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-09-13",
+  "runtimeRevision": "nocturne-c4cf96b06729",
+  "purpose": "Factual inventory of current project visual files, inline vector markup and visual source references. This document grants no license and does not establish copyright clearance.",
+  "copyrightClearance": "not-established",
+  "coverage": {
+    "filesystemRoot": "project root",
+    "nonVendoredFilesScanned": 234,
+    "visualFileCandidates": 120,
+    "validRasterFiles": 116,
+    "invalidRasterTestFixtures": 1,
+    "svgFiles": 1,
+    "blenderFilesIncludingBackups": 2,
+    "inlineSvgOrDataUrlImages": 9,
+    "visualSourceCodeFiles": 19,
+    "developmentReviewSupportFiles": 4,
+    "priorRegisteredRuntimeImagesRehashed": 25,
+    "priorRegisteredPreExistingImagesRehashed": 2,
+    "visualFilesOutsidePriorRegister": 67,
+    "nonstandardExtensionSignatureMatches": [],
+    "byUsage": {
+      "authoring": 26,
+      "game-loaded": 25,
+      "review-only": 18,
+      "site-metadata": 2,
+      "unused": 49
+    },
+    "byCategory": {
+      "authoring-ai-background-master": 4,
+      "authoring-model-backup": 1,
+      "authoring-model-master": 1,
+      "authoring-render-intermediate": 21,
+      "pre-existing-pwa-icon": 1,
+      "pre-existing-social-preview": 1,
+      "review-labelled-contact-sheet": 1,
+      "review-publisher-test-fixture": 7,
+      "review-reproduction-render": 1,
+      "review-ui-screenshot": 9,
+      "runtime-art": 25,
+      "unused-duplicate-export": 48
+    },
+    "allPreviewFilesVisuallyInspected": 10,
+    "visualSupportCodeFiles": 9,
+    "visualSupportCodeByCategory": {
+      "level-authoring-support-code": 2,
+      "rendering-support-code": 3,
+      "scene-data-support-code": 4
+    },
+    "directVisualAndSupportCodeFiles": 28
+  },
+  "discoveryMethod": {
+    "fileEnumeration": "rg --files --hidden --no-ignore with vendored/tool exclusions; ignored art/build and Blender backups included",
+    "fileDetection": "Known raster/vector/3D/font/video/document extensions plus first-256-byte signature scan of every other scoped file",
+    "excludedPaths": [
+      ".git/**",
+      "node_modules/**",
+      ".venv*/**",
+      "**/__pycache__/**",
+      "*.pyc"
+    ],
+    "excludedMaterial": "Git object database, installed Python/Node packages, unrelated tool/system media, temporary files outside the project root",
+    "noMediaSymlinksFound": true,
+    "noStandaloneFontVideoOrPdfFilesFound": true,
+    "visualCodeSelection": "Direct drawing, UI markup/text/glyph providers, palette and level-composition data are in visualSourceFiles. Rendering math/layout and direct scene-data producers plus level-authoring scripts are in visualSupportFiles. General input, save, transport, error, audio and solver infrastructure are outside these visual-code counts; named loader/SW relationships remain in runtimeImageReferenceAudit."
+  },
+  "comparisonWithPriorRegister": {
+    "path": "docs/legal/asset-register.json",
+    "sha256": "b09f9eae97ec2704e366ac1569474090934bbb7bedd027863077eb12c1904500",
+    "all25RuntimeAnd2PreExistingFileHashesMatch": true,
+    "allCurrentSourceAndMasterHashesMatch": true,
+    "newDistinctGameLoadedImageFilesDiscovered": 0,
+    "newInlineImagesOutsidePriorRegister": 9,
+    "unusedExportDuplicatesVerified": 48
+  },
+  "runtimeImageReferenceAudit": {
+    "manifest": "assets/game/manifest.json",
+    "loader": "src/assets/assetStore.js",
+    "consumers": [
+      "src/render/background.js",
+      "src/render/sprites.js",
+      "src/render/entities.js",
+      "tools/art-preview.js"
+    ],
+    "flow": "src/main.js starts AssetStore.load(); manifest-relative image URLs are fetched, decoded through temporary blob URLs, and drawn by renderer helpers. SW validates and caches the manifest image set.",
+    "staticImageReferences": [
+      {
+        "source": "index.html",
+        "line": 12,
+        "target": "assets/og.png",
+        "role": "Open Graph metadata"
+      },
+      {
+        "source": "manifest.webmanifest",
+        "line": 11,
+        "target": "assets/icon.svg",
+        "role": "PWA icon"
+      },
+      {
+        "source": "sw.js",
+        "line": 14,
+        "target": "assets/icon.svg",
+        "role": "core precache"
+      },
+      {
+        "source": "index.html",
+        "line": 18,
+        "target": "embeddedVisuals/favicon",
+        "role": "data:image/svg+xml browser favicon"
+      }
+    ],
+    "cssImageUrlReferencesFound": 0,
+    "externalImageUrlsFoundInRuntime": 0,
+    "dataImageUrlsFoundInRuntime": 1,
+    "blobUrls": "Ephemeral object URLs created only from validated manifest image bytes; no separately embedded art payload.",
+    "serviceWorkerScope": "Precache includes explicit application shell and validated runtime art; does not precache art/source, art/previews, art/build, or development gallery pages.",
+    "serverExposureLimit": "Not requested or precached does not mean inaccessible if a server publishes the whole workspace. No final deployment archive is defined or audited here."
+  },
+  "files": [
+    {
+      "path": "art/build/sprites/crystal-b-v1.png",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+      "bytes": 102038,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "crystal.b",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/0"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/crystal-g-v1.png",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+      "bytes": 102133,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "crystal.g",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/1"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/crystal-r-v1.png",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+      "bytes": 102564,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "crystal.r",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/2"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/emitter-v1.png",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+      "bytes": 139907,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "emitter",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/4"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/flower-awake-v1.png",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+      "bytes": 93787,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "flower.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/5"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/flower-dormant-v1.png",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+      "bytes": 86299,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "flower.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/6"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/gate-b-v1.png",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab",
+      "bytes": 139992,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "gate.b",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/9"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/gate-g-v1.png",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f",
+      "bytes": 139717,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "gate.g",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/10"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/gate-r-v1.png",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96",
+      "bytes": 140419,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "gate.r",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/11"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/mirror-v1.png",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+      "bytes": 152140,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "mirror",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/13"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/mushroom-awake-v1.png",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+      "bytes": 97225,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "mushroom.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/14"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/mushroom-dormant-v1.png",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+      "bytes": 97045,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "mushroom.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/15"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/owl-awake-v1.png",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+      "bytes": 110380,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "owl.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/16"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/owl-dormant-v1.png",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+      "bytes": 107993,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "owl.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/17"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/portal-gold-v1.png",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+      "bytes": 145871,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "portal.gold",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/18"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/portal-violet-v1.png",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+      "bytes": 145137,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "portal.violet",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/19"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/rock-alt-v1.png",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+      "bytes": 75770,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "rock.alt",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/21"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/rock-v1.png",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+      "bytes": 75027,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "rock",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/20"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/rock-v1-c0530e24a807.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/splitter-v1.png",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+      "bytes": 148975,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "splitter",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/22"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/tree-awake-v1.png",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+      "bytes": 152628,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "tree.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/23"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/sprites/tree-dormant-v1.png",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+      "bytes": 148427,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-render-intermediate",
+      "usage": "authoring",
+      "assetId": "tree.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/24"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/depths-55de4c0ea245.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/3"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/depths-v1.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/3"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/forest-256a3858f253.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/7"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/forest-v1-256a3858f253.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/forest-v1.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/7"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/forest-v1-256a3858f253.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/garden-0de0a548ed54.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/8"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/backgrounds/garden-v1.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206,
+      "gitIgnored": true,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/8"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-b-d4f7feea1455.png",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+      "bytes": 74414,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/0"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-b-v1.png",
+      "sha256": "08396203e1b48ebbd324f8f3643fbb32066ae7709a72bb47d7669bdad1c1cb74",
+      "bytes": 102038,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/0"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/crystal-b-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-g-9dda05f4465b.png",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+      "bytes": 74522,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/1"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-g-v1.png",
+      "sha256": "7c78f2c96166cdedff2962c57b4e226469a076d020ac52f048c89ddb9f6ebf26",
+      "bytes": 102133,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/1"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/crystal-g-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-r-982f1d4ceecf.png",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+      "bytes": 74811,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/2"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/crystal-r-v1.png",
+      "sha256": "f6205a14e7fdfc31e163d2fdc95b4462465a7060adc314c9914cf9b3a241b335",
+      "bytes": 102564,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/2"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/crystal-r-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/emitter-08b94cf5b6d8.png",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+      "bytes": 106166,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/4"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/emitter-v1.png",
+      "sha256": "7c553d57dabb06979458b0cddeacf3f9835526e9a82ff98d7c41863ce5903980",
+      "bytes": 139907,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/4"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/emitter-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/flower-awake-6c5dc174bd75.png",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+      "bytes": 65000,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/5"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/flower-awake-v1.png",
+      "sha256": "c2bcbbc8b6bafb42b72e1ca410150740d45fbab4aa7bfc40b86cd011d856e315",
+      "bytes": 93787,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/5"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/flower-awake-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/flower-dormant-8a29750a727d.png",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+      "bytes": 59300,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/6"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/flower-dormant-v1.png",
+      "sha256": "32872cdbf6fa1cdbca8e3078eae9aa6c7608268048f648e14992a1a8fc389454",
+      "bytes": 86299,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/6"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/flower-dormant-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-b-84b7686ddbf9.png",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6",
+      "bytes": 103282,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/9"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-b-v1.png",
+      "sha256": "5eb15d370a4326575dfba5c3a3b6191a844d3851223c430d62b9b46458afb6ab",
+      "bytes": 139992,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/9"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/gate-b-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-g-d0db52bbbd49.png",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3",
+      "bytes": 102831,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/10"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-g-v1.png",
+      "sha256": "44c01bf73df6c0241a5e2aad00cd74e3bdd19f2bcd64174924c4e36e6212cb2f",
+      "bytes": 139717,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/10"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/gate-g-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-r-23e0f971ffec.png",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111",
+      "bytes": 103883,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/11"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/gate-r-v1.png",
+      "sha256": "0523e882c97bc698ac9c267c5d12327d4905058c90441e5f0ec5b7f651afdd96",
+      "bytes": 140419,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/11"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/gate-r-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mirror-ad4a7c31891c.png",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+      "bytes": 114999,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/13"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mirror-v1.png",
+      "sha256": "e1a50c4be78814ebd113ff06d81ed0cab41c7515f39527a1ce5819db9d1ac598",
+      "bytes": 152140,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/13"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/mirror-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mushroom-awake-a4256e82ee40.png",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+      "bytes": 68030,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/14"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mushroom-awake-v1.png",
+      "sha256": "1a6d54d88be11d8dbc7d1f3dc3a55cf12b019c1f13b5922d0bd0be68bd0ceaad",
+      "bytes": 97225,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/14"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/mushroom-awake-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mushroom-dormant-4e21909d06bf.png",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+      "bytes": 67690,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/15"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/mushroom-dormant-v1.png",
+      "sha256": "f547401dbb2cabfed5a24b723ae1122be7840e8dfed50f9b19f2dd07a8cf6187",
+      "bytes": 97045,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/15"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/mushroom-dormant-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/owl-awake-cf707d630ce9.png",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+      "bytes": 79392,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/16"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/owl-awake-v1.png",
+      "sha256": "7b95cb92539250e3f8de6e7235fa29196ff8dfc71fcfbab526febd71d27aa129",
+      "bytes": 110380,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/16"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/owl-awake-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/owl-dormant-0b0123e14f8b.png",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+      "bytes": 77012,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/17"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/owl-dormant-v1.png",
+      "sha256": "5d58d359e683e42b206bb4e103eff7eca3c4a7a47f336f6baab4231cd9cf0c42",
+      "bytes": 107993,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/17"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/owl-dormant-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/portal-gold-3ef23c926f42.png",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+      "bytes": 112378,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/18"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/portal-gold-v1.png",
+      "sha256": "13554260189fb0e80b67b5b5c0e985547c371bf84219adbfedb56e4b348a5a58",
+      "bytes": 145871,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/18"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/portal-gold-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/portal-violet-e066b9b0c5bd.png",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+      "bytes": 112020,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/19"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/portal-violet-v1.png",
+      "sha256": "27a043648bb77e56df6128032fd8e5fca9d108d1763ebd2701ca716fea4b4b43",
+      "bytes": 145137,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/19"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/portal-violet-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/rock-alt-ba25c75f7b5e.png",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+      "bytes": 51158,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/21"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/rock-alt-v1.png",
+      "sha256": "00d30702ee0b3139309ba735188dfb9ac6cc4c25715f1549231f0207c977473e",
+      "bytes": 75770,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/21"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/rock-alt-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/rock-c0530e24a807.png",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+      "bytes": 50510,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/20"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/rock-v1-c0530e24a807.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/rock-v1.png",
+      "sha256": "4b71c1e033d3a67ce1b350a2f3106e20684fdde363132d06cf67070b71d47241",
+      "bytes": 75027,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/20"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/rock-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/splitter-fa76287daa4b.png",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+      "bytes": 112227,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/22"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/splitter-v1.png",
+      "sha256": "2c247cfe197d4ef3d42cb0742fdbe87d192c29ff6b2c78129cc8dc41986192c2",
+      "bytes": 148975,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/22"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/splitter-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/tree-awake-87948c6479fa.png",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+      "bytes": 120358,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/23"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/tree-awake-v1.png",
+      "sha256": "bf98e01c24b3bdcbdfdb804d01f9466ead6f798d380ba48d3fb863427dd7c0cd",
+      "bytes": 152628,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/23"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/tree-awake-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/tree-dormant-f96a25b9e9ca.png",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+      "bytes": 118089,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/24"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/unused-exports/sprites/tree-dormant-v1.png",
+      "sha256": "2cbf34b78e96a6666e891ea71e13a4d1d26918ec60f5dd35c6d1cdd12f0ef0ec",
+      "bytes": 148427,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "unused-duplicate-export",
+      "usage": "unused",
+      "provenanceStatus": "verified-byte-duplicate-of-registered-file",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/24"
+      ],
+      "relationships": [
+        {
+          "kind": "byte-identical-to",
+          "path": "art/build/sprites/tree-dormant-v1.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/art/source/blank.png",
+      "sha256": "6fa466e21df6bf014ed03517399a711777f572b1f0be6a561b947790cda9f634",
+      "bytes": 69,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        0
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "note": "Entirely transparent negative-test fixture; not used by the game.",
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/art/source/corrupt.png",
+      "sha256": "928012734bf6e718916a7344dc37c4f371e1456ec4f128b8406726071374e42d",
+      "bytes": 13,
+      "gitIgnored": true,
+      "rasterValidation": "not-decodable",
+      "format": "invalid-raster-candidate",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "note": "Deliberately corrupt .png fixture retained from failed-source validation; not an image used by the game.",
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/art/source/good.png",
+      "sha256": "d46bc0f2168d92a7d553d4d7b4adf3c53382b2c98ff46fb893f7ae22c57ef9b0",
+      "bytes": 76,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/art/source/new.png",
+      "sha256": "bc8a7930f1459372d1526d6f25634e078401c870e3c9e8818dfcc028059093de",
+      "bytes": 77,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-7ea0059449ee.png",
+      "sha256": "7ea0059449ee437c303a259729e0e140956f9fd114f5357cd0373b6edb99c7b4",
+      "bytes": 75,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree-v1-f164334dc398.png",
+      "sha256": "f164334dc3985e3b8d95b71e59462c9c4f6d80c7ede23238c8759d9c4495a6db",
+      "bytes": 69,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        0
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "note": "Entirely transparent negative-test fixture; not used by the game.",
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-publish-3bunwnwy/assets/game/sprites/tree/awake-v1-7ea0059449ee.png",
+      "sha256": "7ea0059449ee437c303a259729e0e140956f9fd114f5357cd0373b6edb99c7b4",
+      "bytes": 75,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 4,
+        "height": 4
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-publisher-test-fixture",
+      "usage": "review-only",
+      "provenanceStatus": "local-test-fixture-recorded",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "tools/art/test_publish.py"
+      ],
+      "notAProductionArtAsset": true,
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/build/verifier-rerender/mirror-v1.png",
+      "sha256": "e7dbe094aa212ce04aca1d79997369171d96b5c2b4fa43cc20d21d20dc59fd51",
+      "bytes": 152140,
+      "gitIgnored": true,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "review-reproduction-render",
+      "usage": "review-only",
+      "provenanceStatus": "recorded-reproduction-verified-pixel-equivalent",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md",
+        "docs/legal/asset-register.json#/assets/13"
+      ],
+      "relationships": [
+        {
+          "kind": "decoded-RGBA-pixel-identical-to",
+          "path": "art/build/sprites/mirror-v1.png"
+        },
+        {
+          "kind": "decoded-RGBA-pixel-identical-to",
+          "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/art-studio-v1.png",
+      "sha256": "907308736e030183acf819cf188906ecbc2c452b59d04f7352c52bbf951c58b3",
+      "bytes": 878795,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "development-art-gallery",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "tools/art-preview.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/game-desktop-v1.png",
+      "sha256": "31d02b92b74efe5acf1f84013931f670edcfecd34ed3796a0c6b308c71a89a98",
+      "bytes": 1754367,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "game-level-17-desktop",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/game-heart-v1.png",
+      "sha256": "ac06dd4a58ddaae9da2bcee872a3f03c829c3acbf3f5f3224e037726ccbec996",
+      "bytes": 1821773,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "game-level-23-desktop",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/game-mobile-v1.png",
+      "sha256": "ba8b39e83cb7074d93f2b61b1262d9f6348f44c74cd76268e5875eddaea6df1e",
+      "bytes": 393080,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "game-level-17-mobile",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/map-mobile-v1.png",
+      "sha256": "f561cc57e707d5ff322266deda3eb88379cfbbee00b19b61e3d69d6720022165",
+      "bytes": 204172,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "level-map-mobile",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/settings-mobile-v1.png",
+      "sha256": "6a928e8ddc2f4b97eb7609e5c1e693b657b48fdefd6f7c31cfa7c86e63e6a745",
+      "bytes": 127822,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "settings-modal-mobile",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/sprite-contact-sheet-v1.jpg",
+      "sha256": "538c24d318dfe69bd023224b343beb9c4dbaeac4079fd4012224df869801a779",
+      "bytes": 126071,
+      "gitIgnored": false,
+      "format": "JPEG",
+      "dimensions": {
+        "width": 960,
+        "height": 1075
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-labelled-contact-sheet",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/verification.md"
+      ],
+      "capturedSurface": "labelled-sprite-contact-sheet",
+      "textOrigin": "Rasterized label text; exact font file/face not recorded",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "composite-of-local-art-and-label-text",
+          "sourceSet": "art/build/sprites/"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/title-desktop-v1.png",
+      "sha256": "ca3d2e1c908da4eb4b8cbdd507497fa5098198566dda789a9141f84e241f4f84",
+      "bytes": 1885844,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1440,
+        "height": 960
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "game-title-desktop",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/title-mobile-v1.png",
+      "sha256": "fe6aa31993cc6a86b49a796616d88444d73c3f9a4910b27b212723762745630f",
+      "bytes": 417779,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "game-title-mobile",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/previews/win-mobile-v1.png",
+      "sha256": "232fdceceaf70ced2dac93f74afa3620e533ce803d8404572830f986d1596140",
+      "bytes": 167827,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 390,
+        "height": 844
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "no-colorful-emoji-observed-in-reviewed-capture",
+      "category": "review-ui-screenshot",
+      "usage": "review-only",
+      "provenanceStatus": "local-review-artifact-visually-observed",
+      "provenanceRecordLinks": [
+        "docs/art/browser-qa.md"
+      ],
+      "capturedSurface": "win-modal-mobile",
+      "textOrigin": "Rasterized browser/UI text using platform fonts; exact font face not embedded or determined",
+      "isPureArtExport": false,
+      "relationships": [
+        {
+          "kind": "capture-of-local-application-surface",
+          "source": "index.html"
+        }
+      ],
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/source/blender/grove-library-v1.blend",
+      "sha256": "72e07d0be357b37a8b20e6cbdc30c0dc148447ab1c019134e9ffafdd43faed1a",
+      "bytes": 1286762,
+      "gitIgnored": false,
+      "format": "Blender scene file",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-model-master",
+      "usage": "authoring",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/blenderMaster"
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/source/blender/grove-library-v1.blend1",
+      "sha256": "63bcdf4558218c1a288708bc61740700fd99917eaea190d2af1229f4e2bee656",
+      "bytes": 782457,
+      "gitIgnored": true,
+      "format": "Blender scene file",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-model-backup",
+      "usage": "unused",
+      "provenanceStatus": "local-backup-observed-origin-not-independently-established",
+      "provenanceRecordLinks": [
+        "art/README.md",
+        "tools/art/build_blender.py"
+      ],
+      "relationships": [
+        {
+          "kind": "Blender-backup-naming-and-structure-match",
+          "path": "art/source/blender/grove-library-v1.blend",
+          "basis": "same 21 asset-scene IDs; distinct model content"
+        }
+      ],
+      "readOnlyInspection": {
+        "blenderVersion": "5.2.1 LTS",
+        "assetScenes": 21,
+        "meshes": 848,
+        "curves": 142,
+        "linkedLibraries": 0,
+        "fontBlocks": 0,
+        "textBlocks": 0,
+        "externalImagePaths": [],
+        "imageBlocks": "two empty-path VIEWER buffers",
+        "renderedOrSavedDuringInspection": false
+      },
+      "inPriorAssetRegister": false
+    },
+    {
+      "path": "art/source/imagegen/depths-v1.png",
+      "sha256": "d30a132bf9b557e12ac9014df824f7034a22f793f6d039dd68a82f226bc9acea",
+      "bytes": 3022317,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-ai-background-master",
+      "usage": "authoring",
+      "assetId": "depths",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/3"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/source/imagegen/forest-v1.png",
+      "sha256": "c60de4846c267a0ad458ccd281eb2fceeef54be1907a6311dcbc61308d00215f",
+      "bytes": 2824749,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-ai-background-master",
+      "usage": "authoring",
+      "assetId": "forest",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/7"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/backgrounds/forest-v1-256a3858f253.webp"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/source/imagegen/garden-v1.png",
+      "sha256": "3feb9e0fcfb9d8f02fb3522ffb7d437a3ed70941919b8081e473b1c2cb6c383a",
+      "bytes": 3146119,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-ai-background-master",
+      "usage": "authoring",
+      "assetId": "garden",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/8"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "art/source/imagegen/heart-v1.png",
+      "sha256": "02267279ecdf4ff7284a38ed7aa1a56acf353ea80a590f97aaa5112a770fc91f",
+      "bytes": 3233817,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "authoring-ai-background-master",
+      "usage": "authoring",
+      "assetId": "heart",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/12"
+      ],
+      "relationships": [
+        {
+          "kind": "source-for",
+          "path": "assets/game/backgrounds/heart-v1-360ccc2982cf.webp"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "sha256": "55de4c0ea245bc1e126c74f66a17875407b201af4e9aedc3b83b3bcaa586047c",
+      "bytes": 379122,
+      "gitIgnored": false,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "depths",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/3"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/depths"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "sha256": "256a3858f2534f9741fa41c9106018298c77f9d4300bdb5b068233d7869b6626",
+      "bytes": 329064,
+      "gitIgnored": false,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "forest",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/7"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/forest"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "sha256": "0de0a548ed541fa4fa1f8ace216f7042d1b8f45c883722e8e7e30e0902bbc00d",
+      "bytes": 423206,
+      "gitIgnored": false,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "garden",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/8"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/garden"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "sha256": "360ccc2982cf46f930a12f146d1ce193cf6f6aa573431be715a85b25badb06d8",
+      "bytes": 475964,
+      "gitIgnored": false,
+      "format": "WEBP",
+      "dimensions": {
+        "width": 1536,
+        "height": 1024
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "heart",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/12"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/heart"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "sha256": "d4f7feea1455163608261fd8aa39c5cfff2b43c255e1bfaa495df75fcba20060",
+      "bytes": 74414,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "crystal.b",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/0"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/crystal.b"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "sha256": "9dda05f4465b6ebc76bde02b8ab3afc5734f63fd2a44403af8e04290184c8509",
+      "bytes": 74522,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "crystal.g",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/1"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/crystal.g"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "sha256": "982f1d4ceecf24c1f6a00b7de697981cde96fc3e321529b3a2dc90808f20c7cc",
+      "bytes": 74811,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "crystal.r",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/2"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/crystal.r"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "sha256": "08b94cf5b6d8f474f74bbd361ed53ffe8309b4d45a52948966ad24fcc5d863bd",
+      "bytes": 106166,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "emitter",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/4"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/emitter"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "sha256": "6c5dc174bd7562a4772e21e2032840c244ae5a36b26a229a43d76ad8c1446044",
+      "bytes": 65000,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "flower.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/5"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/flower.awake"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "sha256": "8a29750a727dd16efa56fce2a1421e0e0c038123d18cfc235e9f09aead9b1e9a",
+      "bytes": 59300,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "flower.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/6"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/flower.dormant"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+      "sha256": "84b7686ddbf909feeec04904467a5ccde4b9a8bc398da59d426f6cf25b6509a6",
+      "bytes": 103282,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "gate.b",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/9"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/gate.b"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+      "sha256": "d0db52bbbd49f00ad67d842d6a59f471602c493960313711c7f4eb000fa2bca3",
+      "bytes": 102831,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "gate.g",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/10"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/gate.g"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+      "sha256": "23e0f971ffec2e6788d857bb72c7778b371ca71fe6f04bbb45fad02e90260111",
+      "bytes": 103883,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "gate.r",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/11"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/gate.r"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "sha256": "ad4a7c31891cd1e25acc90c3743db84c8950df502c9d350650cf7ca1523e01d5",
+      "bytes": 114999,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "mirror",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/13"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/mirror"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "sha256": "a4256e82ee40969513168c49323dcb35bfa3bbfd3b36adc091684fff7973587e",
+      "bytes": 68030,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "mushroom.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/14"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/mushroom.awake"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "sha256": "4e21909d06bf5ad425b7c04053ebba378c050a0a00c623c070c4442685681599",
+      "bytes": 67690,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "mushroom.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/15"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/mushroom.dormant"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "sha256": "cf707d630ce9fb7ae85e444634ef6f42fe6e061ed6bb9722e5b0fcfcabfa2e1c",
+      "bytes": 79392,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "owl.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/16"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/owl.awake"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "sha256": "0b0123e14f8b78cdb9c2d5b625535329091c6be1076a5af7909589c847879ff9",
+      "bytes": 77012,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "owl.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/17"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/owl.dormant"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "sha256": "3ef23c926f423c8442cdabfd701e29d72ea19e8a3abcd57a2c59ac69da4412c5",
+      "bytes": 112378,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "portal.gold",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/18"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/portal.gold"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "sha256": "e066b9b0c5bd4dc1336f28eaaf7de6d37f8727c64030c7e38c001ff8dfe8baff",
+      "bytes": 112020,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "portal.violet",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/19"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/portal.violet"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "sha256": "ba25c75f7b5e5825347f636a55f25d624cd9385ae2effed9f04f76fc3642998f",
+      "bytes": 51158,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "rock.alt",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/21"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/rock.alt"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/rock-v1-c0530e24a807.png",
+      "sha256": "c0530e24a807ce6d573d48ef23509882bd0aea1cf8c931d90061ec3fec0eb62d",
+      "bytes": 50510,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "rock",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/20"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/rock"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "sha256": "fa76287daa4ba81ff2229dba302a9e4e13f4be090324b809edb737d10771d293",
+      "bytes": 112227,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "splitter",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/22"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/splitter"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "sha256": "87948c6479faeee038f95119c9619e8137574fbb34cc5101f4fcc2af7822d997",
+      "bytes": 120358,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "tree.awake",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/23"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/tree.awake"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "sha256": "f96a25b9e9cacd6bb0878cc5b5d0cb243cd3056b15b8bfe4c2caf65dff1c1025",
+      "bytes": 118089,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 384,
+        "height": 384
+      },
+      "rasterValidation": "fully-decoded",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "runtime-art",
+      "usage": "game-loaded",
+      "assetId": "tree.dormant",
+      "provenanceStatus": "verified-against-current-art-register",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/assets/24"
+      ],
+      "references": [
+        {
+          "source": "assets/game/manifest.json",
+          "jsonPointer": "/assets/tree.dormant"
+        },
+        {
+          "source": "src/assets/assetStore.js",
+          "role": "manifest-driven-image-decoding"
+        },
+        {
+          "source": "sw.js",
+          "role": "validated-manifest-image-precache"
+        },
+        {
+          "source": "tools/art-preview.js",
+          "role": "development-gallery-consumer"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/icon.svg",
+      "sha256": "e8887b1e45c9945bbd710102968c76fa6a43d9adec709b0b40894ffb88658891",
+      "bytes": 348,
+      "gitIgnored": false,
+      "format": "SVG",
+      "containsRasterizedText": false,
+      "emojiArtworkObservation": "not-applicable-to-pure-art-or-model",
+      "category": "pre-existing-pwa-icon",
+      "usage": "site-metadata",
+      "provenanceStatus": "origin-unconfirmed",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/preExistingAssets/0"
+      ],
+      "references": [
+        {
+          "source": "manifest.webmanifest",
+          "line": 11,
+          "role": "PWA-install-icon"
+        },
+        {
+          "source": "sw.js",
+          "line": 14,
+          "role": "explicit-precache"
+        }
+      ],
+      "inPriorAssetRegister": true
+    },
+    {
+      "path": "assets/og.png",
+      "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c",
+      "bytes": 316899,
+      "gitIgnored": false,
+      "format": "PNG",
+      "dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "rasterValidation": "fully-decoded",
+      "containsRasterizedText": true,
+      "emojiArtworkObservation": "not-observed-in-reviewed-image",
+      "category": "pre-existing-social-preview",
+      "usage": "site-metadata",
+      "provenanceStatus": "origin-unconfirmed",
+      "provenanceRecordLinks": [
+        "docs/legal/asset-register.json#/preExistingAssets/1"
+      ],
+      "references": [
+        {
+          "source": "index.html",
+          "line": 12,
+          "role": "Open-Graph-image-for-social-consumers"
+        }
+      ],
+      "textOrigin": "Existing game UI capture; original capture/font provenance unconfirmed",
+      "inPriorAssetRegister": true
+    }
+  ],
+  "embeddedVisuals": [
+    {
+      "id": "favicon",
+      "sourceFile": "index.html",
+      "sourceLine": 18,
+      "kind": "data-url-svg",
+      "usage": "browser-tab-icon",
+      "markupSha256": "5fbe18b80d00ad52b8befdbe24c82e43eb2fd105bae6a5ec8963544155de52d4",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit.",
+      "decodedSvgSha256": "0ed645031eb47618c7f542eb706a1ddf6021d44298e5d0f4ac2694b704f1dd6e"
+    },
+    {
+      "id": "grove-sigil",
+      "sourceFile": "index.html",
+      "sourceLine": 30,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "054899c4f5f614cb6273cc8e1aec5e3f8c6580b667d56698a2d303d7b2e77ceb",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "play-arrow",
+      "sourceFile": "index.html",
+      "sourceLine": 36,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "f6e852428e10dc350a5ffc98ae88c4843d2e6702f80e974368d3f4758caa30de",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "hint-button",
+      "sourceFile": "index.html",
+      "sourceLine": 70,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "9ddf0fb6f8a351ae36975a6001ed809b7a85897d1754eed0f35419cea35dc87c",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "undo-button",
+      "sourceFile": "index.html",
+      "sourceLine": 71,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "a33b2f72db106ab9c93f5fd0bf1c0fc5215c80a03108ab1554b59ebe09cb95ad",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "reset-button",
+      "sourceFile": "index.html",
+      "sourceLine": 72,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "2f5a92791f33950ed9cb1654e00b08e72a8448693f8b2747d00a010daa904b6b",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "map-button",
+      "sourceFile": "index.html",
+      "sourceLine": 73,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "bab53c5b864b00dce7d0f8bc834cd93a8706153092e9750ae936a615d9b54835",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "tutorial-pointer",
+      "sourceFile": "src/ui/ui.js",
+      "sourceLine": 55,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "a832d2238d19c926d8107d3f4099e9e0d8d568dc095064d62a394232a8c92bda",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    },
+    {
+      "id": "locked-level-padlock",
+      "sourceFile": "src/ui/ui.js",
+      "sourceLine": 141,
+      "kind": "inline-svg",
+      "usage": "game-ui",
+      "markupSha256": "4a89a70432f26fa47ff9f589004c8df7e65e908aeb0eda127591ee8b5680f754",
+      "provenanceStatus": "source-present-not-covered-by-asset-register",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ],
+      "note": "Source presence and bytes recorded; origin/ownership assessment belongs to the visual code audit."
+    }
+  ],
+  "visualSourceFiles": [
+    {
+      "path": "index.html",
+      "sha256": "fbdd4cbb245bb4a8ed9a0517d50ebfdfd76d338ff6267967c345ae6e46acf280",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Inline SVGs, text/symbol glyphs, game canvas and UI structure",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "css/style.css",
+      "sha256": "0e2d4ef18b3844f0ed7ec9f34c741666843a5a5c360e41c12daf460b22985119",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "CSS gradients, panels, controls, typeface selections and animated decorations; no url() image dependency",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/ui/ui.js",
+      "sha256": "818a29a6e7b5790c4ed77905af383526b31918fa456a468440d9236646ab61c2",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Inline pointer/lock SVGs, level-star text and achievement glyph rendering",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/ui/strings.js",
+      "sha256": "46cc6f8b70022f2a2c4025eca1a549231f1cbf7bc9ce82bdea072de3bfc7aeb0",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Localized visual text, symbols and tutorial strings",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/services/achievements.js",
+      "sha256": "1a14b0b0d01c3ac7a7dda9f76e256ab8a4bb1593c2a36b21950e04e23a189304",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Unicode emoji icon choices; glyph artwork supplied by platform",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/background.js",
+      "sha256": "4b6239c5d16978c1c59a533b1b3131fe0f03833eed49c9ed06442e427e4b35cc",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Manifest backgrounds, procedural fallback scenery, board/grid/corners/walls and motes",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/entities.js",
+      "sha256": "cf40f812bcf626b6c4c1aa4c5cc130a615799158dc15ceed296c808e23f3666a",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Sprite composition, procedural fallback props, mirror slash, badges and glyph seals",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/beams.js",
+      "sha256": "84ae3d7083bcd7c98917d886c1cf8fc46aadedf12fb259b15b105d822f8005f8",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Procedural beam strokes, pulses and portal links",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/bloom.js",
+      "sha256": "2e3379969814297c1382a65f869a9481c4cc1396c7e764b7547bec1f6c86f15a",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Event-only canvas bloom compositing",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/renderer.js",
+      "sha256": "881eec581d7b3f371c802186a210482075884e867316031e7a6a6c6487ef2323",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Scene ordering, clipping and manifest-driven art integration",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/sprites.js",
+      "sha256": "90020deab9b78b86cf563ce8014bffcaf46e8edc8fc2b560a27318508e25f8df",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Manifest-defined sprite cropping, anchoring and drawing",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/fx/particles.js",
+      "sha256": "7af08cd08c3b3c45accbda153da8cb514b796bd787db6af0435066e8368aefd2",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Procedural fireflies, sparks, rings, leaves and spores",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/game/game.js",
+      "sha256": "d0bb24cd9647c0f51ff8e0237332928b1943dbca88213f41aa447776bf2235a2",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Gameplay-driven visual animation and win glow",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/main.js",
+      "sha256": "d8f94d72c540542cc3f6167b7619bddda0d0081dc276cc5c352ce9fc0867e5d5",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Visible hint bulb and daily sun labels, localized settings options, HUD label overrides and screen flow",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/core/skins.js",
+      "sha256": "23995bc705d7c5c2947d5fa33ba89277bd1de727df15d0ddcf6bd77b894aa05c",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Four named beam-theme palettes and localized theme labels",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/core/colors.js",
+      "sha256": "d5d4a855e597c5bca6a091049834262a278f6953b48df89080942623836402ff",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Default beam palette constants and selected-theme color lookup used by beams and props",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/services/tutorial.js",
+      "sha256": "5a6dbd9af74125adae65ddad58fb288e2c517dac1638500cbcd66c09d6ae5a1f",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Tutorial card glyphs (diamond, circled A, concentric circle), text-key selection and pointer placement",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/data/levels.js",
+      "sha256": "14e090df27abc5fd6d263abff79854d72415074fb9998f90079dad8713e3936a",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Hand-authored level grid compositions, chapter names/descriptions, level names and hint text consumed by UI and renderer",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/data/levels.generated.js",
+      "sha256": "787a15e0ace66821037b5144bc7a475a0641fa3f347661bc8ba6db2200931818",
+      "usage": "game-loaded",
+      "category": "visual-source-code",
+      "visualRole": "Current generated level grid compositions, level/chapter names and hint text consumed by UI and renderer",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    }
+  ],
+  "visualSupportFiles": [
+    {
+      "path": "src/render/layout.js",
+      "sha256": "4652e13451fdca7333810773f1b4fe8859ef99bdb016f9acb3969588d7b8838d",
+      "usage": "game-loaded",
+      "category": "rendering-support-code",
+      "visualRole": "Computes board position, cell size and cell centers; no independent image payload",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/render/gradientCache.js",
+      "sha256": "f2b15bf47a1ad2e5f099aa4c8a453fd8a1afb22b0c04d0a24f7d8f6c32883c15",
+      "usage": "game-loaded",
+      "category": "rendering-support-code",
+      "visualRole": "Creates and caches two-stop radial gradients used by procedural lighting and victory glow",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/core/math.js",
+      "sha256": "60c4443228b6b188b592861daec5c912437eff0a54c7ac3c0c66bba3b5eb7eb5",
+      "usage": "game-loaded",
+      "category": "rendering-support-code",
+      "visualRole": "Easing/interpolation and seeded random helpers used by animated/procedural visuals; PRNG correspondence is separately recorded in notices",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md",
+        "THIRD_PARTY_NOTICES.md"
+      ]
+    },
+    {
+      "path": "src/core/tiles.js",
+      "sha256": "3f855ba053d0172ffe330cffc487d598663a73f159d1e145611087ab94689c68",
+      "usage": "game-loaded",
+      "category": "scene-data-support-code",
+      "visualRole": "Maps grid tokens to prop kinds and direction constants; these tokens are scene data, not bundled glyph images",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/sim/parser.js",
+      "sha256": "ee550f71cb5247b9e89e68434f2173a735214e4b9d84486c144f1fceb28ac89e",
+      "usage": "game-loaded",
+      "category": "scene-data-support-code",
+      "visualRole": "Converts stored grids into object positions, wall geometry, target kinds, initial orientations and visible metadata",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/sim/tracer.js",
+      "sha256": "506f04686a3147e16b129cd9a2579a620406dcd60e1fdf53721de4fb03e6dcf7",
+      "usage": "game-loaded",
+      "category": "scene-data-support-code",
+      "visualRole": "Produces beam/portal segment coordinates and colors, lit targets and impact events consumed by visual layers",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/services/daily.js",
+      "sha256": "863de586ff9088f38df466c43a9828041e34b0471ad357ea065fe5da9ce13a54",
+      "usage": "game-loaded",
+      "category": "scene-data-support-code",
+      "visualRole": "Selects a stored daily board and scrambles its mirror orientations using the date seed; supplies the daily scene configuration",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "src/services/generator.js",
+      "sha256": "705851761265d81582900fee148b580607b93afa6f36b136faabd2076411acb7",
+      "usage": "authoring-and-offline-precache",
+      "category": "level-authoring-support-code",
+      "visualRole": "Locally generates grid compositions, target choices, level/chapter names and hints. Referenced by authoring tools and SW precache; no live UI import found",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    },
+    {
+      "path": "tools/generate-levels.mjs",
+      "sha256": "5a711fe44be8081de55678d0c423f7183dd1806db7d5b985e53f6e771d00abc1",
+      "usage": "authoring",
+      "category": "level-authoring-support-code",
+      "visualRole": "Invokes the local generator and writes levels.generated.js; this inventory did not rerun it or establish original authorship",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "provenanceRecordLinks": [
+        "docs/legal/procedural-visual-audit.md"
+      ]
+    }
+  ],
+  "developmentReviewSupport": [
+    {
+      "path": "tools/art-preview.html",
+      "sha256": "5d141e65bea59f0036b3123d62f021f0250f0941418227a39db589b742c51d2d",
+      "usage": "review-only",
+      "category": "development-gallery-source",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "imageRelationships": "Consumes runtime manifest assets through AssetStore",
+      "containsTextAndPlatformGlyphs": true
+    },
+    {
+      "path": "tools/art-preview.js",
+      "sha256": "f3b62956b9b7a5a72518d9aeb736e0e2d3b583e100776a4a6380508a53878947",
+      "usage": "review-only",
+      "category": "development-gallery-source",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "imageRelationships": "Consumes runtime manifest assets through AssetStore",
+      "containsTextAndPlatformGlyphs": true
+    },
+    {
+      "path": "tools/art-preview.css",
+      "sha256": "7e382c2390fb6285c53538a5885b7e131c58219fcb68b88d022daaa35ea4d80d",
+      "usage": "review-only",
+      "category": "development-gallery-source",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "imageRelationships": "Consumes runtime manifest assets through AssetStore",
+      "containsTextAndPlatformGlyphs": true
+    },
+    {
+      "path": "tools/browser-e2e.html",
+      "sha256": "22fc097f47cee1e23b6fe3b1fba8a1989c865463c0496685324b947447a52a59",
+      "usage": "review-only",
+      "category": "browser-verification-page",
+      "provenanceStatus": "source-present-authorship-outside-file-inventory",
+      "imageRelationships": "Exercises the real procedural/image renderer",
+      "containsTextAndPlatformGlyphs": true
+    }
+  ],
+  "nonFileGlyphDependencies": {
+    "fontFilesBundled": false,
+    "fontSelectionSources": [
+      "css/style.css",
+      "src/render/entities.js",
+      "tools/art-preview.css",
+      "tools/art-preview.js"
+    ],
+    "emojiSource": "src/services/achievements.js plus src/main.js hint/daily labels, index.html and src/ui/strings.js; src/services/tutorial.js supplies non-emoji Unicode tutorial symbols",
+    "achievementEmoji": [
+      "🌱",
+      "🌄",
+      "🌫️",
+      "✨",
+      "💎",
+      "🧠",
+      "📅",
+      "🔥",
+      "🌟"
+    ],
+    "status": "Unicode choices reside in source; actual rendered glyph outlines/emoji artwork come from device/platform fonts and are not inventoried as separate project image files. Code/font/glyph rights assessed separately."
+  },
+  "findings": [
+    {
+      "kind": "unconfirmed-pre-existing-origin",
+      "paths": [
+        "assets/icon.svg",
+        "assets/og.png"
+      ],
+      "detail": "Still referenced by PWA/social metadata. Their hashes match the previous register; original authorship/permission remains unconfirmed."
+    },
+    {
+      "kind": "inline-art-not-in-prior-register",
+      "count": 9,
+      "detail": "One SVG data favicon and eight inline SVG UI illustrations/icons are now indexed by source line and markup hash; this does not establish their ownership."
+    },
+    {
+      "kind": "previews-contain-rasterized-text",
+      "count": 10,
+      "detail": "All nine UI/gallery screenshots and the sprite contact sheet contain text. These are review composites, not pure art masters. No colorful emoji was observed in these ten captures; other UI states contain emoji."
+    },
+    {
+      "kind": "old-exports-do-not-add-new-art",
+      "count": 48,
+      "detail": "Every unused export matches a registered current runtime/source file byte-for-byte."
+    },
+    {
+      "kind": "negative-fixtures-not-production",
+      "count": 7,
+      "detail": "Ignored publication-test image candidates include one corrupt .png and an all-transparent PNG; none is referenced by the real runtime manifest."
+    }
+  ],
+  "limitations": [
+    "This is a current local-file inventory, not infringement clearance, a license grant or a guarantee of commercial use without risk.",
+    "Extension/signature scanning does not exhaust every possible encoded asset hidden in arbitrary code, archives, compressed application formats or future dynamic responses; no such additional candidate was found in the scoped signature pass.",
+    "Inline SVG source hashes and visual-code file hashes establish presence, not source originality or ownership. Procedural draw operations and all possible UI/game states are summarized by source file rather than enumerated as infinitely many rendered images.",
+    "All ten preview files were viewed, but this inventory does not independently identify their exact rasterized font faces or check every platform emoji design.",
+    "Byte-identical duplicate matching is stronger than filename inference; different Blender backup geometry was inspected but not regenerated or proven original.",
+    "Only files currently under this project root are included. Prior /tmp screenshots, user machine fonts, browser caches, vendor packages and OpenAI generation storage are outside scope.",
+    "Ignored build artifacts can disappear on another checkout. Entries record current local evidence and do not imply these files are version-controlled or deployed.",
+    "Regenerated/replaced visuals and changed code require a new inventory and provenance review.",
+    "Visual code records distinguish direct providers from supporting scene/math code; they do not certify authorship, exhaustively audit every nonvisual application dependency, or prove the existing generated-level data was reproduced by the currently present generator."
+  ]
+}

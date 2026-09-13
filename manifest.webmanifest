@@ -1,6 +1,6 @@
 {
-  "name": "Glintgrove — Wake the Forest of Light",
-  "short_name": "Glintgrove",
+  "name": "Ilyndrel — Wake the Forest of Light",
+  "short_name": "Ilyndrel",
   "description": "A light-reflection puzzle in a sleeping forest.",
   "start_url": "./",
   "display": "standalone",
@@ -8,6 +8,6 @@
   "theme_color": "#0a1420",
   "lang": "en",
   "icons": [
-    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "assets/site/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

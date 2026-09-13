@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob: data:; script-src 'self'; style-src 'self'; connect-src 'self'">
+  <meta name="robots" content="noindex">
+  <title>Ilyndrel · Art Studio</title>
+  <link rel="stylesheet" href="art-preview.css">
+</head>
+<body>
+  <main>
+    <header class="page-heading">
+      <div><p class="eyebrow">ILYNDREL / DEVELOPMENT TOOLS</p><h1>Art Studio</h1><p class="intro">현재 게임에 적용된 아트를 실제 셀 크기와 확대 화면으로 비교합니다.</p></div>
+      <a href="../" class="game-link">게임 열기 ↗</a>
+    </header>
+    <section class="manifest-bar" aria-label="아트 로딩 상태">
+      <div><span id="load-state" class="state" role="status" aria-live="polite">불러오는 중</span><span id="asset-count"></span><code id="revision"></code></div>
+      <button id="reload" type="button">매니페스트 다시 불러오기 ↻</button>
+    </section>
+    <aside id="errors" class="errors" hidden aria-live="polite"></aside>
+    <section class="toolbar" aria-label="미리보기 설정">
+      <label class="size-control" for="cell-size">게임 셀 크기 <output id="cell-output" for="cell-size">64 px</output><input id="cell-size" type="range" min="24" max="96" value="64" step="1"></label>
+      <label for="surface">스프라이트 바탕 <select id="surface"><option value="dark">숲의 어두운 바탕</option><option value="checker">투명도 체크무늬</option></select></label>
+      <p>왼쪽: 실제 픽셀 크기 · 오른쪽: 원본 확대<br>가는 정사각형은 논리 셀, 십자는 매니페스트의 앵커입니다.</p>
+    </section>
+    <section class="gallery-section" aria-labelledby="background-heading"><div class="section-heading"><h2 id="background-heading">숲의 풍경 <span>Backgrounds</span></h2><span id="background-count" class="section-count"></span></div><div id="backgrounds" class="background-grid"></div></section>
+    <section class="gallery-section" aria-labelledby="sprite-heading"><div class="section-heading"><h2 id="sprite-heading">숲의 작은 생명과 장치 <span>Sprites</span></h2><span id="sprite-count" class="section-count"></span></div><div id="sprites" class="sprite-grid"></div></section>
+    <footer><p><b>교체 순서</b> 원본 / Blender 수정 → 아트 렌더 → <code>.venv-art-build/bin/python tools/art/publish_art.py</code> → <code>npm run check:assets</code> → 여기서 매니페스트 다시 불러오기</p><p>이 도구는 게임과 같은 AssetStore를 사용합니다. 실패한 교체는 이전 정상 이미지를 유지하며, 처음부터 없는 이미지는 게임의 코드 기반 그래픽으로 대체됩니다. 실제 방향, 광선, 애니메이션은 게임 화면에서도 확인하세요.</p><a href="../assets/game/manifest.json">런타임 매니페스트</a><span> · </span><a href="../art/recipes/catalog.json">원본 카탈로그</a></footer>
+  </main>
+  <script type="module" src="art-preview.js"></script>
+</body>
+</html>

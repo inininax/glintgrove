@@ -1,19 +1,18 @@
-export function computeLayout(level, W, H) {
-  const padX = Math.max(16, W * 0.06);
-  const padTop = 84;
-  const padBot = 40;
-  const cw = (W - padX * 2) / level.w;
-  const chh = (H - padTop - padBot) / level.h;
-  let cell = Math.floor(Math.min(cw, chh, 96));
-  cell = Math.max(14, cell);
-  const ox = Math.floor((W - cell * level.w) / 2);
-  const oy = Math.floor(padTop + (H - padTop - padBot - cell * level.h) / 2);
-  return { cell, ox, oy };
+// Grid fitting is mathematical layout, with space reserved for the actual HUD.
+export function computeLayout(level, width, height) {
+  const horizontalMargin = Math.max(16, width * .06);
+  const top = width <= 480 ? 138 : width >= 700 ? 118 : 100;
+  const bottom = width >= 700 ? 72 : 64;
+  const availableWidth = width - horizontalMargin * 2;
+  const availableHeight = height - top - bottom;
+  const cell = Math.max(14, Math.floor(Math.min(96, availableWidth / level.w, availableHeight / level.h)));
+  return {
+    cell,
+    ox: Math.floor((width - level.w * cell) / 2),
+    oy: Math.floor(top + (availableHeight - level.h * cell) / 2)
+  };
 }
 
-export function centerOf(layout, x, y) {
-  return {
-    cx: layout.ox + x * layout.cell + layout.cell / 2,
-    cy: layout.oy + y * layout.cell + layout.cell / 2
-  };
+export function centerOf({ ox, oy, cell }, x, y) {
+  return { cx: ox + (x + .5) * cell, cy: oy + (y + .5) * cell };
 }

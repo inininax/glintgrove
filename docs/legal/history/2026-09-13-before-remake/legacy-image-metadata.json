@@ -1,0 +1,46 @@
+{
+  "auditDate": "2026-09-13",
+  "purpose": "Read-only metadata and history findings for unresolved image provenance. No creator, font, license, or clearance is inferred from missing metadata.",
+  "files": [
+    {
+      "path": "assets/og.png",
+      "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c",
+      "bytes": 316899,
+      "dimensions": [1200, 630],
+      "mode": "RGB",
+      "pngChunkCounts": {"IHDR": 1, "IDAT": 79, "IEND": 1},
+      "textExifXmpIccChunksPresent": false,
+      "trailingDataAfterIend": false,
+      "originStatus": "unconfirmed"
+    },
+    {
+      "path": "art/previews/sprite-contact-sheet-v1.jpg",
+      "sha256": "538c24d318dfe69bd023224b343beb9c4dbaeac4079fd4012224df869801a779",
+      "bytes": 126071,
+      "dimensions": [960, 1075],
+      "mode": "RGB",
+      "jpegMetadataSegments": ["APP0 JFIF 1.01: units none, density 1x1"],
+      "app1ExifXmpPresent": false,
+      "app2IccPresent": false,
+      "commentSegmentPresent": false,
+      "trailingDataAfterEoi": false,
+      "labelFontStatus": "unconfirmed",
+      "note": "JFIF metadata does not identify Pillow, a default font, or a creator."
+    },
+    {
+      "path": "assets/icon.svg",
+      "sha256": "e8887b1e45c9945bbd710102968c76fa6a43d9adec709b0b40894ffb88658891",
+      "bytes": 348,
+      "elementTypes": ["svg", "rect", "circle", "path"],
+      "commentsMetadataTitleDescTextStylePresent": false,
+      "originStatus": "unconfirmed"
+    }
+  ],
+  "history": {
+    "iconAndOgFirstCommit": "2eca9bc813130ad41bc330734ad2f3a78f38e4e9",
+    "initialRepositoryCommit": "4a50735db540b59e1a1f2e4906941618d4157538",
+    "commitMessagesContainImageFontSource": false,
+    "contactSheetGitHistoryFound": false
+  },
+  "conclusion": "No metadata or inspected commit message identifies the missing creator/tool/font provenance. The previous unresolved statuses remain; absence of metadata does not establish infringement."
+}

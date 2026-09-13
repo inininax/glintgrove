@@ -1,0 +1,156 @@
+{
+  "auditDate": "2026-09-13",
+  "purpose": "Observed browser font and resource evidence only; not a license grant or non-infringement clearance.",
+  "environment": {
+    "osVersion": "26.6.2",
+    "browserSurface": "Ego Lite Chromium",
+    "url": "http://127.0.0.1:8000/",
+    "screensObserved": [
+      "title",
+      "level map",
+      "achievements"
+    ]
+  },
+  "observedAt": "2026-09-13T08:39:47.470Z",
+  "fontEvidence": [
+    {
+      "selector": ".title-logo",
+      "fonts": [
+        {
+          "familyName": "Georgia",
+          "postScriptName": "Georgia",
+          "isCustomFont": false,
+          "glyphCount": 10
+        }
+      ]
+    },
+    {
+      "selector": "#ach-title",
+      "fonts": [
+        {
+          "familyName": "AppleMyungjo",
+          "postScriptName": "AppleMyungjo",
+          "isCustomFont": false,
+          "glyphCount": 2
+        },
+        {
+          "familyName": "Georgia",
+          "postScriptName": "Georgia",
+          "isCustomFont": false,
+          "glyphCount": 4
+        }
+      ]
+    },
+    {
+      "selector": "#ach-list .ach-icon",
+      "fonts": [
+        {
+          "familyName": "Apple Color Emoji",
+          "postScriptName": "AppleColorEmoji",
+          "isCustomFont": false,
+          "glyphCount": 1
+        }
+      ]
+    }
+  ],
+  "resourceObservation": {
+    "count": 64,
+    "externalResources": [],
+    "fontFaceRules": [],
+    "documentFontFaceCount": 0,
+    "resourcePaths": [
+      "/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+      "/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+      "/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+      "/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+      "/assets/game/manifest.json",
+      "/assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+      "/assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+      "/assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+      "/assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+      "/assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+      "/assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+      "/assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+      "/assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+      "/assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+      "/assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+      "/assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+      "/assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+      "/assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+      "/assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+      "/assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+      "/assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+      "/assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+      "/assets/game/sprites/rock-v1-c0530e24a807.png",
+      "/assets/game/sprites/splitter-v1-fa76287daa4b.png",
+      "/assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+      "/assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+      "/assets/icon.svg",
+      "/config.json",
+      "/css/style.css",
+      "/manifest.webmanifest",
+      "/src/assets/assetStore.js",
+      "/src/core/colors.js",
+      "/src/core/emitter.js",
+      "/src/core/math.js",
+      "/src/core/skins.js",
+      "/src/core/tiles.js",
+      "/src/core/version.js",
+      "/src/data/levels.generated.js",
+      "/src/data/levels.js",
+      "/src/fx/particles.js",
+      "/src/fx/sound.js",
+      "/src/game/game.js",
+      "/src/infra/analytics.js",
+      "/src/infra/errorHandler.js",
+      "/src/main.js",
+      "/src/render/background.js",
+      "/src/render/beams.js",
+      "/src/render/bloom.js",
+      "/src/render/entities.js",
+      "/src/render/gradientCache.js",
+      "/src/render/layout.js",
+      "/src/render/renderer.js",
+      "/src/render/sprites.js",
+      "/src/services/achievements.js",
+      "/src/services/config.js",
+      "/src/services/daily.js",
+      "/src/services/tutorial.js",
+      "/src/sim/index.js",
+      "/src/sim/parser.js",
+      "/src/sim/solver.js",
+      "/src/sim/tracer.js",
+      "/src/state/saveStore.js",
+      "/src/ui/strings.js",
+      "/src/ui/ui.js"
+    ]
+  },
+  "sourceFiles": [
+    {
+      "path": "index.html",
+      "sha256": "fbdd4cbb245bb4a8ed9a0517d50ebfdfd76d338ff6267967c345ae6e46acf280"
+    },
+    {
+      "path": "css/style.css",
+      "sha256": "0e2d4ef18b3844f0ed7ec9f34c741666843a5a5c360e41c12daf460b22985119"
+    },
+    {
+      "path": "src/ui/ui.js",
+      "sha256": "818a29a6e7b5790c4ed77905af383526b31918fa456a468440d9236646ab61c2"
+    },
+    {
+      "path": "src/services/achievements.js",
+      "sha256": "1a14b0b0d01c3ac7a7dda9f76e256ab8a4bb1593c2a36b21950e04e23a189304"
+    },
+    {
+      "path": "assets/game/manifest.json",
+      "sha256": "10bc1eda57b8ff22daf6b4aabcd5607b08b29107f5cac25bb67234842286649a"
+    }
+  ],
+  "limitations": [
+    "One macOS browser session; other OS/browser font selection may differ.",
+    "Resource observation covers the observed session, not every possible application state or future deployment.",
+    "isCustomFont false identifies local/platform rendering and does not itself prove a license.",
+    "No game progress data is included in this record."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "observedAt": "2026-09-13T09:05:29.585357+00:00",
+  "purpose": "Read-only deployment evidence, not copyright clearance. No repository or hosting settings changed.",
+  "repository": "inininax/glintgrove",
+  "repositoryVisibility": "public",
+  "githubLicenseApiField": null,
+  "pages": {
+    "status": "built",
+    "html_url": "https://inininax.github.io/glintgrove/",
+    "build_type": "legacy",
+    "source": {
+      "branch": "main",
+      "path": "/"
+    }
+  },
+  "remoteMain": {
+    "sha": "48820b60a64d312456219d40768597e3fc677160",
+    "commitDate": "2026-08-25T18:29:01Z"
+  },
+  "publishedPathChecks": [
+    {
+      "path": "tools/art/build_blender.py",
+      "status": 404
+    },
+    {
+      "path": "tools/art/render_library.py",
+      "status": 404
+    },
+    {
+      "path": "assets/og.png",
+      "status": 200,
+      "contentType": "image/png",
+      "sha256": "03be2eeeeecce7fa164d9b788dfd2f2a52f20e719d374bb41f8d941b869be56c",
+      "bytes": 316899,
+      "matchesLocal": true
+    },
+    {
+      "path": "assets/game/manifest.json",
+      "status": 404
+    }
+  ],
+  "interpretation": [
+    "Observed current Pages deployment serves main branch root.",
+    "The new art manifest and two Blender authoring scripts were not served at these paths during the check.",
+    "Publishing source files in a public repository is distribution even when a site build excludes them.",
+    "Current absence from the public site does not establish copyright ownership or future deployment compliance."
+  ],
+  "limitations": [
+    "The original metadata/script checks cover four URLs; the follow-up covers all 25 current manifest image URLs. Both apply only at their recorded observation times, not every historical release, branch, cache, or external mirror.",
+    "The GitHub license API field is detection metadata, not a legal determination of all licenses."
+  ],
+  "newArtPathChecks": {
+    "observedAt": "2026-09-13T09:09:35.040126+00:00",
+    "manifestRevision": "nocturne-c4cf96b06729",
+    "method": "HTTP HEAD of every current manifest image URL",
+    "results": [
+      {
+        "id": "crystal.b",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/crystal-b-v1-d4f7feea1455.png",
+        "status": 404
+      },
+      {
+        "id": "crystal.g",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/crystal-g-v1-9dda05f4465b.png",
+        "status": 404
+      },
+      {
+        "id": "crystal.r",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/crystal-r-v1-982f1d4ceecf.png",
+        "status": 404
+      },
+      {
+        "id": "depths",
+        "url": "https://inininax.github.io/glintgrove/assets/game/backgrounds/depths-v1-55de4c0ea245.webp",
+        "status": 404
+      },
+      {
+        "id": "emitter",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/emitter-v1-08b94cf5b6d8.png",
+        "status": 404
+      },
+      {
+        "id": "flower.awake",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/flower-awake-v1-6c5dc174bd75.png",
+        "status": 404
+      },
+      {
+        "id": "flower.dormant",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/flower-dormant-v1-8a29750a727d.png",
+        "status": 404
+      },
+      {
+        "id": "forest",
+        "url": "https://inininax.github.io/glintgrove/assets/game/backgrounds/forest-v1-256a3858f253.webp",
+        "status": 404
+      },
+      {
+        "id": "garden",
+        "url": "https://inininax.github.io/glintgrove/assets/game/backgrounds/garden-v1-0de0a548ed54.webp",
+        "status": 404
+      },
+      {
+        "id": "gate.b",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/gate-b-v1-84b7686ddbf9.png",
+        "status": 404
+      },
+      {
+        "id": "gate.g",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/gate-g-v1-d0db52bbbd49.png",
+        "status": 404
+      },
+      {
+        "id": "gate.r",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/gate-r-v1-23e0f971ffec.png",
+        "status": 404
+      },
+      {
+        "id": "heart",
+        "url": "https://inininax.github.io/glintgrove/assets/game/backgrounds/heart-v1-360ccc2982cf.webp",
+        "status": 404
+      },
+      {
+        "id": "mirror",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/mirror-v1-ad4a7c31891c.png",
+        "status": 404
+      },
+      {
+        "id": "mushroom.awake",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/mushroom-awake-v1-a4256e82ee40.png",
+        "status": 404
+      },
+      {
+        "id": "mushroom.dormant",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/mushroom-dormant-v1-4e21909d06bf.png",
+        "status": 404
+      },
+      {
+        "id": "owl.awake",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/owl-awake-v1-cf707d630ce9.png",
+        "status": 404
+      },
+      {
+        "id": "owl.dormant",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/owl-dormant-v1-0b0123e14f8b.png",
+        "status": 404
+      },
+      {
+        "id": "portal.gold",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/portal-gold-v1-3ef23c926f42.png",
+        "status": 404
+      },
+      {
+        "id": "portal.violet",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/portal-violet-v1-e066b9b0c5bd.png",
+        "status": 404
+      },
+      {
+        "id": "rock",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/rock-v1-c0530e24a807.png",
+        "status": 404
+      },
+      {
+        "id": "rock.alt",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/rock-alt-v1-ba25c75f7b5e.png",
+        "status": 404
+      },
+      {
+        "id": "splitter",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/splitter-v1-fa76287daa4b.png",
+        "status": 404
+      },
+      {
+        "id": "tree.awake",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/tree-awake-v1-87948c6479fa.png",
+        "status": 404
+      },
+      {
+        "id": "tree.dormant",
+        "url": "https://inininax.github.io/glintgrove/assets/game/sprites/tree-dormant-v1-f96a25b9e9ca.png",
+        "status": 404
+      }
+    ]
+  }
+}

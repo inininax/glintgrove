@@ -1,29 +1,30 @@
-const CLASSIC_PALETTE = Object.freeze({ white: '#ffe9b8', r: '#ff5d5d', g: '#5dff9d', b: '#6da8ff' });
+// Ilyndrel palettes selected locally; legacy IDs preserve saved preferences.
+const CLASSIC_PALETTE = Object.freeze({ white: '#ffe9b8', r: '#ed887f', g: '#82d4ae', b: '#84b9e8' });
 
 export const SKINS = [
   {
     id: 'classic',
-    name: '클래식', nameEn: 'Classic',
+    name: '상아빛', nameEn: 'Ivory',
     unlockStars: 0,
     palette: CLASSIC_PALETTE
   },
   {
     id: 'ocean',
-    name: '오션', nameEn: 'Ocean',
+    name: '물안개', nameEn: 'Waterglass',
     unlockStars: 0,
-    palette: { white: '#bfeaff', r: '#7fd8ff', g: '#5fffd0', b: '#6f9dff' }
+    palette: { white: '#d3e9ed', r: '#df9b98', g: '#8bc6b3', b: '#6eabd4' }
   },
   {
     id: 'ember',
-    name: '엠버', nameEn: 'Ember',
+    name: '구리빛', nameEn: 'Copper',
     unlockStars: 0,
-    palette: { white: '#ffd9a0', r: '#ff8a5c', g: '#ffc46b', b: '#ff6b9d' }
+    palette: { white: '#f5dcaa', r: '#e88162', g: '#acbd7a', b: '#a59bcc' }
   },
   {
     id: 'aurora',
-    name: '오로라', nameEn: 'Aurora',
+    name: '자개빛', nameEn: 'Nacre',
     unlockStars: 0,
-    palette: { white: '#e4ffe9', r: '#8affe0', g: '#a0ffb0', b: '#c48aff' }
+    palette: { white: '#e5edcc', r: '#e6a1c4', g: '#9fcfb4', b: '#a8b9e6' }
   }
 ];
 

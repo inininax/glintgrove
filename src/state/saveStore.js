@@ -13,6 +13,7 @@ export function defaults() {
     seenIntro: false,
     lang: 'en',
     skin: 'classic',
+    displayMode: 'sculpted',
     tipsSeen: {},
     daily: {},
     ach: {}
@@ -71,6 +72,7 @@ function sanitize(d) {
   if (d.lang === 'auto') d.lang = 'en';
   if (!['auto', 'ko', 'en'].includes(d.lang)) d.lang = 'en';
   if (!['classic', 'ocean', 'ember', 'aurora'].includes(d.skin)) d.skin = 'classic';
+  if (!['sculpted', 'simple'].includes(d.displayMode)) d.displayMode = 'sculpted';
   const def = defaults();
   for (const k of ['sound', 'motion', 'colorblind', 'seenIntro']) {
     if (typeof d[k] !== 'boolean') d[k] = def[k];

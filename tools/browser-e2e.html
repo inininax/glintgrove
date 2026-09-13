@@ -8,7 +8,7 @@
 <body>
   <canvas id="game-canvas"></canvas>
   <div id="tutorial-layer"></div>
-  <div id="screen-title" class="screen"><h1 class="title-logo">GLINTGROVE</h1>
+  <div id="screen-title" class="screen"><h1 class="title-logo">ILYNDREL</h1>
     <p class="tagline" data-i18n="tagline"></p></div>
   <div id="screen-levels" class="screen hidden"><div class="levels-head"><h2></h2><span id="total-stars"></span></div><div id="chapter-list"></div></div>
   <div id="screen-game" class="screen hidden">
@@ -24,6 +24,8 @@
   <script type="module" src="../src/main.js"></script>
   <script type="module">
   import { LEVELS as LEVELS_FOR_TEST } from '../src/data/levels.js';
+  import { getTutorial } from '../src/services/tutorial.js';
+  import { solve } from '../src/sim/solver.js';
   const results = [];
   const check = (name, cond) => results.push((cond ? 'PASS' : 'FAIL') + ' ' + name);
   const wait = ms => new Promise(r => setTimeout(r, ms));
@@ -44,7 +46,9 @@
 
     const lay = game.renderer.layout(game.level);
     const canvas = document.getElementById('game-canvas');
-    const mirror = game.level.rotatables[0];
+    const tutorial = getTutorial(LEVELS_FOR_TEST[0], { tipsSeen: {} });
+    const mirror = game.level.rotatables.find(item => item.x === tutorial.x && item.y === tutorial.y);
+    check('tutorialMirrorPresent', !!mirror);
     const rect = canvas.getBoundingClientRect();
     canvas.dispatchEvent(new PointerEvent('pointerdown', {
       clientX: rect.left + lay.ox + mirror.x * lay.cell + lay.cell / 2,
@@ -80,10 +84,17 @@
     }
     check('traceAllLevels', traceOk);
 
-    ui.hooks.onPlay(26);
+    const finalDef = LEVELS_FOR_TEST.at(-1);
+    ui.hooks.onPlay(finalDef.id);
     await wait(80);
-    check('finalLevelLoads', game.def.id === 26 && game.level.targets.length === 8);
-    check('finalBeamsActive', game.hitCells.size > 0);
+    check('finalLevelLoads', game.def.id === 300 && game.level.emitters.length === 2);
+    check('finalMechanisms', game.level.rotatables.some(item => item.kind === 'splitter')
+      && Object.keys(game.level.portals).length === 2
+      && ['r', 'g', 'b'].every(color => game.level.targets.some(target => target.need === color)));
+    const finalSolution = solve(game.level);
+    check('finalSolutionAvailable', finalSolution?.moves === finalDef.par);
+    for (const index of finalSolution?.flips || []) game.rotateIdx(index);
+    check('finalTargetsSatisfied', game.won && game.satisfied.size === game.level.targets.length);
 
     // daily challenge flow
     const dailyBtn = document.getElementById('btn-daily');

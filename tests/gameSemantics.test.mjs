@@ -1,105 +1,109 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { installDom } from './helpers/domStub.mjs';
+import { solve } from '../src/sim/solver.js';
 
-test('satisfaction is live while awakening persists', async () => {
+// Small engine fixtures stay independent of the published level catalogue.
+const WIN_A = { id: 901, par: 1, grid: ['.....', '..T..', '.....', '>.\\..'] };
+const WIN_B = { id: 902, par: 1, grid: ['..v...', '......', '../.T.', '......'] };
+
+function finishRun(game) {
+  const solution = solve(game.level);
+  assert.ok(solution && solution.moves > 0, 'fixture begins unsolved');
+  for (const index of solution.flips) game.rotateIdx(index);
+  assert.equal(game.won, true);
+  for (let i = 0; i < 120; i++) game.update(1 / 60);
+}
+
+for (const restart of ['next level', 'replay via startLevel', 'resetLevel']) {
+  test(`winUi fires exactly once per run after ${restart}`, async () => {
+    const { Game } = await import('../src/game/game.js');
+    installDom();
+    const game = new Game(document.getElementById('game-canvas'));
+    game.setSettings({ sound: false, motion: false });
+    const presented = [];
+    game.events.on('winUi', current => presented.push(current.def.id));
+    game.startLevel(WIN_A);
+    finishRun(game);
+    assert.deepEqual(presented, [WIN_A.id], 'first clear presents once');
+
+    if (restart === 'resetLevel') game.resetLevel();
+    else game.startLevel(restart === 'next level' ? WIN_B : WIN_A);
+    assert.deepEqual(presented, [WIN_A.id], 'starting a run does not present a win');
+    finishRun(game);
+    assert.deepEqual(presented, [WIN_A.id, restart === 'next level' ? WIN_B.id : WIN_A.id],
+      'the next first clear must present once, even after a previous win');
+  });
+}
+
+const TWO_TURNS = { id: 903, par: 2, grid: ['.......', '..\\..T.', '.......', '>.\\....'] };
+
+async function fixtureGame(def) {
   const { Game } = await import('../src/game/game.js');
-  const { LEVELS } = await import('../src/data/levels.js');
   installDom();
   const game = new Game(document.getElementById('game-canvas'));
-  game.startLevel(LEVELS.find(l => l.id === 1));
+  game.setSettings({ sound: false, motion: false });
+  game.startLevel(def);
+  return game;
+}
 
-  const mirrorIdx = game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2);
-  const targetKey = '4,0';
-
+test('satisfaction is live while awakening persists', async () => {
+  const game = await fixtureGame(WIN_A);
+  const mirrorIdx = solve(game.level).flips[0];
+  const target = game.level.targets[0];
+  const targetKey = `${target.x},${target.y}`;
   game.rotateIdx(mirrorIdx);
   assert.equal(game.won, true);
   assert.ok(game.satisfied.has(targetKey));
-
   game.won = false;
   game.rotateIdx(mirrorIdx);
   assert.equal(game.satisfied.size, 0, 'live satisfaction drops');
   assert.equal(game.won, false);
   assert.ok(game.litAt.has(targetKey), 'visual wake persists');
   assert.ok(game.awarded.has(targetKey), 'award persists');
-
   game.rotateIdx(mirrorIdx);
   assert.equal(game.won, true);
 });
 
 test('undo restores board but move attempt is kept (anti-cheat)', async () => {
-  const { Game } = await import('../src/game/game.js');
-  const { LEVELS } = await import('../src/data/levels.js');
-  installDom();
-  const game = new Game(document.getElementById('game-canvas'));
-  game.startLevel(LEVELS.find(l => l.id === 3));
-  game.rotateIdx(0);
+  const game = await fixtureGame(TWO_TURNS);
+  const initial = game.level.rotatables.map(r => r.orient);
+  const solution = solve(game.level);
+  assert.equal(solution.moves, 2);
+  game.rotateIdx(solution.flips[0]);
+  assert.equal(game.won, false);
   assert.equal(game.moves, 1);
-  game.undo();
+  assert.equal(game.undo(), true);
+  assert.deepEqual(game.level.rotatables.map(r => r.orient), initial);
   assert.equal(game.moves, 1, 'undo must NOT refund the move counter');
   game.resetLevel();
   assert.equal(game.moves, 0);
 });
 
 test('hint increments hintsUsed and caps stars at 2', async () => {
-  const { Game } = await import('../src/game/game.js');
-  const { LEVELS } = await import('../src/data/levels.js');
-  installDom();
-  const game = new Game(document.getElementById('game-canvas'));
-  game.startLevel(LEVELS.find(l => l.id === 1));
+  const game = await fixtureGame(WIN_A);
   assert.equal(game.requestHint(), true);
   assert.equal(game.hintsUsed, 1);
-
   game.rotateIdx(game.hintIdx);
   assert.equal(game.won, true);
   assert.equal(game.starsFor(), 2, 'hint used caps stars at 2');
 });
 
-test('win emits structured event with stars and par delta', async () => {
-  const { Game } = await import('../src/game/game.js');
-  const { LEVELS } = await import('../src/data/levels.js');
-  installDom();
-  let winPayload = null;
-  const game = new Game(document.getElementById('game-canvas'));
-  game.events.on('win', e => {
-    winPayload = e;
-  });
-  game.startLevel(LEVELS.find(l => l.id === 2));
-  for (let i = 0; i < game.level.rotatables.length && !game.won; i++) {
-    if (game.won) break;
-    game.rotateIdx(i);
-    if (!game.won && game.level.rotatables[i]) {
-      const snapshot = game.trace;
-      void snapshot;
-    }
-    if (i === 0 && !game.won) {
-      game.rotateIdx(i);
-    }
-  }
-  assert.ok(winPayload || game.won, 'win reached by solver-guided play or brute force');
+test('win emits structured event with stars and par', async () => {
+  const game = await fixtureGame(WIN_B);
+  const events = [];
+  game.events.on('win', payload => events.push(payload));
+  finishRun(game);
+  assert.deepEqual(events, [{ id: WIN_B.id, moves: 1, par: 1, stars: 3, hints: 0, daily: null }]);
 });
 
-test('winUi event fires again after reset (regression: winUiDone reset)', async () => {
-  const { Game } = await import('../src/game/game.js');
-  const { LEVELS } = await import('../src/data/levels.js');
-  installDom();
-  let winUiCount = 0;
-  const game = new Game(document.getElementById('game-canvas'));
-  game.events.on('winUi', () => {
-    winUiCount++;
-  });
-  game.startLevel(LEVELS.find(l => l.id === 1));
-
-  game.rotateIdx(game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2));
-  for (let i = 0; i < 60 && !winUiCount; i++) game.update(1 / 30);
-  assert.equal(winUiCount, 1);
-
-  game.resetLevel();
-  for (let i = 0; i < 80 && !game.won; i++) {
-    game.rotateIdx(game.level.rotatables.findIndex(r => r.x === 4 && r.y === 2));
-    if (!game.won) break;
-    void i;
-  }
-  for (let i = 0; i < 60 && winUiCount < 2; i++) game.update(1 / 30);
-  assert.equal(winUiCount, 2, 'winUi must fire on every win');
+test('initial reduced motion disables victory bloom before any UI listener exists', async () => {
+  const game = await fixtureGame(WIN_A);
+  assert.equal(game.renderer.bloom.enabled, false);
+  for (const index of solve(game.level).flips) game.rotateIdx(index);
+  game.renderer.resize();
+  game.render();
+  assert.equal(game.renderer.bloom.pulse, 0, 'disabled bloom does not add a changing full-frame effect');
+  game.setSettings({ motion: true });
+  assert.equal(game.renderer.bloom.enabled, true);
 });

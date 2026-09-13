@@ -1,3 +1,4 @@
+// Event-only light diffusion, authored 2026-09-13 with native Canvas operations.
 export class Bloom {
   constructor() {
     this.canvas = null;
@@ -6,58 +7,39 @@ export class Bloom {
     this.h = 0;
     this.enabled = true;
     this.pulse = 0;
-    this.baseStrength = 0.5;
+    this.baseStrength = 0;
   }
 
-  ensure(w, h) {
-    const qw = Math.max(1, Math.floor(w / 4));
-    const qh = Math.max(1, Math.floor(h / 4));
-    if (!this.canvas || this.w !== qw || this.h !== qh) {
-      this.canvas = document.createElement('canvas');
-      this.canvas.width = qw;
-      this.canvas.height = qh;
-      this.ctx = this.canvas.getContext('2d');
-      this.w = qw;
-      this.h = qh;
-    }
+  ensure(width, height) {
+    const w = Math.max(1, Math.ceil(width / 6));
+    const h = Math.max(1, Math.ceil(height / 6));
+    if (this.canvas && this.w === w && this.h === h) return;
+    this.canvas = document.createElement('canvas');
+    this.canvas.width = this.w = w;
+    this.canvas.height = this.h = h;
+    this.ctx = this.canvas.getContext('2d');
   }
 
-  trigger(amount = 1) {
-    this.pulse = Math.min(1.6, this.pulse + amount);
-  }
+  trigger(amount = 1) { this.pulse = Math.min(1.5, this.pulse + Math.max(0, amount)); }
+  update(dt) { this.pulse = Math.max(0, this.pulse - Math.max(0, dt) * 1.8); }
 
-  update(dt) {
-    this.pulse = Math.max(0, this.pulse - dt * 1.4);
-  }
-
-  composite(mainCtx, mainCanvas) {
-    if (!this.enabled) {
-      this.pulse = 0;
-      return;
-    }
-    this.ensure(mainCanvas.width / 4, mainCanvas.height / 4);
-    const g = this.ctx;
-    g.globalCompositeOperation = 'source-over';
-    g.globalAlpha = 1;
-    g.clearRect(0, 0, this.w, this.h);
-    g.drawImage(mainCanvas, 0, 0, this.w, this.h);
-
-    g.globalAlpha = 0.35;
-    for (let pass = 0; pass < 2; pass++) {
-      g.drawImage(this.canvas, 1, 0);
-      g.drawImage(this.canvas, -1, 0);
-      g.drawImage(this.canvas, 0, 1);
-      g.drawImage(this.canvas, 0, -1);
-      g.drawImage(this.canvas, 0.5, 0.5);
-    }
-    g.globalAlpha = 1;
-
-    mainCtx.save();
-    mainCtx.setTransform(1, 0, 0, 1, 0, 0);
-    mainCtx.globalCompositeOperation = 'lighter';
-    mainCtx.globalAlpha = Math.min(0.85, this.baseStrength + this.pulse * 0.35);
-    mainCtx.imageSmoothingEnabled = true;
-    mainCtx.drawImage(this.canvas, 0, 0, mainCanvas.width, mainCanvas.height);
-    mainCtx.restore();
+  composite(ctx, source) {
+    if (!this.enabled) { this.pulse = 0; return; }
+    if (this.pulse < .002) return;
+    this.ensure(source.width, source.height);
+    const soft = this.ctx;
+    soft.clearRect(0, 0, this.w, this.h);
+    soft.globalAlpha = 1;
+    soft.imageSmoothingEnabled = true;
+    soft.drawImage(source, 0, 0, this.w, this.h);
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.globalCompositeOperation = 'screen';
+    ctx.globalAlpha = Math.min(.022, this.pulse * .018);
+    ctx.imageSmoothingEnabled = true;
+    // Two slightly displaced soft copies widen only the short event afterglow.
+    ctx.drawImage(this.canvas, -3, -2, source.width + 6, source.height + 4);
+    ctx.drawImage(this.canvas, 2, 1, source.width - 4, source.height - 2);
+    ctx.restore();
   }
 }
