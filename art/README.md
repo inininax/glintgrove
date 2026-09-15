@@ -2,6 +2,8 @@
 
 ## 로컬 에셋 바로가기
 
+**[로컬 에셋 보관함](http://localhost:8000/tools/asset-library.html)**에서 제작 원본·렌더·검토 이미지·이전 작업 자료를 썸네일로 탐색하고 확대할 수 있습니다. 게임 매니페스트에 포함되지 않은 이미지와 음악도 표시합니다. `npm run dev`로 목록이 자동 생성되며, 서버 실행 중 파일 추가·삭제 후에는 `npm run assets:index`를 실행하고 목록을 새로고침하세요.
+
 저장소 루트에서 `npm run dev`를 실행한 뒤 [아트 스튜디오 열기](http://localhost:8000/tools/art-preview.html)를 누르세요. 배경·소품·로고·음악을 한곳에서 보고, 각 에셋의 상세 창에서 제작 원본과 기록을 바로 열 수 있습니다.
 
 [배경](http://localhost:8000/tools/art-preview.html#background-section) · [소품과 장치](http://localhost:8000/tools/art-preview.html#sprite-section) · [로고·아이콘](http://localhost:8000/tools/art-preview.html#site-section) · [음악](http://localhost:8000/tools/art-preview.html#audio-section)

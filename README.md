@@ -30,6 +30,7 @@ ES Modules를 사용하므로 저장소 루트에서 로컬 HTTP 서버를 실�
 |---|---|---|
 | 게임 실행 | [게임 열기](http://localhost:8000/) | 실제 플레이 화면 |
 | 에셋 전체 보기 | [아트 스튜디오](http://localhost:8000/tools/art-preview.html) | 검색·확대·게임용 파일과 제작 원본 비교 |
+| 로컬 제작 자료 전체 보기 | [로컬 에셋 보관함](http://localhost:8000/tools/asset-library.html) | 배포 목록에 없는 원본·렌더·검토·이전 작업 이미지와 음악 미리보기 |
 | 배경 이미지 | [숲의 풍경](http://localhost:8000/tools/art-preview.html#background-section) | 현재 숲과 보존 배경 |
 | 소품과 장치 | [작은 생명과 장치](http://localhost:8000/tools/art-preview.html#sprite-section) | 소품 원본·실제 게임 셀 크기·Blender 원본 |
 | 로고와 사이트 이미지 | [게임의 얼굴](http://localhost:8000/tools/art-preview.html#site-section) | 보석 게임명·아이콘·공유 이미지 |
@@ -40,6 +41,8 @@ ES Modules를 사용하므로 저장소 루트에서 로컬 HTTP 서버를 실�
 | 브라우저 통합 테스트 | [E2E 실행](http://localhost:8000/tools/browser-e2e.html?debug=1) | 브라우저에서 게임 흐름 자동 검사 |
 
 아트 스튜디오의 에셋을 누르면 상세 창에서 **게임용 파일·제작 원본·제작 기록** 링크를 볼 수 있습니다. 자세한 사용법은 [아트 스튜디오 안내](docs/art/art-studio.md), 편집 순서는 [아트 작업 안내](art/README.md)를 참고하세요.
+
+로컬 에셋 보관함의 파일 목록은 `npm run dev`를 시작할 때 자동 생성됩니다. 서버 실행 중 파일을 추가·삭제했다면 `npm run assets:index` 후 보관함의 **목록 새로고침**을 누르세요. 큰 이미지는 화면에 들어올 때 불러오며, 한 번에 36개씩 펼쳐 볼 수 있습니다.
 
 위 주소는 `npm run dev`의 기본 포트 `8000` 기준입니다. 다른 포트로 실행했다면 주소의 포트를 바꾸세요. 로컬 서버를 종료하면 링크도 열리지 않습니다. 아트 스튜디오와 제작 자료는 저장소 루트를 실행할 때 제공되며, `dist/`와 GitHub Pages 배포에서는 제외됩니다.
 

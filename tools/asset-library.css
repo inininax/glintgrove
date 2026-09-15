@@ -1,0 +1,25 @@
+.library-nav { display: flex; flex-wrap: wrap; gap: 12px 20px; flex-shrink: 0; }
+.local-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.local-card { min-width: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--panel); }
+.local-preview { width: 100%; height: 220px; display: grid; place-items: center; padding: 12px; border: 0; border-radius: 0; }
+.local-preview img { width: 100%; height: 196px; object-fit: contain; }
+.local-card .card-body { overflow-wrap: anywhere; }
+.local-card h2 { font-size: 15px; font-weight: 500; margin: 0; }
+.local-card .file-details { font-size: 12px; color: var(--muted); margin: 8px 0; }
+.local-card audio { margin: 18px 0; }
+.local-preview, #library-preview { background: #0a2022; }
+[data-surface="light"] .local-preview, #library-preview[data-surface="light"] { background: #efeee7; }
+[data-surface="checker"] .local-preview, #library-preview[data-surface="checker"] { background-color: #ddd; background-image: conic-gradient(#aaa 25%, transparent 0 50%, #aaa 0 75%, transparent 0); background-size: 24px 24px; }
+.local-preview .image-error { color: #cbb999; }
+#library-more { display: block; margin: 28px auto 0; }
+#library-detail { width: min(1100px, calc(100% - 24px)); max-height: calc(100dvh - 24px); padding: 22px; border: 1px solid #78988d; border-radius: 12px; color: var(--ink); background: #102728; }
+#library-detail::backdrop { background: #020e12cf; }
+#library-detail header { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 18px; }
+#library-detail h2 { margin: 0; font-size: 18px; overflow-wrap: anywhere; }
+#library-close { flex-shrink: 0; }
+#library-preview { min-height: 180px; display: grid; place-items: center; padding: 12px; }
+#library-preview img { max-width: 100%; max-height: 65vh; object-fit: contain; }
+#library-preview audio { width: min(100%, 700px); }
+#library-detail-status { color: var(--muted); font-size: 13px; }
+@media (max-width: 1000px) { .local-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .local-gallery { grid-template-columns: 1fr; } #library-detail { padding: 16px; } }

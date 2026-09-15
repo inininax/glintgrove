@@ -2,6 +2,8 @@
 
 에셋을 바로 확인하려면 저장소 루트에서 `npm run dev`를 실행하고 [로컬 아트 스튜디오](http://localhost:8000/tools/art-preview.html)를 여세요. 배경·소품·로고·음악별 이동과 원본·제작 기록 링크는 [README의 로컬 바로가기](README.md#로컬-바로가기)에 모아 두었습니다.
 
+[로컬 에셋 보관함](http://localhost:8000/tools/asset-library.html)은 원본·렌더·검토·이전 작업 이미지와 음악을 썸네일로 표시합니다. `tools/index-local-assets.mjs`가 서버 시작 시 `tools/local-assets.json`을 생성합니다. 실행 중 목록 갱신은 `npm run assets:index`를 사용하며 생성된 목록은 Git에서 제외됩니다.
+
 ```text
 glintgrove/                      저장소 폴더명 (게임 표시명: Ilyndrel)
 ├── src/                          게임 실행 소스 코드 (.js)
