@@ -1,5 +1,15 @@
 # Ilyndrel 아트 작업실
 
+## 로컬 에셋 바로가기
+
+저장소 루트에서 `npm run dev`를 실행한 뒤 [아트 스튜디오 열기](http://localhost:8000/tools/art-preview.html)를 누르세요. 배경·소품·로고·음악을 한곳에서 보고, 각 에셋의 상세 창에서 제작 원본과 기록을 바로 열 수 있습니다.
+
+[배경](http://localhost:8000/tools/art-preview.html#background-section) · [소품과 장치](http://localhost:8000/tools/art-preview.html#sprite-section) · [로고·아이콘](http://localhost:8000/tools/art-preview.html#site-section) · [음악](http://localhost:8000/tools/art-preview.html#audio-section)
+
+파일 목록은 [원본 폴더](http://localhost:8000/art/source/)와 [제작 기록 폴더](http://localhost:8000/art/recipes/)에서 확인하세요. 서버 실행 조건과 전체 링크는 [README의 로컬 바로가기](../README.md#로컬-바로가기), 검색·상세 보기 사용법은 [스튜디오 안내](../docs/art/art-studio.md)에 있습니다.
+
+## 현재 에셋 구성
+
 현재 아트는 로컬 Blender 소품 21개, Blender 배경 3개, GPT로 생성·편집한 숲 배경 1개와 보석 타이틀 게임명 이미지 1개입니다. 별도 타이틀 상징은 메인과 배포에서 제거하고 이전 원본으로 보존합니다. 숲 v6는 v4의 청록·금빛을 유지하면서 중앙을 어둡게 비우고 고대 나무와 희미한 신비로운 빛을 강조했습니다. 소품 중 문 3개는 새로운 빈 통로의 석문 v2로 교체했습니다. 조각 아트 모드의 타이틀과 모든 장은 같은 GPT 숲을 표시하며, 기존 Blender 배경 3개는 호환용 라이브러리에 보존합니다. 공유 이미지와 글자 없는 소품 모음은 Blender에서 렌더하고, 사이트·화면 아이콘은 자체 SVG 경로로 구성합니다. 배경음악은 별도 악보와 수학적 음원 합성 코드로 만든 96초 연주곡입니다. [고대 숲·장치·음악 제작 기록](recipes/ancient-forest-v6.md)과 [보석 타이틀 기록](recipes/jeweled-title-v2.md)은 각 제작 방식을 구분합니다.
 
 제작 경로와 남은 권리 확인 범위는 [재제작 기록](../docs/legal/remake-audit.md)에 정리합니다. 코드로 제작했다는 사실은 수작업 제작·독점 저작권·비침해 보증을 뜻하지 않습니다.
@@ -69,7 +79,7 @@ npm run build
 
 `publish_art.py`는 해시가 포함된 PNG/WebP와 매니페스트를 로컬 게임 폴더에 만들고, 공유 이미지 원본에서 경로·시간 메타데이터를 제거한 사이트용 PNG를 내보냅니다. 소품 렌더 원본은 Git에 포함할 `art/renders/sprites/`에 보관합니다. `npm run build`는 현재 게임 실행 파일만 `dist/`에 묶습니다. 두 명령 모두 실제 웹사이트에 업로드하지 않습니다.
 
-`npm run dev`로 실행한 뒤 [아트 스튜디오](../tools/art-preview.html)에서 배경·소품·로고·음악을 확인하세요. 검색·종류 필터와 확대 상세 보기에서 배포 파일, 편집 원본과 제작 기록을 찾아볼 수 있습니다. [사용 안내](../docs/art/art-studio.md)에 관리 화면의 범위가 있습니다. 게임의 작은 칸과 모바일 화면도 함께 확인하세요. 누락된 이미지가 있어도 게임은 Canvas 기본 도형으로 계속 실행됩니다.
+`npm run dev`로 실행한 뒤 [아트 스튜디오](http://localhost:8000/tools/art-preview.html)에서 배경·소품·로고·음악을 확인하세요. 검색·종류 필터와 확대 상세 보기에서 배포 파일, 편집 원본과 제작 기록을 찾아볼 수 있습니다. [사용 안내](../docs/art/art-studio.md)에 관리 화면의 범위가 있습니다. 게임의 작은 칸과 모바일 화면도 함께 확인하세요. 누락된 이미지가 있어도 게임은 Canvas 기본 도형으로 계속 실행됩니다.
 
 이전 이미지 모델 배경·예전 화면 캡처·이전 출력은 [작업 보관 폴더](history/2026-09-14-complete-work/README.md)에 Git으로 보존하며 서비스 묶음에서는 제외합니다. 재제작 전 조사·프롬프트 문서는 이력 자료이며 현재 입력과 구분합니다.
 

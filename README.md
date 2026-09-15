@@ -20,13 +20,36 @@
 
 ```bash
 npm run dev
-# http://localhost:8000
+```
+
+ES Modules를 사용하므로 저장소 루트에서 로컬 HTTP 서버를 실행합니다. 서버를 켜 둔 상태에서 아래 링크를 클릭하세요.
+
+### 로컬 바로가기
+
+| 목적 | 바로 열기 | 확인할 수 있는 정보 |
+|---|---|---|
+| 게임 실행 | [게임 열기](http://localhost:8000/) | 실제 플레이 화면 |
+| 에셋 전체 보기 | [아트 스튜디오](http://localhost:8000/tools/art-preview.html) | 검색·확대·게임용 파일과 제작 원본 비교 |
+| 배경 이미지 | [숲의 풍경](http://localhost:8000/tools/art-preview.html#background-section) | 현재 숲과 보존 배경 |
+| 소품과 장치 | [작은 생명과 장치](http://localhost:8000/tools/art-preview.html#sprite-section) | 소품 원본·실제 게임 셀 크기·Blender 원본 |
+| 로고와 사이트 이미지 | [게임의 얼굴](http://localhost:8000/tools/art-preview.html#site-section) | 보석 게임명·아이콘·공유 이미지 |
+| 배경음악 | [음악 미리 듣기](http://localhost:8000/tools/art-preview.html#audio-section) | 반복 재생·음원·악보·제작 기록 |
+| 이미지 목록 | [현재 매니페스트](http://localhost:8000/assets/game/manifest.json) | 게임에서 읽는 이미지 경로·크기·해시 |
+| 원본 연결 정보 | [원본 카탈로그](http://localhost:8000/art/recipes/catalog.json) | 에셋 식별 이름과 원본 경로·중심·표시 크기 |
+| 제작 자료 탐색 | [원본 폴더](http://localhost:8000/art/source/) · [제작 기록](http://localhost:8000/art/recipes/) · [출처·검토 자료](http://localhost:8000/docs/legal/) | PNG·Blender·악보와 제작·검토 문서 목록 |
+| 브라우저 통합 테스트 | [E2E 실행](http://localhost:8000/tools/browser-e2e.html?debug=1) | 브라우저에서 게임 흐름 자동 검사 |
+
+아트 스튜디오의 에셋을 누르면 상세 창에서 **게임용 파일·제작 원본·제작 기록** 링크를 볼 수 있습니다. 자세한 사용법은 [아트 스튜디오 안내](docs/art/art-studio.md), 편집 순서는 [아트 작업 안내](art/README.md)를 참고하세요.
+
+위 주소는 `npm run dev`의 기본 포트 `8000` 기준입니다. 다른 포트로 실행했다면 주소의 포트를 바꾸세요. 로컬 서버를 종료하면 링크도 열리지 않습니다. 아트 스튜디오와 제작 자료는 저장소 루트를 실행할 때 제공되며, `dist/`와 GitHub Pages 배포에서는 제외됩니다.
+
+### 명령으로 검증
+
+```bash
 npm test
 npm run check
 npm run check:assets
 ```
-
-ES Modules를 사용하므로 파일을 더블클릭하는 대신 로컬 HTTP 서버로 실행합니다. 제작자용 [아트 스튜디오](tools/art-preview.html)에서는 배경·소품·로고·음악을 검색하고 확대해 볼 수 있습니다. [관리 화면 사용법](docs/art/art-studio.md)을 참고하세요. 아트 스튜디오는 게임 배포와 분리된 로컬 도구입니다. 브라우저 통합 테스트는 `/tools/browser-e2e.html?debug=1`입니다.
 
 ## 조작
 

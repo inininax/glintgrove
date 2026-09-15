@@ -371,3 +371,7 @@ byId('asset-detail').addEventListener('click', event => {
 let frame;
 window.addEventListener('resize', () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(drawPreviews); });
 await reload();
+// Async gallery content changes section positions after the browser's first
+// fragment jump. Apply documented section links once the cards are laid out.
+const linkedSection = Object.keys(sections).find(kind => location.hash === `#${kind}-section`);
+if (linkedSection) byId(`${linkedSection}-section`).scrollIntoView();

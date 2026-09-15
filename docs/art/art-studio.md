@@ -1,6 +1,22 @@
 # 아트 스튜디오
 
-로컬 서버를 실행한 뒤 [아트 스튜디오](../../tools/art-preview.html)를 엽니다. 배경·소품·사이트 이미지·음악을 함께 살펴보는 제작자용 조회 도구입니다. 별도의 관리자 계정이나 인증 서버가 없고, 파일 수정·업로드 기능은 제공하지 않습니다. 게임의 일반 사용자 화면에는 진입 버튼을 두지 않습니다.
+배경·소품·사이트 이미지·음악을 함께 살펴보는 제작자용 조회 도구입니다. 별도의 관리자 계정이나 인증 서버가 없고, 파일 수정·업로드 기능은 제공하지 않습니다. 게임의 일반 사용자 화면에는 진입 버튼을 두지 않습니다.
+
+## 로컬에서 열기
+
+저장소 루트에서 아래 명령을 실행하고 서버를 켜 둡니다.
+
+```bash
+npm run dev
+```
+
+**[아트 스튜디오 바로 열기](http://localhost:8000/tools/art-preview.html)**
+
+[배경](http://localhost:8000/tools/art-preview.html#background-section) · [소품과 장치](http://localhost:8000/tools/art-preview.html#sprite-section) · [사이트 이미지](http://localhost:8000/tools/art-preview.html#site-section) · [음악](http://localhost:8000/tools/art-preview.html#audio-section)
+
+개별 에셋의 이미지나 **상세 보기**를 누르면 게임용 파일·제작 원본·Blender 원본·제작 기록 링크가 표시됩니다. 목록 파일은 [현재 매니페스트](http://localhost:8000/assets/game/manifest.json)와 [원본 카탈로그](http://localhost:8000/art/recipes/catalog.json)에서 바로 확인할 수 있습니다.
+
+포트를 바꿔 실행했다면 링크의 `8000`을 해당 포트로 바꾸세요. HTML 파일을 직접 열거나 `dist/` 서버에서 접속하면 제작 자료를 불러올 수 없습니다. 게임·원본 폴더·검토 자료까지 포함한 [전체 로컬 링크 모음](../../README.md#로컬-바로가기)도 참고하세요.
 
 ## 볼 수 있는 것
 
