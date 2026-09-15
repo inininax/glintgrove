@@ -2,7 +2,7 @@ import { ASSET_LIMITS, validateAssetManifest, readBoundedResponse, validateRaste
 
 // Bump CORE_CACHE whenever application code changes. Runtime art uses independent
 // complete snapshots, so editing artwork cannot strand the offline application.
-const CORE_CACHE = 'glintgrove-core-v11-settings-layout';
+const CORE_CACHE = 'glintgrove-core-v12-settings-actions';
 // Retire the previous image-generation edition during activation. Future
 // complete snapshots within this geometry edition still support open clients.
 const ART_INDEX = 'glintgrove-art-index-v2-original';

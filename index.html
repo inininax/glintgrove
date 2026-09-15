@@ -98,49 +98,60 @@
   </div>
 
   <div id="settings-modal" class="modal-overlay hidden">
-    <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+    <div class="modal panel settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
       <p class="eyebrow" data-i18n="settingsEyebrow">나에게 맞는 숲의 감각</p>
       <h2 id="settings-title" data-i18n="settings">설정</h2>
-      <div class="settings-row">
-        <label for="set-sound" data-i18n="soundDesc">배경음악과 효과음</label>
-        <label class="switch"><input type="checkbox" id="set-sound"><span class="slider"></span></label>
-      </div>
-      <div class="settings-row">
-        <label for="set-display" data-i18n="displayLabel">화면 표현</label>
-        <select id="set-display" class="select">
-          <option value="sculpted" data-i18n="displaySculpted">조각 아트</option>
-          <option value="simple" data-i18n="displaySimple">간결한 도형</option>
-        </select>
-      </div>
-      <div class="settings-row">
-        <label for="set-motion" data-i18n="motionDesc">배경 움직임과 반짝임</label>
-        <label class="switch"><input type="checkbox" id="set-motion"><span class="slider"></span></label>
-      </div>
-      <div class="settings-row">
-        <label for="set-colorblind" data-i18n="colorblindDesc">빛의 색을 선 무늬로도 구분</label>
-        <label class="switch"><input type="checkbox" id="set-colorblind"><span class="slider"></span></label>
-      </div>
-      <div class="settings-row">
-        <label for="set-lang" data-i18n="langLabel">언어</label>
-        <select id="set-lang" class="select">
-          <option value="auto" data-i18n="langAuto">자동</option>
-          <option value="ko" selected>한국어 (Korean)</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-      <div class="settings-row">
-        <label for="set-skin" data-i18n="skinLabel">빛 스킨</label>
-        <select id="set-skin" class="select"></select>
-      </div>
-      <section class="settings-data" aria-labelledby="settings-data-title">
-        <h3 id="settings-data-title" data-i18n="playData">플레이 데이터</h3>
-        <div class="settings-data-actions">
-          <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
-          <button id="btn-wipe" class="btn danger small" aria-describedby="settings-reset-note" data-i18n="wipe">진행 데이터 초기화</button>
+      <div class="settings-body">
+        <div class="settings-row">
+          <label for="set-sound" data-i18n="soundDesc">배경음악과 효과음</label>
+          <label class="switch"><input type="checkbox" id="set-sound"><span class="slider"></span></label>
         </div>
-        <p id="settings-reset-note" class="settings-data-note" data-i18n="wipeNote">초기화하면 진행 기록과 설정이 모두 삭제됩니다.</p>
-      </section>
-      <div class="modal-actions">
+        <div class="settings-row">
+          <label for="set-display" data-i18n="displayLabel">화면 표현</label>
+          <select id="set-display" class="select">
+            <option value="sculpted" data-i18n="displaySculpted">조각 아트</option>
+            <option value="simple" data-i18n="displaySimple">간결한 도형</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label for="set-motion" data-i18n="motionDesc">배경 움직임과 반짝임</label>
+          <label class="switch"><input type="checkbox" id="set-motion"><span class="slider"></span></label>
+        </div>
+        <div class="settings-row">
+          <label for="set-colorblind" data-i18n="colorblindDesc">빛의 색을 선 무늬로도 구분</label>
+          <label class="switch"><input type="checkbox" id="set-colorblind"><span class="slider"></span></label>
+        </div>
+        <div class="settings-row">
+          <label for="set-lang" data-i18n="langLabel">언어</label>
+          <select id="set-lang" class="select">
+            <option value="auto" data-i18n="langAuto">자동</option>
+            <option value="ko" selected>한국어 (Korean)</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <div class="settings-row">
+          <label for="set-skin" data-i18n="skinLabel">빛 스킨</label>
+          <select id="set-skin" class="select"></select>
+        </div>
+        <section class="settings-data" aria-labelledby="settings-data-title">
+          <h3 id="settings-data-title" data-i18n="playData">플레이 데이터</h3>
+          <div class="settings-data-row">
+            <div class="settings-data-copy">
+              <h4 data-i18n="exportDataTitle">플레이 기록</h4>
+              <p id="settings-export-note" data-i18n="exportDataNote">현재 기록을 파일로 저장합니다.</p>
+            </div>
+            <button id="btn-export-data" class="btn small" aria-label="플레이 데이터 내보내기" data-i18n-aria="exportBtn" aria-describedby="settings-export-note" data-i18n="exportAction">내보내기</button>
+          </div>
+          <div class="settings-data-row">
+            <div class="settings-data-copy">
+              <h4 data-i18n="resetDataTitle">진행 초기화</h4>
+              <p id="settings-reset-note" data-i18n="wipeNote">진행 기록과 설정을 모두 삭제합니다.</p>
+            </div>
+            <button id="btn-wipe" class="btn danger small" aria-label="진행 데이터 초기화" data-i18n-aria="wipe" aria-describedby="settings-reset-note" data-i18n="resetAction">초기화</button>
+          </div>
+        </section>
+      </div>
+      <div class="modal-actions settings-footer">
         <button id="btn-close-settings" class="btn primary" data-i18n="close">닫기</button>
       </div>
     </div>

@@ -160,16 +160,20 @@ input:checked + .slider::before { background: #f1ddaf; transform: translateX(18p
 .select:hover { border-color: #c0c6a1; }
 .btn.danger { background: transparent; color: var(--danger); border-color: #d4998966; }
 .btn.small { min-height: 38px; padding: 9px 14px; font-size: 11px; }
-.settings-data { padding-top: 22px; text-align: left; }
-.settings-data h3 { margin-bottom: 12px; color: #d5dfc6; font-size: 12px; font-weight: 500; }
-.settings-data-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.settings-data-actions .btn { width: 100%; min-height: 44px; padding-inline: 10px; }
-.settings-data-actions .btn.danger:hover { background: #f0a69a0d; border-color: var(--danger); }
-.modal .settings-data-note { margin-top: 12px; color: var(--text-dim); font-size: 10px; line-height: 1.7; }
-.settings-data + .modal-actions { margin-top: 22px; padding-top: 22px; border-top: 1px solid #9fbd9b33; }
-@media (max-width: 400px) {
-  .settings-data-actions { grid-template-columns: 1fr; gap: 10px; }
-}
+.settings-panel { display: flex; flex-direction: column; overflow: hidden; }
+.settings-panel::before, .settings-panel > .eyebrow, .settings-panel > h2 { flex-shrink: 0; }
+/* Reserve room for focus outlines inside the scrolling settings list. */
+.settings-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; margin: -6px; padding: 6px; scrollbar-width: thin; }
+.settings-data { padding-top: 20px; text-align: left; }
+.settings-data h3 { margin-bottom: 2px; color: var(--accent2); font-size: 11px; font-weight: 500; }
+.settings-data-row { display: grid; grid-template-columns: minmax(0, 1fr) min(112px, 40%); align-items: center; gap: 18px; padding: 14px 0; }
+.settings-data-row + .settings-data-row { border-top: 1px solid #9fbd9b24; }
+.settings-data-copy h4 { margin: 0; color: #d5dfc6; font-size: 12px; font-weight: 500; line-height: 1.65; }
+.settings-panel .settings-data-copy p { margin-top: 3px; color: var(--text-dim); font-size: 10px; line-height: 1.65; }
+.settings-data-row .btn { width: 100%; min-height: 44px; padding-inline: 10px; }
+.settings-data-row .btn.danger:hover { background: #f0a69a0d; border-color: var(--danger); }
+.settings-footer { flex-shrink: 0; margin-top: 16px; padding-top: 20px; border-top: 1px solid #9fbd9b33; }
+.settings-footer .btn { width: 100%; }
 @media (forced-colors: active) {
   .select { appearance: auto; -webkit-appearance: auto; background-image: none; padding-inline: 10px; }
 }
