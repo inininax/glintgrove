@@ -132,13 +132,14 @@
         <label for="set-skin" data-i18n="skinLabel">빛 스킨</label>
         <select id="set-skin" class="select"></select>
       </div>
-      <div class="settings-row">
-        <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
-        <span></span>
-      </div>
-      <div class="danger-zone">
-        <button id="btn-wipe" class="btn danger small" data-i18n="wipe">진행 데이터 초기화</button>
-      </div>
+      <section class="settings-data" aria-labelledby="settings-data-title">
+        <h3 id="settings-data-title" data-i18n="playData">플레이 데이터</h3>
+        <div class="settings-data-actions">
+          <button id="btn-export-data" class="btn small" data-i18n="exportBtn">플레이 데이터 내보내기</button>
+          <button id="btn-wipe" class="btn danger small" aria-describedby="settings-reset-note" data-i18n="wipe">진행 데이터 초기화</button>
+        </div>
+        <p id="settings-reset-note" class="settings-data-note" data-i18n="wipeNote">초기화하면 진행 기록과 설정이 모두 삭제됩니다.</p>
+      </section>
       <div class="modal-actions">
         <button id="btn-close-settings" class="btn primary" data-i18n="close">닫기</button>
       </div>
